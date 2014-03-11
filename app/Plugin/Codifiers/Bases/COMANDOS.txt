@@ -1,0 +1,81 @@
+
+******************************* Pais **********************************
+
+mx paismarc "prolog=@prolog.pft" "pft=@paismarc.pft" "epilog=@epilog.pft" lw=999 -all now >pais.xml
+
+
+
+
+
+
+***************************** Lenguaje ********************************
+
+mx lang "prolog=@prolog.pft" "pft=@lang.pft" "epilog=@epilog.pft" lw=999 -all now >lenguaje.xml
+
+
+
+
+
+
+******************************* Tipo de Registro **********************************
+
+mx codes9 "prolog=@prolog.pft" "pft=@codes9.pft" "epilog=@epilog.pft" lw=999 -all now >tipo_registro.xml
+
+
+
+
+
+
+********************** Tipo de Material Visual ************************
+
+mx codes14 "prolog=@prolog.pft" "pft=@codes14.pft" "epilog=@epilog.pft" lw=999 -all now >tipo_material_visual.xml
+
+
+
+
+
+
+********************** Tipo de Material Cartográfico ************************
+
+mx codes12 "prolog=@prolog.pft" "pft=@codes12.pft" "epilog=@epilog.pft" lw=999 -all now >tipo_material_cartografico.xml
+
+
+
+
+
+
+**************** Designación Específica del Material (Material No Proyectable) *******************
+
+mx codes15 "prolog=@prolog.pft" "pft=@codes15.pft" "epilog=@epilog.pft" lw=999 -all now >designacion_especifica_material.xml
+
+
+
+
+
+
+******************************* Forma del Item **********************************
+
+mx codes10 "prolog=@prolog.pft" "pft=@codes10.pft" "epilog=@epilog.pft" lw=999 -all now >forma_item.xml
+
+
+
+
+
+
+******************************* Tipo de Archivo de computador **********************************
+
+mx codes11 "prolog=@prolog.pft" "pft=@codes11.pft" "epilog=@epilog.pft" lw=999 -all now >tipo_archivo_computador.xml
+
+
+
+
+
+
+
+
+
+
+
+
+
+

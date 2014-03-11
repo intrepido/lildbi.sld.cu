@@ -1,0 +1,1340 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<add>
+<doc>
+<field></field>
+<field>edt</field>
+<field>Editor</field>
+<field>Editor</field>
+<field>Editor</field>
+</doc>
+<doc>
+<field></field>
+<field>com</field>
+<field>Compiler</field>
+<field>Compilador</field>
+<field>Compilador</field>
+</doc>
+<doc>
+<field></field>
+<field>coord</field>
+<field>Coordinator</field>
+<field>Coordinador</field>
+<field>Coordenador</field>
+</doc>
+<doc>
+<field></field>
+<field>org</field>
+<field>Organizer</field>
+<field>Organizador</field>
+<field>Organizador</field>
+</doc>
+<doc>
+<field></field>
+<field>adp</field>
+<field>Adapter</field>
+<field>Adaptador</field>
+<field>Adaptador</field>
+</doc>
+<doc>
+<field></field>
+<field>srv</field>
+<field>Surveyor</field>
+<field>Agrimensor</field>
+<field>Agrimensor</field>
+</doc>
+<doc>
+<field></field>
+<field>hst</field>
+<field>Host</field>
+<field>Anfitrión</field>
+<field>Anfitrião</field>
+</doc>
+<doc>
+<field></field>
+<field>anm</field>
+<field>Animator</field>
+<field>Animador</field>
+<field>Animador</field>
+</doc>
+<doc>
+<field></field>
+<field>sce</field>
+<field>Scenarist</field>
+<field>Animador de pantalla</field>
+<field>Animador de cenário</field>
+</doc>
+<doc>
+<field></field>
+<field>ann</field>
+<field>Annotator</field>
+<field>Anotador</field>
+<field>Anotador</field>
+</doc>
+<doc>
+<field></field>
+<field>ant</field>
+<field>Bibliographic antecedent</field>
+<field>Antecedente bibliográfico</field>
+<field>Antecedente bibliográfico</field>
+</doc>
+<doc>
+<field></field>
+<field>etr</field>
+<field>Etcher</field>
+<field>Grabador al agua fuerte</field>
+<field>Aquafortista</field>
+</doc>
+<doc>
+<field></field>
+<field>arc</field>
+<field>Architect</field>
+<field>Arquitecto</field>
+<field>Arquiteto</field>
+</doc>
+<doc>
+<field></field>
+<field>arr</field>
+<field>Arranger</field>
+<field>Arreglador</field>
+<field>Arranjador</field>
+</doc>
+<doc>
+<field></field>
+<field>art</field>
+<field>Artist</field>
+<field>Artista</field>
+<field>Artista</field>
+</doc>
+<doc>
+<field></field>
+<field>app</field>
+<field>Applicant</field>
+<field>Aspirante</field>
+<field>Aspirante</field>
+</doc>
+<doc>
+<field></field>
+<field>act</field>
+<field>Actor</field>
+<field>Actor</field>
+<field>Ator</field>
+</doc>
+<doc>
+<field></field>
+<field>aut</field>
+<field>Author</field>
+<field>Autor</field>
+<field>Autor</field>
+</doc>
+<doc>
+<field></field>
+<field>aui</field>
+<field>Author of introduction</field>
+<field>Autor de la introducción</field>
+<field>Autor da introdução</field>
+</doc>
+<doc>
+<field></field>
+<field>lyr</field>
+<field>Lyricist</field>
+<field>Autor de la letra de una canción</field>
+<field>Autor da letra de uma música</field>
+</doc>
+<doc>
+<field></field>
+<field>aqt</field>
+<field>Author in quotations or text abstracts</field>
+<field>Autor de citas o resúmenes</field>
+<field>Autor das citações ou resumes</field>
+</doc>
+<doc>
+<field></field>
+<field>aud</field>
+<field>Author of dialog</field>
+<field>Autor del diálogo</field>
+<field>Autor do diálogo</field>
+</doc>
+<doc>
+<field></field>
+<field>aft</field>
+<field>Author of afterword, colophon, etc.</field>
+<field>Autor del postfacio, colophon, etc.</field>
+<field>Autor do posfácio, colofão, etc.</field>
+</doc>
+<doc>
+<field></field>
+<field>aus</field>
+<field>Author of screenplay, etc.</field>
+<field>Autor de la animación de pantalla, etc.</field>
+<field>Autor do roteiro, etc.</field>
+</doc>
+<doc>
+<field></field>
+<field>dub</field>
+<field>Dubious author</field>
+<field>Autor dudoso</field>
+<field>Autor duvidoso</field>
+</doc>
+<doc>
+<field></field>
+<field>ccp</field>
+<field>Conceptor</field>
+<field>Autor intelectual</field>
+<field>Autor intelectual</field>
+</doc>
+<doc>
+<field></field>
+<field>dnc</field>
+<field>Dancer</field>
+<field>Bailarín</field>
+<field>Bailarino</field>
+</doc>
+<doc>
+<field></field>
+<field>lse</field>
+<field>Licensee</field>
+<field>Beneficiario de la licencia</field>
+<field>Beneficiário da licença</field>
+</doc>
+<doc>
+<field></field>
+<field>cll</field>
+<field>Calligrapher</field>
+<field>Calígrafo</field>
+<field>Calígrafo</field>
+</doc>
+<doc>
+<field></field>
+<field>ctg</field>
+<field>Cartographer</field>
+<field>Cartógrafo</field>
+<field>Cartógrafo</field>
+</doc>
+<doc>
+<field></field>
+<field>std</field>
+<field>Set designer</field>
+<field>Escenógrafo</field>
+<field>Cenógrafo</field>
+</doc>
+<doc>
+<field></field>
+<field>cns</field>
+<field>Censor</field>
+<field>Censor</field>
+<field>Censor</field>
+</doc>
+<doc>
+<field></field>
+<field>rth</field>
+<field>Research team head</field>
+<field>Jefe del equipo de investigación</field>
+<field>Chefe da equipe de pesquisa</field>
+</doc>
+<doc>
+<field></field>
+<field>cng</field>
+<field>Cinematographer</field>
+<field>Cinematógrafo</field>
+<field>Cinematógrafo</field>
+</doc>
+<doc>
+<field></field>
+<field>cli</field>
+<field>Client</field>
+<field>Cliente</field>
+<field>Cliente</field>
+</doc>
+<doc>
+<field></field>
+<field>clb</field>
+<field>Collaborator</field>
+<field>Colaborador</field>
+<field>Colaborador</field>
+</doc>
+<doc>
+<field></field>
+<field>col</field>
+<field>Collector</field>
+<field>Coleccionista</field>
+<field>Colecionador</field>
+</doc>
+<doc>
+<field></field>
+<field>clt</field>
+<field>Collotyper</field>
+<field>Colotipiador</field>
+<field>Colotipador</field>
+</doc>
+<doc>
+<field></field>
+<field>cmm</field>
+<field>Commentator</field>
+<field>Comentador</field>
+<field>Comentarista</field>
+</doc>
+<doc>
+<field></field>
+<field>cwt</field>
+<field>Commentator for written text</field>
+<field>Comentador de texto escrito</field>
+<field>Comentarista de texto escrito</field>
+</doc>
+<doc>
+<field></field>
+<field>stn</field>
+<field>Standards body</field>
+<field>Comite de Normalización</field>
+<field>Comitê de Normalização</field>
+</doc>
+<doc>
+<field></field>
+<field>cmp</field>
+<field>Composer</field>
+<field>Compositor</field>
+<field>Compositor</field>
+</doc>
+<doc>
+<field></field>
+<field>dgg</field>
+<field>Degree grantor</field>
+<field>Concedente de grado</field>
+<field>Concessor de grau</field>
+</doc>
+<doc>
+<field></field>
+<field>cnd</field>
+<field>Conductor</field>
+<field>Conductor</field>
+<field>Condutor</field>
+</doc>
+<doc>
+<field></field>
+<field>csl</field>
+<field>Consultant</field>
+<field>Consultor</field>
+<field>Consultor</field>
+</doc>
+<doc>
+<field></field>
+<field>sad</field>
+<field>Scientific advisor</field>
+<field>Consultor científico</field>
+<field>Consultor científico</field>
+</doc>
+<doc>
+<field></field>
+<field>csp</field>
+<field>Consultant to a project</field>
+<field>Consultor de un proyectp</field>
+<field>Consultor de um projeto</field>
+</doc>
+<doc>
+<field></field>
+<field>stl</field>
+<field>Storyteller</field>
+<field>Contador de historia</field>
+<field>Contador de historia</field>
+</doc>
+<doc>
+<field></field>
+<field>mdc</field>
+<field>Metadata contact</field>
+<field>Contacto de metadatos</field>
+<field>Contato de metadatos</field>
+</doc>
+<doc>
+<field></field>
+<field>prc</field>
+<field>Process contact</field>
+<field>Contacto de proceso</field>
+<field>Contato de processo</field>
+</doc>
+<doc>
+<field></field>
+<field>cts</field>
+<field>Contestee</field>
+<field>Contestado</field>
+<field>Contestado</field>
+</doc>
+<doc>
+<field></field>
+<field>cte</field>
+<field>Contestee-appellee</field>
+<field>Contendido-apelado</field>
+<field>Contestado-apelado</field>
+</doc>
+<doc>
+<field></field>
+<field>ctr</field>
+<field>Contractor</field>
+<field>Contratista</field>
+<field>Contratante</field>
+</doc>
+<doc>
+<field></field>
+<field>ctb</field>
+<field>Contributor</field>
+<field>Contribuyente</field>
+<field>Contribuinte</field>
+</doc>
+<doc>
+<field></field>
+<field>chr</field>
+<field>Choreographer</field>
+<field>Coreógrafo</field>
+<field>Coreógrafo</field>
+</doc>
+<doc>
+<field></field>
+<field>crp</field>
+<field>Correspondent</field>
+<field>Correspondiente</field>
+<field>Correspondente</field>
+</doc>
+<doc>
+<field></field>
+<field>crr</field>
+<field>Corrector</field>
+<field>Corrector</field>
+<field>Corretor</field>
+</doc>
+<doc>
+<field></field>
+<field>cre</field>
+<field>Creator</field>
+<field>Creador</field>
+<field>Criador</field>
+</doc>
+<doc>
+<field></field>
+<field>orn</field>
+<field>Originator</field>
+<field>Creador</field>
+<field>Criador</field>
+</doc>
+<doc>
+<field></field>
+<field>cur</field>
+<field>Curator of an exhibition</field>
+<field>Curador de una exhibición</field>
+<field>Curador de uma exibição</field>
+</doc>
+<doc>
+<field></field>
+<field>dte</field>
+<field>Dedicatee</field>
+<field>Dedicado</field>
+<field>Dedicado</field>
+</doc>
+<doc>
+<field></field>
+<field>dto</field>
+<field>Dedicator</field>
+<field>Dedicador</field>
+<field>Dedicador</field>
+</doc>
+<doc>
+<field></field>
+<field>dln</field>
+<field>Delineator</field>
+<field>Delineador, dibujante</field>
+<field>Delineador, desenhista</field>
+</doc>
+<doc>
+<field></field>
+<field>rsp</field>
+<field>Respondent</field>
+<field>Demandado</field>
+<field>Demandado</field>
+</doc>
+<doc>
+<field></field>
+<field>rse</field>
+<field>Respondent-appellee</field>
+<field>Demandado-apelado</field>
+<field>Demandado-apelado</field>
+</doc>
+<doc>
+<field></field>
+<field>rst</field>
+<field>Respondent-appellant</field>
+<field>Demandado-apelante</field>
+<field>Demandado-apelante</field>
+</doc>
+<doc>
+<field></field>
+<field>cos</field>
+<field>Contestant</field>
+<field>Demandante</field>
+<field>Demandante</field>
+</doc>
+<doc>
+<field></field>
+<field>ptf</field>
+<field>Plaintiff</field>
+<field>Demandante</field>
+<field>Demandante</field>
+</doc>
+<doc>
+<field></field>
+<field>fpy</field>
+<field>First party / Second party</field>
+<field>Demandante / Demandado</field>
+<field>Demandante / Demandado</field>
+</doc>
+<doc>
+<field></field>
+<field>cpc</field>
+<field>Copyright claimant</field>
+<field>Demandante del copyright</field>
+<field>Demandante do copyright</field>
+</doc>
+<doc>
+<field></field>
+<field>coe</field>
+<field>Contestant-appellee</field>
+<field>Demandante-apelado</field>
+<field>Demandante-apelado</field>
+</doc>
+<doc>
+<field></field>
+<field>pte</field>
+<field>Plaintiff-appellee</field>
+<field>Demandante-apelado</field>
+<field>Demandante-apelado</field>
+</doc>
+<doc>
+<field></field>
+<field>cot</field>
+<field>Contestant-appellant</field>
+<field>Demandante-apelante</field>
+<field>Demandante-apelante</field>
+</doc>
+<doc>
+<field></field>
+<field>ptt</field>
+<field>Plaintiff-appellant</field>
+<field>Demandante-apelante</field>
+<field>Demandante-apelante</field>
+</doc>
+<doc>
+<field></field>
+<field>dpt</field>
+<field>Depositor</field>
+<field>Depositante</field>
+<field>Depositante</field>
+</doc>
+<doc>
+<field></field>
+<field>tyd</field>
+<field>Type designer</field>
+<field>Diseñador de tipos de letras</field>
+<field>Desenhador de tipos de letras</field>
+</doc>
+<doc>
+<field></field>
+<field>dsr</field>
+<field>Designer</field>
+<field>Diseñador</field>
+<field>Desenhista</field>
+</doc>
+<doc>
+<field></field>
+<field>cov</field>
+<field>Cover designer</field>
+<field>Diseñador de la capa</field>
+<field>Desenhista da capa</field>
+</doc>
+<doc>
+<field></field>
+<field>bjd</field>
+<field>Bookjacket designer</field>
+<field>Diseñador de la cubierta del libro</field>
+<field>Desenhista da capa do livro</field>
+</doc>
+<doc>
+<field></field>
+<field>bdd</field>
+<field>Binding designer</field>
+<field>Diseñador de encuadernación</field>
+<field>Desenhista da encadernação</field>
+</doc>
+<doc>
+<field></field>
+<field>lgd</field>
+<field>Lighting designer</field>
+<field>Diseñador de iluminación</field>
+<field>Desenhista de iluminação</field>
+</doc>
+<doc>
+<field></field>
+<field>drm</field>
+<field>Draftsman</field>
+<field>Dibujante</field>
+<field>Desenhista de plantas e projetos</field>
+</doc>
+<doc>
+<field></field>
+<field>ren</field>
+<field>Renderer</field>
+<field>Dibujante del rendering</field>
+<field>Desenhista de reprodução</field>
+</doc>
+<doc>
+<field></field>
+<field>cst</field>
+<field>Costume designer</field>
+<field>Diseñador de trajes, vestuario</field>
+<field>Desenhista de trajes, vestuário</field>
+</doc>
+<doc>
+<field></field>
+<field>bpd</field>
+<field>Bookplate designer</field>
+<field>Diseñador del ex libris</field>
+<field>Desenhista do ex libris</field>
+</doc>
+<doc>
+<field></field>
+<field>bkd</field>
+<field>Book designer</field>
+<field>Diseñador del libro</field>
+<field>Desenhista do livro</field>
+</doc>
+<doc>
+<field></field>
+<field>rcp</field>
+<field>Recipient</field>
+<field>Destinatario</field>
+<field>Destinatário</field>
+</doc>
+<doc>
+<field></field>
+<field>lel</field>
+<field>Libelee</field>
+<field>Difamado</field>
+<field>Difamado</field>
+</doc>
+<doc>
+<field></field>
+<field>lee</field>
+<field>Libelee-appellee</field>
+<field>Difamado-apelado</field>
+<field>Difamado-apelado</field>
+</doc>
+<doc>
+<field></field>
+<field>let</field>
+<field>Libelee-appellant</field>
+<field>Difamado-apelante</field>
+<field>Difamado-apelante</field>
+</doc>
+<doc>
+<field></field>
+<field>lil</field>
+<field>Libelant</field>
+<field>Difamador</field>
+<field>Difamador</field>
+</doc>
+<doc>
+<field></field>
+<field>lie</field>
+<field>Libelant-appellee</field>
+<field>Difamador-apelado</field>
+<field>Difamador-apelado</field>
+</doc>
+<doc>
+<field></field>
+<field>lit</field>
+<field>Libelant-appellant</field>
+<field>Difamador-apelante</field>
+<field>Difamador-apelante</field>
+</doc>
+<doc>
+<field></field>
+<field>drt</field>
+<field>Director</field>
+<field>Director</field>
+<field>Diretor</field>
+</doc>
+<doc>
+<field></field>
+<field>pbd</field>
+<field>Publishing director</field>
+<field>Director de publicación</field>
+<field>Diretor de publicação</field>
+</doc>
+<doc>
+<field></field>
+<field>dis</field>
+<field>Dissertant</field>
+<field>Disertante</field>
+<field>Dissertante</field>
+</doc>
+<doc>
+<field></field>
+<field>dst</field>
+<field>Distributor</field>
+<field>Distribuidor</field>
+<field>Distribuidor</field>
+</doc>
+<doc>
+<field></field>
+<field>dnr</field>
+<field>Donor</field>
+<field>Donante</field>
+<field>Doador</field>
+</doc>
+<doc>
+<field></field>
+<field>mrk</field>
+<field>Markup editor</field>
+<field>Editor de marcación</field>
+<field>Editor de marcação</field>
+</doc>
+<doc>
+<field></field>
+<field>flm</field>
+<field>Film editor</field>
+<field>Editor de la película</field>
+<field>Editor do filme</field>
+</doc>
+<doc>
+<field></field>
+<field>pbl</field>
+<field>Publisher</field>
+<field>Publicador</field>
+<field>Editora</field>
+</doc>
+<doc>
+<field></field>
+<field>elt</field>
+<field>Electrotyper</field>
+<field>Electrotipeador</field>
+<field>Eletrotipeador</field>
+</doc>
+<doc>
+<field></field>
+<field>len</field>
+<field>Lender</field>
+<field>Prestador</field>
+<field>Emprestador</field>
+</doc>
+<doc>
+<field></field>
+<field>bnd</field>
+<field>Binder</field>
+<field>Encuadernador</field>
+<field>Encadernador</field>
+</doc>
+<doc>
+<field></field>
+<field>eng</field>
+<field>Engineer</field>
+<field>Ingeniero</field>
+<field>Engenheiro</field>
+</doc>
+<doc>
+<field></field>
+<field>rce</field>
+<field>Recording engineer</field>
+<field>Ingeniero de grabación</field>
+<field>Engenheiro de gravação</field>
+</doc>
+<doc>
+<field></field>
+<field>ive</field>
+<field>Interviewee</field>
+<field>Entrevistado</field>
+<field>Entrevistado</field>
+</doc>
+<doc>
+<field></field>
+<field>ivr</field>
+<field>Interviewer</field>
+<field>Entrevistador</field>
+<field>Entrevistador</field>
+</doc>
+<doc>
+<field></field>
+<field>scr</field>
+<field>Scribe</field>
+<field>Escriba</field>
+<field>Escriba</field>
+</doc>
+<doc>
+<field></field>
+<field>wam</field>
+<field>Writer of accompanying material</field>
+<field>Escritor del material acompañante</field>
+<field>Escritor do material acompanhante</field>
+</doc>
+<doc>
+<field></field>
+<field>scl</field>
+<field>Sculptor</field>
+<field>Escultor</field>
+<field>Escultor</field>
+</doc>
+<doc>
+<field></field>
+<field>str</field>
+<field>Stereotyper</field>
+<field>Estereotipador</field>
+<field>Estereotipador</field>
+</doc>
+<doc>
+<field></field>
+<field>prf</field>
+<field>Performer</field>
+<field>Ejecutante / actor</field>
+<field>Executante / ator</field>
+</doc>
+<doc>
+<field></field>
+<field>exp</field>
+<field>Expert</field>
+<field>Experto</field>
+<field>Experto</field>
+</doc>
+<doc>
+<field></field>
+<field>mfr</field>
+<field>Manufacturer</field>
+<field>Manufacturero</field>
+<field>Fabricante</field>
+</doc>
+<doc>
+<field></field>
+<field>ppm</field>
+<field>Papermaker</field>
+<field>Fabricante de papel</field>
+<field>Fabricante de papel</field>
+</doc>
+<doc>
+<field></field>
+<field>fac</field>
+<field>Facsimilist</field>
+<field>Facsimilador</field>
+<field>Facsimilador</field>
+</doc>
+<doc>
+<field></field>
+<field>frg</field>
+<field>Forger</field>
+<field>Forjador</field>
+<field>Forjador</field>
+</doc>
+<doc>
+<field></field>
+<field>pht</field>
+<field>Photographer</field>
+<field>Fotógrafo</field>
+<field>Fotógrafo</field>
+</doc>
+<doc>
+<field></field>
+<field>fnd</field>
+<field>Funder</field>
+<field>Fundador</field>
+<field>Fundador</field>
+</doc>
+<doc>
+<field></field>
+<field>prm</field>
+<field>Printmaker</field>
+<field>Gráfico</field>
+<field>Gráfico</field>
+</doc>
+<doc>
+<field></field>
+<field>egr</field>
+<field>Engraver</field>
+<field>Grabador</field>
+<field>Gravador</field>
+</doc>
+<doc>
+<field></field>
+<field>mte</field>
+<field>Metal-engraver</field>
+<field>Grabador de metales</field>
+<field>Gravador de metais</field>
+</doc>
+<doc>
+<field></field>
+<field>hnr</field>
+<field>Honoree</field>
+<field>Honrado</field>
+<field>Honrado</field>
+</doc>
+<doc>
+<field></field>
+<field>ilu</field>
+<field>Illuminator</field>
+<field>Iluminador</field>
+<field>Iluminador</field>
+</doc>
+<doc>
+<field></field>
+<field>ill</field>
+<field>Illustrator</field>
+<field>Ilustrador</field>
+<field>Ilustrador</field>
+</doc>
+<doc>
+<field></field>
+<field>pop</field>
+<field>Printer of plates</field>
+<field>Impresor de planchas</field>
+<field>Impresor de lâminas</field>
+</doc>
+<doc>
+<field></field>
+<field>prt</field>
+<field>Printer</field>
+<field>Impresor</field>
+<field>Impressor</field>
+</doc>
+<doc>
+<field></field>
+<field>itr</field>
+<field>Instrumentalist</field>
+<field>Instrumentalista</field>
+<field>Instrumentalista</field>
+</doc>
+<doc>
+<field></field>
+<field>inv</field>
+<field>Inventor</field>
+<field>Inventor</field>
+<field>Inventor</field>
+</doc>
+<doc>
+<field></field>
+<field>auc</field>
+<field>Auctioneer</field>
+<field>Subastador</field>
+<field>Leiloeiro</field>
+</doc>
+<doc>
+<field></field>
+<field>lbt</field>
+<field>Librettist</field>
+<field>Libretista</field>
+<field>Libretista</field>
+</doc>
+<doc>
+<field></field>
+<field>ltg</field>
+<field>Lithographer</field>
+<field>Litógrafo</field>
+<field>Litógrafo</field>
+</doc>
+<doc>
+<field></field>
+<field>bsl</field>
+<field>Bookseller</field>
+<field>Librero</field>
+<field>Livreiro</field>
+</doc>
+<doc>
+<field></field>
+<field>ppt</field>
+<field>Puppeteer</field>
+<field>Titiritero</field>
+<field>Marionetista</field>
+</doc>
+<doc>
+<field></field>
+<field>rtm</field>
+<field>Research team member</field>
+<field>Miembro del equipo de investigación</field>
+<field>Membro da equipe de pesquisa</field>
+</doc>
+<doc>
+<field></field>
+<field>mod</field>
+<field>Moderator</field>
+<field>Moderador</field>
+<field>Moderador</field>
+</doc>
+<doc>
+<field></field>
+<field>mon</field>
+<field>Monitor</field>
+<field>Monitor</field>
+<field>Monitor</field>
+</doc>
+<doc>
+<field></field>
+<field>mus</field>
+<field>Musician</field>
+<field>Músico</field>
+<field>Músico</field>
+</doc>
+<doc>
+<field></field>
+<field>nrt</field>
+<field>Narrator</field>
+<field>Narrador</field>
+<field>Narrador</field>
+</doc>
+<doc>
+<field></field>
+<field>asn</field>
+<field>Associated name</field>
+<field>Nombre asociado</field>
+<field>Nome associado</field>
+</doc>
+<doc>
+<field></field>
+<field>att</field>
+<field>Attributed name</field>
+<field>Nombre atribuído</field>
+<field>Nome atribuido</field>
+</doc>
+<doc>
+<field></field>
+<field>opn</field>
+<field>Opponent</field>
+<field>Oponente</field>
+<field>Oponente</field>
+</doc>
+<doc>
+<field></field>
+<field>spk</field>
+<field>Speaker</field>
+<field>Orador</field>
+<field>Orador</field>
+</doc>
+<doc>
+<field></field>
+<field>orm</field>
+<field>Organizer of meeting</field>
+<field>Organizador de un encuentro</field>
+<field>Organizador de um encontro</field>
+</doc>
+<doc>
+<field></field>
+<field>ths</field>
+<field>Thesis advisor</field>
+<field>Orientador</field>
+<field>Orientador</field>
+</doc>
+<doc>
+<field></field>
+<field>lso</field>
+<field>Licensor</field>
+<field>Otorgador de licencia</field>
+<field>Outorgador da licença</field>
+</doc>
+<doc>
+<field></field>
+<field>oth</field>
+<field>Other</field>
+<field>Otro</field>
+<field>Outro</field>
+</doc>
+<doc>
+<field></field>
+<field>lsa</field>
+<field>Landscape architect</field>
+<field>Arquitecto del paisaje</field>
+<field>Paisagista</field>
+</doc>
+<doc>
+<field></field>
+<field>spn</field>
+<field>Sponsor</field>
+<field>Patrocinador</field>
+<field>Patrocinador</field>
+</doc>
+<doc>
+<field></field>
+<field>pat</field>
+<field>Patron</field>
+<field>Patrón</field>
+<field>Patrono</field>
+</doc>
+<doc>
+<field></field>
+<field>res</field>
+<field>Researcher</field>
+<field>Investigador</field>
+<field>Pesquisador</field>
+</doc>
+<doc>
+<field></field>
+<field>prd</field>
+<field>Production personnel</field>
+<field>Personal de producción</field>
+<field>Pessoal de produção</field>
+</doc>
+<doc>
+<field></field>
+<field>asg</field>
+<field>Assignee</field>
+<field>Apoderado</field>
+<field>Procurador</field>
+</doc>
+<doc>
+<field></field>
+<field>pro</field>
+<field>Producer</field>
+<field>Productor</field>
+<field>Produtor</field>
+</doc>
+<doc>
+<field></field>
+<field>plt</field>
+<field>Platemaker</field>
+<field>Productor de planchas</field>
+<field>Produtor de lâminas</field>
+</doc>
+<doc>
+<field></field>
+<field>bkp</field>
+<field>Book producer</field>
+<field>Productor del libro</field>
+<field>Produtor do livro</field>
+</doc>
+<doc>
+<field></field>
+<field>tch</field>
+<field>Teacher</field>
+<field>Profesor</field>
+<field>Professor</field>
+</doc>
+<doc>
+<field></field>
+<field>prg</field>
+<field>Programmer</field>
+<field>Programador</field>
+<field>Programador</field>
+</doc>
+<doc>
+<field></field>
+<field>own</field>
+<field>Owner</field>
+<field>Propietario</field>
+<field>Proprietário</field>
+</doc>
+<doc>
+<field></field>
+<field>fmo</field>
+<field>Former owner</field>
+<field>Propietario anterior</field>
+<field>Proprietário anterior</field>
+</doc>
+<doc>
+<field></field>
+<field>cpl</field>
+<field>Complainant</field>
+<field>Querellante</field>
+<field>Querelante</field>
+</doc>
+<doc>
+<field></field>
+<field>cpe</field>
+<field>Complainant-appellee</field>
+<field>Querellante-apelado</field>
+<field>Querelante-apelado</field>
+</doc>
+<doc>
+<field></field>
+<field>cpt</field>
+<field>Complainant-appellant</field>
+<field>Querellante-apelante</field>
+<field>Querelante-apelante</field>
+</doc>
+<doc>
+<field></field>
+<field>red</field>
+<field>Redactor</field>
+<field>Redactor</field>
+<field>Redator</field>
+</doc>
+<doc>
+<field></field>
+<field>rsg</field>
+<field>Restager</field>
+<field>Remontador de pieza teatral, Director teatral</field>
+<field>Remontador de peça teatral, Diretor teatral</field>
+</doc>
+<doc>
+<field></field>
+<field>rpt</field>
+<field>Reporter</field>
+<field>Repórter</field>
+<field>Repórter</field>
+</doc>
+<doc>
+<field></field>
+<field>rpy</field>
+<field>Responsible party</field>
+<field>Requerido / Responsable por el contenido</field>
+<field>Requerente / Responsável pelo conteúdo</field>
+</doc>
+<doc>
+<field></field>
+<field>pta</field>
+<field>Patent applicant</field>
+<field>Requeriente de patente</field>
+<field>Requerente de patente</field>
+</doc>
+<doc>
+<field></field>
+<field>dpc</field>
+<field>Depicted</field>
+<field>Retratado</field>
+<field>Retratado</field>
+</doc>
+<doc>
+<field></field>
+<field>dfd</field>
+<field>Defendant</field>
+<field>Defensor</field>
+<field>Réu</field>
+</doc>
+<doc>
+<field></field>
+<field>dfe</field>
+<field>Defendant-appellee</field>
+<field>Defensor-apelado</field>
+<field>Réu-apelado</field>
+</doc>
+<doc>
+<field></field>
+<field>dft</field>
+<field>Defendant-appellant</field>
+<field>Defensor-apelante</field>
+<field>Réu-apelante</field>
+</doc>
+<doc>
+<field></field>
+<field>pfr</field>
+<field>Proofreader</field>
+<field>Corrector de prueba</field>
+<field>Revisor</field>
+</doc>
+<doc>
+<field></field>
+<field>rev</field>
+<field>Reviewer</field>
+<field>Revisor</field>
+<field>Revisor</field>
+</doc>
+<doc>
+<field></field>
+<field>ins</field>
+<field>Inscriber</field>
+<field>Rotulador</field>
+<field>Rotulador / quem escreveu dedicatória</field>
+</doc>
+<doc>
+<field></field>
+<field>rbr</field>
+<field>Rubricator</field>
+<field>Rubricador</field>
+<field>Rubricador</field>
+</doc>
+<doc>
+<field></field>
+<field>sec</field>
+<field>Secretary</field>
+<field>Secretaria</field>
+<field>Secretária</field>
+</doc>
+<doc>
+<field></field>
+<field>sgn</field>
+<field>Signer</field>
+<field>Firmante</field>
+<field>Signatário</field>
+</doc>
+<doc>
+<field></field>
+<field>grt</field>
+<field>Graphic technician</field>
+<field>Técnico gráfico</field>
+<field>Técnico gráfico</field>
+</doc>
+<doc>
+<field></field>
+<field>wit</field>
+<field>Witness</field>
+<field>Testigo</field>
+<field>Testemunha</field>
+</doc>
+<doc>
+<field></field>
+<field>cmt</field>
+<field>Compositor</field>
+<field>Componedor</field>
+<field>Tipógrafo</field>
+</doc>
+<doc>
+<field></field>
+<field>tyg</field>
+<field>Typographer</field>
+<field>Tipógrafo</field>
+<field>Tipógrafo</field>
+</doc>
+<doc>
+<field></field>
+<field>pth</field>
+<field>Patent holder</field>
+<field>Titular de la patente</field>
+<field>Titular da patente</field>
+</doc>
+<doc>
+<field></field>
+<field>cph</field>
+<field>Copyright holder</field>
+<field>Titular del copyright</field>
+<field>Titular do copyright</field>
+</doc>
+<doc>
+<field></field>
+<field>trl</field>
+<field>Translator</field>
+<field>Traductor</field>
+<field>Tradutor</field>
+</doc>
+<doc>
+<field></field>
+<field>trc</field>
+<field>Transcriber</field>
+<field>Transcriptor</field>
+<field>Transcritor</field>
+</doc>
+<doc>
+<field></field>
+<field>vdg</field>
+<field>Videographer</field>
+<field>Videógrafo, Cameraman</field>
+<field>Videógrafo, Cameraman</field>
+</doc>
+<doc>
+<field></field>
+<field>voc</field>
+<field>Vocalist</field>
+<field>Vocalista</field>
+<field>Vocalista</field>
+</doc>
+<doc>
+<field></field>
+<field>wdc</field>
+<field>Woodcutter</field>
+<field>Xilógrafo (trabaja con la textura fina de un bloque de madera)</field>
+<field>Xilógrafo (trabalha com a textura fina de um bloco de madeira)</field>
+</doc>
+<doc>
+<field></field>
+<field>wde</field>
+<field>Wood-engraver, woodcutter</field>
+<field>Xilógrafo (trabaja con el lado de la plancha de um bloque de madera)</field>
+<field>Xilógrafo (trabalha com o lado da prancha de um bloco de madeira)</field>
+</doc>
+</add>

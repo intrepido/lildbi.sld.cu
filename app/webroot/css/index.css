@@ -1,0 +1,106 @@
+
+body {
+	background-color : #CAD7E6;
+	margin : 10px 12px;
+	scrollbar-arrow-color : #C0D6C;
+	scrollbar-face-color : #C0D6C2;
+	scrollbar-base-color: #3D4F7A;
+}
+body, th, td,  div, p {
+	font: 08pt Verdana, Arial, Helvetica, sans-serif;
+	color : Black;
+}
+
+a {	color : #990000;
+	text-decoration : underline;
+}
+
+a:visited {
+	color : #666666;
+	text-decoration : underline;
+}
+
+a:hover {	
+	color : red;
+	text-decoration : underline;
+}
+
+select 		{
+		font: 9px Verdana, Arial, Helvetica, sans-serif;
+		color: #444444;
+		border-color:#303030 solid;
+		}		
+
+a.menu:link { 
+	color: #666666; font-weight:bold; text-decoration: none; font-size: 09pt ; font-family: Arial, Helvetica, sans-serif
+}
+a.menu:visited {
+	 color: #666666; font-weight:bold; text-decoration: none; font-size: 09pt ; font-family: Arial, Helvetica, sans-serif
+ }
+a.menu:hover 	{
+	 color:#3399CC ; font-weight:bold; ; font-family: Arial, Helvetica, sans-serif; text-transform: uppercase
+ }
+
+.result_set_title{
+	color:Navy;
+}
+
+ .source_title  {
+	font-size:8pt;
+	font-family:verdana;
+	color: Navy;
+}
+.block_header {
+	font-weight: bold;
+	font-size:8pt;
+	font-family:verdana;
+	color: Navy;
+}
+
+.result_item {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+}
+.result_source{
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: Navy;
+	font-weight: bold;
+}
+
+.searchinfo {  	
+	font-size: 8pt; 
+	font-style: italic; 
+	font-weight: bold
+}
+
+
+.bar {
+	background : #A5BDAD;	
+}
+
+.inputsemborda 		{
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+	color: #444444;
+	border: 0 px solid;
+}
+
+.inputcomborda 		{
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+	color: #444444;
+}
+
+.inputcombordaie		{
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+	color: #444444;
+	border: 1px solid;
+	border-color: #303030 solid;
+}
+.copyright{
+	font : smaller Verdana;
+	color: Black;
+}
+
+
+
+

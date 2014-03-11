@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<add>
+<doc>
+<field>Type-cartographic-material</field>
+<field>a</field>
+<field>Single map</field>
+<field>Mapa único</field>
+<field>Mapa único</field>
+</doc>
+<doc>
+<field>Type-cartographic-material</field>
+<field>b</field>
+<field>Map series</field>
+<field>Serie de mapas</field>
+<field>Série de mapas</field>
+</doc>
+<doc>
+<field>Type-cartographic-material</field>
+<field>c</field>
+<field>Map serial</field>
+<field>Mapa seriado</field>
+<field>Mapa seriado</field>
+</doc>
+<doc>
+<field>Type-cartographic-material</field>
+<field>d</field>
+<field>Globe</field>
+<field>Globo</field>
+<field>Globo</field>
+</doc>
+<doc>
+<field>Type-cartographic-material</field>
+<field>e</field>
+<field>Atlas</field>
+<field>Atlas</field>
+<field>Atlas</field>
+</doc>
+<doc>
+<field>Type-cartographic-material</field>
+<field>f</field>
+<field>Separate map as supplement to another work</field>
+<field>Mapa como suplemento de otra obra</field>
+<field>Mapa como suplemento de outra obra</field>
+</doc>
+<doc>
+<field>Type-cartographic-material</field>
+<field>g</field>
+<field>Map bound as part of another work</field>
+<field>Mapa encuadernado como parte de otra obra</field>
+<field>Mapa encadernado como parte de outra obra</field>
+</doc>
+<doc>
+<field>Type-cartographic-material</field>
+<field>u</field>
+<field>Unknown</field>
+<field>Desconocido</field>
+<field>Desconhecido</field>
+</doc>
+<doc>
+<field>Type-cartographic-material</field>
+<field>z</field>
+<field>Other</field>
+<field>Otro</field>
+<field>Outro</field>
+</doc>
+<doc>
+<field>Type-cartographic-material</field>
+<field>|</field>
+<field>No attempt to code</field>
+<field>No se codifica</field>
+<field>Não se codifica</field>
+</doc>
+</add>

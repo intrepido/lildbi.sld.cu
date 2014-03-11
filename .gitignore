@@ -1,0 +1,64 @@
+# User specific & automatically generated files #
+#################################################
+/app/tmp/cache/cake_all_codifiers
+/app/tmp/cache/models/*
+!/app/tmp/cache/models/empty
+/app/tmp/cache/persistent/*
+!/app/tmp/cache/persistent/empty
+/app/tmp/cache/views/*
+!/app/tmp/cache/views/empty
+/app/tmp/logs/*
+!/app/tmp/logs/empty
+/app/tmp/sessions/*
+!/app/tmp/sessions/empty
+/app/tmp/tests/*
+!/app/tmp/tests/empty
+/lib/Cake/Console/Templates/skel/tmp/
+/build
+/dist
+/tags
+.svn
+.git
+
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+# Folder config file
+Desktop.ini
+
+
+######################
+# Eclipse
+######################
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+/src/main/resources/rebel.xml
+# External tool builders
+.externalToolBuilders/
+# Locally stored "Eclipse launch configurations"
+*.launch
+# CDT-specific
+.cproject
+# PDT-specific
+.buildpath
+

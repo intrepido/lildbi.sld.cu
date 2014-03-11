@@ -1,0 +1,1725 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<add>
+<doc>
+<field>COUNTRIES</field>
+<field>af</field>
+<field>Afghanistan</field>
+<field>Afganistán</field>
+<field>Afeganistão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sa</field>
+<field>South Africa</field>
+<field>Sudáfrica</field>
+<field>África do Sul</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sh</field>
+<field>Spanish North Africa</field>
+<field>Africa del Norte Española</field>
+<field>África Espanhola do Norte</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>aa</field>
+<field>Albania</field>
+<field>Albania</field>
+<field>Albania</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gw</field>
+<field>Germany</field>
+<field>Alemania</field>
+<field>Alemanha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>an</field>
+<field>Andorra</field>
+<field>Andorra</field>
+<field>Andorra</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ao</field>
+<field>Angola</field>
+<field>Angola</field>
+<field>Angola</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>am</field>
+<field>Anguilla</field>
+<field>Anguilla</field>
+<field>Anguilla</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ay</field>
+<field>Antarctica</field>
+<field>Antártida</field>
+<field>Antártida</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>aq</field>
+<field>Antigua and Barbuda</field>
+<field>Antigua y Barbuda</field>
+<field>Antigua e Barbuda</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>na</field>
+<field>Netherlands Antilles</field>
+<field>Antillas Holandesas</field>
+<field>Antilhas Holandesas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>su</field>
+<field>Saudi Arabia</field>
+<field>Arabia Saudita</field>
+<field>Arábia Saudita</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ae</field>
+<field>Algeria</field>
+<field>Algeria</field>
+<field>Argélia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ag</field>
+<field>Argentina</field>
+<field>Argentina</field>
+<field>Argentina</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ai</field>
+<field>Armenia (Republic)</field>
+<field>Armenia (República)</field>
+<field>Armêmia (República)</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>aw</field>
+<field>Aruba</field>
+<field>Aruba</field>
+<field>Aruba</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>at</field>
+<field>Australia</field>
+<field>Australia</field>
+<field>Austrália</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>au</field>
+<field>Austria</field>
+<field>Austria</field>
+<field>Áustria</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>aj</field>
+<field>Azerbaijan</field>
+<field>Azerbaijan</field>
+<field>Azerbaijão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bf</field>
+<field>Bahamas</field>
+<field>Bahamas</field>
+<field>Bahamas, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bg</field>
+<field>Bangladesh</field>
+<field>Bangladesh</field>
+<field>Bangladesh</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bb</field>
+<field>Barbados</field>
+<field>Barbados</field>
+<field>Barbados, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ba</field>
+<field>Bahrain</field>
+<field>Bahrain</field>
+<field>Barem</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>be</field>
+<field>Belgium</field>
+<field>Bélgica</field>
+<field>Bélgica</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bh</field>
+<field>Belize</field>
+<field>Belice</field>
+<field>Belize</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>dm</field>
+<field>Benin</field>
+<field>Benin</field>
+<field>Benin</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bm</field>
+<field>Bermuda Islands</field>
+<field>Islas Bermudas</field>
+<field>Bermudas, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bw</field>
+<field>Belarus</field>
+<field>Belarus</field>
+<field>Bielo-Rússia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bo</field>
+<field>Bolivia</field>
+<field>Bolivia</field>
+<field>Bolívia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bn</field>
+<field>Bosnia and Hercegovina</field>
+<field>Bosnia y Herzegovina</field>
+<field>Bósnia-Hercegovina</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bs</field>
+<field>Botswana</field>
+<field>Botswana</field>
+<field>Botsuana</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bv</field>
+<field>Bouvet Island</field>
+<field>Isla Bouvet</field>
+<field>Bouvet, Ilha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bl</field>
+<field>Brazil</field>
+<field>Brasil</field>
+<field>Brasil</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bx</field>
+<field>Brunei</field>
+<field>Brunei</field>
+<field>Brunei</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bu</field>
+<field>Bulgaria</field>
+<field>Bulgaria</field>
+<field>Bulgária</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>uv</field>
+<field>Burkina Faso</field>
+<field>Burkina Faso</field>
+<field>Burkina Faso</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>br</field>
+<field>Burma</field>
+<field>Burma</field>
+<field>Burma</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bd</field>
+<field>Burundi</field>
+<field>Burundi</field>
+<field>Burundi</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bt</field>
+<field>Bhutan</field>
+<field>Bhutan</field>
+<field>Butão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cv</field>
+<field>Cape Verde</field>
+<field>Cabo Verde</field>
+<field>Cabo Verde, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cm</field>
+<field>Cameroon</field>
+<field>Camerún</field>
+<field>Camarões</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cb</field>
+<field>Cambodia</field>
+<field>Camboya</field>
+<field>Camboja</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cn</field>
+<field>Canada</field>
+<field>Canadá</field>
+<field>Canadá</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>uc</field>
+<field>United States Misc. Caribbean Islands</field>
+<field>Islas varias en el Caribe de Estados Unidos </field>
+<field>Caribe, Ilhas (E.U.)</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>kz</field>
+<field>Kazakhstan</field>
+<field>Kazakstan</field>
+<field>Casaquistão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>qa</field>
+<field>Qatar</field>
+<field>Qatar</field>
+<field>Catar</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cj</field>
+<field>Cayman Islands</field>
+<field>Islas Caimán</field>
+<field>Cayman, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cd</field>
+<field>Chad</field>
+<field>Chad</field>
+<field>Chade</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cl</field>
+<field>Chile</field>
+<field>Chile</field>
+<field>Chile</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cc</field>
+<field>China</field>
+<field>China</field>
+<field>China</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ch</field>
+<field>China (Republic : 1949- )</field>
+<field>China (República : 1949- )</field>
+<field>China, República da (1949-)</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cy</field>
+<field>Cyprus</field>
+<field>Chipre</field>
+<field>Chipre, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xa</field>
+<field>Christmas Island</field>
+<field>Isla Natividad</field>
+<field>Christmas, Ilhas (Oceano Índico)</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xb</field>
+<field>Cocos (Keeling) Islands</field>
+<field>Islas Cocos (Keeling)</field>
+<field>Cocos (Keeling), Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ck</field>
+<field>Colombia</field>
+<field>Colombia</field>
+<field>Colômbia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cq</field>
+<field>Comoros</field>
+<field>Comoros</field>
+<field>Comoros</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cf</field>
+<field>Congo (Brazzaville)</field>
+<field>Congo (Brazzaville)</field>
+<field>Congo (Brazzaville)</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cw</field>
+<field>Cook Islands</field>
+<field>Islas Cook</field>
+<field>Cook, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>kn</field>
+<field>Korea (North)</field>
+<field>Corea del Norte</field>
+<field>Coréia do Norte</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ko</field>
+<field>Korea (South)</field>
+<field>Corea del Sur</field>
+<field>Coréia do Sul</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>iv</field>
+<field>C“te d'Ivoire</field>
+<field>Costa de Marfil</field>
+<field>Costa do Marfim</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cr</field>
+<field>Costa Rica</field>
+<field>Costa Rica</field>
+<field>Costa Rica</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ci</field>
+<field>Croatia</field>
+<field>Croacia</field>
+<field>Croácia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cu</field>
+<field>Cuba</field>
+<field>Cuba</field>
+<field>Cuba</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>dk</field>
+<field>Denmark</field>
+<field>Dinamarca</field>
+<field>Dinamarca</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ft</field>
+<field>Djibouti</field>
+<field>Djibouti</field>
+<field>Djibuti</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>dq</field>
+<field>Dominica</field>
+<field>Dominica</field>
+<field>Dominica</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ua</field>
+<field>Egypt</field>
+<field>Egipto</field>
+<field>Egito</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>es</field>
+<field>El Salvador</field>
+<field>El Salvador</field>
+<field>El Salvador</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ts</field>
+<field>United Arab Emirates</field>
+<field>Emiratos Arabes Unidos</field>
+<field>Emirados Árabes Unidos</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ec</field>
+<field>Ecuador</field>
+<field>Ecuador</field>
+<field>Equador</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ea</field>
+<field>Eritrea</field>
+<field>Eritrea</field>
+<field>Eritréia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>st</field>
+<field>Scotland</field>
+<field>Escocia</field>
+<field>Escócia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xo</field>
+<field>Slovakia</field>
+<field>Eslovaquia</field>
+<field>Eslováquia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xv</field>
+<field>Slovenia</field>
+<field>Eslovenia</field>
+<field>Eslovênia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sp</field>
+<field>Spain</field>
+<field>España</field>
+<field>Espanha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>us</field>
+<field>United States</field>
+<field>Estados Unidos</field>
+<field>Estados Unidos</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>er</field>
+<field>Estonia</field>
+<field>Estonia</field>
+<field>Estônia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>et</field>
+<field>Ethiopia</field>
+<field>Etiopía</field>
+<field>Etiópia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>fk</field>
+<field>Falkland Islands</field>
+<field>Islas Malvinas</field>
+<field>Falkland, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>fa</field>
+<field>Faroe Islands</field>
+<field>Islas Faroe</field>
+<field>Faroe, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>fj</field>
+<field>Fiji</field>
+<field>Fiji</field>
+<field>Fidji, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ph</field>
+<field>Philippines</field>
+<field>Filipinas</field>
+<field>Filipinas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>fi</field>
+<field>Finland</field>
+<field>Finlandia</field>
+<field>Finlândia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>fr</field>
+<field>France</field>
+<field>Francia</field>
+<field>França</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>go</field>
+<field>Gabon</field>
+<field>Gabon</field>
+<field>Gabão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gm</field>
+<field>Gambia</field>
+<field>Gambia</field>
+<field>Gâmbia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gh</field>
+<field>Ghana</field>
+<field>Ghana</field>
+<field>Gana</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gz</field>
+<field>Gaza Strip</field>
+<field>Franja de Gaza</field>
+<field>Gaza, Estreito de</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xs</field>
+<field>South Georgia and the South Sandwich Islands</field>
+<field>Islas Georgias y Sandwich del Sur</field>
+<field>Geórgia do Sul</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gs</field>
+<field>Georgia (Republic)</field>
+<field>Georgia (República)</field>
+<field>Geórgia, República da</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gi</field>
+<field>Gibraltar</field>
+<field>Gibraltar</field>
+<field>Gibraltar</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xxk</field>
+<field>United Kingdom</field>
+<field>Reino Unido</field>
+<field>Graã-Bretanha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gd</field>
+<field>Grenada</field>
+<field>Granada</field>
+<field>Granada</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gr</field>
+<field>Greece</field>
+<field>Grecia</field>
+<field>Grécia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gl</field>
+<field>Greenland</field>
+<field>Groenlandia</field>
+<field>Groelândia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gp</field>
+<field>Guadeloupe</field>
+<field>Guadalupe</field>
+<field>Guadalupe</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gu</field>
+<field>Guam</field>
+<field>Guam</field>
+<field>Guam, Ilha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gt</field>
+<field>Guatemala</field>
+<field>Guatemala</field>
+<field>Guatemala</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gy</field>
+<field>Guyana</field>
+<field>Guayana</field>
+<field>Guiana</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>fg</field>
+<field>French Guiana</field>
+<field>Guayana Francesa</field>
+<field>Guiana Francesa</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gv</field>
+<field>Guinea</field>
+<field>Guinea</field>
+<field>Guiné</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>eg</field>
+<field>Equatorial Guinea</field>
+<field>Guinea Ecuatorial</field>
+<field>Guiné Equatorial</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>pg</field>
+<field>Guinea-Bissau</field>
+<field>Guinea-Bissau</field>
+<field>Guiné-Bissau</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ht</field>
+<field>Haiti</field>
+<field>Haiti</field>
+<field>Haiti</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>hm</field>
+<field>Heard and McDonald Islands</field>
+<field>Islas Heard y McDonald</field>
+<field>Heard e MacDonald, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ne</field>
+<field>Netherlands</field>
+<field>Holanda</field>
+<field>Holanda</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ho</field>
+<field>Honduras</field>
+<field>Honduras</field>
+<field>Honduras</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>hu</field>
+<field>Hungary</field>
+<field>Hungría</field>
+<field>Hungria</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ye</field>
+<field>Yemen</field>
+<field>Yemen</field>
+<field>Iêmen</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ii</field>
+<field>India</field>
+<field>India</field>
+<field>Índia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>io</field>
+<field>Indonesia</field>
+<field>Indonesia</field>
+<field>Indonésia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ir</field>
+<field>Iran</field>
+<field>Irán</field>
+<field>Irã</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>iq</field>
+<field>Iraq</field>
+<field>Irak</field>
+<field>Iraque</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ie</field>
+<field>Ireland</field>
+<field>Irlanda</field>
+<field>Irlanda</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ic</field>
+<field>Iceland</field>
+<field>Islandia</field>
+<field>Islândia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>is</field>
+<field>Israel</field>
+<field>Israel</field>
+<field>Israel</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>it</field>
+<field>Italy</field>
+<field>Italia</field>
+<field>Itália</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>yu</field>
+<field>Yugoslavia</field>
+<field>Yugoslavia</field>
+<field>Iugoslávia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>jm</field>
+<field>Jamaica</field>
+<field>Jamaica</field>
+<field>Jamaica</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ja</field>
+<field>Japan</field>
+<field>Japón</field>
+<field>Japão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ji</field>
+<field>Johnston Atoll</field>
+<field>Johnston Atoll</field>
+<field>Johnston, Atól</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>jo</field>
+<field>Jordan</field>
+<field>Jordania</field>
+<field>Jordânia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ku</field>
+<field>Kuwait</field>
+<field>Kuwait</field>
+<field>Kuwait</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ls</field>
+<field>Laos</field>
+<field>Laos</field>
+<field>Laos</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>lo</field>
+<field>Lesotho</field>
+<field>Lesoto</field>
+<field>Lesotho</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>lv</field>
+<field>Latvia</field>
+<field>Latvia</field>
+<field>Letônia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>le</field>
+<field>Lebanon</field>
+<field>Líbano</field>
+<field>Líbano</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>lb</field>
+<field>Liberia</field>
+<field>Liberia</field>
+<field>Libéria</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ly</field>
+<field>Libya</field>
+<field>Libia</field>
+<field>Líbia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>lh</field>
+<field>Liechtenstein</field>
+<field>Lichtenstein</field>
+<field>Liechtenstein</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>li</field>
+<field>Lithuania</field>
+<field>Lituania</field>
+<field>Lituânia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>vp</field>
+<field>Various places</field>
+<field>Lugares varios</field>
+<field>Lugares Diversos</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>lu</field>
+<field>Luxembourg</field>
+<field>Luxemburgo</field>
+<field>Luxemburgo</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xn</field>
+<field>Macedonia</field>
+<field>Macedonia</field>
+<field>Macedônia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mg</field>
+<field>Madagascar</field>
+<field>Madagascar</field>
+<field>Madagascar</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>my</field>
+<field>Malaysia</field>
+<field>Malasia</field>
+<field>Malásia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mw</field>
+<field>Malawi</field>
+<field>Malaui</field>
+<field>Malaui</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xc</field>
+<field>Maldives</field>
+<field>Maldivia</field>
+<field>Maldives</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ml</field>
+<field>Mali</field>
+<field>Mali</field>
+<field>Mali</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mm</field>
+<field>Malta</field>
+<field>Malta</field>
+<field>Malta</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>wj</field>
+<field>West Bank of the Jordan River</field>
+<field>Margen Oeste del Río Jordán</field>
+<field>Margem Esquerda do Rio Jordão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>nw</field>
+<field>Northern Mariana Islands</field>
+<field>Islas Marianas del Norte</field>
+<field>Mariana do Norte, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mr</field>
+<field>Morocco</field>
+<field>Marruecos</field>
+<field>Marrocos</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xe</field>
+<field>Marshall Islands</field>
+<field>Islas Marshall</field>
+<field>Marshall, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mf</field>
+<field>Mauritius</field>
+<field>Mauricio</field>
+<field>Maurício, Ilha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mu</field>
+<field>Mauritania</field>
+<field>Mauritania</field>
+<field>Mauritânia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ot</field>
+<field>Mayotte</field>
+<field>Mayotte</field>
+<field>Mayotte</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mx</field>
+<field>Mexico</field>
+<field>México</field>
+<field>México</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>fm</field>
+<field>Micronesia (Federated States)</field>
+<field>Micronesia (Estados Federados)</field>
+<field>Micronésia, Estados Federados</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xf</field>
+<field>Midway Islands</field>
+<field>Islas Midway</field>
+<field>Midway, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mz</field>
+<field>Mozambique</field>
+<field>Mozambique</field>
+<field>Moçambique</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mv</field>
+<field>Moldova</field>
+<field>Moldova</field>
+<field>Moldávia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mc</field>
+<field>Monaco</field>
+<field>Mónaco</field>
+<field>Mônaco</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mp</field>
+<field>Mongolia</field>
+<field>Mongolia</field>
+<field>Mongólia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mj</field>
+<field>Montserrat</field>
+<field>Montserrat</field>
+<field>Montserrat, Ilha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sx</field>
+<field>Namibia</field>
+<field>Namibia</field>
+<field>Namíbia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>nu</field>
+<field>Nauru</field>
+<field>Nauru</field>
+<field>Nauru</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>np</field>
+<field>Nepal</field>
+<field>Nepal</field>
+<field>Nepal</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>nq</field>
+<field>Nicaragua</field>
+<field>Nicaragua</field>
+<field>Nicarágua</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ng</field>
+<field>Niger</field>
+<field>Nigeria</field>
+<field>Niger</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>nr</field>
+<field>Nigeria</field>
+<field>Nigeria</field>
+<field>Nigéria</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xh</field>
+<field>Niue</field>
+<field>Niue</field>
+<field>Niue, Ilha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>nx</field>
+<field>Norfolk Island</field>
+<field>Islas Norfolk</field>
+<field>Norfolk, Ilha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>no</field>
+<field>Norway</field>
+<field>Noruega</field>
+<field>Noruega</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>nl</field>
+<field>New Caledonia</field>
+<field>Nueva Caledonia</field>
+<field>Nova Caledônia, Ilha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>nz</field>
+<field>New Zealand</field>
+<field>Nueva Zelandia</field>
+<field>Nova Zelândia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>mk</field>
+<field>Oman</field>
+<field>Omán</field>
+<field>Omã</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>up</field>
+<field>United States Misc. Pacific Islands</field>
+<field>Islas varias en el Pacífico de Estados Unidos</field>
+<field>Pacífico, Ilhas (E.U.)</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>wl</field>
+<field>Wales</field>
+<field>Gales</field>
+<field>País de Gales</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>pw</field>
+<field>Palau</field>
+<field>Palau</field>
+<field>Palau</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>pn</field>
+<field>Panama</field>
+<field>Panamá</field>
+<field>Panamá</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>pp</field>
+<field>Papua New Guinea</field>
+<field>Papúa Nueva Guinea</field>
+<field>Papua-Nova Guiné</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>pk</field>
+<field>Pakistan</field>
+<field>Paquistán</field>
+<field>Paquistão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>pf</field>
+<field>Paracel Islands</field>
+<field>Islas Paracel</field>
+<field>Paracel, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>py</field>
+<field>Paraguay</field>
+<field>Paraguay</field>
+<field>Paraguai</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>pe</field>
+<field>Peru</field>
+<field>Perú</field>
+<field>Peru</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>pc</field>
+<field>Pitcairn Island</field>
+<field>Islas Pitcairn</field>
+<field>Pitcairn, Ilha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>fp</field>
+<field>French Polynesia</field>
+<field>Polinesia Francesa</field>
+<field>Polinésia Francesa</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>pl</field>
+<field>Poland</field>
+<field>Polonia</field>
+<field>Polônia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>pr</field>
+<field>Puerto Rico</field>
+<field>Puerto Rico</field>
+<field>Porto Rico</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>po</field>
+<field>Portugal</field>
+<field>Portugal</field>
+<field>Portugal</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ke</field>
+<field>Kenya</field>
+<field>Kenia</field>
+<field>Quênia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>kg</field>
+<field>Kyrgyzstan</field>
+<field>Kirgistan</field>
+<field>Quirguízia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>gb</field>
+<field>Kiribati</field>
+<field>Kiribati</field>
+<field>Quiribate</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cx</field>
+<field>Central African Republic</field>
+<field>Africa Central (República)</field>
+<field>República Centro Africana</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>dr</field>
+<field>Dominican Republic</field>
+<field>República Dominicana</field>
+<field>República Dominicana</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>re</field>
+<field>Réunion Island</field>
+<field>Isla Reunión</field>
+<field>Reunião, Ilha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>rm</field>
+<field>Romania</field>
+<field>Rumania</field>
+<field>Romênia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>rw</field>
+<field>Rwanda</field>
+<field>Ruanda</field>
+<field>Ruanda</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ru</field>
+<field>Russia (Federation)</field>
+<field>Rusia (Federación)</field>
+<field>Rússia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ss</field>
+<field>Western Sahara</field>
+<field>Sahara Occidental</field>
+<field>Saara Ocidental</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xl</field>
+<field>Saint Pierre and Miquelon</field>
+<field>San Pierre y Miquelón</field>
+<field>Saint Pierre e Miquelon</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bp</field>
+<field>Solomon Islands</field>
+<field>Islas Salomón</field>
+<field>Salomão, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>as</field>
+<field>American Samoa</field>
+<field>Samoa Americana</field>
+<field>Samoa Americana</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ws</field>
+<field>Samoa</field>
+<field>Samoa</field>
+<field>Samoa Ocidental</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sm</field>
+<field>San Marino</field>
+<field>San Marino</field>
+<field>San Marino</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xj</field>
+<field>Saint Helena</field>
+<field>Santa Helena</field>
+<field>Santa Helena</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xd</field>
+<field>Saint Kitts-Nevis</field>
+<field>San Kitts y Nevis</field>
+<field>São Cristóvão e Nevis</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sf</field>
+<field>Sao Tome and Principe</field>
+<field>Santo Tomás y Príncipe</field>
+<field>São Tomé e Príncipe</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xm</field>
+<field>Saint Vincent and the Grenadines</field>
+<field>San Vincente y las Granadinas</field>
+<field>São Vicente e Granadinas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xx</field>
+<field>No place, unknown, or undetermined</field>
+<field>Ningún lugar, desconocido o indeterminado</field>
+<field>Sem local, desconhecido ou indeterminado</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sg</field>
+<field>Senegal</field>
+<field>Senegal</field>
+<field>Senegal</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sl</field>
+<field>Sierra Leone</field>
+<field>Sierra Leona</field>
+<field>Serra Leoa</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>se</field>
+<field>Seychelles</field>
+<field>Seychelles</field>
+<field>Seychelles, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>si</field>
+<field>Singapore</field>
+<field>Singapur</field>
+<field>Singapura</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sy</field>
+<field>Syria</field>
+<field>Siria</field>
+<field>Síria</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>so</field>
+<field>Somalia</field>
+<field>Somalía</field>
+<field>Somália</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xp</field>
+<field>Spratly Island</field>
+<field>Islas Spratly</field>
+<field>Spratly, Ilha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ce</field>
+<field>Sri Lanka</field>
+<field>Sri Lanka</field>
+<field>Sri-Lanka</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sq</field>
+<field>Swaziland</field>
+<field>Suaziland</field>
+<field>Suassilândia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sj</field>
+<field>Sudan</field>
+<field>Sudán</field>
+<field>Sudão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sw</field>
+<field>Sweden</field>
+<field>Suecia</field>
+<field>Suécia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sz</field>
+<field>Switzerland</field>
+<field>Suiza</field>
+<field>Suíça</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>sr</field>
+<field>Surinam</field>
+<field>Surinam</field>
+<field>Suriname</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ta</field>
+<field>Tajikistan</field>
+<field>Tajikistan</field>
+<field>Tadjquistão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>th</field>
+<field>Thailand</field>
+<field>Tailandia</field>
+<field>Tailândia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>tz</field>
+<field>Tanzania</field>
+<field>Tanzania</field>
+<field>Tanzânia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>xr</field>
+<field>Czech Republic</field>
+<field>República Checa</field>
+<field>Tcheca, República</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>fs</field>
+<field>Terres australes et antarctiques francaises</field>
+<field>Tierras australes y Antartida Francesa</field>
+<field>Terras Austrais e Antárticas Francesas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>bi</field>
+<field>British Indian Ocean Territory</field>
+<field>Territorio Británico del Océano Indico</field>
+<field>Território Britânico do Oceano Índico</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>tg</field>
+<field>Togo</field>
+<field>Togo</field>
+<field>Togo</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>tl</field>
+<field>Tokelau</field>
+<field>Tokelau</field>
+<field>Tokelau, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>to</field>
+<field>Tonga</field>
+<field>Tonga</field>
+<field>Tonga</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>tr</field>
+<field>Trinidad and Tobago</field>
+<field>Trinidad y Tobago</field>
+<field>Trinidad e Tobago</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ti</field>
+<field>Tunisia</field>
+<field>Túnez</field>
+<field>Tunísia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>tc</field>
+<field>Turks and Caicos Islands</field>
+<field>Islas Turks y Caicos</field>
+<field>Turcas e Caicos, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>tk</field>
+<field>Turkmenistan</field>
+<field>Turkmenistán</field>
+<field>Turcomenistão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>tu</field>
+<field>Turkey</field>
+<field>Turquía</field>
+<field>Turquia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>tv</field>
+<field>Tuvalu</field>
+<field>Tuvalu</field>
+<field>Tuvalu</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>un</field>
+<field>Ukraine</field>
+<field>Ucrania</field>
+<field>Ucrânia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ug</field>
+<field>Uganda</field>
+<field>Uganda</field>
+<field>Uganda</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>uy</field>
+<field>Uruguay</field>
+<field>Uruguay</field>
+<field>Uruguai</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>uz</field>
+<field>Uzbekistan</field>
+<field>Uzbekistán</field>
+<field>Usbequistão</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>nn</field>
+<field>Vanuatu</field>
+<field>Vanuatu</field>
+<field>Vanuato</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>vc</field>
+<field>Vatican City</field>
+<field>Vaticano (Ciudad)</field>
+<field>Vaticano</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>ve</field>
+<field>Venezuela</field>
+<field>Venezuela</field>
+<field>Venezuela</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>vm</field>
+<field>Vietnam</field>
+<field>Vietnam</field>
+<field>Vietnan</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>vb</field>
+<field>British Virgin Islands</field>
+<field>Islas Vírgenes Británicas</field>
+<field>Virgens Britânicas, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>vi</field>
+<field>Virgin Islands of the United States</field>
+<field>Islas Vírgenes de Estados Unidos</field>
+<field>Virgens, Ilhas (E.U.A)</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>wk</field>
+<field>Wake Island</field>
+<field>Isla Wake</field>
+<field>Wake, Ilha</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>wf</field>
+<field>Wallis and Futuna Islands</field>
+<field>Islas Wallis y Futuna</field>
+<field>Wallis e Futuna, Ilhas</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>cg</field>
+<field>Congo (Democratic Republic)</field>
+<field>Congo (República Democrática)</field>
+<field>Zaire</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>za</field>
+<field>Zambia</field>
+<field>Zambia</field>
+<field>Zâmbia</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>rh</field>
+<field>Zimbabwe</field>
+<field>Zimbaue</field>
+<field>Zimbábue</field>
+</doc>
+<doc>
+<field>COUNTRIES</field>
+<field>iy</field>
+<field>Iraq-Saudi Arabia Neutral Zone</field>
+<field>Irak-Zona neutral de Arabia Saudita</field>
+<field>Zona Neutra (entre Iraque e Arábia Saudita)</field>
+</doc>
+</add>

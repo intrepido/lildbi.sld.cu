@@ -1,0 +1,9 @@
+          'PROLOG=@PROLOG.PFT'
+          Set #000000001
+Hits=0
+          'PFT=@PAISMARC.PFT'
+          Set #000000001
+Hits=0
+          'EPILOG=@EPILOG.PFT'
+          Set #000000001
+Hits=0

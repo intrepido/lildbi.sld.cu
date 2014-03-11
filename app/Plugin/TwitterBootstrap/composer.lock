@@ -1,0 +1,136 @@
+{
+    "hash": "e51246909ae58406963deb94bf17481f",
+    "packages": [
+        {
+            "name": "composer/installers",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers",
+                "reference": "v1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/composer/installers/archive/v1.0.1.zip",
+                "reference": "v1.0.1",
+                "shasum": ""
+            },
+            "replace": {
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "time": "2013-01-14 07:14:45",
+            "type": "composer-installer",
+            "extra": {
+                "class": "Composer\\Installers\\Installer"
+            },
+            "autoload": {
+                "psr-0": {
+                    "Composer\\Installers\\": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "http://composer.github.com/installers/",
+            "keywords": [
+                "symfony",
+                "installer",
+                "zend",
+                "wordpress",
+                "cakephp",
+                "codeigniter",
+                "fuelphp",
+                "drupal",
+                "lithium",
+                "li3",
+                "joomla",
+                "laravel",
+                "phpbb",
+                "ppi",
+                "silverstripe",
+                "kohana",
+                "mako",
+                "TYPO3 Flow",
+                "TYPO3 Neos",
+                "agl"
+            ]
+        },
+        {
+            "name": "slywalker/twitter_bootstrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slywalker/TwitterBootstrap",
+                "reference": "2cebcbcfd77d5f4afaf0db0e5091966b500cede0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slywalker/TwitterBootstrap/zipball/2cebcbcfd77d5f4afaf0db0e5091966b500cede0",
+                "reference": "2cebcbcfd77d5f4afaf0db0e5091966b500cede0",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "twitter/bootstrap": "Bootstrap for Twitter"
+            },
+            "time": "2013-02-04 08:41:40",
+            "type": "cakephp-plugin",
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yasuo Harada",
+                    "email": "slywalker.net@gmail.com"
+                }
+            ],
+            "description": "CakePHP Bootstrap (for Twitter) Plugin",
+            "homepage": "https://github.com/slywalker/TwitterBootstrap",
+            "keywords": [
+                "bootstrap",
+                "twitter",
+                "cakephp"
+            ]
+        },
+        {
+            "name": "twitter/bootstrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/twitter/bootstrap",
+                "reference": "master"
+            },
+            "require": {
+                "composer/installers": "*"
+            },
+            "type": "library"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "twitter/bootstrap": 20,
+        "slywalker/twitter_bootstrap": 20
+    }
+}

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<add>
+<doc>
+<field>Type-visual-material</field>
+<field>a</field>
+<field>Art (original)</field>
+<field>Arte (original)</field>
+<field>Arte (original)</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>b</field>
+<field>Kit</field>
+<field>Kit</field>
+<field>Kit</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>c</field>
+<field>Art (reproduction)</field>
+<field>Arte (reproducción)</field>
+<field>Arte (reprodução)</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>d</field>
+<field>Diorama</field>
+<field>Diorama</field>
+<field>Diorama</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>f</field>
+<field>Filmstrip</field>
+<field>Tira de Film</field>
+<field>Tira de Filme</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>g</field>
+<field>Game</field>
+<field>Juego</field>
+<field>Jogo</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>I</field>
+<field>Picture</field>
+<field>Cuadro</field>
+<field>Quadro</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>k</field>
+<field>Graphic</field>
+<field>Gráfico</field>
+<field>Gráfico</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>l</field>
+<field>Technical drawing</field>
+<field>Dibujo técnico</field>
+<field>Desenho técnico</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>m</field>
+<field>Motion picture</field>
+<field>Film</field>
+<field>Filme</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>n</field>
+<field>Chart</field>
+<field>Mapa</field>
+<field>Mapa</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>o</field>
+<field>Flash card</field>
+<field>Flash card (cartón relámpago)</field>
+<field>Flash card (cartão relâmpago)</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>p</field>
+<field>Microscope slide</field>
+<field>Slide de microscopio</field>
+<field>Slide de microscopia</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>q</field>
+<field>Model</field>
+<field>Modelo</field>
+<field>Modelo</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>r</field>
+<field>Realia</field>
+<field>Realia</field>
+<field>Reália</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>s</field>
+<field>Slide</field>
+<field>Slide</field>
+<field>Slide</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>t</field>
+<field>Transparency</field>
+<field>Transparencia</field>
+<field>Transparência</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>v</field>
+<field>Videorecording</field>
+<field>Grabación en video</field>
+<field>Gravação em video</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>w</field>
+<field>Toy</field>
+<field>Juguete</field>
+<field>Brinquedo</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>z</field>
+<field>Other</field>
+<field>Otro</field>
+<field>Outro</field>
+</doc>
+<doc>
+<field>Type-visual-material</field>
+<field>|</field>
+<field>No attempt to code</field>
+<field>No se codifica</field>
+<field>Não se codifica</field>
+</doc>
+</add>

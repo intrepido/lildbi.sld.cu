@@ -1,0 +1,15 @@
+{
+   "_id": "_design/functions",  
+   "language": "javascript",
+   "views": {
+       "getAllAnalitics": {
+           "map": "function(doc) {\n  if(doc.v98 != \"FONTE\") {\n    emit([doc._id, doc.v2], doc);\n  }  \n}"
+       },
+       "getAllDocuments": {
+           "map": "function(doc) {\n  if(doc.v98 == \"FONTE\") {\n    emit([doc._id, doc.v2], doc);\n  }  \n}"
+       },
+       "getDocumentAnalitics": {
+           "map": "function(doc) {\n  emit(doc.v98, doc);\n}"
+       }
+   }
+}

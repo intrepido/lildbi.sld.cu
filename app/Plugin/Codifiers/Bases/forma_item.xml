@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<add>
+<doc>
+<field>Form-Item</field>
+<field>a</field>
+<field>Microfilm</field>
+<field>Microfilm</field>
+<field>Microfilme</field>
+</doc>
+<doc>
+<field>Form-Item</field>
+<field>b</field>
+<field>Microfiche</field>
+<field>Microficha</field>
+<field>Microficha</field>
+</doc>
+<doc>
+<field>Form-Item</field>
+<field>c</field>
+<field>Microopaque</field>
+<field>Microficha opaca</field>
+<field>Microficha opaca</field>
+</doc>
+<doc>
+<field>Form-Item</field>
+<field>d</field>
+<field>Large print</field>
+<field>Impreso grande</field>
+<field>Impresso grande</field>
+</doc>
+<doc>
+<field>Form-Item</field>
+<field>f</field>
+<field>Braille</field>
+<field>Braille</field>
+<field>Braille</field>
+</doc>
+<doc>
+<field>Form-Item</field>
+<field>r</field>
+<field>Regular print reproduction – eye-readable print</field>
+<field>Reproducción impresa regular – impresión legible</field>
+<field>Reprodução impressa regular – impressão legível</field>
+</doc>
+<doc>
+<field>Form-Item</field>
+<field>s</field>
+<field>Electronic</field>
+<field>Electrónico</field>
+<field>Eletrônico</field>
+</doc>
+<doc>
+<field>Form-Item</field>
+<field>|</field>
+<field>No attempt to code</field>
+<field>No se codifica</field>
+<field>Não se codifica</field>
+</doc>
+</add>

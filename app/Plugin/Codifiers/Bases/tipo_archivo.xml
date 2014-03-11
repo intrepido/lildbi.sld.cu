@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<add>
+<doc>
+<field>tipo-y</field>
+<field>AJUDA</field>
+<field>HELP</field>
+<field>AYUDA</field>
+<field>AJUDA</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>AUDIO</field>
+<field>AUDIO</field>
+<field>AUDIO</field>
+<field>AUDIO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>AUTOCAD</field>
+<field>AUTOCAD</field>
+<field>AUTOCAD</field>
+<field>AUTOCAD</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>BASE DE DADOS</field>
+<field>DATABASE</field>
+<field>BASE DE DATOS</field>
+<field>BASE DE DADOS</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>BIBLIOTECA DE VÍNCULO DINÂMICO</field>
+<field>DYNAMIC LINK LIBRARY</field>
+<field>BIBLIOTECA DE VÍNCULO DINÁMICO</field>
+<field>BIBLIOTECA DE VÍNCULO DINÂMICO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>CATÁLOGO</field>
+<field>CATALOG</field>
+<field>CATÁLOGO</field>
+<field>CATÁLOGO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>COMPACTADO</field>
+<field>COMPACT/ZIPPED CONTENT</field>
+<field>COMPACTADO</field>
+<field>COMPACTADO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>CONFIGURAÇÃO</field>
+<field>CONFIGURATION</field>
+<field>CONFIGURACIÓN</field>
+<field>CONFIGURAÇÃO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>CORELDRAW</field>
+<field>CORELDRAW</field>
+<field>CORELDRAW</field>
+<field>CORELDRAW</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>DEFINIÇÃO DE TIPO DE DOCUMENTO</field>
+<field>DOCUMENT TYPE DEFINITION</field>
+<field>DEFINICIÓN DE TIPO DE DOCUMENTO</field>
+<field>DEFINIÇÃO DE TIPO DE DOCUMENTO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>DICIONARIO</field>
+<field>DICTIONARY</field>
+<field>DICCIONARIO</field>
+<field>DICIONARIO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>DOCUMENTO DO MS-WORD</field>
+<field>DOCUMENT</field>
+<field>DOCUMENTO DEL MS-WORD</field>
+<field>DOCUMENTO DO MS-WORD</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>EXTENSIBLE MARKUP LANGUAGE</field>
+<field>EXTENSIBLE MARKUP LANGUAGE</field>
+<field>EXTENSIBLE MARKUP LANGUAGE</field>
+<field>EXTENSIBLE MARKUP LANGUAGE</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>FOLHA DE ESTILO</field>
+<field>FONT</field>
+<field>FUENTE</field>
+<field>FOLHA DE ESTILO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>FONTE</field>
+<field>STYLE SHEET</field>
+<field>HOJA DE ESTILO</field>
+<field>FONTE</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>HTML ESTÁTICO</field>
+<field>STATIC HTML</field>
+<field>HTML ESTÁTICO</field>
+<field>HTML ESTÁTICO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>IMAGEM</field>
+<field>IMAGE</field>
+<field>IMAGEN</field>
+<field>IMAGEM</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>INFORMAÇÃO</field>
+<field>INFORMATION</field>
+<field>INFORMACIÓN</field>
+<field>INFORMAÇÃO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>INICIALIZAÇÃO</field>
+<field>INITIALIZATION</field>
+<field>INICIALIZACIÓN</field>
+<field>INICIALIZAÇÃO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>INTERFACE PARA PROGRAMA APLICATIVO</field>
+<field>APPLICATION PROGRAM INTERFACE</field>
+<field>INTERFAZ PARA PROGRAMA APLICATIVO</field>
+<field>INTERFACE PARA PROGRAMA APLICATIVO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>LINGUAGEM DE PROGRAMAÇÃO</field>
+<field>PROGRAMMING LANGUAGE</field>
+<field>LENGUAJE DE PROGRAMACIÓN</field>
+<field>LINGUAGEM DE PROGRAMAÇÃO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>MENSAGEM</field>
+<field>MESSAGE</field>
+<field>MENSAJE</field>
+<field>MENSAGEM</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>MODELO DO MS-WORD</field>
+<field>MS-WORD TEMPLATE</field>
+<field>MODELO DEL MS-WORD</field>
+<field>MODELO DO MS-WORD</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>MS-OUTLOOK</field>
+<field>MS-OUTLOOK</field>
+<field>MS-OUTLOOK</field>
+<field>MS-OUTLOOK</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>MULTIMIDIA</field>
+<field>MULTIMEDIA</field>
+<field>MULTIMEDIA</field>
+<field>MULTIMIDIA</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>PLANILHA</field>
+<field>SPREADSHEET</field>
+<field>PLANILLA</field>
+<field>PLANILHA</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>PDF</field>
+<field>PDF</field>
+<field>PDF</field>
+<field>PDF</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>POWER-POINT</field>
+<field>POWER-POINT</field>
+<field>POWER-POINT</field>
+<field>POWER-POINT</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>PROTOCOLO DE COMUNICAÇÃO</field>
+<field>COMMUNICATION PROTOCOL</field>
+<field>PROTOCOLO DE COMUNICACIÓN</field>
+<field>PROTOCOLO DE COMUNICAÇÃO</field>
+</doc>
+<doc>
+<field>tipo-y</field>
+<field>TEXTO</field>
+<field>TEXT</field>
+<field>TEXTO</field>
+<field>TEXTO</field>
+</doc>
+</add>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<add>
+<doc>
+<field>Material-no-proyect</field>
+<field>c</field>
+<field>Collage</field>
+<field>Colage</field>
+<field>Colagem</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>d</field>
+<field>Drawing</field>
+<field>Dibujo</field>
+<field>Desenho</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>e</field>
+<field>Painting</field>
+<field>Pintura</field>
+<field>Pintura</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>f</field>
+<field>Photomechanical printing</field>
+<field>Impresión fotomecánica</field>
+<field>Impressão fotomecânica</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>g</field>
+<field>Photonegative</field>
+<field>Fotonegativo</field>
+<field>Fotonegativo</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>h</field>
+<field>Photoprint</field>
+<field>Fotoimpresión</field>
+<field>Fotoimpressão</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>i</field>
+<field>Picture</field>
+<field>Foto</field>
+<field>Foto</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>j</field>
+<field>Print</field>
+<field>Impresión</field>
+<field>Impressão</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>l</field>
+<field>Technical drawing</field>
+<field>Dibujo técnico</field>
+<field>Desenho técnico</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>n</field>
+<field>Chart</field>
+<field>Gráfico</field>
+<field>Gráfico</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>o</field>
+<field>Flash card</field>
+<field>Flash card (Cartón relámpago)</field>
+<field>Flash card (Cartão relâmpago)</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>u</field>
+<field>Unspecified</field>
+<field>Desconocido</field>
+<field>Desconhecido</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>z</field>
+<field>Other</field>
+<field>Otro</field>
+<field>Outro</field>
+</doc>
+<doc>
+<field>Material-no-proyect</field>
+<field>|</field>
+<field>No attempt to code</field>
+<field>No se codifica</field>
+<field>Não se codifica</field>
+</doc>
+</add>

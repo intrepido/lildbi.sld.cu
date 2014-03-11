@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<add>
+<doc>
+<field>LDR-06</field>
+<field>a</field>
+<field>Language material</field>
+<field>Material textual</field>
+<field>Material textual</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>c</field>
+<field>Printed music</field>
+<field>Música impresa</field>
+<field>Música impressa</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>d</field>
+<field>Manuscript  music</field>
+<field>Manuscritos de música</field>
+<field>Manuscritos de música</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>e</field>
+<field>Printed cartographic material</field>
+<field>Material cartográfico</field>
+<field>Material cartográfico</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>f</field>
+<field>Manuscript cartographic material</field>
+<field>Manuscritos de material cartográfico</field>
+<field>Manuscritos de material cartográfico</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>g</field>
+<field>Projected medium</field>
+<field>Material proyectable</field>
+<field>Material projetável</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>i</field>
+<field>Nonmusical sound recording</field>
+<field>Registros sonoros no musicales</field>
+<field>Registros sonoros não musicais</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>j</field>
+<field>Musical sound recording</field>
+<field>Registros musicales</field>
+<field>Registros musicais</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>k</field>
+<field>Two-dimensional nonprojectable graphic</field>
+<field>Gráficos bidimensionales no proyectables</field>
+<field>Gráficos bi-dimensionais não projetáveis</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>m</field>
+<field>Computer file</field>
+<field>Archivo de computador</field>
+<field>Arquivo de computador</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>o</field>
+<field>Kit</field>
+<field>Kit</field>
+<field>Kit</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>p</field>
+<field>Mixed material</field>
+<field>Material mixto</field>
+<field>Material misto</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>r</field>
+<field>Three-dimensional artifact or naturally occurring object</field>
+<field>Material tridimensional, artefacto, objeto</field>
+<field>Material tridimensional, artefato, objeto</field>
+</doc>
+<doc>
+<field>LDR-06</field>
+<field>t</field>
+<field>Manuscript language material</field>
+<field>Manuscritos</field>
+<field>Manuscritos</field>
+</doc>
+</add>

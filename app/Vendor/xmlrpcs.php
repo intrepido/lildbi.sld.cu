@@ -1,0 +1,1 @@
+<?php include "Xmlrpc".DS."xmlrpcs.inc"; ?>

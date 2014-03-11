@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<add>
+<doc>
+<field>Type-computer-file</field>
+<field>a</field>
+<field>Numeric data</field>
+<field>Datos numéricos</field>
+<field>Dados numéricos</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>b</field>
+<field>Computer program</field>
+<field>Programas de computador</field>
+<field>Programas de computador</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>c</field>
+<field>Representational</field>
+<field>Representacionales</field>
+<field>Representacionais</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>d</field>
+<field>Document</field>
+<field>Documentos</field>
+<field>Documentos</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>e</field>
+<field>Bibliographic data</field>
+<field>Datos bibliográficos</field>
+<field>Dados bibliográficos</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>f</field>
+<field>Type of letters (font)</field>
+<field>Tipos de letra (fuentes)</field>
+<field>Tipos de letra (fontes)</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>g</field>
+<field>Game</field>
+<field>Juegos</field>
+<field>Jogos</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>h</field>
+<field>Sound</field>
+<field>Sonidos</field>
+<field>Sons</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>i</field>
+<field>Interactive multimedia</field>
+<field>Multimedios interactivos</field>
+<field>Multimídia interativa</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>j</field>
+<field>Online system or service</field>
+<field>Servicios o sistemas online</field>
+<field>Serviços ou sistemas online</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>m</field>
+<field>Combination</field>
+<field>Combinación</field>
+<field>Combinação</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>u</field>
+<field>Unknown</field>
+<field>Desconocido</field>
+<field>Desconhecido</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>z</field>
+<field>Other</field>
+<field>Otro</field>
+<field>Outro</field>
+</doc>
+<doc>
+<field>Type-computer-file</field>
+<field>|</field>
+<field>No attempt to code</field>
+<field>No se codifica</field>
+<field>Não se codifica</field>
+</doc>
+</add>

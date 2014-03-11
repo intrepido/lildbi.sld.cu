@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<add>
+<doc>
+<field>Type-serial</field>
+<field>l</field>
+<field>Updating loose-leaf</field>
+<field>Hojas sueltas con actualizaciones diarias</field>
+<field>Folhas soltas com atualizações diárias</field>
+</doc>
+<doc>
+<field>Type-serial</field>
+<field>n</field>
+<field>Newspaper</field>
+<field>Jornales</field>
+<field>Jornais</field>
+</doc>
+<doc>
+<field>Type-serial</field>
+<field>p</field>
+<field>Periodical</field>
+<field>Revistas</field>
+<field>Revistas</field>
+</doc>
+<doc>
+<field>Type-serial</field>
+<field>u</field>
+<field>Separatum</field>
+<field>Separatas</field>
+<field>Separatas</field>
+</doc>
+<doc>
+<field>Type-serial</field>
+<field>|</field>
+<field>No attempt to code</field>
+<field>No se codifica</field>
+<field>Não se codifica</field>
+</doc>
+</add>
