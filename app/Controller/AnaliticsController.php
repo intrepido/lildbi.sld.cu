@@ -28,15 +28,36 @@ class AnaliticsController extends AppController {
 		//http://127.0.0.1:5984/fsantana/_design/functions/_view/getAllDocuments?startkey=[%2241d35488f5ec8f2368c98af75d007bf3%22,%223%22]&limit=1
 
 		if($this->RequestHandler->isAjax()){
-			$db = $this->Document->curlGet($this->Auth->user('username').'/_design/functions/_view/getAllAnalitics');
+			if(empty($this->params['data']['id'])){ //se listan todas las analiticas
+				$db = $this->Document->curlGet($this->Auth->user('username').'/_design/functions/_view/getAllAnalitics');
+			}
+			else{ //se listan las analiticas de un documento dado
+				$document = $this->Document->curlGet($this->Auth->user('username').'/'.$this->params['data']['id']);
+				$db = $this->Document->curlGet($this->Auth->user('username').'/_design/functions/_view/getDocumentAnalitics?key="' . $document['v1'].'-'.$document['v2'] . '"');
+			}
+			
 			$this->autoRender = FALSE;
 			if(!isset($db['error']) && $db['total_rows']!=0){
+				foreach ($db['rows'] as $key => $value) { //Poniendo el tipo a cada documento
+					$totalAnalitics = $this->Document->curlGet($this->Auth->user('username').'/_design/functions/_view/getDocumentAnalitics?key="' . $value['value']['v1'].'-'.$value['value']['v2'] . '"');
+					$urlTypeNameDocument = $this->DocumentDatas->getTypeDocument($value['value']);
+					$typeUrl = $this->DocumentDatas->convertTypeNameToUrlName($urlTypeNameDocument);
+					$value= array_merge(array('type' => $typeUrl), $value);
+					$db['rows'][$key] = array_merge(array('totalAnalitics' => sizeof($totalAnalitics['rows'])), $value);
+				}
 				return json_encode($db);
 			}
 			else{
 				return false;
+			}	
+		}	
+		else{
+			if(isset($this->params['pass'][0])){
+				$document = $this->Document->curlGet($this->Auth->user('username').'/'.$this->params['pass'][0]);				
+				$this->set('documentTitle', $document['v30']);
+				$this->set('idDocument', $this->params['pass'][0]);
 			}
-		}
+		}	
 	}
 
 
@@ -157,13 +178,5 @@ class AnaliticsController extends AppController {
 		$this->set('typeNameDocument', $typeNameDocument);
 
 	}
-	
-	function listDocumentAnalitics($id = null) {
-		$document = $this->Document->curlGet($this->Auth->user('username').'/'.$id);
-		$totalAnalitics = $this->Document->curlGet($this->Auth->user('username').'/_design/functions/_view/getDocumentAnalitics?key="' . $document['rows']['value']['v1'].'-'.$document['rows']['value']['v2'] . '"');
-	}
-
-
-
 }
 ?>

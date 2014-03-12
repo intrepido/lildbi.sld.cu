@@ -1,10 +1,10 @@
 <?php 
-echo $this->Html->script('documents', FALSE);
+echo $this->Html->script('paginate', FALSE);
 
 echo $this->Html->breadcrumb(array(
-		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
-		$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')),
-		utf8_encode(__('Analíticas'))
+					$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
+					$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')),
+					utf8_encode(__('Analíticas'))
 ), array('class' => 'breadcrumb row-fluid')); ?>
 
 <?php echo $this->Session->flash(); ?>
@@ -36,7 +36,16 @@ echo $this->Html->breadcrumb(array(
 		<div class="span9">
 			<div class="container-document-inner">
 				<legend>
-					<?php echo utf8_encode(__('Analíticas')); ?>
+					<?php 	
+					if(isset($documentTitle)){
+						$documentTitle = __(" del documento ").$this->Html->link($documentTitle, array('controller' => 'documents', 'action' => 'view', $idDocument ));
+					}
+					else{
+						$documentTitle = "";
+					}
+					
+					echo utf8_encode(__('Analíticas')).$documentTitle;
+					?>
 				</legend>
 				<table id='list-source-documents'
 					class="table table-striped table-bordered table-hover inset-type"
@@ -53,32 +62,24 @@ echo $this->Html->breadcrumb(array(
 					<tbody>
 					</tbody>
 					<!-- Actions -->
-					<div style="display: none" id='actions'>					
-							<div class="btn-toolbar">
-								<div class="btn-group">
-									<a href="analitics/view/" class="btn"
-										data-title="<?php echo __('Ver'); ?>" data-placement="top"
-										data-toggle="tooltip"><i
-										class="icon-eye-open"></i> </a>
-									<a href="analitics/edit/"
-										class="btn" data-title="<?php echo __('Editar'); ?>"
-										data-placement="top" data-toggle="tooltip"><i
-										class="icon-pencil"></i> </a>
-									<a href="#" class="btn"
-										data-title="<?php echo __('Eliminar'); ?>"
-										data-placement="top" data-toggle="tooltip" id="delete"><i
-										class="icon-remove"></i><input type="hidden" value=""> </a>
-									<a href="analitics/add/" class="btn"
-										data-title="<?php echo utf8_encode(__('Adicionar analítica')); ?>"
-										data-placement="top" data-toggle="tooltip"><i
-										class="icon-plus"></i> </a>
-									<a href="analitics/index"
-										class="btn"
-										data-title="<?php echo __('Ver fuente'); ?>"
-										data-placement="top" data-toggle="tooltip"><i
-										class="icon-tasks"></i> </a>
-								</div>
-							</div>						
+					<div style="display: none" id='actions'>
+						<div class="btn-toolbar">
+							<div class="btn-group">
+								<a href="analitics/view/" class="btn"
+									data-title="<?php echo __('Ver'); ?>" data-placement="top"
+									data-toggle="tooltip"><i class="icon-eye-open"></i> </a> <a
+									href="analitics/edit/" class="btn"
+									data-title="<?php echo __('Editar'); ?>" data-placement="top"
+									data-toggle="tooltip"><i class="icon-pencil"></i> </a> <a
+									href="#" class="btn" data-title="<?php echo __('Eliminar'); ?>"
+									data-placement="top" data-toggle="tooltip" id="delete"><i
+									class="icon-remove"></i><input type="hidden" value=""> </a> <a
+									href="analitics/index" class="btn"
+									data-title="<?php echo __('Ver fuente'); ?>"
+									data-placement="top" data-toggle="tooltip"><i
+									class="icon-tasks"></i> </a>
+							</div>
+						</div>
 					</div>
 				</table>
 

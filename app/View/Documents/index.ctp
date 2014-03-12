@@ -1,5 +1,5 @@
 <?php 
-echo $this->Html->script('documents', FALSE);
+echo $this->Html->script('paginate', FALSE);
 
 echo $this->Html->breadcrumb(array(
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
@@ -74,7 +74,7 @@ echo $this->Html->breadcrumb(array(
 										data-title="<?php echo utf8_encode(__('Adicionar analítica')); ?>"
 										data-placement="top" data-toggle="tooltip"><i
 										class="icon-plus"></i> </a>
-									<a href="#"
+									<a href="analitics/index/"
 										class="btn" id="total-analitics"
 										data-title="<?php echo utf8_encode(__('Ver analíticas')); ?>"
 										data-placement="top" data-toggle="tooltip"><span
