@@ -260,8 +260,13 @@ class DocumentDatasComponent extends Component {
 		$this->Session->delete('revEditDocument');
 		$this->Session->delete('dateCreationEditDocument');
 		$this->Session->delete('dateTransferDBEditDocument');
+		$this->Session->delete('idEditAnalitic');
+		$this->Session->delete('revEditAnalitic');
+		$this->Session->delete('dateCreationEditAnalitic');
+		$this->Session->delete('dateTransferDBEditAnalitic');
 		$this->Session->delete('document');
 		$this->Session->delete('idDocument');
+		$this->Session->delete('idDocumentForUrl');		
 	}
 	
 	

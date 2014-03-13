@@ -3,7 +3,9 @@ echo $this->Html->script('documents', FALSE);
 
 echo $this->Html->breadcrumb(array(
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
-		$this->Html->link( utf8_encode(__('Analíticas')), array('controller' => 'analitics','action' => 'index', isset($idDocument)? $idDocument : '' ), array('id' => 'backUrl')), __('Ver')
+		$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')),
+		$this->Html->link( utf8_encode(__('Analíticas')), array('controller' => 'analitics','action' => 'index', $this->Session->check('idDocumentForUrl')? $this->Session->read('idDocumentForUrl') : '' ), array('id' => 'backUrl')),
+		__('Ver')
 	), array('class' => 'breadcrumb row-fluid')); ?>
 
 <div class="container-document">

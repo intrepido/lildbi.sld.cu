@@ -1,7 +1,7 @@
 <?php
 echo $this->Html->script('documents', FALSE);
 
-if(!$this->Session->check('idEditDocument')){ //Si estoy adicionando una analitica
+if(!$this->Session->check('idEditAnalitic')){ //Si estoy adicionando una analitica
 
 	echo $this->Html->breadcrumb(array(
 			$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
@@ -15,7 +15,7 @@ if(!$this->Session->check('idEditDocument')){ //Si estoy adicionando una analiti
 	echo $this->Html->breadcrumb(array(
 			$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
 			$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')),
-			$this->Html->link(utf8_encode(__('Analíticas')), array('controller' => 'analitics','action' => 'index')),
+			$this->Html->link( utf8_encode(__('Analíticas')), array('controller' => 'analitics','action' => 'index', $this->Session->check('idDocumentForUrl')? $this->Session->read('idDocumentForUrl') : '' ), array('id' => 'backUrl')),
 			$this->Html->link(__('Editar'), "#", array('id' => 'backBreadcrumb')),
 			utf8_encode(__('Visualización'))
 	), array('class' => 'breadcrumb row-fluid'));
@@ -71,7 +71,7 @@ if(!$this->Session->check('idEditDocument')){ //Si estoy adicionando una analiti
 				<td>
 					<form accept-charset="utf-8" method="post"
 						id="DocumentVisualizationForm"
-						action="/lildbi/analitics/<?php echo $this->Session->check('idEditDocument') ? 'edit' : 'add';?>/<?php echo $urlTypeNameDocument;?><?php echo $this->Session->check('idEditDocument') ? '/'.$this->Session->read('idEditDocument') : '/'.$this->Session->read('idDocument');?>">
+						action="/lildbi/analitics/<?php echo $this->Session->check('idEditAnalitic') ? 'edit' : 'add';?>/<?php echo $urlTypeNameDocument;?><?php echo $this->Session->check('idEditAnalitic') ? '/'.$this->Session->read('idEditAnalitic') : '/'.$this->Session->read('idDocument');?>">
 						<div style="display: none;">
 							<input type="hidden" value="POST" name="_method">
 						</div>

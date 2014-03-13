@@ -10,6 +10,9 @@
        },
        "getDocumentAnalitics": {
            "map": "function(doc) {\n  emit(doc.v98, doc);\n}"
+       },
+       "getDocumentById": {
+           "map": "function(doc) {\n  emit(doc.v2, doc);\n}"
        }
    }
 }
