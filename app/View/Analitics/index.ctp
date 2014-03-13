@@ -38,7 +38,7 @@ echo $this->Html->breadcrumb(array(
 				<legend>
 					<?php 	
 					if(isset($documentTitle)){
-						$documentTitle = __(" del documento ").$this->Html->link($documentTitle, array('controller' => 'documents', 'action' => 'view', $idDocument ));
+						$documentTitle = __(" del documento - ").$this->Html->link($documentTitle, array('controller' => 'documents', 'action' => 'view', $idDocument ));
 					}
 					else{
 						$documentTitle = "";
@@ -60,21 +60,22 @@ echo $this->Html->breadcrumb(array(
 						</tr>
 					</thead>
 					<tbody>
-					</tbody>
+					</tbody>					
+					
 					<!-- Actions -->
 					<div style="display: none" id='actions'>
 						<div class="btn-toolbar">
 							<div class="btn-group">
-								<a href="analitics/view/" class="btn"
+								<a href="/analitics/view/" class="btn"
 									data-title="<?php echo __('Ver'); ?>" data-placement="top"
 									data-toggle="tooltip"><i class="icon-eye-open"></i> </a> <a
-									href="analitics/edit/" class="btn"
+									href="/analitics/edit/" class="btn"
 									data-title="<?php echo __('Editar'); ?>" data-placement="top"
 									data-toggle="tooltip"><i class="icon-pencil"></i> </a> <a
 									href="#" class="btn" data-title="<?php echo __('Eliminar'); ?>"
 									data-placement="top" data-toggle="tooltip" id="delete"><i
 									class="icon-remove"></i><input type="hidden" value=""> </a> <a
-									href="analitics/index" class="btn"
+									href="/analitics/index" class="btn"
 									data-title="<?php echo __('Ver fuente'); ?>"
 									data-placement="top" data-toggle="tooltip"><i
 									class="icon-tasks"></i> </a>
@@ -86,7 +87,7 @@ echo $this->Html->breadcrumb(array(
 				<div class="alert alert-error fade in"
 					id="alert-empty-list-document" style="display: none;">
 					<button data-dismiss="alert" class="close" type="button">&times;</button>
-					<?php echo utf8_encode(__('No tiene documentos en su base de datos')); ?>
+					<?php echo utf8_encode(__('Este documento no tiene analíticas')); ?>
 				</div>
 
 				<div id="loading" style="text-align: center;"></div>
@@ -106,7 +107,7 @@ echo $this->Html->breadcrumb(array(
 					</div>
 					<div class="modal-body">
 						<p>
-							<?php echo utf8_encode(__('Esta seguro que desea eliminar esta analitítica?')); ?>
+							<?php echo utf8_encode(__('Esta seguro que desea eliminar esta analítica?')); ?>
 						</p>
 					</div>
 					<div class="modal-footer">
