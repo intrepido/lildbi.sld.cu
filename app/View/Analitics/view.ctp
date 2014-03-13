@@ -1,6 +1,9 @@
-<?php echo $this->Html->breadcrumb(array(
+<?php 
+echo $this->Html->script('documents', FALSE);
+
+echo $this->Html->breadcrumb(array(
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
-		$this->Html->link( utf8_encode(__('Analíticas')), array('controller' => 'analitics','action' => 'index', isset($idDocument)? $idDocument : '' )), __('Ver')
+		$this->Html->link( utf8_encode(__('Analíticas')), array('controller' => 'analitics','action' => 'index', isset($idDocument)? $idDocument : '' ), array('id' => 'backUrl')), __('Ver')
 	), array('class' => 'breadcrumb row-fluid')); ?>
 
 <div class="container-document">
@@ -43,4 +46,7 @@
 		</tbody>
 	</table>
 	<hr>
+	<div class="form-actions">
+			<?php echo $this->Form->button(__('Atras'), array('type' => 'button', 'class' => 'btn', 'id'=>'backView'));?>
+	</div>
 </div>

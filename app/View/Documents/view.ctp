@@ -3,7 +3,7 @@ echo $this->Html->script('documents', FALSE);
 
 echo $this->Html->breadcrumb(array(
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
-		$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')), __('Ver')
+		$this->Html->link(__('Documentos'), array('controller' => isset($idDocument)? 'analitics' : 'documents','action' => 'index', isset($idDocument)? $idDocument : ''), array('id' => 'backUrl')), __('Ver')
 	), array('class' => 'breadcrumb row-fluid')); ?>
 
 <div class="container-document">
@@ -46,4 +46,7 @@ echo $this->Html->breadcrumb(array(
 		</tbody>
 	</table>
 	<hr>
+	<div class="form-actions">
+			<?php echo $this->Form->button(__('Atras'), array('type' => 'button', 'class' => 'btn', 'id'=>'backView'));?>
+	</div>
 </div>

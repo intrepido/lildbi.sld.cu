@@ -22,6 +22,11 @@ $(document).ready(
 				e.preventDefault();
 			});
 			
+			//Boton "Atras" de las vistas view Document y Analitic
+			$("#backView").click(function() {				
+				$(location).attr("href", $("#backUrl").attr("href"));		
+			});	
+			
 			//Boton "Cancelar" 
 			$("#documentCancelButton button[type='button']").click(function() {
 				if($(location).attr("href").contains('documents')){ //Formulario de Documentos
