@@ -1,6 +1,6 @@
 <?php echo $this->Html->breadcrumb(array(
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
-		$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')), __('Ver')
+		$this->Html->link(__('Analíticas'), array('controller' => 'documents','action' => 'index')), __('Ver')
 	), array('class' => 'breadcrumb row-fluid')); ?>
 
 <div class="container-document">
