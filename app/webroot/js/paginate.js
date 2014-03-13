@@ -6,7 +6,7 @@ $(document).ready(
 			var url;
 			var idDocument = "";
 			
-			if($(location).attr("href").contains('documents')){//Documents
+			if($(location).attr("href").indexOf('documents') != -1){//Documents
 				url = 'documents';
 			}else{ //Analitics
 				url = 'analitics';
