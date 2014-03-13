@@ -1,6 +1,6 @@
 <?php echo $this->Html->breadcrumb(array(
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
-		$this->Html->link(__('Analíticas'), array('controller' => 'documents','action' => 'index')), __('Ver')
+		$this->Html->link( utf8_encode(__('Analíticas')), array('controller' => 'analitics','action' => 'index', isset($idDocument)? $idDocument : '' )), __('Ver')
 	), array('class' => 'breadcrumb row-fluid')); ?>
 
 <div class="container-document">
@@ -19,17 +19,24 @@
 		</thead>
 		<tbody>
 			<?php 
-			foreach($document as $key => $value):
-			if($value['value'] != "" && $value['value'] != "null" && $key!='v98' && $key!='_id'){
-					  $tag = substr($key, 1);
-					  strlen($tag) == 1 ? $tag = "0".$tag : null;
-					  ?>
+			foreach($analitics as $key => $val):
+			$value = Set::extract('{s}', $val);
+			$name = array_keys($val);
+			if($value[0] != "" && $value[0] != "null" && $key!='v98' && $key!='_id'){
+						  $tag = substr($key, 1);
+						  strlen($tag) == 1 ? $tag = "0".$tag : null;
+						  ?>
 			<tr>
 				<td><?php echo "[". $tag ."]";?></td>
-				<td><?php echo $value['name'];?></td>
-				<td><strong><?php echo str_replace("\n", "</br>", $value['value']);?>
-				</strong>
+				<td><?php echo $name[0];?></td>
+				<?php if(!is_array($value[0])){?>
+				<td><strong><?php echo $value[0];?> </strong>
 				</td>
+				<?php }else{?>
+				<td><strong> <?php foreach($value[0] as $item):
+				echo $item;?> </br> <?php endforeach; ?>
+				</strong></td>
+				<?php }?>
 			</tr>
 			<?php } ?>
 			<?php endforeach; ?>

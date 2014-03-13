@@ -61,9 +61,14 @@ class AnaliticsController extends AppController {
 	}
 
 
-	function view($id = null) { //FUNCIONA el leer un documento
+	function view($id = null) {
 		$document = $this->Document->curlGet($this->Auth->user('username').'/'.$id);
-		//$this->set('type', $this->requestAction('/documents/getTypeDocument/'.$document));
+		$this->set('type', $this->DocumentDatas->getTypeDocument($document));
+		$this->set('analitics', $this->DocumentDatas->getNameFieldsDocument($document));
+		$result = explode('index/', $this->referer());
+		if(isset($result[1])){
+			$this->set('idDocument', $result[1]);
+		}		
 	}
 
 
