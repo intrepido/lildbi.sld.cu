@@ -84,8 +84,7 @@ echo $this->Html->breadcrumb(array(
 					</div>
 
 				<div class="alert alert-error fade in"
-					id="alert-empty-list-document" style="display: none;">
-					<button data-dismiss="alert" class="close" type="button">&times;</button>
+					id="alert-empty-list-document" style="display: none;">					
 					<?php echo utf8_encode(__('No tiene documentos en su base de datos')); ?>
 				</div>
 
@@ -111,7 +110,7 @@ echo $this->Html->breadcrumb(array(
 					</div>
 					<div class="modal-footer">
 						<button class="btn" data-dismiss="modal" aria-hidden="true">
-							<?php echo __('Close'); ?>
+							<?php echo __('Cerrar'); ?>
 						</button>
 						<button id="delete-document" class="btn btn-primary">
 							<?php echo __('Eliminar'); ?>

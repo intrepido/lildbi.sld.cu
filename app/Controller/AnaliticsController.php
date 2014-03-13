@@ -37,7 +37,7 @@ class AnaliticsController extends AppController {
 			}
 			
 			$this->autoRender = FALSE;
-			if(!isset($db['error']) && $db['total_rows']!=0){
+			if(!isset($db['error']) && sizeof($db['rows'])!=0){
 				foreach ($db['rows'] as $key => $value) { //Poniendo el tipo a cada documento
 					$totalAnalitics = $this->Document->curlGet($this->Auth->user('username').'/_design/functions/_view/getDocumentAnalitics?key="' . $value['value']['v1'].'-'.$value['value']['v2'] . '"');
 					$urlTypeNameDocument = $this->DocumentDatas->getTypeDocument($value['value']);

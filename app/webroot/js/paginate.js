@@ -46,8 +46,15 @@ $(document).ready(
 					      $('#paginator').bootstrapPaginator(options);				
 						   
 					}	
-					else{						
-						$("#alert-empty-list-document").delay(200).fadeIn();
+					else{	
+						setTimeout(function() {$("#alert-empty-list-document").show(); }, 500);
+						if(url == 'analitics'){
+							if(idDocument != ''){
+								setTimeout(function() {$("#alert-empty-list-document-analitics").show(); }, 500); 
+							 }else{
+								setTimeout(function() {$("#alert-empty-list-analitics").show(); }, 500);
+							 }
+						}						
 					}
 				});
 			}
@@ -144,6 +151,13 @@ $(document).ready(
 						 $("#list-source-documents").fadeOut(100);
 						 $('#paginator').fadeOut(100);
 						 setTimeout(function() {$("#alert-empty-list-document").show(); }, 1000);
+						 if(url == 'analitics'){
+							if(idDocument != ''){
+								setTimeout(function() {$("#alert-empty-list-document-analitics").show(); }, 1000); 
+						    }else{
+								setTimeout(function() {$("#alert-empty-list-analitics").show(); }, 1000);
+							 }
+						 }							 
 					}
 					
 				});

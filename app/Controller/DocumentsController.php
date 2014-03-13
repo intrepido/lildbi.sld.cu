@@ -145,12 +145,21 @@ class DocumentsController extends AppController {
 
 	function delete($id) {  //FUNCIONA el eliminar un documento
 		if ($this->RequestHandler->isAjax()) {
+
 			$id_rev = explode("_", $this->request->data["value"]);
+			
+			//eliminar analiticas
+			$document = $this->Document->curlGet($this->Auth->user('username').'/'.$id_rev[0]);
+			$analitics = $this->Document->curlGet($this->Auth->user('username').'/_design/functions/_view/getDocumentAnalitics?key="' . $document['v1'].'-'.$document['v2'] . '"');			
+			foreach ($analitics['rows'] as $value) {
+				$this->Document->curlDelete($this->Auth->user('username').'/'.$value['value']['_id'].'/?rev='.$value['value']['_rev']);
+			}	
+			
+			//eliminar documento			
 			$this->Document->curlDelete($this->Auth->user('username').'/'.$id_rev[0].'/?rev='.$id_rev[1]);
+			
 			$this->autoRender = FALSE;
-		}
-		//Elimina la BD
-		//$this->Document->curlDelete($this->Auth->user('username'));
+		}	
 	}
 
 

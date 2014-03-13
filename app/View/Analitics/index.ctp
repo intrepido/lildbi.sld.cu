@@ -44,6 +44,8 @@ echo $this->Html->breadcrumb(array(
 						$documentTitle = "";
 					}
 					
+					
+					
 					echo utf8_encode(__('Analíticas')).$documentTitle;
 					?>
 				</legend>
@@ -85,8 +87,12 @@ echo $this->Html->breadcrumb(array(
 				</table>
 
 				<div class="alert alert-error fade in"
-					id="alert-empty-list-document" style="display: none;">
-					<button data-dismiss="alert" class="close" type="button">&times;</button>
+					id="alert-empty-list-analitics" style="display: none;">					
+					<?php echo utf8_encode(__('No tiene analiticas en su base de datos')); ?>
+				</div>
+				
+				<div class="alert alert-error fade in"
+					id="alert-empty-list-document-analitics" style="display: none;">					
 					<?php echo utf8_encode(__('Este documento no tiene analíticas')); ?>
 				</div>
 
@@ -112,7 +118,7 @@ echo $this->Html->breadcrumb(array(
 					</div>
 					<div class="modal-footer">
 						<button class="btn" data-dismiss="modal" aria-hidden="true">
-							<?php echo __('Close'); ?>
+							<?php echo __('Cerrar'); ?>
 						</button>
 						<button id="delete-document" class="btn btn-primary">
 							<?php echo __('Eliminar'); ?>
