@@ -83,9 +83,8 @@ $(document).ready(
 						 
 						 if(value['totalAnalitics'] != 0){
 							 actions.find("a:nth-child(5) span").addClass('badge-info');
-							 actions.find("a:nth-child(5) span").text(value['totalAnalitics']);
-							 ref = actions.find("a:nth-child(5)").attr('href');
-							 actions.find("a:nth-child(5)").attr('href', ref + value['id']);
+							 actions.find("a:nth-child(5) span").text(value['totalAnalitics']);							
+							 actions.find("a:nth-child(5)").attr('href', '/lildbi/analitics/index/' + value['id']);
 						 }						
 						 												 
 						 $('#list-source-documents tbody').append( "<tr>" +

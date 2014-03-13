@@ -58,11 +58,11 @@ echo $this->Html->breadcrumb(array(
 					<div style="display: none" id='actions'>					
 							<div class="btn-toolbar">
 								<div class="btn-group">
-									<a href="documents/view/" class="btn"
+									<a href="/lildbi/documents/view/" class="btn"
 										data-title="<?php echo __('Ver'); ?>" data-placement="top"
 										data-toggle="tooltip"><i
 										class="icon-eye-open"></i> </a>
-									<a href="documents/edit/"
+									<a href="/lildbi/documents/edit/"
 										class="btn" data-title="<?php echo __('Editar'); ?>"
 										data-placement="top" data-toggle="tooltip"><i
 										class="icon-pencil"></i> </a>
@@ -70,11 +70,11 @@ echo $this->Html->breadcrumb(array(
 										data-title="<?php echo __('Eliminar'); ?>"
 										data-placement="top" data-toggle="tooltip" id="delete"><i
 										class="icon-remove"></i><input type="hidden" value=""> </a>
-									<a href="analitics/add/" class="btn"
+									<a href="/lildbi/analitics/add/" class="btn"
 										data-title="<?php echo utf8_encode(__('Adicionar analítica')); ?>"
 										data-placement="top" data-toggle="tooltip"><i
 										class="icon-plus"></i> </a>
-									<a href="analitics/index/"
+									<a href="#"
 										class="btn" id="total-analitics"
 										data-title="<?php echo utf8_encode(__('Ver analíticas')); ?>"
 										data-placement="top" data-toggle="tooltip"><span
