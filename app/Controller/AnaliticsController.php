@@ -130,7 +130,12 @@ class AnaliticsController extends AppController {
 				//$this->Document->curlPut($this->Auth->user('username').'/72fc1e696025b11d23240372bf0092d9', array('_rev' => '5-c7a4d9ba3af06d0378d9ec5f726273df', 'v2' => 'caballo', 'v4' => 'Pendenciero'));
 					
 				//redireccionando luego de insertar
-				$this->redirect(array('controller' => 'analitics','action' => 'index'));
+				if($this->Session->check('idDocumentForUrl')){
+					$this->redirect(array('controller' => 'analitics','action' => 'index', $this->Session->read('idDocumentForUrl')));
+				}
+				else{
+					$this->redirect(array('controller' => 'analitics','action' => 'index'));
+				}				
 			}
 		}
 		else{
