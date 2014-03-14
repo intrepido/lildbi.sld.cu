@@ -75,7 +75,7 @@ class AnaliticsController extends AppController {
 
 	function add($id = null) {
 
-		$this->DocumentDatas->deleteSessions();
+		//$this->DocumentDatas->deleteSessions();
 		
 		if ($this->request->is('post')) {
 			if(isset($this->request->data['Document']['Back'])) //Boton "Atras" de la pagina "visualization"
@@ -90,9 +90,7 @@ class AnaliticsController extends AppController {
 				$dataFormatArray = $this->DocumentDatas->prepareDataForDB($dataArray, $this->params['typeName']);
 
 				//Insertando el Analitica en CouchDB
-				$this->Document->curlPost($this->Auth->user('username'), $dataFormatArray, false);
-				$this->Session->delete('initialTimeCreation');
-				$this->DocumentDatas->deleteSessions();
+				$this->Document->curlPost($this->Auth->user('username'), $dataFormatArray, false);			
 				
 				//redireccionando luego de insertar
 				$this->redirect(array('controller' => 'documents','action' => 'index'));
@@ -103,9 +101,9 @@ class AnaliticsController extends AppController {
 			$document = $this->DocumentDatas->prepareDataForForm($document);
 			$this->Session->write('document', $this->DocumentDatas->getNameFieldsDocument($document));
 			$this->Session->write('idDocument', $document['_id']);
+			$this->Session->write('initialTimeCreation', CakeTime::format('H:i:s', time()));
 			$this->set('urlTypeNameDocument', $this->params['typeName']);
 		}
-
 	}
 
 
@@ -125,10 +123,10 @@ class AnaliticsController extends AppController {
 				$dataFormatArray = $this->DocumentDatas->prepareDataForDB($dataArray, $this->params['typeName']);
 
 				//Poniendo la rev
-				$dataFormatArray = array_merge(array('_rev' => $this->Session->read('revEditAnalitic')), $dataFormatArray);
+				$dataFormatArray = array_merge(array('_rev' => $this->Session->read('revEdit')), $dataFormatArray);
 
 				/** Modificando el Documento en CouchDB **/
-				$this->Document->curlPut($this->Auth->user('username').'/'.$this->Session->read('idEditAnalitic'), $dataFormatArray, false);
+				$this->Document->curlPut($this->Auth->user('username').'/'.$this->Session->read('idEdit'), $dataFormatArray, false);
 				//$this->Document->curlPut($this->Auth->user('username').'/72fc1e696025b11d23240372bf0092d9', array('_rev' => '5-c7a4d9ba3af06d0378d9ec5f726273df', 'v2' => 'caballo', 'v4' => 'Pendenciero'));
 					
 				//redireccionando luego de insertar
@@ -138,10 +136,10 @@ class AnaliticsController extends AppController {
 		else{
 			//Se busca la analitica dado el id
 			$analitic = $this->Document->curlGet($this->Auth->user('username').'/'.$id);
-			$this->Session->write('idEditAnalitic', $analitic['_id']);
-			$this->Session->write('revEditAnalitic', $analitic['_rev']);
-			$this->Session->write('dateCreationEditAnalitic', $analitic['v91']);
-			$this->Session->write('dateTransferDBEditAnalitic', $analitic['v84']);
+			$this->Session->write('idEdit', $analitic['_id']);
+			$this->Session->write('revEdit', $analitic['_rev']);
+			$this->Session->write('dateCreationEdit', $analitic['v91']);
+			$this->Session->write('dateTransferDBEdit', $analitic['v84']);
 
 			//Se busca el documento al cual pertenece la analitica
 			$tempArray = explode('-', $analitic['v98']);
@@ -183,8 +181,8 @@ class AnaliticsController extends AppController {
 		$arrayData = array_merge(array('v92' => array(__('Documentalista') => $user['initials'])), $this->params['data']['Document']);
 		$arrayData = array_merge(array('v93' => array(utf8_encode(__('Fecha de ultima modificación')) => CakeTime::format('Ymd', time()))), $arrayData);
 			
-		if($this->Session->check('dateCreationEditAnalitic')){//si se esta modificando
-			$arrayData = array_merge(array('v91' => array(utf8_encode(__('Fecha de Creación del Registro')) => $this->Session->read('dateCreationEditAnalitic'))), $arrayData);
+		if($this->Session->check('dateCreationEdit')){//si se esta modificando
+			$arrayData = array_merge(array('v91' => array(utf8_encode(__('Fecha de Creación del Registro')) => $this->Session->read('dateCreationEdit'))), $arrayData);
 		}else{//si se esta insertando
 			$arrayData = array_merge(array('v91' => array(utf8_encode(__('Fecha de Creación del Registro')) => CakeTime::format('Ymd', time()))), $arrayData);
 		}

@@ -76,7 +76,7 @@ class DocumentDatasComponent extends Component {
 						$dataFormatArray[$key] = $value[$arrayKey[0]];
 					}
 				}else{ //Campos que se modifican en el momento que se inserta.
-					if($key == 'v91' && !$this->Session->check('dateCreationEditDocument')){ //Fecha de Creación del Registro si se esta insertando
+					if($key == 'v91' && !$this->Session->check('dateCreationEdit')){ //Fecha de Creación del Registro si se esta insertando
 						$interval1 = $this->Session->read('initialTimeCreation');
 						$interval2 = CakeTime::format("H:i:s", time());
 						$value[$arrayKey[0]] = CakeTime::format("Ymd", time())."^i".$this->Session->read('initialTimeCreation')."^f".CakeTime::format("H:i:s", time())."^t". Utils::subtractHours($interval1, $interval2);
@@ -105,8 +105,8 @@ class DocumentDatasComponent extends Component {
 		$this->setTypeDocument(&$dataFormatArray, $urlTypeNameDocument);		
 	
 		//Este campo es la fecha en que se transfirio el documento en la BD (CouchDB)
-		if($this->Session->check('dateTransferDBEditDocument')){ //Si se esta editando
-			$dataFormatArray = array_merge(array('v84' => $this->Session->read('dateTransferDBEditDocument')), $dataFormatArray);
+		if($this->Session->check('dateTransferDBEdit')){ //Si se esta editando
+			$dataFormatArray = array_merge(array('v84' => $this->Session->read('dateTransferDBEdit')), $dataFormatArray);
 		}
 		else{//Si se esta insertando
 			$dataFormatArray = array_merge(array('v84' => CakeTime::format("Ymd", time())), $dataFormatArray);
@@ -256,17 +256,14 @@ class DocumentDatasComponent extends Component {
 	}
 	
 	function deleteSessions() {
-		$this->Session->delete('idEditDocument');
-		$this->Session->delete('revEditDocument');
-		$this->Session->delete('dateCreationEditDocument');
-		$this->Session->delete('dateTransferDBEditDocument');
-		$this->Session->delete('idEditAnalitic');
-		$this->Session->delete('revEditAnalitic');
-		$this->Session->delete('dateCreationEditAnalitic');
-		$this->Session->delete('dateTransferDBEditAnalitic');
+		$this->Session->delete('idEdit');
+		$this->Session->delete('revEdit');
+		$this->Session->delete('dateCreationEdit');
+		$this->Session->delete('dateTransferDBEdit');			
 		$this->Session->delete('document');
 		$this->Session->delete('idDocument');
-		$this->Session->delete('idDocumentForUrl');		
+		$this->Session->delete('idDocumentForUrl');	
+		$this->Session->delete('initialTimeCreation');
 	}
 	
 	

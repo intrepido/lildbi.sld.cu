@@ -104,7 +104,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 	</div>
 
 	<form accept-charset="utf-8" method="post" id="DocumentAddForm"
-		action="/lildbi/analitics/<?php echo isset($typeEditAnalitic) ? 'edit' : 'add';?>/series_monograficas/<?php echo isset($typeEditAnalitic) ? $this->Session->read('idEditAnalitic').'/' : $this->Session->read('idDocument').'/';?>visualization">
+		action="/lildbi/analitics/<?php echo isset($typeEditAnalitic) ? 'edit' : 'add';?>/series_monograficas/<?php echo isset($typeEditAnalitic) ? $this->Session->read('idEdit').'/' : $this->Session->read('idDocument').'/';?>visualization">
 		<div style="display: none;">
 			<input type="hidden" value="POST" name="_method">
 		</div>

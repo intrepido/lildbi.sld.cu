@@ -63,7 +63,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 	</div>
 
 	<form accept-charset="utf-8" method="post" id="DocumentAddForm"
-		action="/lildbi/documents/<?php echo isset($typeEditDocument) ? 'edit' : 'add';?>/series_monograficas/<?php echo isset($typeEditDocument) ? $this->Session->read('idEditDocument').'/' : '';?>visualization">
+		action="/lildbi/documents/<?php echo isset($typeEditDocument) ? 'edit' : 'add';?>/series_monograficas/<?php echo isset($typeEditDocument) ? $this->Session->read('idEdit').'/' : '';?>visualization">
 		<div style="display: none;">
 			<input type="hidden" value="POST" name="_method">
 		</div>

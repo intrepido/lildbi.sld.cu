@@ -54,14 +54,14 @@ class DocumentsController extends AppController {
 		$this->set('document', $this->DocumentDatas->getNameFieldsDocument($document));
 		$result = explode('index/', $this->referer());
 		if(isset($result[1])){
-			$this->set('idDocument', $result[1]);
+			$this->Session->write('idDocumentForUrl', $result[1]);				
 		}
 	}
 
 
 	function add() { //FUNCIONA el adicionar un documento (Hay que especificar un squema en el modelo)
 
-		$this->DocumentDatas->deleteSessions();
+		//$this->DocumentDatas->deleteSessions();
 
 		if ($this->request->is('post')) {
 
@@ -101,10 +101,9 @@ class DocumentsController extends AppController {
 		elseif (isset($this->params['typeName']))
 		{
 			$this->set('urlTypeNameDocument', $this->params['typeName']);
-			$this->set('typeNameDocument', $this->DocumentDatas->convertUrlNameToTypeName($this->params['typeName']));
+			$this->set('typeNameDocument', $this->DocumentDatas->convertUrlNameToTypeName($this->params['typeName']));			
 			$this->Session->write('initialTimeCreation', CakeTime::format('H:i:s', time()));
 		}
-
 	}
 
 
@@ -123,10 +122,10 @@ class DocumentsController extends AppController {
 				$dataFormatArray = $this->DocumentDatas->prepareDataForDB($dataArray, $this->params['typeName']);
 
 				//Poniendo la rev
-				$dataFormatArray = array_merge(array('_rev' => $this->Session->read('revEditDocument')), $dataFormatArray);
+				$dataFormatArray = array_merge(array('_rev' => $this->Session->read('revEdit')), $dataFormatArray);
 
 				/** Modificando el Documento en CouchDB **/
-				$this->Document->curlPut($this->Auth->user('username').'/'.$this->Session->read('idEditDocument'), $dataFormatArray, false);
+				$this->Document->curlPut($this->Auth->user('username').'/'.$this->Session->read('idEdit'), $dataFormatArray, false);
 				//$this->Document->curlPut($this->Auth->user('username').'/72fc1e696025b11d23240372bf0092d9', array('_rev' => '5-c7a4d9ba3af06d0378d9ec5f726273df', 'v2' => 'caballo', 'v4' => 'Pendenciero'));
 					
 				//redireccionando luego de insertar
@@ -135,10 +134,10 @@ class DocumentsController extends AppController {
 		}
 		else{
 			$document = $this->Document->curlGet($this->Auth->user('username').'/'.$id);
-			$this->Session->write('idEditDocument', $document['_id']);
-			$this->Session->write('revEditDocument', $document['_rev']);
-			$this->Session->write('dateCreationEditDocument', $document['v91']);
-			$this->Session->write('dateTransferDBEditDocument', $document['v84']);
+			$this->Session->write('idEdit', $document['_id']);
+			$this->Session->write('revEdit', $document['_rev']);
+			$this->Session->write('dateCreationEdit', $document['v91']);
+			$this->Session->write('dateTransferDBEdit', $document['v84']);
 			
 			$document = $this->DocumentDatas->prepareDataForForm($document);			
 			$this->set('typeEditDocument', $this->request->params['typeName']);
@@ -177,8 +176,8 @@ class DocumentsController extends AppController {
 			$arrayData = array_merge(array('v92' => array(__('Documentalista') => $user['initials'])), $this->params['data']['Document']);
 			$arrayData = array_merge(array('v93' => array(utf8_encode(__('Fecha de ultima modificación')) => CakeTime::format('Ymd', time()))), $arrayData);
 			
-			if($this->Session->check('dateCreationEditDocument')){//si se esta modificando
-				$arrayData = array_merge(array('v91' => array(utf8_encode(__('Fecha de Creación del Registro')) => $this->Session->read('dateCreationEditDocument'))), $arrayData);
+			if($this->Session->check('dateCreationEdit')){//si se esta modificando
+				$arrayData = array_merge(array('v91' => array(utf8_encode(__('Fecha de Creación del Registro')) => $this->Session->read('dateCreationEdit'))), $arrayData);
 			}else{//si se esta insertando
 				$arrayData = array_merge(array('v91' => array(utf8_encode(__('Fecha de Creación del Registro')) => CakeTime::format('Ymd', time()))), $arrayData);
 			}

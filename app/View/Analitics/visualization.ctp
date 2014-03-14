@@ -1,7 +1,7 @@
 <?php
 echo $this->Html->script('documents', FALSE);
 
-if(!$this->Session->check('idEditAnalitic')){ //Si estoy adicionando una analitica
+if(!$this->Session->check('idEdit')){ //Si estoy adicionando una analitica
 
 	echo $this->Html->breadcrumb(array(
 			$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
@@ -71,7 +71,7 @@ if(!$this->Session->check('idEditAnalitic')){ //Si estoy adicionando una analiti
 				<td>
 					<form accept-charset="utf-8" method="post"
 						id="DocumentVisualizationForm"
-						action="/lildbi/analitics/<?php echo $this->Session->check('idEditAnalitic') ? 'edit' : 'add';?>/<?php echo $urlTypeNameDocument;?><?php echo $this->Session->check('idEditAnalitic') ? '/'.$this->Session->read('idEditAnalitic') : '/'.$this->Session->read('idDocument');?>">
+						action="/lildbi/analitics/<?php echo $this->Session->check('idEdit') ? 'edit' : 'add';?>/<?php echo $urlTypeNameDocument;?><?php echo $this->Session->check('idEdit') ? '/'.$this->Session->read('idEdit') : '/'.$this->Session->read('idDocument');?>">
 						<div style="display: none;">
 							<input type="hidden" value="POST" name="_method">
 						</div>
