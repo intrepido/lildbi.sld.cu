@@ -38,14 +38,11 @@ echo $this->Html->breadcrumb(array(
 				<legend>
 					<?php 	
 					if(isset($documentTitle)){
-						$documentTitle = __(" del documento - ").$this->Html->link($documentTitle, array('controller' => 'documents', 'action' => 'view', $idDocument ));
+						$documentTitle = __(" del documento - ").$this->Html->link($documentTitle, array('controller' => 'documents', 'action' => 'view', $idDocument ), array('class' => 'link-decoration'));
 					}
 					else{
 						$documentTitle = "";
 					}
-					
-					
-					
 					echo utf8_encode(__('Analíticas')).$documentTitle;
 					?>
 				</legend>
@@ -62,8 +59,8 @@ echo $this->Html->breadcrumb(array(
 						</tr>
 					</thead>
 					<tbody>
-					</tbody>					
-					
+					</tbody>
+
 					<!-- Actions -->
 					<div style="display: none" id='actions'>
 						<div class="btn-toolbar">
@@ -87,12 +84,12 @@ echo $this->Html->breadcrumb(array(
 				</table>
 
 				<div class="alert alert-error fade in"
-					id="alert-empty-list-analitics" style="display: none;">					
+					id="alert-empty-list-analitics" style="display: none;">
 					<?php echo utf8_encode(__('No tiene analiticas en su base de datos')); ?>
 				</div>
-				
+
 				<div class="alert alert-error fade in"
-					id="alert-empty-list-document-analitics" style="display: none;">					
+					id="alert-empty-list-document-analitics" style="display: none;">
 					<?php echo utf8_encode(__('Este documento no tiene analíticas')); ?>
 				</div>
 
