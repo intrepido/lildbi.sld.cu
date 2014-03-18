@@ -1,8 +1,7 @@
 $(document).ready(
-		function() {
+		function() {			
 			
 			var jsonObj; //Variable Global. Contiene la lista de documentos a mostrar.
-			var groupBy = 3; //Variable Global. Cantidad de documentos por paginas.
 			var url;
 			var idDocument = "";
 			
@@ -17,34 +16,17 @@ $(document).ready(
 			}
 			
 			//Paginator documents
-			if($("#paginator").length){
-				 $('#loading').html('<img src="/lildbi/img/loader.gif">');				 
+			$('#loading').html('<img src="/lildbi/img/loader.gif">');				 
 				 
-				//Se obtienen los documentos o analiticas a listar
-				$.post("/lildbi/" + url + "/index" , { id: idDocument } )
+			//Se obtienen los documentos o analiticas a listar
+			$.post("/lildbi/" + url + "/index" , { id: idDocument } )
 				.done(function(data) {						
 					$('#loading').fadeOut(100);
 					if(data){ 						
-						 jsonObj = $.parseJSON(data);
-						 var temp = jsonObj['rows'].slice(0); //copia por valor	
-						 var totalPages = Math.ceil(temp.length / groupBy);							 
-						 fullTable(1, groupBy, temp);	
-						  
-						 var options = {
-					            currentPage: 1,
-					            totalPages: totalPages,
-								alignment: "center",
-								itemContainerClass: function (type, page, current) {
-					                return (page === current) ? "active" : "pointer-cursor";
-					            },
-					            onPageClicked: function(e,originalEvent,type,page){									
-									 temp = jsonObj['rows'].slice();									 
-							     	 fullTable(page, groupBy, temp);  													 
-					            }
-					      };
-
-					      $('#paginator').bootstrapPaginator(options);				
-						   
+						jsonObj = $.parseJSON(data);							
+						fullTable(jsonObj['rows']);
+						tablestoreOptions();
+						$('#list-source-documents-sticky').show();						
 					}	
 					else{	
 						setTimeout(function() {$("#alert-empty-list-document").show(); }, 500);
@@ -56,16 +38,15 @@ $(document).ready(
 							 }
 						}						
 					}
-				});
-			}
+			});
+			
 			
 			//llena la tabla con los documentos paginados
-			function fullTable(noPage, groupBy, array){				   
-					 var startRec = Math.max(noPage - 1, 0) * groupBy;  
-					 var recordsToShow = array.splice(startRec, groupBy);
+			function fullTable(array){				   
+					 
 					 $('#list-source-documents tbody').empty();
 					  
-					 $.each(recordsToShow, function( index, value ) {	
+					 $.each(array, function( index, value ) {	
 						 
 						 var actions = $('#actions').clone();
 						 var ref;
@@ -96,10 +77,102 @@ $(document).ready(
 						   	);
 						 
 						 $('#list-source-documents tbody tr:last td:last').append(actions.children());
-					 });					
-					 
-					 $("#list-source-documents").delay(800).fadeIn();
-					 $('#paginator').delay(800).fadeIn();
+					 });	
+
+					$("#list-source-documents").delay(800).fadeIn();									
+			}			
+			
+			
+			function tablestoreOptions(){
+						/*** Bootstrap collapse ***/					
+					
+						$('#collapseOne').collapse({
+							toggle: false
+						}).on('shown.bs.collapse', function () {
+							$.tablesorter.columnSelector.attachTo( $('.tablesorter'), '#columns');
+						});
+					
+						/*****  Table Sorter ******/
+						
+						$.extend($.tablesorter.themes.bootstrap, {
+						    // these classes are added to the table. To see other table classes available,
+						    // look here: http://twitter.github.com/bootstrap/base-css.html#tables
+						    table      : 'table table-bordered',
+						    header     : 'bootstrap-header', // give the header a gradient background
+						    footerRow  : '',
+						    footerCells: '',
+						    icons      : '', // add "icon-white" to make them white; this icon class is added to the <i> in the header
+						    sortNone   : 'bootstrap-icon-unsorted',
+						    sortAsc    : 'icon-chevron-up',
+						    sortDesc   : 'icon-chevron-down',
+						    active     : '', // applied when column is sorted
+						    hover      : '', // use custom css here - bootstrap class may not override it
+						    filterRow  : '', // filter row class
+						    even       : '', // odd row zebra striping
+						    odd        : ''  // even row zebra striping
+						  });
+						
+						// call the tablesorter plugin and apply the uitheme widget
+						$("table").tablesorter({
+							// this will apply the bootstrap theme if "uitheme" widget is included
+							// the widgetOptions.uitheme is no longer required to be set
+							theme : "bootstrap",
+
+							widthFixed : true,
+
+							headerTemplate : '{content} {icon}', // new in v2.7. Needed to add
+																	// the bootstrap icon!
+																	
+							headers: { 
+								4: {sorter: false, filter: false}								
+							}, 
+
+							// widget code contained in the jquery.tablesorter.widgets.js file
+							// use the zebra stripe widget if you plan on hiding any rows (filter
+							// widget)
+							widgets : [ "uitheme", "filter", "zebra", "columnSelector", "stickyHeaders" ],
+
+							widgetOptions : {
+								// using the default zebra striping class name, so it actually isn't
+								// included in the theme variable above
+								// this is ONLY needed for bootstrap theming if you are using the
+								// filter widget, because rows are hidden
+								zebra : [ "even", "odd" ],
+
+								// reset filters button
+								filter_reset : ".reset",
+
+							// set the uitheme widget to use the bootstrap theme class names
+							// this is no longer required, if theme is set
+							// ,uitheme : "bootstrap"
+							
+								stickyHeaders_offset : 75.1
+
+							}
+						}).tablesorterPager({
+
+							// target the pager markup - see the HTML block below
+							container : $(".pager"),
+
+							// target the pager page select dropdown - choose a page
+							cssGoto : ".pagenum",
+
+							// remove rows from the table to speed up the sort of large tables.
+							// setting this to false, only hides the non-visible rows; needed if you
+							// plan to add/remove rows with the pager enabled.
+							removeRows : false,
+
+							// output string - default is '{page}/{totalPages}';
+							// possible variables: {page}, {totalPages}, {filteredPages},
+							// {startRow}, {endRow}, {filteredRows} and {totalRows}
+							output : '{startRow} - {endRow} / {filteredRows} ({totalRows})',
+								
+							// Number of visible rows - default is 10
+							size: 5
+
+						});
+						
+						$('table thead td input[disabled]').css("display", "none");
 			}
 			
 			//Tooltip para los botones de las acciones de la tabla de documentos
@@ -121,34 +194,14 @@ $(document).ready(
 			   $('#x').hide("slow");
 			   $("#x").delay(300).queue(function(){					
 					var id = ($('#x').find("#delete input").val()).split('_');
-					$(this).remove();
-					jsonObj['rows'] = $.grep(jsonObj['rows'], function(e){ return e.id !== id[0]}); //Devuelve el array sin el elemento que tiene el id que se le pasa					
-					var temp = jsonObj['rows'].slice(0); //Copia por valor del array desde la posicion 0
-					var totalPages = Math.ceil(temp.length / groupBy); //La funcion ceil redondea el resultado
-					var currentPage;					
+					$(this).remove();	
 					
-					if(temp.length != 0){
-						if($('#paginator ul li.active a').text() > totalPages){						
-							currentPage = ($('#paginator ul li.active a').text()) - 1;
-						}
-						else{
-							currentPage = $('#paginator ul li.active a').text();
-						}
-						
-						 options = {				                
-					                totalPages: totalPages,
-					            };
-
-					     $('#paginator').bootstrapPaginator(options);
-					     $('#paginator').bootstrapPaginator("show", currentPage);
-					     fullTable(currentPage, groupBy, temp);  
-					}				
+					$('table').trigger('update');				
 				     
 					$("#modal-confirmation-delete").modal('hide');
 					
 					if(jsonObj['rows'].length == 0){
-						 $("#list-source-documents").fadeOut(100);
-						 $('#paginator').fadeOut(100);
+						 $("#list-source-documents").fadeOut(100);						
 						 setTimeout(function() {$("#alert-empty-list-document").show(); }, 1000);
 						 if(url == 'analitics'){
 							if(idDocument != ''){
@@ -158,7 +211,6 @@ $(document).ready(
 							 }
 						 }							 
 					}
-					
 				});
 			});
 			
@@ -166,5 +218,8 @@ $(document).ready(
 			$('#modal-confirmation-delete').live('hide', function(e) { //al ocultarse el modal				
 				$('#x').removeAttr("id");		
 			});
+			
+			
+			
 			
 });

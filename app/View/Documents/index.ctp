@@ -1,9 +1,15 @@
 <?php 
+echo $this->Html->css('tablesorter/theme.bootstrap.css', FALSE);
+echo $this->Html->css('tablesorter/addons/pager/jquery.tablesorter.pager.css', FALSE);
+echo $this->Html->script('tablesorter/jquery.tablesorter.js', FALSE);
+echo $this->Html->script('tablesorter/jquery.tablesorter.widgets.min.js', FALSE);
+echo $this->Html->script('tablesorter/widgets/widget-columnSelector.js', FALSE);
+echo $this->Html->script('tablesorter/addons/pager/jquery.tablesorter.pager.min.js', FALSE);
 echo $this->Html->script('paginate', FALSE);
 
 echo $this->Html->breadcrumb(array(
-		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
-		__('Documentos')
+					$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
+					__('Documentos')
 	), array('class' => 'breadcrumb row-fluid')); ?>
 
 <?php echo $this->Session->flash(); ?>
@@ -38,9 +44,23 @@ echo $this->Html->breadcrumb(array(
 					<?php echo __('Documentos'); ?>
 				</legend>
 
+				<div class="accordion" id="accordion-filter">	
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-filter" href="#collapseOne">
+								Filtros de columnas
+							</a>
+						</div>
+						<div id="collapseOne" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div id="columns"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+								
 				<table id='list-source-documents'
-					class="table table-striped table-bordered table-hover inset-type"
-					style="display: none">
+					class="tablesorter" style="display: none">
 					<thead>
 						<tr>
 							<th><?php echo utf8_encode(__('Id')); ?></th>
@@ -50,46 +70,67 @@ echo $this->Html->breadcrumb(array(
 							<th style="width: 0px;"><?php echo __('Acciones'); ?></th>
 						</tr>
 					</thead>
+					<tfoot>
+						<tr>
+							<th class="pager form-horizontal" colspan="7">
+								<button class="btn first" type="button">
+									<i class="icon-step-backward"></i>
+								</button>
+								<button class="btn prev" type="button">
+									<i class="icon-arrow-left"></i>
+								</button> <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+								<button class="btn next" type="button">
+									<i class="icon-arrow-right"></i>
+								</button>
+								<button class="btn last" type="button">
+									<i class="icon-step-forward"></i>
+								</button> <select title="Select page size"
+								class="pagesize input-mini">
+									<option value="3" selected="selected">3</option>
+									<option value="5">5</option>
+									<option value="10">10</option>
+									<option value="20">20</option>
+									<option value="30">30</option>
+									<option value="40">40</option>
+							</select> <select title="Select page number"
+								class="pagenum input-mini"></select>
+							</th>
+						</tr>
+					</tfoot>
 					<tbody>
-					</tbody>					
+					</tbody>
 				</table>
-				
+
 				<!-- Actions -->
-					<div style="display: none" id='actions'>					
-							<div class="btn-toolbar">
-								<div class="btn-group">
-									<a href="/lildbi/documents/view/" class="btn"
-										data-title="<?php echo __('Ver'); ?>" data-placement="top"
-										data-toggle="tooltip"><i
-										class="icon-eye-open"></i> </a>
-									<a href="/lildbi/documents/edit/"
-										class="btn" data-title="<?php echo __('Editar'); ?>"
-										data-placement="top" data-toggle="tooltip"><i
-										class="icon-pencil"></i> </a>
-									<a href="#" class="btn"
-										data-title="<?php echo __('Eliminar'); ?>"
-										data-placement="top" data-toggle="tooltip" id="delete"><i
-										class="icon-remove"></i><input type="hidden" value=""> </a>
-									<a href="/lildbi/analitics/add/" class="btn"
-										data-title="<?php echo utf8_encode(__('Adicionar analítica')); ?>"
-										data-placement="top" data-toggle="tooltip"><i
-										class="icon-plus"></i> </a>
-									<a href="#"
-										class="btn" id="total-analitics"
-										data-title="<?php echo utf8_encode(__('Ver analíticas')); ?>"
-										data-placement="top" data-toggle="tooltip"><span
-										class="badge">0</span> </a>
-								</div>
-							</div>						
+				<div style="display: none" id='actions'>
+					<div class="btn-toolbar">
+						<div class="btn-group">
+							<a href="/lildbi/documents/view/" class="btn"
+								data-title="<?php echo __('Ver'); ?>" data-placement="top"
+								data-toggle="tooltip"><i class="icon-eye-open"></i> </a> <a
+								href="/lildbi/documents/edit/" class="btn"
+								data-title="<?php echo __('Editar'); ?>" data-placement="top"
+								data-toggle="tooltip"><i class="icon-pencil"></i> </a> <a
+								href="#" class="btn" data-title="<?php echo __('Eliminar'); ?>"
+								data-placement="top" data-toggle="tooltip" id="delete"><i
+								class="icon-remove"></i><input type="hidden" value=""> </a> <a
+								href="/lildbi/analitics/add/" class="btn"
+								data-title="<?php echo utf8_encode(__('Adicionar analítica')); ?>"
+								data-placement="top" data-toggle="tooltip"><i class="icon-plus"></i>
+							</a> <a href="#" class="btn" id="total-analitics"
+								data-title="<?php echo utf8_encode(__('Ver analíticas')); ?>"
+								data-placement="top" data-toggle="tooltip"><span class="badge">0</span>
+							</a>
+						</div>
 					</div>
+				</div>
 
 				<div class="alert alert-error fade in"
-					id="alert-empty-list-document" style="display: none;">					
+					id="alert-empty-list-document" style="display: none;">
 					<?php echo utf8_encode(__('No tiene documentos en su base de datos')); ?>
 				</div>
 
-				<div id="loading" style="text-align: center;"></div>
-				<div id="paginator" style="display: none"></div>
+				<div id="loading" style="text-align: center;"></div>				
 
 
 				<!-- Modal Delete-->
