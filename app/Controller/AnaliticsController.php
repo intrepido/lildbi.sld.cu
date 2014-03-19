@@ -65,7 +65,7 @@ class AnaliticsController extends AppController {
 	function view($id = null) {
 		$document = $this->Document->curlGet($this->Auth->user('username').'/'.$id);
 		$this->set('type', $this->DocumentDatas->getTypeDocument($document));
-		$this->set('analitics', $this->DocumentDatas->getNameFieldsDocument($document));
+		$this->set('analitics', $this->DocumentDatas->setNameFieldsDocument($document));
 		$result = explode('index/', $this->referer());
 		if(isset($result[1])){
 			$this->Session->write('idDocumentForUrl', $result[1]);	
@@ -99,7 +99,7 @@ class AnaliticsController extends AppController {
 		else{
 			$document = $this->Document->curlGet($this->Auth->user('username').'/'.$id);
 			$document = $this->DocumentDatas->prepareDataForForm($document);
-			$this->Session->write('document', $this->DocumentDatas->getNameFieldsDocument($document));
+			$this->Session->write('document', $this->DocumentDatas->setNameFieldsDocument($document));
 			$this->Session->write('idDocument', $document['_id']);
 			$this->Session->write('initialTimeCreation', CakeTime::format('H:i:s', time()));
 			$this->set('urlTypeNameDocument', $this->params['typeName']);
@@ -151,11 +151,11 @@ class AnaliticsController extends AppController {
 			$idDocument = $tempArray[1];
 			$document = $this->Document->curlGet($this->Auth->user('username').'/_design/functions/_view/getDocumentById?key="' . $idDocument . '"');
 			$document = $this->DocumentDatas->prepareDataForForm($document['rows'][0]['value']);
-			$this->Session->write('document', $this->DocumentDatas->getNameFieldsDocument($document));			
+			$this->Session->write('document', $this->DocumentDatas->setNameFieldsDocument($document));			
 			
 			$analitic = $this->DocumentDatas->prepareDataForForm($analitic);
 			$this->set('typeEditAnalitic', $this->request->params['typeName']);
-			$this->set('backValues', $this->DocumentDatas->getNameFieldsDocument($analitic));
+			$this->set('backValues', $this->DocumentDatas->setNameFieldsDocument($analitic));
 			
 			$result = explode('index/', $this->referer());
 			if(isset($result[1])){

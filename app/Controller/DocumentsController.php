@@ -38,9 +38,11 @@ class DocumentsController extends AppController {
 					$typeUrl = $this->DocumentDatas->convertTypeNameToUrlName($urlTypeNameDocument);
 					$value= array_merge(array('type' => $typeUrl), $value);
 					$db['rows'][$key] = array_merge(array('totalAnalitics' => sizeof($totalAnalitics['rows'])), $value);
-					$db['rows'][$key]['value'] = $this->DocumentDatas->getNameFieldsDocument($db['rows'][$key]['value']);
+					$db['rows'][$key]['value'] = $this->DocumentDatas->setNameFieldsDocument($db['rows'][$key]['value']);
 					$this->DocumentDatas->orderFieldsDocument(&$db['rows'][$key]['value']);
 				}
+								
+				$db = array_merge(array('nameFields' => $this->DocumentDatas->getNameFieldsDocument()), $db);
 				return json_encode($db);
 			}
 			else{
@@ -53,7 +55,7 @@ class DocumentsController extends AppController {
 	function view($id = null) { //FUNCIONA el leer un documento
 		$document = $this->Document->curlGet($this->Auth->user('username').'/'.$id);
 		$this->set('type', $this->DocumentDatas->getTypeDocument($document));
-		$this->set('document', $this->DocumentDatas->getNameFieldsDocument($document));
+		$this->set('document', $this->DocumentDatas->setNameFieldsDocument($document));
 		$result = explode('index/', $this->referer());
 		if(isset($result[1])){
 			$this->Session->write('idDocumentForUrl', $result[1]);				
@@ -143,7 +145,7 @@ class DocumentsController extends AppController {
 			
 			$document = $this->DocumentDatas->prepareDataForForm($document);			
 			$this->set('typeEditDocument', $this->request->params['typeName']);
-			$this->set('backValues', $this->DocumentDatas->getNameFieldsDocument($document));
+			$this->set('backValues', $this->DocumentDatas->setNameFieldsDocument($document));
 		}
 	}
 
