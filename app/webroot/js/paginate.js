@@ -24,7 +24,7 @@ $(document).ready(
 					$('#loading').fadeOut(100);
 					if(data){ 						
 						jsonObj = $.parseJSON(data);							
-						fullTable(jsonObj['rows']);
+						fullTable(jsonObj['rows'], jsonObj['nameFields']);
 						tablestoreOptions();
 						$('#list-source-documents-sticky').show();						
 					}	
@@ -42,11 +42,17 @@ $(document).ready(
 			
 			
 			//llena la tabla con los documentos paginados
-			function fullTable(array){				   
+			function fullTable(array, arrayHeaders){				   
 					 
 					 $('#list-source-documents tbody').empty();
-					  
-					 $.each(array, function( index, value ) {	
+					 					 
+					 $.each(arrayHeaders, function( index, value ) {	//Se llena el header de la tabla					 
+						 $('#list-source-documents thead tr').append("<th>" + value + "</th>");							 
+					 });				 
+					 
+					 $('#list-source-documents thead tr').find("th:nth-child(1)").insertAfter( $('#list-source-documents thead tr th:last') );;
+					 
+					 $.each(array, function( index, value ) { //Recorro cada documento
 						 
 						 var actions = $('#actions').clone();
 						 var ref;
@@ -66,29 +72,21 @@ $(document).ready(
 							 actions.find("a:nth-child(5) span").addClass('badge-info');
 							 actions.find("a:nth-child(5) span").text(value['totalAnalitics']);							
 							 actions.find("a:nth-child(5)").attr('href', '/lildbi/analitics/index/' + value['id']);
-						 }						
+						 }							
+						 						
+						 $('#list-source-documents tbody').append("<tr></tr>");
 						 
-						/* var temp = false;
-						 $('#list-source-documents tbody').append( "<tr>");
-						 $.each(value['value'], function( index, fieldValue ) {
-							 $('#list-source-documents thead tr th').each(function(){
-								 if($(this).text().indexOf($.map(fieldValue, function(val, key){return key;})) > -1){ //Si no existe un th con ese nombre entonces lo agrego
-									
-								 }
-							 });							 							 
-							 $('#list-source-documents tbody').append("<td>" + $.map(fieldValue, function(val, key){return val;}) + "</td>");
+						 $.each(arrayHeaders, function( index, value ) {	//Se llena el tr con td	vacios			 
+							 $('#list-source-documents tbody tr:last').append( "<td id='" + index + "'></td>");								 
 						 });
-						 $('#list-source-documents tbody').append( "</tr>");*/
 						 
-						 $('#list-source-documents tbody').append( "<tr>" +
-						   		"<td>" + $.map(value['value']['v2'], function(val, key){return val;}) + "</td>" +
-						   		"<td>" + $.map(value['value']['v30'], function(val, key){return val;})  + "</td>" +
-						   		"<td>" + $.map(value['value']['v92'], function(val, key){return val;})  + "</td>" +
-						   		"<td>" + $.map(value['value']['v64'], function(val, key){return val;})  + "</td>" +	
-						   		"<td class='actions'></td></tr>"
-						   	);
+						 $.each(value['value'], function( index, fieldValue ) {		//Se llenan los td 					
+							 if($('#list-source-documents tbody tr:last').find("td[id='" + index + "']").length > 0){ 
+								 $('#list-source-documents tbody tr:last').find("td[id='" + index + "']").append($.map(fieldValue, function(val, key){return val;}));
+							 }
+						 });	
 						 
-						 $('#list-source-documents tbody tr:last td:last').append(actions.children());
+						 $('#list-source-documents tbody tr:last').append("<td>" + actions.children() + "</td>");
 					 });	
 
 					$("#list-source-documents").delay(800).fadeIn();									

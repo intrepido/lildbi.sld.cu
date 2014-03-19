@@ -62,11 +62,7 @@ echo $this->Html->breadcrumb(array(
 				<table id='list-source-documents'
 					class="tablesorter" style="display: none">
 					<thead>
-						<tr>
-							<th><?php echo utf8_encode(__('Id')); ?></th>
-							<th><?php echo utf8_encode(__('Título')); ?></th>
-							<th><?php echo utf8_encode(__('Documentalista')); ?></th>
-							<th><?php echo utf8_encode(__('Fecha de Publicación')); ?></th>
+						<tr>							
 							<th style="width: 0px;"><?php echo __('Acciones'); ?></th>
 						</tr>
 					</thead>
