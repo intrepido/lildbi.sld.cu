@@ -57,7 +57,7 @@ $(document).ready(
 						 ref = actions.find("a:nth-child(2)").attr('href');
 						 actions.find("a:nth-child(2)").attr('href', ref + value['type'] + "/" + value['id']);
 						 
-						 actions.find("a:nth-child(3) input").val(value['id'] + "_" + value['value']['_rev']);						
+						 actions.find("a:nth-child(3) input").val(value['id'] + "_" + value['key'][1]);						
 						 
 						 ref = actions.find("a:nth-child(4)").attr('href');
 						 actions.find("a:nth-child(4)").attr('href', ref + value['type'] + "/" + value['id']);
@@ -67,13 +67,25 @@ $(document).ready(
 							 actions.find("a:nth-child(5) span").text(value['totalAnalitics']);							
 							 actions.find("a:nth-child(5)").attr('href', '/lildbi/analitics/index/' + value['id']);
 						 }						
-						 												 
+						 
+						/* var temp = false;
+						 $('#list-source-documents tbody').append( "<tr>");
+						 $.each(value['value'], function( index, fieldValue ) {
+							 $('#list-source-documents thead tr th').each(function(){
+								 if($(this).text().indexOf($.map(fieldValue, function(val, key){return key;})) > -1){ //Si no existe un th con ese nombre entonces lo agrego
+									
+								 }
+							 });							 							 
+							 $('#list-source-documents tbody').append("<td>" + $.map(fieldValue, function(val, key){return val;}) + "</td>");
+						 });
+						 $('#list-source-documents tbody').append( "</tr>");*/
+						 
 						 $('#list-source-documents tbody').append( "<tr>" +
-						   		"<td>" + value['value']['v2'] + "</td>" +
-						   		"<td>" + value['value']['v30']  + "</td>" +
-						   		"<td>" + value['value']['v92']  + "</td>" +
-						   		"<td>" + value['value']['v64']  + "</td>" +	
-						   		"<td class='actions'></td>"
+						   		"<td>" + $.map(value['value']['v2'], function(val, key){return val;}) + "</td>" +
+						   		"<td>" + $.map(value['value']['v30'], function(val, key){return val;})  + "</td>" +
+						   		"<td>" + $.map(value['value']['v92'], function(val, key){return val;})  + "</td>" +
+						   		"<td>" + $.map(value['value']['v64'], function(val, key){return val;})  + "</td>" +	
+						   		"<td class='actions'></td></tr>"
 						   	);
 						 
 						 $('#list-source-documents tbody tr:last td:last').append(actions.children());

@@ -37,7 +37,9 @@ class DocumentsController extends AppController {
 					$urlTypeNameDocument = $this->DocumentDatas->getTypeDocument($value['value']);
 					$typeUrl = $this->DocumentDatas->convertTypeNameToUrlName($urlTypeNameDocument);
 					$value= array_merge(array('type' => $typeUrl), $value);
-					$db['rows'][$key] = array_merge(array('totalAnalitics' => sizeof($totalAnalitics['rows'])), $value);					
+					$db['rows'][$key] = array_merge(array('totalAnalitics' => sizeof($totalAnalitics['rows'])), $value);
+					$db['rows'][$key]['value'] = $this->DocumentDatas->getNameFieldsDocument($db['rows'][$key]['value']);
+					$this->DocumentDatas->orderFieldsDocument(&$db['rows'][$key]['value']);
 				}
 				return json_encode($db);
 			}
