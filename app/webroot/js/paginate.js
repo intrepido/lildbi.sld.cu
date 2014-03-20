@@ -23,9 +23,10 @@ $(document).ready(
 				.done(function(data) {						
 					$('#loading').fadeOut(100);
 					if(data){ 						
-						jsonObj = $.parseJSON(data);							
+						jsonObj = $.parseJSON(data);						
 						fullTable(jsonObj['rows'], jsonObj['nameFields']);
-						tablestoreOptions();
+						tablestoreOptions(jsonObj['nameFields']);
+						
 						$('#list-source-documents-sticky').show();						
 					}	
 					else{	
@@ -46,8 +47,13 @@ $(document).ready(
 					 
 					 $('#list-source-documents tbody').empty();
 					 					 
-					 $.each(arrayHeaders, function( index, value ) {	//Se llena el header de la tabla					 
-						 $('#list-source-documents thead tr').append("<th>" + value + "</th>");							 
+					 $.each(arrayHeaders, function( index, value ) {	//Se llena el header de la tabla	
+						 var mostImportantFieldDocument = Array("v1", "v2", "v18", "v20", "v30", "v91");
+						 if($.inArray(index, mostImportantFieldDocument) > -1){
+							 $('#list-source-documents thead tr').append("<th data-priority='critical'>" + value + "</th>");									 
+						 }else{							 
+							 $('#list-source-documents thead tr').append("<th data-priority='4' class='columnSelector-false'>" + value + "</th>");
+						 }						 
 					 });				 
 					 
 					 $('#list-source-documents thead tr').find("th:nth-child(1)").insertAfter( $('#list-source-documents thead tr th:last') );;
@@ -86,21 +92,46 @@ $(document).ready(
 							 }
 						 });	
 						 
-						 $('#list-source-documents tbody tr:last').append("<td>" + actions.children() + "</td>");
+						 $('#list-source-documents tbody tr:last').append("<td></td>");
+						 $('#list-source-documents tbody tr:last td:last').append(actions.children());
 					 });	
 
 					$("#list-source-documents").delay(800).fadeIn();									
 			}			
 			
 			
-			function tablestoreOptions(){
+			function tablestoreOptions(arrayHeaders){				
+				
 						/*** Bootstrap collapse ***/					
 					
 						$('#collapseOne').collapse({
 							toggle: false
 						}).on('shown.bs.collapse', function () {
-							$.tablesorter.columnSelector.attachTo( $('.tablesorter'), '#columns');
+							$.tablesorter.columnSelector.attachTo( $('.tablesorter'), '#columns');							
 						});
+						
+						
+						/***** Disable header actions ****/
+						
+						var dataHeader = {};
+						dataHeader[$('#list-source-documents thead tr th:last').index()] = {sorter: false, filter: false};
+						
+						
+						/***** Disable colums ****/
+						
+						/*var dataColumns = {};	
+						var cont=0;
+						$.each(arrayHeaders, function( index, value ) {				 
+							 if(index != ("v2" || "v18" || "v20" || "v30" || "v91")){
+								 dataColumns[cont] = "false";								 
+							 }			
+							 cont++;
+						 });*/
+						
+						
+						//alert(inner2.getSource());
+						//inner2[$('.disableSorter').index()] = 'disable';
+						
 					
 						/*****  Table Sorter ******/
 						
@@ -133,9 +164,7 @@ $(document).ready(
 							headerTemplate : '{content} {icon}', // new in v2.7. Needed to add
 																	// the bootstrap icon!
 																	
-							headers: { 
-								4: {sorter: false, filter: false}								
-							}, 
+							headers: dataHeader, 
 
 							// widget code contained in the jquery.tablesorter.widgets.js file
 							// use the zebra stripe widget if you plan on hiding any rows (filter
@@ -156,7 +185,12 @@ $(document).ready(
 							// this is no longer required, if theme is set
 							// ,uitheme : "bootstrap"
 							
-								stickyHeaders_offset : 75.1
+								//columnSelector_columns : dataColumns,
+								
+								columnSelector_saveColumns: false,
+								
+								stickyHeaders_offset : 75.1								
+								
 
 							}
 						}).tablesorterPager({
