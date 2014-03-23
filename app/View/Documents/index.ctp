@@ -1,6 +1,7 @@
 <?php 
-echo $this->Html->css('tablesorter/theme.bootstrap.css', FALSE);
+
 echo $this->Html->css('tablesorter/addons/pager/jquery.tablesorter.pager.css', FALSE);
+echo $this->Html->css('tablesorter/theme.bootstrap.css', FALSE);
 echo $this->Html->script('tablesorter/jquery.tablesorter.js', FALSE);
 echo $this->Html->script('tablesorter/jquery.tablesorter.widgets.min.js', FALSE);
 echo $this->Html->script('tablesorter/widgets/widget-columnSelector.js', FALSE);
@@ -8,9 +9,10 @@ echo $this->Html->script('tablesorter/addons/pager/jquery.tablesorter.pager.min.
 echo $this->Html->script('paginate', FALSE);
 
 echo $this->Html->breadcrumb(array(
-					$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
-					__('Documentos')
+		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
+		__('Documentos')
 	), array('class' => 'breadcrumb row-fluid')); ?>
+	
 
 <?php echo $this->Session->flash(); ?>
 <div class="container-document">
@@ -44,31 +46,51 @@ echo $this->Html->breadcrumb(array(
 					<?php echo __('Documentos'); ?>
 				</legend>
 
-				<div class="accordion" id="accordion-filter">	
+				<div class="accordion show-element" id="accordion-filter" style="display: none">
 					<div class="accordion-group">
 						<div class="accordion-heading">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-filter" href="#collapseOne">
-								Filtros de columnas
-							</a>
+							<a class="accordion-toggle" data-toggle="collapse"
+								data-parent="#accordion-filter" href="#collapseOne"> Filtros de
+								columnas </a>
 						</div>
 						<div id="collapseOne" class="accordion-body collapse">
 							<div class="accordion-inner">
 								<div id="columns"></div>
+
+									<div id="myCarousel" class="carousel slide" data-interval="false">
+										<!-- Carousel items -->
+										<div class="carousel-inner">
+											
+										</div>
+										<!-- Carousel nav -->
+										<a class="carousel-control left" href="#myCarousel"
+											data-slide="prev">&lsaquo;</a> <a
+											class="carousel-control right" href="#myCarousel"
+											data-slide="next">&rsaquo;</a>
+									</div>
+
+								
 							</div>
 						</div>
 					</div>
 				</div>
-								
-				<table id='list-source-documents'
-					class="tablesorter" style="display: none">
-					<thead>
-						<tr>							
-							<th style="width: 0px;"><?php echo __('Acciones'); ?></th>
-						</tr>
-					</thead>
-					<tfoot>
-						<tr>
-							<th class="pager form-horizontal" colspan="7">
+				<div style="overflow: auto; padding-right: 13px; padding-left: 13px;">
+					<table id='list-source-documents' class="tablesorter show-element"
+						style="display: none">
+						<thead>
+							<tr>
+								<th style="width: 0px;"><?php echo __('Acciones'); ?></th>
+							</tr>
+						</thead>						
+						<tbody>
+						</tbody>
+					</table>					
+				</div>
+				<div style="padding-right: 13px; padding-left: 13px;">
+					<table class="table table-bordered show-element" style="display: none;">
+					  <thead>	
+					 	 <tr>
+							<th class="pager form-horizontal" colspan="87">
 								<button class="btn first" type="button">
 									<i class="icon-step-backward"></i>
 								</button>
@@ -80,22 +102,23 @@ echo $this->Html->breadcrumb(array(
 								</button>
 								<button class="btn last" type="button">
 									<i class="icon-step-forward"></i>
-								</button> <select title="Select page size"
-								class="pagesize input-mini">
+								</button> 
+								<select title="Select page size" class="pagesize input-mini">
 									<option value="3" selected="selected">3</option>
 									<option value="5">5</option>
 									<option value="10">10</option>
 									<option value="20">20</option>
 									<option value="30">30</option>
 									<option value="40">40</option>
-							</select> <select title="Select page number"
-								class="pagenum input-mini"></select>
+								</select> 
+								<select title="Select page number" class="pagenum input-mini">
+								</select>
 							</th>
-						</tr>
-					</tfoot>
-					<tbody>
-					</tbody>
-				</table>
+						</tr>						
+					  </thead>						
+					</table>
+				</div>
+				
 
 				<!-- Actions -->
 				<div style="display: none" id='actions'>
@@ -126,7 +149,7 @@ echo $this->Html->breadcrumb(array(
 					<?php echo utf8_encode(__('No tiene documentos en su base de datos')); ?>
 				</div>
 
-				<div id="loading" style="text-align: center;"></div>				
+				<div id="loading" style="text-align: center;"></div>
 
 
 				<!-- Modal Delete-->
