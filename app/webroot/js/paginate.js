@@ -295,8 +295,65 @@ $(document).ready(
 						colSel.$container.find('input[data-column="' + indx + '"]')
 							.prop('checked', this.checked)
 							.trigger('change');
+						
+						if(indx=="auto"){
+							var slider = $('#columnCarousel').clone();
+							var temp = true;
+							var cont=0;
+							$('#columns').find("label").each(function(){					
+								if(cont==5){
+									cont = 0;
+								}					
+								if(cont<5){
+									if(cont==0){
+										if(temp){
+											slider.find('.carousel-inner').append("<div class='item active'></div>");
+											temp=false;
+										}else{
+											slider.find('.carousel-inner').append("<div class='item'></div>");
+										}
+									}	
+									slider.find('.carousel-inner div:last').append($(this));											
+								}					
+								cont++;																			
+							});
+												
+							slider.appendTo('.tablesorter-column-selector');
+							slider.attr('id', 'columnCarouselActive');
+							slider.find('.carousel-control').attr('href', '#columnCarouselActive');
+							slider.show();
+						}
+						
 					});
+					
+					var slider = $('#columnCarousel').clone();
+					var temp = true;
+					var cont=0;
+					$('#columns').find("label").each(function(){					
+						if(cont==5){
+							cont = 0;
+						}					
+						if(cont<5){
+							if(cont==0){
+								if(temp){
+									slider.find('.carousel-inner').append("<div class='item active'></div>");
+									temp=false;
+								}else{
+									slider.find('.carousel-inner').append("<div class='item'></div>");
+								}
+							}	
+							slider.find('.carousel-inner div:last').append($(this));											
+						}					
+						cont++;																			
+					});
+										
+					slider.appendTo('.tablesorter-column-selector');
+					slider.attr('id', 'columnCarouselActive');
+					slider.find('.carousel-control').attr('href', '#columnCarouselActive');
+					slider.show();
 				}
+				
+				
 			
 			});	
 			

@@ -55,21 +55,19 @@ echo $this->Html->breadcrumb(array(
 						</div>
 						<div id="collapseOne" class="accordion-body collapse">
 							<div class="accordion-inner">
-								<div id="columns"></div>
-
-									<div id="myCarousel" class="carousel slide" data-interval="false">
+								<div id="columns">
+									<div id="columnCarousel" style="display: none" class="carousel slide" data-interval="false">
 										<!-- Carousel items -->
 										<div class="carousel-inner">
 											
 										</div>
 										<!-- Carousel nav -->
-										<a class="carousel-control left" href="#myCarousel"
+										<a class="carousel-control left" href="#columnCarousel"
 											data-slide="prev">&lsaquo;</a> <a
-											class="carousel-control right" href="#myCarousel"
+											class="carousel-control right" href="#columnCarousel"
 											data-slide="next">&rsaquo;</a>
 									</div>
-
-								
+								</div>
 							</div>
 						</div>
 					</div>
