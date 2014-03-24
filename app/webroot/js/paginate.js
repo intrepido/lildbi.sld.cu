@@ -281,13 +281,14 @@ $(document).ready(
 						$popup.append('<span class="tablesorter-column-selector"></span>');
 					}
 					colSel = $('.tablesorter')[0].config.selector;
-					//wo = c.widgetOptions;
+					
 					$popup.find('.tablesorter-column-selector')
 						.html( colSel.$container.html() )
 						.find('input').each(function(){
 							var indx = $(this).attr('data-column');
 							$(this).prop( 'checked', indx === 'auto' ? colSel.auto : colSel.states[indx] );
 						});
+					
 					colSel.$popup = $popup.on('change', 'input', function(){
 						// data input
 						indx = $(this).attr('data-column');
@@ -297,65 +298,42 @@ $(document).ready(
 							.trigger('change');
 						
 						if(indx=="auto"){
-							var slider = $('#columnCarousel').clone();
-							var temp = true;
-							var cont=0;
-							$('#columns').find("label").each(function(){					
-								if(cont==5){
-									cont = 0;
-								}					
-								if(cont<5){
-									if(cont==0){
-										if(temp){
-											slider.find('.carousel-inner').append("<div class='item active'></div>");
-											temp=false;
-										}else{
-											slider.find('.carousel-inner').append("<div class='item'></div>");
-										}
-									}	
-									slider.find('.carousel-inner div:last').append($(this));											
-								}					
-								cont++;																			
-							});
-												
-							slider.appendTo('.tablesorter-column-selector');
-							slider.attr('id', 'columnCarouselActive');
-							slider.find('.carousel-control').attr('href', '#columnCarouselActive');
-							slider.show();
+						   fullSliderColumns();
 						}
 						
 					});
 					
-					var slider = $('#columnCarousel').clone();
-					var temp = true;
-					var cont=0;
-					$('#columns').find("label").each(function(){					
-						if(cont==5){
-							cont = 0;
-						}					
-						if(cont<5){
-							if(cont==0){
-								if(temp){
-									slider.find('.carousel-inner').append("<div class='item active'></div>");
-									temp=false;
-								}else{
-									slider.find('.carousel-inner').append("<div class='item'></div>");
-								}
-							}	
-							slider.find('.carousel-inner div:last').append($(this));											
-						}					
-						cont++;																			
-					});
-										
-					slider.appendTo('.tablesorter-column-selector');
-					slider.attr('id', 'columnCarouselActive');
-					slider.find('.carousel-control').attr('href', '#columnCarouselActive');
-					slider.show();
+					fullSliderColumns();	
 				}
-				
-				
-			
 			});	
+			
+			function fullSliderColumns(){	
+				var slider = $('#columnCarousel').clone();
+				var temp = true;
+				var cont=0;
+				$('#columns').find("label").each(function(){					
+					if(cont==5){
+						cont = 0;
+					}					
+					if(cont<5){
+						if(cont==0){
+							if(temp){
+								slider.find('.carousel-inner').append("<div class='item active'></div>");
+								temp=false;
+							}else{
+								slider.find('.carousel-inner').append("<div class='item'></div>");
+							}
+						}	
+						slider.find('.carousel-inner div:last').append($(this));											
+					}					
+					cont++;																			
+				});
+									
+				slider.appendTo('.tablesorter-column-selector');
+				slider.attr('id', 'columnCarouselActive');
+				slider.find('.carousel-control').attr('href', '#columnCarouselActive');
+				slider.show();
+			}
 			
 			
 			//Tooltip para los botones de las acciones de la tabla de documentos

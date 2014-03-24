@@ -57,6 +57,12 @@ echo $this->Html->breadcrumb(array(
 							<div class="accordion-inner">
 								<div id="columns">
 									<div id="columnCarousel" style="display: none" class="carousel slide" data-interval="false">
+										<!-- Dot Indicators -->
+										<ol class="carousel-indicators">
+										    <li data-target="#columnCarousel" data-slide-to="0" class="active"></li>
+										    <li data-target="#columnCarousel" data-slide-to="1"></li>
+										    <li data-target="#columnCarousel" data-slide-to="2"></li>
+									    </ol>
 										<!-- Carousel items -->
 										<div class="carousel-inner">
 											
