@@ -2,17 +2,20 @@
 
 echo $this->Html->css('tablesorter/addons/pager/jquery.tablesorter.pager.css', FALSE);
 echo $this->Html->css('tablesorter/theme.bootstrap.css', FALSE);
+echo $this->Html->css('bxslider/jquery.bxslider.css', FALSE);
 echo $this->Html->script('tablesorter/jquery.tablesorter.js', FALSE);
 echo $this->Html->script('tablesorter/jquery.tablesorter.widgets.min.js', FALSE);
 echo $this->Html->script('tablesorter/widgets/widget-columnSelector.js', FALSE);
 echo $this->Html->script('tablesorter/addons/pager/jquery.tablesorter.pager.min.js', FALSE);
+echo $this->Html->script('bxslider/jquery.bxslider.min.js', FALSE);
 echo $this->Html->script('paginate', FALSE);
 
+
 echo $this->Html->breadcrumb(array(
-		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
-		__('Documentos')
+					$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
+					__('Documentos')
 	), array('class' => 'breadcrumb row-fluid')); ?>
-	
+
 
 <?php echo $this->Session->flash(); ?>
 <div class="container-document">
@@ -45,84 +48,75 @@ echo $this->Html->breadcrumb(array(
 				<legend>
 					<?php echo __('Documentos'); ?>
 				</legend>
-
-				<div class="accordion show-element" id="accordion-filter" style="display: none">
+				<div class="accordion show-element" id="accordion-filter"
+					style="display: none">
 					<div class="accordion-group">
 						<div class="accordion-heading">
 							<a class="accordion-toggle" data-toggle="collapse"
-								data-parent="#accordion-filter" href="#collapseOne"> Filtros de
-								columnas </a>
+								data-parent="#accordion-filter" href="#collapseOne"> <?php echo __('Filtrar por columnas'); ?>
+							</a>
 						</div>
 						<div id="collapseOne" class="accordion-body collapse">
 							<div class="accordion-inner">
 								<div id="columns">
-									<div id="columnCarousel" style="display: none" class="carousel slide" data-interval="false">
-										<!-- Dot Indicators -->
-										<ol class="carousel-indicators">
-										    <li data-target="#columnCarousel" data-slide-to="0" class="active"></li>
-										    <li data-target="#columnCarousel" data-slide-to="1"></li>
-										    <li data-target="#columnCarousel" data-slide-to="2"></li>
-									    </ol>
-										<!-- Carousel items -->
-										<div class="carousel-inner">
-											
-										</div>
-										<!-- Carousel nav -->
-										<a class="carousel-control left" href="#columnCarousel"
-											data-slide="prev">&lsaquo;</a> <a
-											class="carousel-control right" href="#columnCarousel"
-											data-slide="next">&rsaquo;</a>
-									</div>
+									<div id='columns-default' style="margin-top: 10px;"></div>
+									<hr style="margin-top: 0px; margin-bottom: 10px;"></hr>
+									<!-- Slider -->
+									<ul class="bxslider" style="display: none">
+									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div style="overflow: auto; padding-right: 13px; padding-left: 13px;">
+				<div
+					style="overflow: auto; padding-right: 13px; padding-left: 13px;">
 					<table id='list-source-documents' class="tablesorter show-element"
 						style="display: none">
 						<thead>
 							<tr>
-								<th style="width: 0px;"><?php echo __('Acciones'); ?></th>
+								<th style="width: 0px;" data-priority='critical'><?php echo __('Acciones'); ?>
+								</th>
 							</tr>
-						</thead>						
+						</thead>
 						<tbody>
 						</tbody>
-					</table>					
-				</div>
-				<div style="padding-right: 13px; padding-left: 13px;">
-					<table class="table table-bordered show-element" style="display: none;">
-					  <thead>	
-					 	 <tr>
-							<th class="pager form-horizontal" colspan="87">
-								<button class="btn first" type="button">
-									<i class="icon-step-backward"></i>
-								</button>
-								<button class="btn prev" type="button">
-									<i class="icon-arrow-left"></i>
-								</button> <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
-								<button class="btn next" type="button">
-									<i class="icon-arrow-right"></i>
-								</button>
-								<button class="btn last" type="button">
-									<i class="icon-step-forward"></i>
-								</button> 
-								<select title="Select page size" class="pagesize input-mini">
-									<option value="3" selected="selected">3</option>
-									<option value="5">5</option>
-									<option value="10">10</option>
-									<option value="20">20</option>
-									<option value="30">30</option>
-									<option value="40">40</option>
-								</select> 
-								<select title="Select page number" class="pagenum input-mini">
-								</select>
-							</th>
-						</tr>						
-					  </thead>						
 					</table>
 				</div>
-				
+				<div style="padding-right: 13px; padding-left: 13px;">
+					<table class="table table-bordered show-element"
+						style="display: none;">
+						<thead>
+							<tr>
+								<th class="pager form-horizontal" colspan="87">
+									<button class="btn first" type="button">
+										<i class="icon-step-backward"></i>
+									</button>
+									<button class="btn prev" type="button">
+										<i class="icon-arrow-left"></i>
+									</button> <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+									<button class="btn next" type="button">
+										<i class="icon-arrow-right"></i>
+									</button>
+									<button class="btn last" type="button">
+										<i class="icon-step-forward"></i>
+									</button> <select title="Select page size"
+									class="pagesize input-mini">
+										<option value="3" selected="selected">3</option>
+										<option value="5">5</option>
+										<option value="10">10</option>
+										<option value="20">20</option>
+										<option value="30">30</option>
+										<option value="40">40</option>
+								</select> <select title="Select page number"
+									class="pagenum input-mini">
+								</select>
+								</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+
 
 				<!-- Actions -->
 				<div style="display: none" id='actions'>

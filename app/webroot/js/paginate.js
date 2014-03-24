@@ -137,9 +137,8 @@ $(document).ready(
 							 }			
 							 cont++;
 						 });*/
+												
 						
-						
-						//alert(inner2.getSource());
 						//inner2[$('.disableSorter').index()] = 'disable';
 						
 					
@@ -195,7 +194,7 @@ $(document).ready(
 							// this is no longer required, if theme is set
 							// ,uitheme : "bootstrap"
 							
-								//columnSelector_columns : dataColumns,
+								//columnSelector_columns : dataColumns,	
 								
 								columnSelector_saveColumns: false,
 								
@@ -235,44 +234,10 @@ $(document).ready(
 			}
 			
 			
-			// Bootstrap collaps
+			// Despliega el slide con las columnas a filtrar
 			$('#collapseOne').collapse({
 				toggle: false
 			}).on('shown.bs.collapse', function () {
-				/*$.tablesorter.columnSelector.attachTo( $('.tablesorter'), '#columns');	
-				var columnsFilter = $('#columns span').children().clone();
-				columnsFilter.each(function( index ) {
-					$('.carousel-inner').append("<div class='item'>" + $(this).html() + "</div>");
-			    });
-*/				
-				/*
-				var cont=0;
-				$('.tablesorter')[0].config.selector.$container.find("label").each(function(){					
-					if(cont==5){
-						cont = 0;
-					}					
-					if(cont<5){
-						if(cont==0){
-							$('.carousel-inner').append("<div class='item'></div>");
-						}	
-						$(this).appendTo('.carousel-inner div:last');											
-					}					
-					cont++;																			
-				});
-				
-				 $('div .item label').find('input').each(function(){
-					var indx = $(this).attr('data-column');
-					$(this).prop( 'checked', indx === 'auto' ? $('.tablesorter')[0].config.selector.auto : $('.tablesorter')[0].config.selector.states[indx] );
-				});
-				
-				var contents = $('div .item');
-				$('.tablesorter')[0].config.selector.contents = contents.on('change', 'input', function(){
-					// data input
-					indx = $(this).attr('data-column');
-					// update original popup
-					$('.tablesorter')[0].config.selector.$container.find('input[data-column="' + indx + '"]').prop('checked', this.checked).trigger('change');
-				});
-				*/
 			
 				var colSel, indx, $popup = $('#columns');
 				if ($popup.length && $('.tablesorter')[0].config) {
@@ -298,41 +263,66 @@ $(document).ready(
 							.trigger('change');
 						
 						if(indx=="auto"){
-						   fullSliderColumns();
+						   fullSliderColumns();  //LLena el slide con las columnas a filtrar 
 						}
 						
 					});
 					
-					fullSliderColumns();	
+					fullSliderColumns();	//LLena el slide con las columnas a filtrar 
 				}
-			});	
+			});				
+			 			
 			
 			function fullSliderColumns(){	
-				var slider = $('#columnCarousel').clone();
-				var temp = true;
+				
+				if($('#columns-default').children().length > 0){
+					$('#columns-default').empty();					
+				}		
+				$('.tablesorter-column-selector').find("label").has("input[data-column='auto']").appendTo($('#columns-default'));
+				
+				var slider = $('.bxslider').clone();			
 				var cont=0;
-				$('#columns').find("label").each(function(){					
+				$('.tablesorter-column-selector').find("label").each(function(){					
 					if(cont==5){
 						cont = 0;
 					}					
 					if(cont<5){
 						if(cont==0){
-							if(temp){
-								slider.find('.carousel-inner').append("<div class='item active'></div>");
-								temp=false;
-							}else{
-								slider.find('.carousel-inner').append("<div class='item'></div>");
-							}
+						  slider.append("<li></li>");
 						}	
-						slider.find('.carousel-inner div:last').append($(this));											
+						slider.find('li:last').append($(this));											
 					}					
 					cont++;																			
 				});
 									
 				slider.appendTo('.tablesorter-column-selector');
-				slider.attr('id', 'columnCarouselActive');
-				slider.find('.carousel-control').attr('href', '#columnCarouselActive');
-				slider.show();
+				slider.addClass('active');				
+				slider.show().bxSlider({
+					slideWidth: 6000 ,
+				    minSlides: 3,
+				    maxSlides: 3,
+				    moveSlides: 3,
+				    responsive: true,
+				    controls: false
+				});
+				
+				slider.find('label').addClass('checkbox');
+				$('#columns-default').find('label').addClass('checkbox');
+				
+				$('.bx-wrapper').css({
+					"margin-bottom": "40px",
+					"box-shadow":"0 0 1px #CCCCCC"
+				});
+				
+				$('.bx-viewport').css({
+					"padding-bottom": "30px",
+					"box-shadow":"0 0 1px #CCCCCC"
+				});
+				
+				slider.css({
+					"margin-left": "50px",
+					"margin-top": "20px"
+				});			
 			}
 			
 			
