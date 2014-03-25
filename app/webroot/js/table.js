@@ -351,8 +351,8 @@ $(document).ready(
 				     
 					$("#modal-confirmation-delete").modal('hide');
 					
-					if(jsonObj['rows'].length == 0){//Arreglar
-						 $("#list-source-documents").fadeOut(100);						
+					if($('#list-source-documents tbody').children().length == 0){//Arreglar						
+						 $(".show-element").fadeOut(100);						 
 						 setTimeout(function() {$("#alert-empty-list-document").show(); }, 1000);
 						 if(url == 'analitics'){
 							if(idDocument != ''){
