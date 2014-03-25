@@ -196,6 +196,8 @@ $(document).ready(
 							
 								//columnSelector_columns : dataColumns,	
 								
+								columnSelector_mediaqueryName: $('#columns-default').attr('title'),
+								
 								columnSelector_saveColumns: false,
 								
 								columnSelector_breakpoints: [ "1000px", "1100px", "1200px", "1300px", "1700px", "5000px" ],
@@ -279,7 +281,7 @@ $(document).ready(
 					$('#columns-default').empty();					
 				}		
 				$('.tablesorter-column-selector').find("label").has("input[data-column='auto']").appendTo($('#columns-default'));
-				
+								
 				var slider = $('.bxslider').clone();			
 				var cont=0;
 				$('.tablesorter-column-selector').find("label").each(function(){					
@@ -296,7 +298,7 @@ $(document).ready(
 				});
 									
 				slider.appendTo('.tablesorter-column-selector');
-				slider.addClass('active');				
+				
 				slider.show().bxSlider({
 					slideWidth: 6000 ,
 				    minSlides: 3,
@@ -305,7 +307,8 @@ $(document).ready(
 				    responsive: true,
 				    controls: false
 				});
-				
+								
+				slider.addClass('bxslider-active');
 				slider.find('label').addClass('checkbox');
 				$('#columns-default').find('label').addClass('checkbox');
 				
@@ -318,11 +321,6 @@ $(document).ready(
 					"padding-bottom": "30px",
 					"box-shadow":"0 0 1px #CCCCCC"
 				});
-				
-				slider.css({
-					"margin-left": "50px",
-					"margin-top": "20px"
-				});			
 			}
 			
 			

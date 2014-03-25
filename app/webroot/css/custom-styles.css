@@ -5,6 +5,16 @@ body {
 	background: url("../img/bg_grain_200x200.png") repeat scroll 0 0 #E9E9E9;
 }
 
+.bxslider-active{
+	margin-left: 50px;
+	margin-top: 20px;	
+}
+
+.bxslider-active label{
+	margin-right: 50px;	
+}
+
+
 a.link-decoration, a.link-decoration:hover{
     border-radius: 5px;
     margin-bottom: 2px;
