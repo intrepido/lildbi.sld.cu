@@ -1,5 +1,14 @@
 <?php 
-echo $this->Html->script('paginate', FALSE);
+
+echo $this->Html->css('tablesorter/addons/pager/jquery.tablesorter.pager.css', FALSE);
+echo $this->Html->css('tablesorter/theme.bootstrap.css', FALSE);
+echo $this->Html->css('bxslider/jquery.bxslider.css', FALSE);
+echo $this->Html->script('tablesorter/jquery.tablesorter.js', FALSE);
+echo $this->Html->script('tablesorter/jquery.tablesorter.widgets.min.js', FALSE);
+echo $this->Html->script('tablesorter/widgets/widget-columnSelector.js', FALSE);
+echo $this->Html->script('tablesorter/addons/pager/jquery.tablesorter.pager.min.js', FALSE);
+echo $this->Html->script('bxslider/jquery.bxslider.min.js', FALSE);
+echo $this->Html->script('table', FALSE);
 
 echo $this->Html->breadcrumb(array(
 					$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
@@ -46,23 +55,83 @@ echo $this->Html->breadcrumb(array(
 					echo utf8_encode(__('Analíticas')).$documentTitle;
 					?>
 				</legend>
-				<table id='list-source-documents'
-					class="table table-striped table-bordered table-hover inset-type"
+				
+				<!-- Accordion Columns -->
+				<div class="accordion show-element" id="accordion-filter"
 					style="display: none">
-					<thead>
-						<tr>
-							<th><?php echo utf8_encode(__('Id')); ?></th>
-							<th><?php echo utf8_encode(__('Título')); ?></th>
-							<th><?php echo utf8_encode(__('Documentalista')); ?></th>
-							<th><?php echo utf8_encode(__('Fecha de Publicación')); ?></th>
-							<th style="width: 0px;"><?php echo __('Acciones'); ?></th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-
-					<!-- Actions -->
-					<div style="display: none" id='actions'>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse"
+								data-parent="#accordion-filter" href="#collapseOne"> <?php echo __('Filtrar por columnas'); ?>
+							</a>
+						</div>
+						<div id="collapseOne" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div id="columns">
+									<div id='columns-default' title='<?php echo utf8_encode( __('Básico: ')); ?>' style="margin-top: 10px;"></div>
+									<hr style="margin-top: 0px; margin-bottom: 10px;"></hr>
+									<!-- Slider -->
+									<ul class="bxslider" style="display: none">
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Table -->
+				<div
+					style="overflow: auto; padding-right: 13px; padding-left: 13px;">
+					<table id='list-source-documents' class="tablesorter show-element"
+						style="display: none">
+						<thead>
+							<tr>
+								<th style="width: 0px;" data-priority='critical'><?php echo __('Acciones'); ?>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				
+				<!-- Paginate -->
+				<div style="padding-right: 13px; padding-left: 13px;">
+					<table class="table table-bordered show-element"
+						style="display: none;">
+						<thead>
+							<tr>
+								<th class="pager form-horizontal" colspan="87">
+									<button class="btn first" type="button">
+										<i class="icon-step-backward"></i>
+									</button>
+									<button class="btn prev" type="button">
+										<i class="icon-arrow-left"></i>
+									</button> <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+									<button class="btn next" type="button">
+										<i class="icon-arrow-right"></i>
+									</button>
+									<button class="btn last" type="button">
+										<i class="icon-step-forward"></i>
+									</button> <select title="Select page size"
+									class="pagesize input-mini">
+										<option value="3" selected="selected">3</option>
+										<option value="5">5</option>
+										<option value="10">10</option>
+										<option value="20">20</option>
+										<option value="30">30</option>
+										<option value="40">40</option>
+								</select> <select title="Select page number"
+									class="pagenum input-mini">
+								</select>
+								</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+								
+				<!-- Actions -->
+				<div style="display: none" id='actions'>
 						<div class="btn-toolbar">
 							<div class="btn-group">
 								<a href="/lildbi/analitics/view/" class="btn"
@@ -80,9 +149,9 @@ echo $this->Html->breadcrumb(array(
 									class="icon-tasks"></i> </a>
 							</div>
 						</div>
-					</div>
-				</table>
-
+				</div>
+					
+				<!-- Alerts-->
 				<div class="alert alert-error fade in"
 					id="alert-empty-list-analitics" style="display: none;">
 					<?php echo utf8_encode(__('No tiene analiticas en su base de datos')); ?>
@@ -93,9 +162,8 @@ echo $this->Html->breadcrumb(array(
 					<?php echo utf8_encode(__('Este documento no tiene analíticas')); ?>
 				</div>
 
-				<div id="loading" style="text-align: center;"></div>
-				<div id="paginator" style="display: none"></div>
-
+				<!-- Loader-->
+				<div id="loading" style="text-align: center;"></div>			
 
 				<!-- Modal Delete-->
 				<div id="modal-confirmation-delete" class="modal hide fade"

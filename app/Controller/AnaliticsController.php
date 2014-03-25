@@ -39,13 +39,19 @@ class AnaliticsController extends AppController {
 			
 			$this->autoRender = FALSE;
 			if(!isset($db['error']) && sizeof($db['rows'])!=0){
-				foreach ($db['rows'] as $key => $value) { //Poniendo el tipo a cada documento
-					$totalAnalitics = $this->Document->curlGet($this->Auth->user('username').'/_design/functions/_view/getDocumentAnalitics?key="' . $value['value']['v1'].'-'.$value['value']['v2'] . '"');
+				foreach ($db['rows'] as $key => $value) { //Poniendo el tipo a cada documento					
 					$urlTypeNameDocument = $this->DocumentDatas->getTypeDocument($value['value']);
 					$typeUrl = $this->DocumentDatas->convertTypeNameToUrlName($urlTypeNameDocument);
-					$value= array_merge(array('type' => $typeUrl), $value);
-					$db['rows'][$key] = array_merge(array('totalAnalitics' => sizeof($totalAnalitics['rows'])), $value);
+					$value = array_merge(array('type' => $typeUrl), $value);	
+					if(!empty($this->params['data']['id'])){
+					  $value['key'] = array('0' => $db['rows'][$key]['value']['_id'], '1' => $db['rows'][$key]['value']['_rev'], '2' => $db['rows'][$key]['key']);
+				    }
+				    $db['rows'][$key] = array_merge(array('totalAnalitics' => sizeof($db['rows'])), $value);				    
+					$db['rows'][$key]['value'] = $this->DocumentDatas->setNameFieldsDocument($db['rows'][$key]['value']);
+					$this->DocumentDatas->orderFieldsDocument(&$db['rows'][$key]['value']);
 				}
+				
+				$db = array_merge(array('nameFields' => $this->DocumentDatas->getNameFieldsDocument()), $db);
 				return json_encode($db);
 			}
 			else{

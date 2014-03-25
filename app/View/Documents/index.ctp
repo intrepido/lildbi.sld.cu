@@ -8,7 +8,7 @@ echo $this->Html->script('tablesorter/jquery.tablesorter.widgets.min.js', FALSE)
 echo $this->Html->script('tablesorter/widgets/widget-columnSelector.js', FALSE);
 echo $this->Html->script('tablesorter/addons/pager/jquery.tablesorter.pager.min.js', FALSE);
 echo $this->Html->script('bxslider/jquery.bxslider.min.js', FALSE);
-echo $this->Html->script('paginate', FALSE);
+echo $this->Html->script('table', FALSE);
 
 
 echo $this->Html->breadcrumb(array(
@@ -48,6 +48,8 @@ echo $this->Html->breadcrumb(array(
 				<legend>
 					<?php echo __('Documentos'); ?>
 				</legend>
+				
+				<!-- Accordion Columns -->
 				<div class="accordion show-element" id="accordion-filter"
 					style="display: none">
 					<div class="accordion-group">
@@ -59,7 +61,7 @@ echo $this->Html->breadcrumb(array(
 						<div id="collapseOne" class="accordion-body collapse">
 							<div class="accordion-inner">
 								<div id="columns">
-									<div id='columns-default' style="margin-top: 10px;"></div>
+									<div id='columns-default' title='<?php echo utf8_encode( __('Básico: ')); ?>' style="margin-top: 10px;"></div>
 									<hr style="margin-top: 0px; margin-bottom: 10px;"></hr>
 									<!-- Slider -->
 									<ul class="bxslider" style="display: none">
@@ -69,6 +71,8 @@ echo $this->Html->breadcrumb(array(
 						</div>
 					</div>
 				</div>
+				
+				<!-- Table -->
 				<div
 					style="overflow: auto; padding-right: 13px; padding-left: 13px;">
 					<table id='list-source-documents' class="tablesorter show-element"
@@ -83,6 +87,8 @@ echo $this->Html->breadcrumb(array(
 						</tbody>
 					</table>
 				</div>
+				
+				<!-- Paginate -->
 				<div style="padding-right: 13px; padding-left: 13px;">
 					<table class="table table-bordered show-element"
 						style="display: none;">
@@ -117,7 +123,6 @@ echo $this->Html->breadcrumb(array(
 					</table>
 				</div>
 
-
 				<!-- Actions -->
 				<div style="display: none" id='actions'>
 					<div class="btn-toolbar">
@@ -142,13 +147,14 @@ echo $this->Html->breadcrumb(array(
 					</div>
 				</div>
 
+				<!-- Alerts-->
 				<div class="alert alert-error fade in"
 					id="alert-empty-list-document" style="display: none;">
 					<?php echo utf8_encode(__('No tiene documentos en su base de datos')); ?>
 				</div>
 
+				<!-- Loader-->
 				<div id="loading" style="text-align: center;"></div>
-
 
 				<!-- Modal Delete-->
 				<div id="modal-confirmation-delete" class="modal hide fade"

@@ -29,8 +29,8 @@ $(document).ready(
 			
 			//Boton "Cancelar" 
 			$("#documentCancelButton button[type='button']").click(function() {
-				if($(location).attr("href").contains('documents')){ //Formulario de Documentos
-					if($(location).attr("href").contains('add')){ //Si estoy insertando
+				if($(location).attr("href").indexOf('documents') != -1){ //Formulario de Documentos
+					if($(location).attr("href").indexOf('add') != -1){ //Si estoy insertando
 						$(location).attr("href", "/lildbi/documents/add");
 					}
 					else{// Si estoy editando
@@ -38,7 +38,12 @@ $(document).ready(
 					}
 				}
 				else{ //Formulario de Analiticas
-					$(location).attr("href", "/lildbi/documents");
+					if($(location).attr("href").indexOf('add') != -1){ //Si estoy insertando
+						$(location).attr("href", "/lildbi/documents");
+					}
+					else{// Si estoy editando
+						$(location).attr("href", "/lildbi/analitics");
+					}					
 				}				
 			});		
 			
