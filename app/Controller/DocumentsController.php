@@ -43,6 +43,10 @@ class DocumentsController extends AppController {
 				}
 								
 				$db = array_merge(array('nameFields' => $this->DocumentDatas->getNameFieldsDocument()), $db);
+				if(isset($this->data['id'])){ //Si viene del Ver fuente de la lista de analiticas
+				  $db = array_merge(array('filter' => $this->data['id']), $db); //Pone el v2 a filtrar en la lista de documents
+				}	
+							
 				return json_encode($db);
 			}
 			else{

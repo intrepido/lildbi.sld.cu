@@ -143,7 +143,7 @@ echo $this->Html->breadcrumb(array(
 									href="#" class="btn" data-title="<?php echo __('Eliminar'); ?>"
 									data-placement="top" data-toggle="tooltip" id="delete"><i
 									class="icon-remove"></i><input type="hidden" value=""> </a> <a
-									href="/lildbi/analitics/index" class="btn"
+									href="/lildbi/documents/index/" class="btn"
 									data-title="<?php echo __('Ver fuente'); ?>"
 									data-placement="top" data-toggle="tooltip"><i
 									class="icon-tasks"></i> </a>

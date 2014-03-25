@@ -4,15 +4,17 @@ $(document).ready(
 			var jsonObj; //Variable Global. Contiene la lista de documentos a mostrar.
 			var url;
 			var idDocument = "";
+			var filter="";
 			
 			if($(location).attr("href").indexOf('documents') != -1){//Documents
 				url = 'documents';
 			}else{ //Analitics
-				url = 'analitics';
-				var array = $(location).attr("href").split("index");
-				if(array.length > 1){
-					idDocument = array[1].replace('/', "");	
-				}
+				url = 'analitics';				
+			}
+			
+			var array = $(location).attr("href").split("index");
+			if(array.length > 1){
+				idDocument = array[1].replace('/', "");	
 			}
 			
 			//Se inserta el Loader
@@ -21,9 +23,12 @@ $(document).ready(
 			//Se obtienen los documentos o analiticas a listar
 			$.post("/lildbi/" + url + "/index" , { id: idDocument } )
 				.done(function(data) {						
-					$('#loading').fadeOut(100);
+					$('#loading').fadeOut(100);					
 					if(data){ 						
-						jsonObj = $.parseJSON(data);						
+						jsonObj = $.parseJSON(data);
+						if(jsonObj['filter'] != null){
+							filter = jsonObj['filter'];
+						}
 						fullTable(jsonObj['rows'], jsonObj['nameFields']); //llena la tabla con los documentos
 						tablestoreOptions(jsonObj['nameFields']); //Se inicializan todos los widgets del tablesorter
 					}	
@@ -83,7 +88,13 @@ $(document).ready(
 						 actions.find("a:nth-child(3) input").val(value['id'] + "_" + value['key'][1]);						
 						 
 						 ref = actions.find("a:nth-child(4)").attr('href');
-						 actions.find("a:nth-child(4)").attr('href', ref + value['type'] + "/" + value['id']);
+						 if(url == 'analitics'){ //Ver Fuente (Lista de analiticas)
+							 var temp = $.map(value['value']['v98'], function(val, key){return val;});
+							 var array = temp[0].split("-");								
+							 actions.find("a:nth-child(4)").attr('href', ref + array[1]);
+						 }else{	//Adicionar analiticas (Lista de documents)					
+							actions.find("a:nth-child(4)").attr('href', ref + value['type'] + "/" + value['id']); 
+						 }		
 						 
 						 if(value['totalAnalitics'] != 0){
 							 actions.find("a:nth-child(5) span").addClass('badge-info');
@@ -111,6 +122,13 @@ $(document).ready(
 					$(".show-element").delay(800).fadeIn("", function(){
 						//$('table')[0].config.widgets = [ "uitheme", "filter", "zebra", "columnSelector", "stickyHeaders" ];
 						$(this).trigger('applyWidgets');
+						
+						var columns = [];
+						if(filter != ""){//Filtrar columa con valor de v2
+							columns[1] = filter;
+							$('table').trigger('search', [ columns ]);
+						}						
+						
 						$('#list-source-documents-sticky').show();
 						$('.tablesorter-pager').css({'background-color': '#EEEEEE', 'text-align': 'center'});
 						$('.tablesorter-pager select').css({'padding': '4px 6px'});
