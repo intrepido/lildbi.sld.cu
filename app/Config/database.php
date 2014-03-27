@@ -87,11 +87,18 @@ class DATABASE_CONFIG {
 			'prefix'		=> ''
 	);
 	
-	
+	/*
 	public $solr= array( //DATASOURCE
         'datasource' => 'SolrSource',
 		'host' => 'localhost',
         'port' => '8080',
+    );*/
+	
+	public $solr = array( 
+        'datasource' => 'SolrSource',
+		'host' => 'localhost',
+        'port' => '8983',
+		'path' => '/solr/lildbi/'
     );
 
 	public $test = array(

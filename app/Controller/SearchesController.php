@@ -1,60 +1,83 @@
 <?php
 
 class SearchesController extends AppController {
-	//public $helpers = array('Html','Form');
-	public $name = 'Searches';
+	public $name = 'Searches'; 
+	var $uses = array('Search','Document');
+	public $recursive = 1;
 
-	function index() { //FUNCIONA el buscar
-
-		/******** Ejemplos *****/
-		//$conditions = array('Search.v13_t' => 'Experimental ','Search.v76_t' => 'PERROS'); //Analogia en Solr: Filter Query (fq)
-		//$conditions = array('Search.v13_t' => array('Experimental', 'acute'));
-		//$conditions = array('AND' => array('Search.v13_t' => 'Experimental ','Search.v76_t' => 'PERROS'));
-		$fields = array('Search.v108_t', 'Search.v99_t', 'Search.v83_t'); //Analogia en Solr: Field List (fl)
-		//$order = array('Search.v91_t ASC');
-		//$result = $this->Search->find('all', compact('conditions', 'order', 'fields'));
-		$result2 = $this->Search->find('first');
-
-		$stopAqui = 'fdfsd';
-	}
-
-	function view($id = null) { //FUNCIONA el leer un documento
-		$this->Search->id = '6b4a9cc97cc6521f7edf2a55b3003a01';  //El id debe existir	
-		$fidel = $this->Search->read();
-
-		$stopAqui = 'fdfsd';
-	}
-
-	function add() { //FUNCIONA
-
-		/* FUNCIONA el insertar un documento, siempre y cuando los fields esten en el
-		 * schema. Por tanto los campos dinamicos *_t no se pueden indexar. Se debe definir
-		* en schema.xml de Solr los fields del lildbi.
-		* */
-
-		$fidel['Search']['id'] = '555555555555555555555555555';  //Siempre tiene que tener un id
-		$fidel['Search']['title'] = 'Mi nombfre es fidel el quemao';
-		//$fidel['Search']['v100_t'] = 'ES to es un prueba';
-
-		$this->Search->save($fidel);
+	public function beforeFilter() {
+		parent::beforeFilter();
+		// La accón index que lleva a la interfaz de búsqueda es la única accesible sin autenticarse.
+		$this->Auth->allow('index');
 		
-		$stopAqui = 'fdfsd';
-	}
-
-	function edit($id = null) {  //FUNCIONA
-		$this->Search->id = '555555555555555555555555555'; //NO es necesario
-		$fidel['Search']['id'] = '555555555555555555555555555'; //Se tiene que pasar tambien el id (debe existir) juntos con los datos a modificar
-		$fidel['Search']['title'] = 'Te volvi a editar COCINEROOOOOOOOOOOO'; //Dato a modificar
-		$this->Search->save($fidel);
-
-		$stopAqui = 'fdfsd';
-	}
-
-	function delete($id) {   //FUNCIONA
+		// El layout depende del rol que juega el usuario.
+		$this->layout = 'search_layout'; //Usuario sin autenticarse
 		
-		$this->Search->delete('555555555555555555555555555'); //El id debe existir	
-				
-		$stopAqui = 'fdfsd';
+		if ($this->Session->read('userRol') == 'Administrador'){ //Administrador
+			$this->layout = 'admin_layout';
+		}
+
+		if ($this->Session->read('userRol') == 'Documentalista'){ //Documentalista
+			$this->layout = 'documentalista_layout';
+		}
+
+		if ($this->Session->read('userRol') == 'Editor'){ //Editor
+			$this->layout = 'editor_layout';
+		}
 	}
+
+	public function isAuthorized($user) {
+		// Solo los administradores pueden utilizar el resto de las acciones.
+		if ($this->Session->read('userRol') == 'Administrador') {
+			return true;
+		}
+		return false;
+	}
+	
+	
+	function index() { 	
+		if ($this->request->is('post')) {	
+			if($this->data['query']['qText'] == ''){
+				$result = null;
+			}else{
+				$result = $this->Search->makeSearch($this->data['query']['qText'],0,20);
+			}
+			$this->set(compact('result'));									
+		}	
+	}
+	
+	function indexBoard(){
+		$this->layout = 'admin_layout';
+		$bases = $this->Document->curlGet('_all_dbs');
+		$temp = array();
+		$status = '';	
+		$facetResults = $this->Search->facetByField('v4');
+		
+		foreach ($bases as $base) {							
+			if( strpos( $base, "_base" ) !== false ){				
+				if($facetResults['v4'][strstr($base, '_', true)]){
+					$status = "success"; //Indexado
+					array_push($temp, array('name' => strstr($base, '_', true), 'capacity' => $status, 'countDocs' => $facetResults['v4'][strstr($base, '_', true)]));
+				}
+				else{
+					$status = ""; //No Indexado
+					array_push($temp, array('name' => strstr($base, '_', true), 'capacity' => $status, 'countDocs' => 0));
+				}
+			}				
+		}		
+		$this->set("bases", $temp);		
+	}
+	
+	function toindex($nameBD = null){
+		$this->Search->toIndexBase($nameBD.'_base');
+		$this->redirect(array('action'=>'indexBoard'),null,true);		
+	}
+	
+	function unindex($nameBD = null){
+		$this->Search->unindexBase($nameBD);			
+		$this->redirect(array('action'=>'indexBoard'),null,true);	
+	}
+	
 }
+
 ?>
