@@ -60,7 +60,7 @@ class DocumentsController extends AppController {
 		$document = $this->Document->curlGet($this->Auth->user('username').'/'.$id);
 		$this->set('type', $this->DocumentDatas->getTypeDocument($document));
 		$this->set('document', $this->DocumentDatas->setNameFieldsDocument($document));
-		$result = explode('index/', $this->referer());
+		$result = explode('analitics/index/', $this->referer());
 		if(isset($result[1])){
 			$this->Session->write('idDocumentForUrl', $result[1]);				
 		}
