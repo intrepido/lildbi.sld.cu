@@ -207,6 +207,18 @@ $(document).ready(
 
 								// reset filters button
 								filter_reset : ".reset",
+								
+								filter_functions : {
+
+							        // Add select menu to this column
+							        // set the column value to true, and/or add "filter-select" class name to header
+							        // 0 : true,
+
+							        // Exact match only
+							        1 : function(e, n, f, i, $r) {
+							          return e === f;
+							        }
+							    },
 
 							// set the uitheme widget to use the bootstrap theme class names
 							// this is no longer required, if theme is set
