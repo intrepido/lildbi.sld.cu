@@ -1,9 +1,8 @@
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
 <?php
-
-echo $this->Html->script('dashboard', FALSE);
-
-
+echo $this->Html->script('dashboard', TRUE);
 ?>
+
 <div class="container-document">
 	<h3>Dash Board</h3>
 	<hr>

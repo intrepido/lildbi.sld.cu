@@ -1,5 +1,6 @@
 <?php
 
+
 class AdminController extends AppController {
 	public $components = array('RequestHandler');
 	public $layout = 'admin_layout';

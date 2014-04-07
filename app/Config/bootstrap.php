@@ -146,6 +146,8 @@ CakePlugin::load('CouchDB');
 CakePlugin::load('TwitterBootstrap');
 CakePlugin::load('Codifiers');
 CakePlugin::load('Configuration');
+define('SERVER_NAME', $_SERVER['SERVER_NAME']);
+CakePlugin::load('WebSocket');
 
 /**
  * You can attach event listeners to the request lifecyle as Dispatcher Filter . By Default CakePHP bundles two filters:

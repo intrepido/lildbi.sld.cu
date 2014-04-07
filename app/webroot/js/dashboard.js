@@ -1,6 +1,26 @@
 $(document).ready(function() {
+	
+	var socket = io.connect('http://localhost:3000');
+	
+	socket.emit('getUsers', {message: "give me all users"});
+	
+	socket.on('getUsers', function  (data) {	
+		$("#list-user-online").show();
+	    $("#list-user-online").append("<div><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='media-body'><a id='user-online-" + data.message['username'] + "' data-html='true' data-placement='right' data-toggle='tooltip' href='/lildbi/users/view/" + data.message['userId'] + "' data-original-title='' data-trigger='manual'>" + data.message['username'] + "</a><div id='time-online' class='pull-right''><p class='muted'><small>" + data.message['username'] + "</small></p></div></div></div>");    
+	});
+	
+	socket.on('newUser', function  (data) {	
+	    //alert(data.message['user']);
+	    $("#list-user-online").show();
+	    $("#list-user-online").append("<div><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='media-body'><a id='user-online-" + data.message['username'] + "' data-html='true' data-placement='right' data-toggle='tooltip' href='/lildbi/users/view/" + data.message['userId'] + "' data-original-title='' data-trigger='manual'>" + data.message['username'] + "</a><div id='time-online' class='pull-right''><p class='muted'><small>" + data.message['username'] + "</small></p></div></div></div>");
+	});
+	
+	$(document).on("mouseout", "[id^='user-online']", function(){
+		$(this).tooltip('hide');
+	});
+	
 
-	$.post('/lildbi/onlineUsers/index/').done(function(data){			
+	/*$.post('/lildbi/onlineUsers/index/').done(function(data){			
 		var usersList = $.parseJSON(data);				
 		$.each(usersList, function(key, value) {
 			$.post('/lildbi/onlineUsers/setTimeOnline/', {user : value}).done(function(data2){	
@@ -83,7 +103,7 @@ $(document).ready(function() {
 	$(document).on("mouseout", "[id^='user-online']", function(){
 		$(this).tooltip('hide');
 	});
-	
+	*/
 	
 	/*
 	$(document).on("mouseover", "[id^='user-online']", function(){
