@@ -72,14 +72,18 @@ class UsersController extends AppController {
 						//$this->requestAction('/onlineUsers/add/'.$user['User']['id'].'/'.$user['User']['username'].'/'.$rol['Rol']['name']);
 						
 						//Poner usuario como online usando socket I/O
-						$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'ws'));
+						$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
 						
 						if($websocket->connect()) {	
 							$onlineUser = $this->Auth->user();							
 							$data = array('userId' => $onlineUser['id'], 'username' => $onlineUser['username'], 'current_rol' => $rol['Rol']['name'], 'date' => CakeTime::format("Y-m-d H:i:s", time()), 'ip' => $this->request->clientIp());
 							$websocket->emit('connectUser', $data);						
-						}	
+						}							
 						
+						/*$onlineUser = $this->Auth->user();
+						$dataUser = array('userId' => $onlineUser['id'], 'username' => $onlineUser['username'], 'current_rol' => $rol['Rol']['name'], 'date' => CakeTime::format("Y-m-d H:i:s", time()), 'ip' => $this->request->clientIp());
+						$this->Session->write('userConnectedDatas', $dataUser);*/
+												
 						$this->redirect($this->Auth->redirect());
 					} else {
 						$this->Session->setFlash(__("Your password was incorrect"), 'alert', array(
@@ -102,9 +106,17 @@ class UsersController extends AppController {
 	}
 
 	public function logout() {
-		$this->Session->write('userRol','');
-		//$onlineUser = $this->Auth->user();
-		//$this->requestAction('/onlineUsers/delete/'. $onlineUser['username']);
+		$this->Session->write('userRol','');	
+		
+		//Desloguear usuario usando socket I/O
+		$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
+		
+		if($websocket->connect()) {
+			$onlineUser = $this->Auth->user();
+			$data = array('username' => $onlineUser['username']);
+			$websocket->emit('disconnectUser', $data);
+		}	
+		
 		$this->redirect($this->Auth->logout());
 	}
 	/**
