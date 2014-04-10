@@ -44,24 +44,23 @@ echo $this->Js->writeBuffer(array('cache'=>TRUE));
 ?>
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top" style="position: inherit;">
+	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container">
-				<button type="button" class="btn btn-navbar" data-toggle="collapse"
-					data-target=".nav-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
+			<div class="container" style="width: 86%;">
+			
 				<?php echo $this->Html->link('LiLDBI Web', array('plugin' => false, 'controller' => 'pages', 'action' => 'display', 'home'), array('class' => 'brand')); ?>
 				<div class="nav-collapse collapse navbar-responsive-collapse">
-					
+                	<ul class="nav pull-rigth">
+                    	<li><?php echo $this->Html->link(__('Registrarse'), array('plugin' => false, 'controller'=>'users', 'action'=>'login')); ?></li>
+                    </ul>
 				</div>
+               
 				<!-- /.nav-collapse -->
 			</div>
 		</div>
 		<!-- /navbar-inner -->
 	</div>
-	<div id="container-fluid" >
+	<div id="container-fluid" class="container-general" >
 		<div class="row-fluid">
 			<div id="content">
 				<?php echo $this->Session->flash('auth', array(

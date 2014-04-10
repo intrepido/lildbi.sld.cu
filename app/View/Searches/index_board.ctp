@@ -54,13 +54,10 @@ echo $this->Html->breadcrumb(array(
 								<td class="span1">
                                	 <div class="btn-group">
                               	  <?php if($value['capacity'] != "success"){ 
-								  echo $this->Html->link($this->Html->tag('icon',null,array('class'=>'icon-ok')), array('action' => 'toindex', $value['name']),array('class'=>'btn overDesc','rel'=>'tooltip','data-original-title'=>'Indexar','escape'=>false)); 
-								
+								  echo $this->Html->link($this->Html->tag('icon',null,array('class'=>'icon-ok')), array('action' => 'toindex', $value['name']),array('class'=>'btn overDesc','rel'=>'tooltip','data-original-title'=>'Indexar','escape'=>false)); 		
 							 }else{ 
-							 echo $this->Html->link($this->Html->tag('icon',null,array('class'=>'icon-refresh')), array('action' => 'toindex', $value['name']),array('class'=>'btn overDesc','rel'=>'tooltip','data-original-title'=>'Reindexar','escape'=>false));
-								
-								 echo $this->Html->link($this->Html->tag('icon',null,array('class'=>'icon-remove')), array('action' => 'unindex', $value['name']),array('class'=>'btn overDesc','rel'=>'tooltip','data-original-title'=>'Borrar del indice','escape'=>false),'Est&aacute; seguro?') ;
-								
+								echo $this->Html->link($this->Html->tag('icon',null,array('class'=>'icon-refresh')), array('action' => 'toindex', $value['name']),array('class'=>'btn overDesc','rel'=>'tooltip','data-original-title'=>'Reindexar','escape'=>false));
+								echo $this->Html->link($this->Html->tag('icon',null,array('class'=>'icon-remove')), array('action' => 'unindex', $value['name']),array('class'=>'btn overDesc','rel'=>'tooltip','data-original-title'=>'Borrar del indice','escape'=>false),'Est&aacute; seguro?');		
 							 } ?>
                             </div>
                             </td>
@@ -69,7 +66,19 @@ echo $this->Html->breadcrumb(array(
 					</tbody>
 				</table>
 		
-				<center><p><font face="Verdana" size="1">S&oacute;lo las bases indexadas ser&aacute;n accesibles desde el buscador. Reindexelas peri&oacute;dicamente para actualizar el contenido indexado.</font></p></center>
+				<center>
+                <p><font face="Verdana" size="1">
+                S&oacute;lo las bases indexadas ser&aacute;n accesibles desde el buscador. Reindexelas peri&oacute;dicamente para actualizar el contenido indexado. </br>
+				<?php 
+				    App::uses('ConnectionManager', 'Model');
+                    $dataSource = ConnectionManager::getDataSource('solr');
+                    $host = $dataSource->config['host'];
+                    $port = $dataSource->config['port'];
+					$path = $dataSource->config['path'];
+				echo '<a href="http://'.$host.':'.$port.'/'.$path.'" target="new">Administrar Solr</a>';
+				?>
+                </font></p>
+                </center>
 			</div>
 		</div>
 	</div>

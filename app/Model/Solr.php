@@ -1,7 +1,7 @@
 <?php
 
-class Search extends AppModel {
-	public $name = 'Search'; 
+class Solr extends AppModel {
+	public $name = 'Solr'; 
 	public $useDbConfig = 'solr';
 	public $useTable = false;
 	
@@ -20,7 +20,7 @@ class Search extends AppModel {
 			return true;
 	}
 	
-	public function makeSearch($terms = null, $start = null, $rows = null){
+	public function makeSearch($terms = null, $start = null, $rows = null, $format = null){
 		return $this->query(array('type' => 'query', 'query' => $terms, 'start' => $start, 'rows' => $rows));
 	}
 	

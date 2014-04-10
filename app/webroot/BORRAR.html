@@ -1,0 +1,297 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>BORRAR</title>
+		
+		
+		<script src="js/jquery.js"></script>
+		<link href="css/custom-styles.css" rel="stylesheet"></link>
+		<link href="css/bootstrap.min.css" rel="stylesheet"></link>
+		<script src="js/bootstrap.min.js"></script>
+		<link href="css/tablesorter/theme.bootstrap.css" rel="stylesheet"></link>
+		<link href="css/tablesorter/addons/pager/jquery.tablesorter.pager.css" rel="stylesheet"></link>		
+		<script src="js/tablesorter/jquery.tablesorter.min.js"></script>
+		<script src="js/tablesorter/jquery.tablesorter.widgets.min.js"></script>		
+		<script src="js/tablesorter/widgets/widget-columnSelector.js"></script>
+		<script src="js/tablesorter/addons/pager/jquery.tablesorter.pager.min.js"></script>
+		
+		<script>
+
+			$(document).ready(
+				function() {
+
+					/*** Bootstrap popover demo ***/
+					/*$('#popover')
+					.popover({
+					placement: 'right',
+					html: true, // required if content has HTML
+					content: '<div id="popover-target"></div>'
+					})
+					// bootstrap popover event triggered when the popover opens
+					.on('shown.bs.popover', function () {
+					// call this function to copy the column selection code into the popover
+					//alert(toSource($.tablesorter.columnSelector.init));
+					$.tablesorter.columnSelector.attachTo( $('.bootstrap-popup'), '#fidel');
+					});
+					*/
+					
+					$.extend($.tablesorter.themes.bootstrap, {
+						    // these classes are added to the table. To see other table classes available,
+						    // look here: http://twitter.github.com/bootstrap/base-css.html#tables
+						    table      : 'table table-bordered',
+						    header     : 'bootstrap-header', // give the header a gradient background
+						    footerRow  : '',
+						    footerCells: '',
+						    icons      : '', // add "icon-white" to make them white; this icon class is added to the <i> in the header
+						    sortNone   : 'bootstrap-icon-unsorted',
+						    sortAsc    : 'icon-chevron-up',
+						    sortDesc   : 'icon-chevron-down',
+						    active     : '', // applied when column is sorted
+						    hover      : '', // use custom css here - bootstrap class may not override it
+						    filterRow  : '', // filter row class
+						    even       : '', // odd row zebra striping
+						    odd        : ''  // even row zebra striping
+						  });
+					
+					$('#collapseOne').collapse({
+						toggle: false
+					}).on('shown.bs.collapse', function () {
+						$.tablesorter.columnSelector.attachTo( $('.tablesorter'), '#columns');
+						//$(".tablesorter-column-selector label:first input").prop('checked',false);
+						/*$(".tablesorter-column-selector label:first").remove();
+						$(".tablesorter-column-selector label").removeClass('disabled');
+						$(".tablesorter-column-selector label input").prop('disabled',"");*/
+					});
+					
+
+					// initialize column selector using default settings
+					// note: no container is defined!
+					$(".tablesorter").tablesorter({
+						theme: 'bootstrap',
+						
+						//headers : { 3 : { columnSelector: false }, 4 : { columnSelector: false } },
+						
+						widgets: ['zebra', "filter", 'columnSelector', 'stickyHeaders'],
+						
+						widgetOptions : {					
+							
+							columnSelector_columns : {
+								//3 : 'false'
+							},
+							
+							zebra : [ "even", "odd" ],
+
+								// reset filters button
+							filter_reset : ".reset",
+							
+							columnSelector_saveColumns: false,
+							 
+							stickyHeaders_offset : 75.1		
+						}
+					}).tablesorterPager({
+
+							// target the pager markup - see the HTML block below
+							container : $(".pager"),
+
+							// target the pager page select dropdown - choose a page
+							cssGoto : ".pagenum",
+
+							// remove rows from the table to speed up the sort of large tables.
+							// setting this to false, only hides the non-visible rows; needed if you
+							// plan to add/remove rows with the pager enabled.
+							removeRows : false,
+
+							// output string - default is '{page}/{totalPages}';
+							// possible variables: {page}, {totalPages}, {filteredPages},
+							// {startRow}, {endRow}, {filteredRows} and {totalRows}
+							output : '{startRow} - {endRow} / {filteredRows} ({totalRows})',
+								
+							// Number of visible rows - default is 10
+							size: 5
+
+						});
+					
+				}); 
+
+		</script>
+	
+	</head>
+	<body>
+
+		<div id="main">
+
+			<h3>Bootstrap Popover</h3>
+			
+			<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="/lildbi/">LiLDBI Web</a>				<div class="nav-collapse collapse navbar-responsive-collapse">
+					<ul class="nav">						
+						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentos <b class="caret"></b>
+						</a>
+							<ul class="dropdown-menu">
+							    <li><a href="/lildbi/documents">Listar</a></li>
+								<li class="dropdown-submenu"><a href="#" tabindex="-1">Nuevo</a>
+									<ul class="dropdown-menu">
+										<li><a href="/lildbi/documents/add/sin_indizacion">Sin Indización</a>										</li>
+										<li><a href="/lildbi/documents/add/con_indizacion">Con Indización</a>										</li>
+									</ul>
+								</li>
+								<li class="divider"></li>
+								<li><a href="/lildbi/analitics">Listar Analíticas</a></li>
+								<li class="divider"></li>								
+								<li><a href="#">Indexar</a></li>
+								<li><a href="#">Certificar</a></li>
+							</ul>
+						</li>
+
+						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Utilitarios <b class="caret"></b>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Importar</a></li>
+								<li><a href="#">Exportar</a></li>
+								<li><a href="#">Reorganizar</a></li>
+								<li><a href="#">Reinvertir</a></li>
+								<li><a href="#">Desbloquear</a></li>
+								<li><a href="#">Reiniciar Base</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Configuración</a></li>
+
+						<li class="dropdown" id="change-profile"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Cambiar Perfil								<b class="caret"></b>
+						</a>
+							<ul class="dropdown-menu" id="profiles">
+							</ul>
+						</li>
+
+						<li><a href="/lildbi/users/logout">Salir</a>						</li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+						<li class="divider-vertical"></li>
+					</ul>
+					<div style="margin-top: 10px;" class="navbar-form pull-right">
+						<div class="span20">
+							<p style="color: #ffffff;">
+								Documentalista:								fsantana							</p>
+						</div>
+
+					</div>
+					
+				</div>
+				<!-- /.nav-collapse -->
+			</div>
+		</div>
+		<!-- /navbar-inner -->
+	</div>
+			
+			<div class="accordion" id="accordion-filter">	
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-filter" href="#collapseOne">
+							Filtros de columnas
+						</a>
+					</div>
+					<div id="collapseOne" class="accordion-body collapse">
+						<div class="accordion-inner">
+							<div id="columns"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div style="margin-top: 90px;" class="container-general" id="container-fluid">
+				<div class="row-fluid">
+					<div id="content">
+						<div class="container-document">
+							<div class="row-fluid">
+								<div class="span3">
+									<div class="container-document-inner">
+										<legend>
+											Acciones				</legend>
+										<ul class="nav nav-pills">
+											<li class="dropdown"><a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">Nuevo Documento							<b class="caret"></b> </a>
+												<ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+													<li role="presentation"><a role="menuitem" href="/lildbi/documents/add/con_indizacion">Con Indezación</a>							</li>
+													<li role="presentation"><a role="menuitem" href="/lildbi/documents/add/sin_indizacion">Sin Indezación</a>							</li>
+												</ul>
+											</li>
+											<li><a href="/lildbi/analitics">Listar Analíticas</a>					</li>
+									
+										</ul>
+									</div>
+								</div>
+								<div class="span9">
+									<div class="container-document-inner">
+										<legend> Documentos </legend>
+										
+											<table class="tablesorter">
+												<thead>
+													<tr>
+														<th data-priority="critical">Rank</th>
+														<th data-priority="3">First Name</th>
+														<th data-priority="critical">Last Name</th>
+														<th data-priority="4" class="columnSelector-false">Age</th>
+														<th data-priority="4">Total</th>
+														<th data-priority="5" class="columnSelector-false">Discount</th>
+														<th data-priority="6">Date</th>
+													</tr>
+												</thead>
+												<tfoot>
+													<tr>
+														<th class="pager form-horizontal" colspan="87">
+															<button class="btn first" type="button">
+																<i class="icon-step-backward"></i>
+															</button>
+															<button class="btn prev" type="button">
+																<i class="icon-arrow-left"></i>
+															</button> <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+															<button class="btn next" type="button">
+																<i class="icon-arrow-right"></i>
+															</button>
+															<button class="btn last" type="button">
+																<i class="icon-step-forward"></i>
+															</button> <select title="Select page size"
+															class="pagesize input-mini">
+																<option value="3" selected="selected">3</option>
+																<option value="5">5</option>
+																<option value="10">10</option>
+																<option value="20">20</option>
+																<option value="30">30</option>
+																<option value="40">40</option>
+														</select> <select title="Select page number"
+															class="pagenum input-mini"></select>
+														</th>
+													</tr>
+												</tfoot>
+												<tbody>
+													<tr><td>1</td><td>Philip Aaron Wong</td><td>Johnson Sr Esq</td><td>25</td><td>$5.95</td><td>22%</td><td>Jun 26, 2004 7:22 AM</td></tr>
+													<tr><td>11</td><td>Aaron</td><td>Hibert</td><td>12</td><td>$2.99</td><td>5%</td><td>Aug 21, 2009 12:21 PM</td></tr>
+													<tr><td>12</td><td>Brandon Clark</td><td>Henry Jr</td><td>51</td><td>$42.29</td><td>18%</td><td>Oct 13, 2000 1:15 PM</td></tr>
+													<tr><td>111</td><td>Peter</td><td>Parker</td><td>28</td><td>$9.99</td><td>20%</td><td>Jul 6, 2006 8:14 AM</td></tr>
+													<tr><td>21</td><td>John</td><td>Hood</td><td>33</td><td>$19.99</td><td>25%</td><td>Dec 10, 2002 5:14 AM</td></tr>
+													<tr><td>013</td><td>Clark</td><td>Kent Sr.</td><td>18</td><td>$15.89</td><td>44%</td><td>Jan 12, 2003 11:14 AM</td></tr>
+													<tr><td>005</td><td>Bruce</td><td>Almighty Esq</td><td>45</td><td>$153.19</td><td>44%</td><td>Jan 18, 2021 9:12 AM</td></tr>
+													<tr><td>10</td><td>Alex</td><td>Dumass</td><td>13</td><td>$5.29</td><td>4%</td><td>Jan 8, 2012 5:11 PM</td></tr>
+													<tr><td>16</td><td>Jim</td><td>Franco</td><td>24</td><td>$14.19</td><td>14%</td><td>Jan 14, 2004 11:23 AM</td></tr>
+													<tr><td>166</td><td>Bruce Lee</td><td>Evans</td><td>22</td><td>$13.19</td><td>11%</td><td>Jan 18, 2007 9:12 AM</td></tr>
+													<tr><td>100</td><td>Brenda Dexter</td><td>McMasters</td><td>18</td><td>$55.20</td><td>15%</td><td>Feb 12, 2010 7:23 PM</td></tr>
+													<tr><td>55</td><td>Dennis</td><td>Bronson</td><td>65</td><td>$123.00</td><td>32%</td><td>Jan 20, 2001 1:12 PM</td></tr>
+													<tr><td>9</td><td>Martha</td><td>delFuego</td><td>25</td><td>$22.09</td><td>17%</td><td>Jun 11, 2011 10:55 AM</td></tr>
+												</tbody>
+											</table>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</body>
+
+</html>
