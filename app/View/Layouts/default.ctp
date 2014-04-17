@@ -28,7 +28,7 @@ echo $this->Html->script('jquery');
 echo $this->Html->script('bootstrap');
 echo $this->Html->script('login');
 
-echo $this->Html->meta('icon');
+echo $this->Html->meta('infomed.ico', $this->Html->webroot('img/infomed.ico'), array('type' => 'icon'));
 
 echo $this->Html->css('bootstrap');
 echo $this->Html->css('custom-styles');

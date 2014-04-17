@@ -1,0 +1,12 @@
+{
+   "_id": "_design/solr",
+   "language": "javascript",
+   "views": {
+       "by_id": {
+           "map": "function(doc) {emit(doc._id, doc);}"
+       }
+   },
+   "lists": {
+       "toXml": "function element(name, row, dept){if(dept<3){send('<' + name + '>\\n');}   for(field in row) {  if (typeof(row[field])=='object') {if(dept<2){element(field, row[field],(dept+1))}else{send('<field name=\"' + field + '\">'); element(field, row[field], (dept+1)); send('</field>\\n');}} else {if(dept<3){send('<field name=\"' + field + '\">');  send((''+row[field]).replace(/&/g,'&amp;').replace(/</g,'&lt;'));  send('</field>\\n');}else{send((' '+row[field]).replace(/&/g,'&amp;').replace(/</g,'&lt;')+';');}}  }   if(dept<3){send('</' + name + '>\\n');}};        function(head, req) {    provides('xml', function() {    send('<xml>\\n');    while (row=getRow()) {   element('doc', row, 1)   }    send('</xml>');   });    }"
+   }
+}

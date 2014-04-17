@@ -21,6 +21,7 @@ class SolrSource extends DataSource
 		(
 			'hostname' => $this->config['host'],
 			'port'     => $this->config['port'],
+			'path'     => '/solr/lildbi/',
 		);
 			
 		$client = new SolrClient($opciones);

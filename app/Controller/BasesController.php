@@ -53,7 +53,16 @@ class BasesController extends AppController {
 	function add() {
 
 		if($this->RequestHandler->isAjax()){
+			
+			//Se crea la BD a importar
 			$this->Document->curlPut($this->request->data["value"]."_base");
+			
+			//Se cargan y se insertan en la BD las vistas.
+			$jsonFunctions = file_get_contents(ROOT."/app/Plugin/CouchDB/Actions/functions.json");
+			$jsonSolr = file_get_contents(ROOT."/app/Plugin/CouchDB/Actions/solr.json");				
+			$this->Document->curlPut($this->request->data["value"]."_base"."/_design/functions", json_decode($jsonFunctions), false, true);
+			$this->Document->curlPut($this->request->data["value"]."_base"."/_design/solr", json_decode($jsonSolr), false, true);
+			
 			$this->autoRender = FALSE;
 		}
 

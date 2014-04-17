@@ -30,7 +30,7 @@ echo $this->Html->script('ui/jquery-ui');
 echo $this->Html->script('bootstrap');
 echo $this->Html->script('general');
 
-echo $this->Html->meta('icon');
+echo $this->Html->meta('infomed.ico', $this->Html->webroot('img/infomed.ico'), array('type' => 'icon'));
 
 echo $this->Html->css('custom-styles');
 echo $this->Html->css('bootstrap');

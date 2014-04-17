@@ -85,7 +85,7 @@ class DocumentsController extends AppController {
 				{
 					$this->Document->curlPut($this->Auth->user('username')); //Crea la BD del usuario
 					//Se cargan y se insertan en la BD las vistas.
-					$json = file_get_contents(ROOT."/app/Plugin/CouchDB/Actions/Functions.json");
+					$json = file_get_contents(ROOT."/app/Plugin/CouchDB/Actions/functions.json");
 					$this->Document->curlPut($this->Auth->user('username')."/_design/functions", json_decode($json), false, true);
 				}
 
