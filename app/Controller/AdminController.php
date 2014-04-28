@@ -6,20 +6,6 @@ class AdminController extends AppController {
 	public $layout = 'admin_layout';
 	public $name = 'Admin';
 	
-	public function beforeFilter() {
-		parent::beforeFilter();
-	
-		if($this->Session->read('Auth.User') == null){
-			//Si la session expiró, entonces desconectarlo del servidor de Node JS
-			$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
-			
-			if($websocket->connect()) {
-				$onlineUser = $this->Auth->user();
-				$data = array('username' => $onlineUser['username']);
-				$websocket->emit('disconnectUser', $data);	
-			}	
-		}
-	}
 	
 	
 	function index() {

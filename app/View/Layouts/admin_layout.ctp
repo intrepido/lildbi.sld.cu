@@ -24,6 +24,7 @@ $lilDBIDescription = __d('cake_dev', 'LILDBI: Biblioteca Virtual de Salud');
 <?php echo $this->Html->charset("utf-8"); ?>
 <title><?php echo "LILDBI WEB"; ?>
 </title>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
 <?php
 echo $this->Html->script('jquery');
 echo $this->Html->script('ui/jquery-ui');

@@ -52,6 +52,7 @@ class AppController extends Controller {
 	
 	public $components = array(
 			'Session',
+			'Cookie',
 			'Auth'=>array(
 					'loginRedirect'=>array('controller'=>'admin', 'action'=>'index'),
 					'logoutRedirect'=>array('controller'=>'pages', 'action'=>'display', 'home'),
@@ -93,10 +94,10 @@ class AppController extends Controller {
 			$this->render('../elements/maintenance');
 		}
 		else{
-			$this->Auth->allow('display', 'logout', 'login');			
+			$this->Auth->allow('display', 'logout', 'login', 'verifySessionUser');			
 			$this->set('logged_in', $this->Auth->loggedIn());
 			$this->set('current_user', $this->Auth->user());
+			
 		}
 	}
-	
 }

@@ -49,6 +49,21 @@ $(document).ready(function() {
     		$(this).prop('checked', false);
     	}*/
 	});
+    
+    var interval = null;
+    interval = setInterval(function() { //Verifico si el usuario esta logueado	    	
+    	$.post('/lildbi/users/verifySessionUser/', function(data) {    		
+    		if(data){//Si no lo esta logueado entonces lo quito del servidor de Node para que se elimine de la lista de los otros usuarios
+    			var socket = io.connect('http://localhost:3000');
+    			socket.emit('disconnectUser', {username: data});
+    			stop();
+    		}
+    	});
+	}, 30000);
+    
+    function stop() {
+        clearTimeout(interval);
+    };
 
 
 });

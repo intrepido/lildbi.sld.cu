@@ -31,8 +31,20 @@ class UsersController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('listRolUser');		
-	}
+		$this->Auth->allow('listRolUser');	
+
+		if(!$this->Auth->loggedIn() && ($this->action != 'verifySessionUser') && $this->Cookie->read('username')){
+			//Si la session expiró, entonces desconectarlo del servidor de Node JS
+			$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
+		
+			if($websocket->connect()) {
+				$onlineUser = $this->Auth->user();
+				$data = array('username' => $this->Cookie->read('username'));
+				$websocket->emit('disconnectUser', $data);
+				$this->Cookie->delete('username');
+			}
+		}
+	}	
 
 	public function isAuthorized($user) {
 		/**
@@ -68,14 +80,16 @@ class UsersController extends AppController {
 				}
 				else{
 					if ($this->Auth->login()) {
-						$this->Session->write('userRol', $rol['Rol']['name']);						
+						$this->Session->write('userRol', $rol['Rol']['name']);	
+						$onlineUser = $this->Auth->user();
+						$this->Cookie->write('username', $onlineUser['username']);						
+						
 						//$this->requestAction('/onlineUsers/add/'.$user['User']['id'].'/'.$user['User']['username'].'/'.$rol['Rol']['name']);
 						
 						//Poner usuario como online usando socket I/O
 						$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
 						
-						if($websocket->connect()) {	
-							$onlineUser = $this->Auth->user();							
+						if($websocket->connect()) {															
 							$data = array('userId' => $onlineUser['id'], 'username' => $onlineUser['username'], 'current_rol' => $rol['Rol']['name'], 'date' => CakeTime::format("Y-m-d H:i:s", time()), 'ip' => $this->request->clientIp());
 							$websocket->emit('connectUser', $data);						
 						}							
@@ -115,9 +129,23 @@ class UsersController extends AppController {
 			$onlineUser = $this->Auth->user();
 			$data = array('username' => $onlineUser['username']);
 			$websocket->emit('disconnectUser', $data);
+			$this->Cookie->delete('username');
 		}	
 		
 		$this->redirect($this->Auth->logout());
+	}
+	
+	public function verifySessionUser() {
+		if($this->RequestHandler->isAjax()){
+			$this->autoRender = FALSE;
+			if (!$this->Auth->loggedIn() && $this->Cookie->read('username')) {
+				//Desloguear usuario usando socket I/O
+				$username = $this->Cookie->read('username');
+				$this->Cookie->delete('username');
+				return $username;
+			}
+			return false;
+		}
 	}
 	/**
 	 * index method
