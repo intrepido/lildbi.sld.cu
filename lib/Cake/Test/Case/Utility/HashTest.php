@@ -1,19 +1,26 @@
 <?php
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2011, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2011, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Utility
  * @since         CakePHP(tm) v 2.2.0
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 App::uses('Hash', 'Utility');
 
+/**
+ * Class HashTest
+ *
+ * @package       Cake.Utility
+ */
 class HashTest extends CakeTestCase {
 
 	public static function articleData() {
@@ -167,9 +174,20 @@ class HashTest extends CakeTestCase {
 /**
  * Test get()
  *
- * return void
+ * @return void
  */
 	public function testGet() {
+		$data = array('abc', 'def');
+
+		$result = Hash::get($data, '0');
+		$this->assertEquals('abc', $result);
+
+		$result = Hash::get($data, 0);
+		$this->assertEquals('abc', $result);
+
+		$result = Hash::get($data, '1');
+		$this->assertEquals('def', $result);
+
 		$data = self::articleData();
 
 		$result = Hash::get(array(), '1.Article.title');
@@ -575,6 +593,12 @@ class HashTest extends CakeTestCase {
 		);
 		$this->assertTrue(Hash::contains($b, $a));
 		$this->assertFalse(Hash::contains($a, $b));
+
+		$a = array(0 => 'test', 'string' => null);
+		$this->assertTrue(Hash::contains($a, array('string' => null)));
+
+		$a = array(0 => 'test', 'string' => null);
+		$this->assertTrue(Hash::contains($a, array('test')));
 	}
 
 /**
@@ -641,6 +665,9 @@ class HashTest extends CakeTestCase {
 
 		$data = array('one', 2 => 'two', 3 => 'three', 4 => 'four', 'a' => 'five');
 		$this->assertFalse(Hash::numeric(array_keys($data)));
+
+		$data = array(2.4, 1, 0, -1, -2);
+		$this->assertTrue(Hash::numeric($data));
 	}
 
 /**
@@ -659,6 +686,9 @@ class HashTest extends CakeTestCase {
 
 		$result = Hash::extract($data, '1.Article.title');
 		$this->assertEquals(array('Second Article'), $result);
+
+		$result = Hash::extract(array(false), '{n}.Something.another_thing');
+		$this->assertEquals(array(), $result);
 	}
 
 /**
@@ -802,6 +832,59 @@ class HashTest extends CakeTestCase {
 	}
 
 /**
+ * Test extracting based on attributes with boolean values.
+ *
+ * @return void
+ */
+	public function testExtractAttributeBoolean() {
+		$users = array(
+			array(
+				'id' => 2,
+				'username' => 'johndoe',
+				'active' => true
+			),
+			array(
+				'id' => 5,
+				'username' => 'kevin',
+				'active' => true
+			),
+			array(
+				'id' => 9,
+				'username' => 'samantha',
+				'active' => false
+			),
+		);
+		$result = Hash::extract($users, '{n}[active=false]');
+		$this->assertCount(1, $result);
+		$this->assertEquals($users[2], $result[0]);
+
+		$result = Hash::extract($users, '{n}[active=true]');
+		$this->assertCount(2, $result);
+		$this->assertEquals($users[0], $result[0]);
+		$this->assertEquals($users[1], $result[1]);
+	}
+
+/**
+ * Test that attribute matchers don't cause errors on scalar data.
+ *
+ * @return void
+ */
+	public function testExtractAttributeEqualityOnScalarValue() {
+		$data = array(
+			'Entity' => array(
+				'id' => 1,
+				'data1' => 'value',
+			)
+		);
+		$result = Hash::extract($data, 'Entity[id=1].data1');
+		$this->assertEquals(array('value'), $result);
+
+		$data = array('Entity' => false );
+		$result = Hash::extract($data, 'Entity[id=1].data1');
+		$this->assertEquals(array(), $result);
+	}
+
+/**
  * Test comparison operators.
  *
  * @return void
@@ -858,10 +941,16 @@ class HashTest extends CakeTestCase {
 		$result = Hash::extract($data, '{n}.Article[title=/^First/]');
 		$expected = array($data[0]['Article']);
 		$this->assertEquals($expected, $result);
+
+		$result = Hash::extract($data, '{n}.Article[title=/^Fir[a-z]+/]');
+		$expected = array($data[0]['Article']);
+		$this->assertEquals($expected, $result);
 	}
 
 /**
  * Test that extract() + matching can hit null things.
+ *
+ * @return void
  */
 	public function testExtractMatchesNull() {
 		$data = array(
@@ -1017,7 +1106,7 @@ class HashTest extends CakeTestCase {
 			1 => array('Person' => array('name' => 'Jeff')),
 		);
 		$a = Hash::sort($a, '{n}.Person.name', 'ASC', 'STRING');
-		$this->assertEquals($a, $b);
+		$this->assertSame($a, $b);
 
 		$names = array(
 			array('employees' => array(
@@ -1040,7 +1129,38 @@ class HashTest extends CakeTestCase {
 			array('employees' => array(array('name' => array()))),
 			array('employees' => array(array('name' => array())))
 		);
-		$this->assertEquals($expected, $result);
+		$this->assertSame($expected, $result);
+
+		$a = array(
+			'SU' => array(
+				'total_fulfillable' => 2
+			),
+			'AA' => array(
+				'total_fulfillable' => 1
+			),
+			'LX' => array(
+				'total_fulfillable' => 0
+			),
+			'BL' => array(
+				'total_fulfillable' => 3
+			),
+		);
+		$expected = array(
+			'LX' => array(
+				'total_fulfillable' => 0
+			),
+			'AA' => array(
+				'total_fulfillable' => 1
+			),
+			'SU' => array(
+				'total_fulfillable' => 2
+			),
+			'BL' => array(
+				'total_fulfillable' => 3
+			),
+		);
+		$result = Hash::sort($a, '{s}.total_fulfillable', 'asc');
+		$this->assertSame($expected, $result);
 	}
 
 /**
@@ -1112,6 +1232,28 @@ class HashTest extends CakeTestCase {
 			array('Item' => array('image' => 'img99.jpg')),
 		);
 		$this->assertEquals($expected, $result);
+	}
+
+/**
+ * Test that sort() with 'natural' type will fallback to 'regular' as SORT_NATURAL is introduced in PHP 5.4
+ *
+ * @return void
+ */
+	public function testSortNaturalFallbackToRegular() {
+		if (version_compare(PHP_VERSION, '5.4.0', '>=')) {
+			$this->markTestSkipped('Skipping SORT_NATURAL fallback test on PHP >= 5.4');
+		}
+
+		$a = array(
+			0 => array('Person' => array('name' => 'Jeff')),
+			1 => array('Shirt' => array('color' => 'black'))
+		);
+		$b = array(
+			0 => array('Shirt' => array('color' => 'black')),
+			1 => array('Person' => array('name' => 'Jeff')),
+		);
+		$sorted = Hash::sort($a, '{n}.Person.name', 'asc', 'natural');
+		$this->assertEquals($sorted, $b);
 	}
 
 /**
@@ -1364,6 +1506,34 @@ class HashTest extends CakeTestCase {
 			14 => 'Larry E. Masters',
 			25 => 'The Gwoo');
 		$this->assertEquals($expected, $result);
+	}
+
+/**
+ * test combine() giving errors on key/value length mismatches.
+ *
+ * @expectedException CakeException
+ * @return void
+ */
+	public function testCombineErrorMissingValue() {
+		$data = array(
+			array('User' => array('id' => 1, 'name' => 'mark')),
+			array('User' => array('name' => 'jose')),
+		);
+		Hash::combine($data, '{n}.User.id', '{n}.User.name');
+	}
+
+/**
+ * test combine() giving errors on key/value length mismatches.
+ *
+ * @expectedException CakeException
+ * @return void
+ */
+	public function testCombineErrorMissingKey() {
+		$data = array(
+			array('User' => array('id' => 1, 'name' => 'mark')),
+			array('User' => array('id' => 2)),
+		);
+		Hash::combine($data, '{n}.User.id', '{n}.User.name');
 	}
 
 /**
@@ -2162,7 +2332,19 @@ class HashTest extends CakeTestCase {
 				)
 			)
 		);
-		$this->assertEquals($result, $expected);
+		$this->assertEquals($expected, $result);
+
+		$data = array('a.b.100.a' => null, 'a.b.200.a' => null);
+		$expected = array(
+			'a' => array(
+				'b' => array(
+					100 => array('a' => null),
+					200 => array('a' => null)
+				)
+			)
+		);
+		$result = Hash::expand($data);
+		$this->assertEquals($expected, $result);
 	}
 
 /**
@@ -2210,52 +2392,52 @@ class HashTest extends CakeTestCase {
 			'Order.Item.0.Product.sizes.4.Size.qty' => '',
 			'Order.Item.0.Product.sizes.4.Size.size' => '12-18mo',
 			'Order.Item.0.Product.sizes.4.Size.id' => '42',
-			'Order.Item.0.Art.imprint_locations.0.id' => (int) 2,
+			'Order.Item.0.Art.imprint_locations.0.id' => 2,
 			'Order.Item.0.Art.imprint_locations.0.name' => 'Left Chest',
-			'Order.Item.0.Art.imprint_locations.0.imprint_type.id' => (int) 7,
+			'Order.Item.0.Art.imprint_locations.0.imprint_type.id' => 7,
 			'Order.Item.0.Art.imprint_locations.0.imprint_type.type' => 'Embroidery',
 			'Order.Item.0.Art.imprint_locations.0.art' => '',
-			'Order.Item.0.Art.imprint_locations.0.num_colors' => (int) 3,
+			'Order.Item.0.Art.imprint_locations.0.num_colors' => 3,
 			'Order.Item.0.Art.imprint_locations.0.description' => 'Wooo! This is Embroidery!!',
 			'Order.Item.0.Art.imprint_locations.0.lines.0' => 'Platen',
 			'Order.Item.0.Art.imprint_locations.0.lines.1' => 'Logo',
-			'Order.Item.0.Art.imprint_locations.0.height' => (int) 4,
-			'Order.Item.0.Art.imprint_locations.0.width' => (int) 5,
+			'Order.Item.0.Art.imprint_locations.0.height' => 4,
+			'Order.Item.0.Art.imprint_locations.0.width' => 5,
 			'Order.Item.0.Art.imprint_locations.0.stitch_density' => 'Light',
 			'Order.Item.0.Art.imprint_locations.0.metallic_thread' => true,
-			'Order.Item.0.Art.imprint_locations.1.id' => (int) 4,
+			'Order.Item.0.Art.imprint_locations.1.id' => 4,
 			'Order.Item.0.Art.imprint_locations.1.name' => 'Full Back',
-			'Order.Item.0.Art.imprint_locations.1.imprint_type.id' => (int) 6,
+			'Order.Item.0.Art.imprint_locations.1.imprint_type.id' => 6,
 			'Order.Item.0.Art.imprint_locations.1.imprint_type.type' => 'Screenprinting',
 			'Order.Item.0.Art.imprint_locations.1.art' => '',
-			'Order.Item.0.Art.imprint_locations.1.num_colors' => (int) 3,
+			'Order.Item.0.Art.imprint_locations.1.num_colors' => 3,
 			'Order.Item.0.Art.imprint_locations.1.description' => 'Wooo! This is Screenprinting!!',
 			'Order.Item.0.Art.imprint_locations.1.lines.0' => 'Platen',
 			'Order.Item.0.Art.imprint_locations.1.lines.1' => 'Logo',
-			'Order.Item.0.Art.imprint_locations.2.id' => (int) 26,
+			'Order.Item.0.Art.imprint_locations.2.id' => 26,
 			'Order.Item.0.Art.imprint_locations.2.name' => 'HS - JSY Name Below',
-			'Order.Item.0.Art.imprint_locations.2.imprint_type.id' => (int) 9,
+			'Order.Item.0.Art.imprint_locations.2.imprint_type.id' => 9,
 			'Order.Item.0.Art.imprint_locations.2.imprint_type.type' => 'Names',
 			'Order.Item.0.Art.imprint_locations.2.description' => 'Wooo! This is Names!!',
-			'Order.Item.0.Art.imprint_locations.2.sizes.S.0.active' => (int) 1,
+			'Order.Item.0.Art.imprint_locations.2.sizes.S.0.active' => 1,
 			'Order.Item.0.Art.imprint_locations.2.sizes.S.0.name' => 'Benjamin Talavera',
 			'Order.Item.0.Art.imprint_locations.2.sizes.S.0.color' => 'Red',
 			'Order.Item.0.Art.imprint_locations.2.sizes.S.0.height' => '3',
 			'Order.Item.0.Art.imprint_locations.2.sizes.S.0.layout' => 'Arched',
 			'Order.Item.0.Art.imprint_locations.2.sizes.S.0.style' => 'Classic',
-			'Order.Item.0.Art.imprint_locations.2.sizes.S.1.active' => (int) 0,
+			'Order.Item.0.Art.imprint_locations.2.sizes.S.1.active' => 0,
 			'Order.Item.0.Art.imprint_locations.2.sizes.S.1.name' => 'Rishi Narayan',
 			'Order.Item.0.Art.imprint_locations.2.sizes.S.1.color' => 'Cardinal',
 			'Order.Item.0.Art.imprint_locations.2.sizes.S.1.height' => '4',
 			'Order.Item.0.Art.imprint_locations.2.sizes.S.1.layout' => 'Straight',
 			'Order.Item.0.Art.imprint_locations.2.sizes.S.1.style' => 'Team US',
-			'Order.Item.0.Art.imprint_locations.2.sizes.M.0.active' => (int) 1,
+			'Order.Item.0.Art.imprint_locations.2.sizes.M.0.active' => 1,
 			'Order.Item.0.Art.imprint_locations.2.sizes.M.0.name' => 'Brandon Plasters',
 			'Order.Item.0.Art.imprint_locations.2.sizes.M.0.color' => 'Red',
 			'Order.Item.0.Art.imprint_locations.2.sizes.M.0.height' => '3',
 			'Order.Item.0.Art.imprint_locations.2.sizes.M.0.layout' => 'Arched',
 			'Order.Item.0.Art.imprint_locations.2.sizes.M.0.style' => 'Classic',
-			'Order.Item.0.Art.imprint_locations.2.sizes.M.1.active' => (int) 0,
+			'Order.Item.0.Art.imprint_locations.2.sizes.M.1.active' => 0,
 			'Order.Item.0.Art.imprint_locations.2.sizes.M.1.name' => 'Andrew Reed',
 			'Order.Item.0.Art.imprint_locations.2.sizes.M.1.color' => 'Cardinal',
 			'Order.Item.0.Art.imprint_locations.2.sizes.M.1.height' => '4',
@@ -2280,10 +2462,10 @@ class HashTest extends CakeTestCase {
 			'Order.QualityControl' => '0',
 			'Order.Receiving' => '0',
 			'Order.ScreenPrinting' => '0',
-			'Order.Stage.art_approval' => (int) 0,
-			'Order.Stage.draft' => (int) 1,
-			'Order.Stage.quote' => (int) 1,
-			'Order.Stage.order' => (int) 1,
+			'Order.Stage.art_approval' => 0,
+			'Order.Stage.draft' => 1,
+			'Order.Stage.quote' => 1,
+			'Order.Stage.order' => 1,
 			'Order.StoreLiason' => '0',
 			'Order.Tag_UI_Email' => '',
 			'Order.Tags' => '',

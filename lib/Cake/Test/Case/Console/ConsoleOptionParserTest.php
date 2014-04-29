@@ -2,23 +2,27 @@
 /**
  * ConsoleOptionParserTest file
  *
- * PHP 5
- *
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
- * Copyright 2005-2012, Cake Software Foundation, Inc.
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc.
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
  * @package       Cake.Test.Case.Console
  * @since         CakePHP(tm) v 2.0
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
 App::uses('ConsoleOptionParser', 'Console');
 
+/**
+ * Class ConsoleOptionParserTest
+ *
+ * @package       Cake.Test.Case.Console
+ */
 class ConsoleOptionParserTest extends CakeTestCase {
 
 /**
@@ -254,24 +258,26 @@ class ConsoleOptionParserTest extends CakeTestCase {
  * test parsing options that do not exist.
  *
  * @expectedException ConsoleException
+ * @return void
  */
 	public function testOptionThatDoesNotExist() {
 		$parser = new ConsoleOptionParser('test', false);
 		$parser->addOption('no-commit', array('boolean' => true));
 
-		$result = $parser->parse(array('--fail', 'other'));
+		$parser->parse(array('--fail', 'other'));
 	}
 
 /**
  * test parsing short options that do not exist.
  *
  * @expectedException ConsoleException
+ * @return void
  */
 	public function testShortOptionThatDoesNotExist() {
 		$parser = new ConsoleOptionParser('test', false);
 		$parser->addOption('no-commit', array('boolean' => true));
 
-		$result = $parser->parse(array('-f'));
+		$parser->parse(array('-f'));
 	}
 
 /**
