@@ -58,7 +58,8 @@ class AppController extends Controller {
 					'logoutRedirect'=>array('controller'=>'pages', 'action'=>'display', 'home'),
 					'authError'=>"You can't access that page",
 					'authorize'=>array('Controller')
-			)
+			),
+			'DebugKit.Toolbar'
 	);
 	
 	public $helpers = array(			
