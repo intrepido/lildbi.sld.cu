@@ -8,7 +8,7 @@ echo $this->Html->script('reports', FALSE);
 echo $this->Html->breadcrumb(array(
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
 		'Informes',
-), array('class' => 'breadcrumb row-fluid'));
+), array('class' => 'breadcrumb'));
 ?>
 
 <div class="container-document">

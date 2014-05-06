@@ -3,7 +3,7 @@
 		$this->Html->link(__('Usuarios'), array('controller' => 'users','action' => 'index')),
 		$this->Html->link(__('Roles'), array('controller' => 'rols','action' => 'index')),
 		'Ver',
-	), array('class' => 'breadcrumb row-fluid')); ?>
+	), array('class' => 'breadcrumb')); ?>
 
 <div class="container-document">
 	<div class="row-fluid">

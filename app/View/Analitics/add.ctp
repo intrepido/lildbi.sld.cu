@@ -1,5 +1,5 @@
 <?php
-echo $this->Html->script('documents', FALSE);
+echo $this->Html->script('analitics', FALSE);
 echo $this->Html->script('codifiers', FALSE);
 echo $this->Html->script('assistant', FALSE);
 
@@ -10,7 +10,7 @@ if (isset($urlTypeNameDocument)){
 			$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')),
 			$this->Html->link(utf8_encode(__('Analíticas')), array('controller' => 'analitics','action' => 'index')),
 			utf8_encode(__('Nueva Analítica'))
-	), array('class' => 'breadcrumb row-fluid'));
+	), array('class' => 'breadcrumb'));
 	
 	if ($urlTypeNameDocument == 'series_monograficas') {
 		echo $this->element('Analitics/series_monograficas');

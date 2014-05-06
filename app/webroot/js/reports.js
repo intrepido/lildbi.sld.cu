@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	
 			
-			$('#loading').html('<img src="/lildbi/img/loader.gif">');
-			$.post('/lildbi/bases/getTotalDocsBases').done(function(data){
+			$('#loading').html('<img src="/img/loader.gif">');
+			$.post('/bases/getTotalDocsBases').done(function(data){
 				$('#loading').fadeOut(100);
 				var result = $.parseJSON(data);
 				var chart;

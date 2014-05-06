@@ -7,7 +7,7 @@ $(document).ready(function() {
 	$("#loginCancelButton button[type='button']").addClass("btn");
 	$("#loginCancelButton").parent().css("padding-bottom", '21px');	
 	$("#loginCancelButton button[type='button']").click(function() {
-		$(location).attr("href", "/lildbi");
+		$(location).attr("href", "/");
 	});
 
 });

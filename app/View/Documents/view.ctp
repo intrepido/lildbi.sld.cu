@@ -5,7 +5,7 @@ echo $this->Html->breadcrumb(array(
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
 		$this->Html->link( utf8_encode(__('Documentos')), array('controller' => $this->Session->check('idDocumentForUrl') ? 'analitics' : 'documents','action' => 'index', $this->Session->check('idDocumentForUrl')? $this->Session->read('idDocumentForUrl') : '' ), array('id' => 'backUrl')),		
 		 __('Ver')
-	), array('class' => 'breadcrumb row-fluid')); ?>
+	), array('class' => 'breadcrumb')); ?>
 
 <div class="container-document">
 	<div class="page-header">

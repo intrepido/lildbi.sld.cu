@@ -2,7 +2,7 @@
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
 		$this->Html->link(__('Usuarios'), array('controller' => 'users','action' => 'index')),
 		__('Nuevo Usuario'),
-	), array('class' => 'breadcrumb row-fluid')); ?>
+	), array('class' => 'breadcrumb')); ?>
 <div class="container-document">
 	<div class="row-fluid">
 		<div class="span3">

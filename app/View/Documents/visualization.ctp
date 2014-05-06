@@ -9,7 +9,7 @@ if(!$this->Session->check('idEdit')){ //Si estoy adicionando un documento
 			$this->Html->link($this->Session->read('index'), array('controller' => 'documents','action' => 'add')),
 			$this->Html->link($typeNameDocument, "#", array('id' => 'backBreadcrumb')),
 			utf8_encode(__('Visualización'))
-	), array('class' => 'breadcrumb row-fluid'));
+	), array('class' => 'breadcrumb'));
 
 }else{ //Si estoy editando un documento
 	echo $this->Html->breadcrumb(array(
@@ -70,7 +70,7 @@ if(!$this->Session->check('idEdit')){ //Si estoy adicionando un documento
 				<td>
 					<form accept-charset="utf-8" method="post"
 						id="DocumentVisualizationForm"
-						action="/lildbi/documents/<?php echo $this->Session->check('idEdit') ? 'edit' : 'add';?>/<?php echo $urlTypeNameDocument;?><?php echo $this->Session->check('idEdit') ? '/'.$this->Session->read('idEdit') : '';?>">
+						action="/documents/<?php echo $this->Session->check('idEdit') ? 'edit' : 'add';?>/<?php echo $urlTypeNameDocument;?><?php echo $this->Session->check('idEdit') ? '/'.$this->Session->read('idEdit') : '';?>">
 						<div style="display: none;">
 							<input type="hidden" value="POST" name="_method">
 						</div>

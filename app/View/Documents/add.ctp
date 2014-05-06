@@ -9,7 +9,7 @@ if (!isset($urlTypeNameDocument)) {
 	echo $this->Html->breadcrumb(array(
 			$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
 			$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')), $this->Session->read('index')
-	), array('class' => 'breadcrumb row-fluid'));
+	), array('class' => 'breadcrumb'));
 
 	echo $this->Session->flash();
 	?>
@@ -51,7 +51,7 @@ if (isset($urlTypeNameDocument)){
 		  $this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')),
 		  $this->Html->link($this->Session->read('index'), array('controller' => 'documents','action' => 'add')),
 		  $typeNameDocument
-	), array('class' => 'breadcrumb row-fluid'));
+	), array('class' => 'breadcrumb'));
 
 	if ($urlTypeNameDocument == 'series_monograficas') {
 		echo $this->element('Documents/series_monograficas');

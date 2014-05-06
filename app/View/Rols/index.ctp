@@ -2,7 +2,7 @@
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
 		$this->Html->link(__('Usuarios'), array('controller' => 'users','action' => 'index')),
 		__('Roles'),
-	), array('class' => 'breadcrumb row-fluid')); ?>
+	), array('class' => 'breadcrumb')); ?>
 
 <?php echo $this->Session->flash(); ?>
 <div class="container-document">

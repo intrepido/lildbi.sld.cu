@@ -32,10 +32,10 @@ $(document).ready(function() {
 			
 			if (!temp2){ //Si no existe la base se inserta
 				
-				$.post("/lildbi/bases/exist", {value : nameBase})
+				$.post("/bases/exist", {value : nameBase})
 				.done(function(data) {
 					if(data){ //Si la Base existe en el proveedor
-						$.post('/lildbi/bases/add', {value : nameBase});
+						$.post('/bases/add', {value : nameBase});
 						
 						$("#alert-base-exist").hide();
 						$("#list-bases").removeAttr("style");
@@ -69,7 +69,7 @@ $(document).ready(function() {
 	
 	$(document).on("click", "#delete-alert", function(){				
 				if(($(this).parent().parent().attr("class") == "") && ($(this).parent().prev().is(':hidden'))){					
-					$.post('/lildbi/bases/delete', {value : $(this).parent().prev().prev().html()});
+					$.post('/bases/delete', {value : $(this).parent().prev().prev().html()});
 					$(this).parent().parent().hide('slow', function() {
 						$(this).remove();
 					});
@@ -95,7 +95,7 @@ $(document).ready(function() {
 					deleteBaseLoading.unshift($('#x').children().next().html());					
 				}
 		
-				$.post('/lildbi/bases/delete', {value : $('#x').children().next().html()});
+				$.post('/bases/delete', {value : $('#x').children().next().html()});
 				
 				 $('#x').hide("slow");	
 				 
@@ -160,7 +160,7 @@ $(document).ready(function() {
 																		
 					if (verifyPercentages(current_perc)) {
 						clearInterval(progress);
-						$.post('/lildbi/bases/cleanSession', {value : bases});						
+						$.post('/bases/cleanSession', {value : bases});						
 						
 					} else if(temp) {
 												
@@ -179,7 +179,7 @@ $(document).ready(function() {
 							deleteBaseLoading = Array();
 						}
 						
-						$.post('/lildbi/bases/import', {
+						$.post('/bases/import', {
 							value : bases, count: cont
 						}, function(data) {
 							

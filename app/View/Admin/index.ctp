@@ -1,5 +1,5 @@
 <?php
-echo $this->Html->script('dashboard', TRUE);
+echo $this->Html->script('dashboard', FALSE);
 ?>
 
 <div class="container-document">

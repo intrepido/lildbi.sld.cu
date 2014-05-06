@@ -18,10 +18,10 @@ $(document).ready(
 			}
 			
 			//Se inserta el Loader
-			$('#loading').html('<img src="/lildbi/img/loader.gif">');				 
+			$('#loading').html('<img src="/img/loader.gif">');				 
 				 
 			//Se obtienen los documentos o analiticas a listar
-			$.post("/lildbi/" + url + "/index" , { id: idDocument } )
+			$.post("/" + url + "/index" , { id: idDocument } )
 				.done(function(data) {						
 					$('#loading').fadeOut(100);					
 					if(data){ 						
@@ -99,7 +99,7 @@ $(document).ready(
 						 if(value['totalAnalitics'] != 0){
 							 actions.find("a:nth-child(5) span").addClass('badge-info');
 							 actions.find("a:nth-child(5) span").text(value['totalAnalitics']);							
-							 actions.find("a:nth-child(5)").attr('href', '/lildbi/analitics/index/' + value['id']);
+							 actions.find("a:nth-child(5)").attr('href', '/analitics/index/' + value['id']);
 						 }							
 						 						
 						 $('#list-source-documents tbody').append("<tr></tr>"); //Se agrega un tr al tbody
@@ -371,7 +371,7 @@ $(document).ready(
 			//Cuando se oprime el boton Eliminar del Modal
 			$('#delete-document').click(function() {
 				 
-			   $.post("/lildbi/" + url + "/delete", {value : $('#x').find("#delete input").val()});				   
+			   $.post("/" + url + "/delete", {value : $('#x').find("#delete input").val()});				   
 			   $('#x').hide("slow");
 			   $("#x").delay(300).queue(function(){					
 					var id = ($('#x').find("#delete input").val()).split('_');

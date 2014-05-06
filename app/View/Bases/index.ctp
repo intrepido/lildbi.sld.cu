@@ -4,7 +4,7 @@ echo $this->Html->script('bases', FALSE);
 echo $this->Html->breadcrumb(array(
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),	
 		__('Importar Bases'),
-	), array('class' => 'breadcrumb row-fluid'));
+	), array('class' => 'breadcrumb'));
 ?>
 
 

@@ -14,7 +14,7 @@ echo $this->Html->script('table', FALSE);
 echo $this->Html->breadcrumb(array(
 					$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
 					__('Documentos')
-	), array('class' => 'breadcrumb row-fluid')); ?>
+	), array('class' => 'breadcrumb')); ?>
 
 
 <?php echo $this->Session->flash(); ?>
@@ -127,16 +127,16 @@ echo $this->Html->breadcrumb(array(
 				<div style="display: none" id='actions'>
 					<div class="btn-toolbar">
 						<div class="btn-group">
-							<a href="/lildbi/documents/view/" class="btn"
+							<a href="/documents/view/" class="btn"
 								data-title="<?php echo __('Ver'); ?>" data-placement="top"
 								data-toggle="tooltip"><i class="icon-eye-open"></i> </a> <a
-								href="/lildbi/documents/edit/" class="btn"
+								href="/documents/edit/" class="btn"
 								data-title="<?php echo __('Editar'); ?>" data-placement="top"
 								data-toggle="tooltip"><i class="icon-pencil"></i> </a> <a
 								href="#" class="btn" data-title="<?php echo __('Eliminar'); ?>"
 								data-placement="top" data-toggle="tooltip" id="delete"><i
 								class="icon-remove"></i><input type="hidden" value=""> </a> <a
-								href="/lildbi/analitics/add/" class="btn"
+								href="/analitics/add/" class="btn"
 								data-title="<?php echo utf8_encode(__('Adicionar analítica')); ?>"
 								data-placement="top" data-toggle="tooltip"><i class="icon-plus"></i>
 							</a> <a href="#" class="btn" id="total-analitics"

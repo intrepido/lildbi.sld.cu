@@ -7,7 +7,7 @@ echo $this->Html->breadcrumb(array(
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
 		$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')),
 		__('Editar')
-), array('class' => 'breadcrumb row-fluid'));
+), array('class' => 'breadcrumb'));
 
 
 

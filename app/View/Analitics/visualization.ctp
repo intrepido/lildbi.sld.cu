@@ -1,5 +1,5 @@
 <?php
-echo $this->Html->script('documents', FALSE);
+echo $this->Html->script('analitics', FALSE);
 
 if(!$this->Session->check('idEdit')){ //Si estoy adicionando una analitica
 
@@ -9,7 +9,7 @@ if(!$this->Session->check('idEdit')){ //Si estoy adicionando una analitica
 			$this->Html->link(utf8_encode(__('Analíticas')), array('controller' => 'analitics','action' => 'index')),
 			$this->Html->link(utf8_encode(__('Nueva Analítica')), "#", array('id' => 'backBreadcrumb')),			
 			utf8_encode(__('Visualización'))
-	), array('class' => 'breadcrumb row-fluid'));
+	), array('class' => 'breadcrumb'));
 
 }else{ //Si estoy editando una analitica
 	echo $this->Html->breadcrumb(array(
@@ -18,7 +18,7 @@ if(!$this->Session->check('idEdit')){ //Si estoy adicionando una analitica
 			$this->Html->link( utf8_encode(__('Analíticas')), array('controller' => 'analitics','action' => 'index', $this->Session->check('idDocumentForUrl')? $this->Session->read('idDocumentForUrl') : '' ), array('id' => 'backUrl')),
 			$this->Html->link(__('Editar'), "#", array('id' => 'backBreadcrumb')),
 			utf8_encode(__('Visualización'))
-	), array('class' => 'breadcrumb row-fluid'));
+	), array('class' => 'breadcrumb'));
 }
 ?>
 
@@ -71,7 +71,7 @@ if(!$this->Session->check('idEdit')){ //Si estoy adicionando una analitica
 				<td>
 					<form accept-charset="utf-8" method="post"
 						id="DocumentVisualizationForm"
-						action="/lildbi/analitics/<?php echo $this->Session->check('idEdit') ? 'edit' : 'add';?>/<?php echo $urlTypeNameDocument;?><?php echo $this->Session->check('idEdit') ? '/'.$this->Session->read('idEdit') : '/'.$this->Session->read('idDocument');?>">
+						action="/analitics/<?php echo $this->Session->check('idEdit') ? 'edit' : 'add';?>/<?php echo $urlTypeNameDocument;?><?php echo $this->Session->check('idEdit') ? '/'.$this->Session->read('idEdit') : '/'.$this->Session->read('idDocument');?>">
 						<div style="display: none;">
 							<input type="hidden" value="POST" name="_method">
 						</div>

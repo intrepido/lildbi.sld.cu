@@ -4,7 +4,7 @@ $(document).ready(function() {
 		
 		if($("#tipo_registro option:selected").text() != "")
 		{
-			$.post('/lildbi/Codifiers/getById', {
+			$.post('/Codifiers/getById', {
 				value : $("#tipo_registro option:selected").text()
 			}, showOtherCombos);
 		}
