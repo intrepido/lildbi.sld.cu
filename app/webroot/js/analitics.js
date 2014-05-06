@@ -1,37 +1,55 @@
 $(document).ready(
 		function() {
 			
-			if(window.arrayData != undefined){ //Entra cuando llega de darle al boton atras de la pagina de visualizacion
-				for (var key2 in arrayData["v9"])
+			//LLenar los datos correspondientes al documento	
+			if(window.arrayDataDocument != undefined){ 
+				$(".success td:nth-child(3)").each(function (index) {
+					 var element = $(this);
+					 var temp = element.text().replace('[', '');
+					 temp = temp.replace(']', '');				 
+					 for (var key in window.arrayDataDocument)
+						{						    					
+							if(key == 'v'+ temp){
+								$.each(window.arrayDataDocument[key], function(key2, name) {								
+									element.prev().text(window.arrayDataDocument[key][key2]);
+							    });							
+							}
+						}
+				 });	
+			}
+			
+			//LLenar los datos de la analitica cuando vengo de la pagina de visualizacion
+			if(window.arrayData != undefined){
+				for (var key2 in window.arrayData["v9"])
 				{
 					$.post('/Codifiers/getById', {
-						value : arrayData["v9"][key2]
+						value : window.arrayData["v9"][key2]
 					}, showOtherCombos); //Llama a la funcion "showOtherCombos" del "codifiers.js"
 				}
 				
 				$(document).one('ajaxComplete', function() { //La funcion "one" es para que se ejecute solo una vez cuando se carga la pagina								
-					$.each(arrayData, function(key1, value) {						
+					$.each(window.arrayData, function(key1, value) {						
 						for (var key2 in value) {
-							if(arrayData[key1][key2] != ""){					
+							if(window.arrayData[key1][key2] != ""){					
 								var element = $("[name = 'data[Document][" + key1 + "][" + key2 + "]']");
 								if(element.is('input')){
 									openAccordion(element);
 									if(element.attr('type') == 'hidden'){							
-										$.each(arrayData[key1][key2], function(key3, value2) {								
-											element.next().children().find("option[value='" + arrayData[key1][key2][key3] + "']").attr('selected', 'selected');				
+										$.each(window.arrayData[key1][key2], function(key3, value2) {								
+											element.next().children().find("option[value='" + window.arrayData[key1][key2][key3] + "']").attr('selected', 'selected');				
 										});
 									}
 									else{
-										element.attr('value', arrayData[key1][key2]);
+										element.attr('value', window.arrayData[key1][key2]);
 									}												
 								}
 								if(element.is('textarea')){
 									openAccordion(element);
-									element.attr('value', arrayData[key1][key2]);
+									element.attr('value', window.arrayData[key1][key2]);
 								}
 								if(element.is('select')){								
 									openAccordion(element);
-									element.find("option[value='" + arrayData[key1][key2] + "']").attr('selected', 'selected');														
+									element.find("option[value='" + window.arrayData[key1][key2] + "']").attr('selected', 'selected');														
 								}
 							}					
 						}	
@@ -44,6 +62,25 @@ $(document).ready(
 						element.closest('div .accordion').children().children().attr('checked', true);
 					}
 				}
+			}else{// LLena los datos del combo 'Tipo de Registro' y sus combos correspondientes, del documento. Cuando se carga la pagina por primera vez 
+				if(window.arrayDataDocument["v9"] != null){
+					$.each(window.arrayDataDocument["v9"], function(key, name) {	
+						$.post('/Codifiers/getById', {value : window.arrayDataDocument["v9"][key]}).done(function( data ) {
+							showOtherCombos(data); //Llama a la funcion "showOtherCombos" del "codifiers.js"
+							for (var key in window.arrayDataDocument)
+							{
+								if(key == "v9" || key == "v110" || key == "v111" || key == "v112" || key == "v114" || key == "v115"){					
+									$.each(window.arrayDataDocument[key], function(key2, name) {								
+										var element = $("[name = 'data[Document][" + key + "][" + key2 + "]']");								
+										if(element.is('select')){	
+											element.find("option[value='" + window.arrayDataDocument[key][key2] + "']").attr('selected', 'selected');														
+										}
+									});	
+								}					
+							}								
+						}); 
+					});
+			 }	
 			}			
 			
 			
@@ -76,10 +113,10 @@ $(document).ready(
 			//Boton "Cancelar" 
 			$("#documentCancelButton button[type='button']").click(function() {
 				if($(location).attr("href").indexOf('add') != -1){ //Si estoy insertando
-					$(location).attr("href", "/documents/add");
+					$(location).attr("href", "/documents");
 				}
 				else{// Si estoy editando
-					$(location).attr("href", "/documents");
+					$(location).attr("href", "/analitics");
 				}			
 			});		
 			

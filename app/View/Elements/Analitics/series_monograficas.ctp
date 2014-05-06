@@ -3,97 +3,20 @@
 $escapers = array("\\", "/", "\"", "\n", "\r", "\t", "\x08", "\x0c");
 $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 ?>
-<script> 
-	$(document).ready( 
-		function() {
-			//LLeno los datos del documento	
-			 <?php $document = str_replace($escapers, $replacements, json_encode($this->Session->read('document')));?>
-			 var arrayDataDocument = $.parseJSON('<?php echo $document; ?>');				 	 
-			 $(".success td:nth-child(3)").each(function (index) {
-				 var element = $(this);
-				 var temp = element.text().replace('[', '');
-				 temp = temp.replace(']', '');				 
-				 for (var key in arrayDataDocument)
-					{						    					
-						if(key == 'v'+ temp){
-							$.each(arrayDataDocument[key], function(key2, name) {								
-								element.prev().text(arrayDataDocument[key][key2]);
-						    });							
-						}
-					}
-			 });	
 
-			 //LLeno los datos de la analitica cuando vengo de la pagina de visualizacion
-			<?php if(isset($backValues)) {
-			  $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValues));
-			?>
-						
-				var arrayData = $.parseJSON('<?php echo $backEscapedValues; ?>');
-				for (var key2 in arrayData["v9"])
-				{
-					$.post('/lildbi/Codifiers/getById', {
-						value : arrayData["v9"][key2]
-					}, showOtherCombos); //Llama a la funcion "showOtherCombos" del "codifiers.js"
-				}
-				
-				$(document).one('ajaxComplete', function() { //La funcion "one" es para que se ejecute solo una vez cuando se carga la pagina								
-					$.each(arrayData, function(key1, value) {						
-						for (var key2 in value) {
-							if(arrayData[key1][key2] != ""){					
-								var element = $("[name = 'data[Document][" + key1 + "][" + key2 + "]']");
-								if(element.is('input')){
-									openAccordion(element);
-									if(element.attr('type') == 'hidden'){							
-										$.each(arrayData[key1][key2], function(key3, value2) {								
-											element.next().children().find("option[value='" + arrayData[key1][key2][key3] + "']").attr('selected', 'selected');				
-										});
-									}
-									else{
-										element.attr('value', arrayData[key1][key2]);
-									}												
-								}
-								if(element.is('textarea')){
-									openAccordion(element);
-									element.attr('value', arrayData[key1][key2]);
-								}
-								if(element.is('select')){								
-									openAccordion(element);
-									element.find("option[value='" + arrayData[key1][key2] + "']").attr('selected', 'selected');														
-								}
-							}					
-						}	
-					});
-				});	
-				
-				function openAccordion(element){
-					if(element.closest('div .accordion').length > 0){	
-						element.closest('div .accordion').children().next().collapse('show');
-						element.closest('div .accordion').children().children().attr('checked', true);
-					}
-				}
-
-			<?php }else {  ?>// LLena los datos del combo 'Tipo de Registro' y sus combos correspondientes, del documento. Cuando se carga la pagina por primera vez 
-			if(arrayDataDocument["v9"] != null){
-				$.each(arrayDataDocument["v9"], function(key, name) {	
-					$.post('/lildbi/Codifiers/getById', {value : arrayDataDocument["v9"][key]}).done(function( data ) {
-						showOtherCombos(data); //Llama a la funcion "showOtherCombos" del "codifiers.js"
-						for (var key in arrayDataDocument)
-						{
-							if(key == "v9" || key == "v110" || key == "v111" || key == "v112" || key == "v114" || key == "v115"){					
-								$.each(arrayDataDocument[key], function(key2, name) {								
-									var element = $("[name = 'data[Document][" + key + "][" + key2 + "]']");								
-									if(element.is('select')){	
-										element.find("option[value='" + arrayDataDocument[key][key2] + "']").attr('selected', 'selected');														
-									}
-								});	
-							}					
-						}								
-					}); 
-				});
-		 }	
-		<?php } ?>
-	});
+<script type="text/javascript">
+	//<![CDATA[
+		   <?php $document = str_replace($escapers, $replacements, json_encode($this->Session->read('document')));?>
+           window.arrayDataDocument = JSON.parse('<?php echo $document; ?>');	
+           
+           <?php if(isset($backValues)) {
+ 			  $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValues));
+ 		   ?>
+ 		 	  window.arrayData = JSON.parse('<?php echo $backEscapedValues; ?>');
+ 		 <?php } ?>
+    //]]>
 </script>
+
 <?php } ?>
 
 <div class="container-document">
@@ -104,7 +27,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 	</div>
 
 	<form accept-charset="utf-8" method="post" id="DocumentAddForm"
-		action="/lildbi/analitics/<?php echo isset($typeEditAnalitic) ? 'edit' : 'add';?>/series_monograficas/<?php echo isset($typeEditAnalitic) ? $this->Session->read('idEdit').'/' : $this->Session->read('idDocument').'/';?>visualization">
+		action="/analitics/<?php echo isset($typeEditAnalitic) ? 'edit' : 'add';?>/series_monograficas/<?php echo isset($typeEditAnalitic) ? $this->Session->read('idEdit').'/' : $this->Session->read('idDocument').'/';?>visualization">
 		<div style="display: none;">
 			<input type="hidden" value="POST" name="_method">
 		</div>
