@@ -24,26 +24,16 @@ $lilDBIDescription = __d('cake_dev', 'LILDBI: Biblioteca Virtual de Salud');
 <?php echo $this->Html->charset("utf-8"); ?>
 <title><?php echo "LILDBI WEB"; ?>
 </title>
-<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
 <?php
-echo $this->Html->script('jquery');
-echo $this->Html->script('bootstrap');
-echo $this->Html->script('bootstrap-paginator.min');
-echo $this->Html->script('general');
-
-
 echo $this->Html->meta('infomed.ico', $this->Html->webroot('img/infomed.ico'), array('type' => 'icon'));
 
-echo $this->Html->css('custom-styles');
 echo $this->Html->css('bootstrap');
-echo $this->Html->css('datepicker');
-
-
+echo $this->Html->css('custom-styles');
+echo $this->Html->css('bootstrap-responsive.min');
 
 echo $this->fetch('meta');
 echo $this->fetch('css');
-echo $this->fetch('script');
-
 
 ?>
 
@@ -52,16 +42,23 @@ echo $this->fetch('script');
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container">
+			<div class="container-fluid">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
 				<?php echo $this->Html->link('LiLDBI Web', array('controller' => 'pages', 'action' => 'display', 'home'), array('class' => 'brand')); ?>
 				<div class="nav-collapse collapse navbar-responsive-collapse">
-					<ul class="nav">						
+					<ul class="nav">
 						<li class="dropdown"><a data-toggle="dropdown"
-							class="dropdown-toggle" href="#"><?php echo __('Documentos'); ?> <b class="caret"></b>
-						</a>
+							class="dropdown-toggle" href="#"><?php echo __('Documentos'); ?>
+								<b class="caret"></b> </a>
 							<ul class="dropdown-menu">
-							    <li><?php echo $this->Html->link(__('Listar'), array('plugin' => false, 'controller'=>'documents', 'action'=>'index')); ?></li>
-								<li class="dropdown-submenu"><a tabindex="-1" href="#"><?php echo __('Nuevo'); ?></a>
+								<li><?php echo $this->Html->link(__('Listar'), array('plugin' => false, 'controller'=>'documents', 'action'=>'index')); ?>
+								</li>
+								<li class="dropdown-submenu"><a tabindex="-1" href="#"><?php echo __('Nuevo'); ?>
+								</a>
 									<ul class="dropdown-menu">
 										<li><?php echo $this->Html->link(utf8_encode(__('Sin Indización')), array('plugin' => false, 'controller'=>'documents', 'action'=>'add', 'sin_indizacion')); ?>
 										</li>
@@ -70,26 +67,28 @@ echo $this->fetch('script');
 									</ul>
 								</li>
 								<li class="divider"></li>
-								<li><?php echo $this->Html->link(utf8_encode(__('Listar Analíticas')), array('plugin' => false, 'controller'=>'analitics', 'action'=>'index')); ?></li>
-								<li class="divider"></li>								
-								<li><a href="#"><?php echo __('Indexar'); ?></a></li>
-								<li><a href="#"><?php echo __('Certificar'); ?></a></li>
+								<li><?php echo $this->Html->link(utf8_encode(__('Listar Analíticas')), array('plugin' => false, 'controller'=>'analitics', 'action'=>'index')); ?>
+								</li>
+								<li class="divider"></li>
+								<li><a href="#"><?php echo __('Indexar'); ?> </a></li>
+								<li><a href="#"><?php echo __('Certificar'); ?> </a></li>
 							</ul>
 						</li>
 
 						<li class="dropdown"><a data-toggle="dropdown"
-							class="dropdown-toggle" href="#"><?php echo __('Utilitarios'); ?> <b class="caret"></b>
-						</a>
+							class="dropdown-toggle" href="#"><?php echo __('Utilitarios'); ?>
+								<b class="caret"></b> </a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><?php echo __('Importar'); ?></a></li>
-								<li><a href="#"><?php echo __('Exportar'); ?></a></li>
-								<li><a href="#"><?php echo __('Reorganizar'); ?></a></li>
-								<li><a href="#"><?php echo __('Reinvertir'); ?></a></li>
-								<li><a href="#"><?php echo __('Desbloquear'); ?></a></li>
-								<li><a href="#"><?php echo __('Reiniciar Base'); ?></a></li>
+								<li><a href="#"><?php echo __('Importar'); ?> </a></li>
+								<li><a href="#"><?php echo __('Exportar'); ?> </a></li>
+								<li><a href="#"><?php echo __('Reorganizar'); ?> </a></li>
+								<li><a href="#"><?php echo __('Reinvertir'); ?> </a></li>
+								<li><a href="#"><?php echo __('Desbloquear'); ?> </a></li>
+								<li><a href="#"><?php echo __('Reiniciar Base'); ?> </a></li>
 							</ul>
 						</li>
-						<li><a href="#"><?php echo utf8_encode(__('Configuración')) ?></a></li>
+						<li><a href="#"><?php echo utf8_encode(__('Configuración')) ?> </a>
+						</li>
 
 						<li id="change-profile" class="dropdown"><a data-toggle="dropdown"
 							class="dropdown-toggle" href="#"> <?php echo __('Cambiar Perfil') ?>
@@ -120,33 +119,39 @@ echo $this->fetch('script');
 		</div>
 		<!-- /navbar-inner -->
 	</div>
-	<div id="container-fluid" class="container-general"
-	<?php  echo ($this->here != "/lildbi/admin") ? "style='margin-top: 90px;'" : "style='margin-top: 60px;'"; ?>>
-		<div class="row-fluid">
-			<div id="content">
-				<?php echo $this->Session->flash('auth', array(
-						'element' => 'alert',
-						'params' => array('plugin' => 'TwitterBootstrap'),
+	<div id="wrap">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div id="content">
+					<?php echo $this->Session->flash('auth', array(
+							'element' => 'alert',
+							'params' => array('plugin' => 'TwitterBootstrap'),
 				)); ?>
-				<?php echo $this->Session->flash(); ?>
-
-
-				<?php echo $this->fetch('content'); ?>
+					<?php echo $this->Session->flash(); ?>
+					<?php echo $this->fetch('content'); ?>
+				</div>
 			</div>
 		</div>
-		<div id="footer">
-			<footer>
-			<hr>
-				<p height="5" align="center">
-					<font face="Verdana" size="1">BIREME/OPS/OMS - Centro
-						Latinoamericano y del Caribe de Informaci&oacute;n en Ciencias de
-						la Salud</font><br> <font face="Verdana" size="1">LILDBI-Web
-							Versi&oacute;n 1.8 - 2013 </font>
-				
-				</p>
+		<div id="push"></div>
+	</div>
+	<div id="footer">
+		<div class="container">
+			<p class="muted credit" align="center"
+				style="margin-bottom: 0px; margin-top: 10px;">
+				BIREME/OPS/OMS - Centro Latinoamericano y del Caribe de
+				Informaci&oacute;n en Ciencias de la Salud <br> LILDBI-Web
+					Versi&oacute;n 1.8 - 2013 
 			
-			</footer>
+			</p>
 		</div>
 	</div>
+	<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+	<?php   
+	echo $this->Html->script('jquery');
+	echo $this->Html->script('bootstrap.min');
+	echo $this->Html->script('general');
+	echo $this->Js->writeBuffer(array('cache'=>TRUE));
+	echo $this->fetch('script');
+	?>
 </body>
 </html>
