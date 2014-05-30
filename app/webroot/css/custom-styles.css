@@ -172,6 +172,16 @@ cursor: pointer;
 	color: #FF0000;
 }
 
+.offline a {
+    color: #999999;
+    text-decoration: none;
+}
+.offline a:hover, .offline a:focus {
+    color: #999999;
+    text-decoration: underline;
+}
+
+
 .onoffswitch {
 	position: relative;
 	width: 60px;

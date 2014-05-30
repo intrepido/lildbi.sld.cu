@@ -4,20 +4,33 @@ $(document).ready(function() {
 	
 	socket.emit('getUsers');
 	
-	socket.on('getUsers', function  (data) {			
-	    $("#list-user-online").append("<div><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='media-body'><a id='user-online-" + data.message['username'] + "' data-html='true' data-placement='right' data-toggle='tooltip' href='/users/view/" + data.message['userId'] + "' data-original-title='' data-trigger='manual'>" + data.message['username'] + "</a><div id='time-online' class='pull-right''><p class='muted'><small></small></p></div></div></div>");
-	    $("#list-user-online").fadeIn(1000);
+	socket.on('getUsers', function  (data) {	
+		if(!data.message['online']){// Si esta desconectado
+			$("#list-user-online").append("<div><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='offline media-body'><a id='user-online-" + data.message['username'] + "' href='/users/view/" + data.message['userId'] + "'>" + data.message['username'] + "</a><p></p></div></div>");		 
+		}else{ //Si esta conectado
+			$("#list-user-online").prepend("<div><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='media-body'><a id='user-online-" + data.message['username'] + "' data-html='true' data-placement='right' data-toggle='tooltip' href='/users/view/" + data.message['userId'] + "' data-original-title='' data-trigger='manual'>" + data.message['username'] + "</a><div id='time-online' class='pull-right'><p class='muted'><small></small></p></div></div></div>");		    
+		}
+		
+		$("#list-user-online").fadeIn(1000);	    
 	    socket.emit('updateTimeConnected');
 	});
 	
 	socket.on('newUser', function  (data) {
-	    $("#list-user-online").append("<div style='display: none'><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='media-body'><a id='user-online-" + data.message['username'] + "' data-html='true' data-placement='right' data-toggle='tooltip' href='/users/view/" + data.message['userId'] + "' data-original-title='' data-trigger='manual'>" + data.message['username'] + "</a><div id='time-online' class='pull-right''><p class='muted'><small></small></p></div></div></div>");
-	    $("#list-user-online :last-child").fadeIn(1000);
+	    $("#list-user-online").prepend("<div style='display: none'><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='media-body'><a id='user-online-" + data.message['username'] + "' data-html='true' data-placement='right' data-toggle='tooltip' href='/users/view/" + data.message['userId'] + "' data-original-title='' data-trigger='manual'>" + data.message['username'] + "</a><div id='time-online' class='pull-right'><p class='muted'><small></small></p></div></div></div>");
+	    $("#list-user-online :first-child").fadeIn(1000);
 	    socket.emit('updateTimeConnected');
 	});
 	
-	socket.on('removeUser', function  (data) {
-	    $("#user-online-" + data.message).parent().parent().fadeOut(1000, function(){ $(this).remove();});		   
+	socket.on('updateDatasUser', function  (data) {		
+		if(!data.message.online){ //Si se desconectó
+			$("#user-online-" + data.message.username).parent().parent().remove();
+			$("#list-user-online").append("<div><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='offline media-body'><a id='user-online-" + data.message['username'] + "' href='/users/view/" + data.message['userId'] + "'>" + data.message['username'] + "</a><p></p></div></div>");	
+		}else{ //Si se conectó
+			$("#user-online-" + data.message.username).parent().parent().remove();
+			$("#list-user-online").prepend("<div><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='media-body'><a id='user-online-" + data.message['username'] + "' data-html='true' data-placement='right' data-toggle='tooltip' href='/users/view/" + data.message['userId'] + "' data-original-title='' data-trigger='manual'>" + data.message['username'] + "</a><div id='time-online' class='pull-right'><p class='muted'><small></small></p></div></div></div>");				
+		}	
+		
+		socket.emit('updateTimeConnected');
 	});
 	
 	socket.on('updateTimeConnected', function  (data) {
@@ -36,13 +49,17 @@ $(document).ready(function() {
 	});	
 	
 	$(document).on("mouseover", "[id^='user-online']", function(){
-		var username = $(this).attr('id').replace('user-online-', '');	
-		var element = $(this);
-		socket.emit('getUser', {message: username});			
+		if(!$(this).parent().hasClass('offline')){
+			var username = $(this).attr('id').replace('user-online-', '');	
+			var element = $(this);
+			socket.emit('getUser', {message: {username: username}});	
+		}				
 	});
 	
 	$(document).on("mouseout", "[id^='user-online']", function(){
-		$(this).tooltip('hide');
+		if(!$(this).parent().hasClass('offline')){
+			$(this).tooltip('hide');
+		}
 	});
 	
 

@@ -1,6 +1,27 @@
 $(document).ready(function() {
 	
-	
+    var socket = io.connect('http://localhost:3000');
+    
+    $.post('/users/getUserLogged/', function(data) {   //Actualizar Socket ID		
+		if(data){   			
+			 socket.emit('updateSocketIdUser', {username: data});
+		}
+	});
+   
+    
+   /* var interval = null;
+      interval = setInterval(function() { //Verifico si el usuario esta logueado	    	
+    	$.post('/users/verifySessionUser/', function(data) {    		
+    		if(data){//Si no lo esta logueado entonces lo quito del servidor de Node para que se elimine de la lista de los otros usuario    			
+    			socket.emit('disconnectUser', {username: data});
+    			stop();
+    		}
+    	});
+	}, 30000);
+    
+    function stop() {
+        clearTimeout(interval);
+    };*/
 
 	////Falta arreglar cuando no tiene mas perfiles
 	$("#change-profile").click(function() {
@@ -50,22 +71,6 @@ $(document).ready(function() {
     	else{
     		$(this).prop('checked', false);
     	}*/
-	});
-    
-    var interval = null;
-    interval = setInterval(function() { //Verifico si el usuario esta logueado	    	
-    	$.post('/users/verifySessionUser/', function(data) {    		
-    		if(data){//Si no lo esta logueado entonces lo quito del servidor de Node para que se elimine de la lista de los otros usuarios
-    			var socket = io.connect('http://localhost:3000');
-    			socket.emit('disconnectUser', {username: data});
-    			stop();
-    		}
-    	});
-	}, 30000);
-    
-    function stop() {
-        clearTimeout(interval);
-    };
-
+	});  
 
 });
