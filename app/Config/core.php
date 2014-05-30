@@ -176,7 +176,8 @@
  */
 	
 	Configure::write('Session', array(
-		'defaults' => 'php',		
+		'defaults' => 'php',	
+		'cookieTimeout' => '0',
 		'checkAgent' => false
 	));
 	

@@ -22,18 +22,14 @@ class UsersController extends AppController {
 	 * una vez insertado un usuario se volver a comentarear, ya que ahora podemos gestionar la aplicacion
 	 * con este usuario, siempre y cuando se halla creado con rol de Administrador.
 	*/
-	/*
-	 public function beforeFilter() {
-	parent::beforeFilter();
-	$this->Auth->allow('add');
-	}
-	*/
+	
 
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Auth->allow('listRolUser');	
+		$this->Auth->allow('getUserLogged');
 
-		if(!$this->Auth->loggedIn() && ($this->action != 'verifySessionUser') && $this->Cookie->read('username')){
+	/*	if(!$this->Auth->loggedIn() && ($this->action != 'verifySessionUser') && $this->Cookie->read('username')){
 			//Si la session expiró, entonces desconectarlo del servidor de Node JS
 			$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
 		
@@ -43,7 +39,7 @@ class UsersController extends AppController {
 				$websocket->emit('disconnectUser', $data);
 				$this->Cookie->delete('username');
 			}
-		}
+		}*/
 	}	
 
 	public function isAuthorized($user) {
@@ -81,24 +77,18 @@ class UsersController extends AppController {
 				else{
 					if ($this->Auth->login()) {
 						$this->Session->write('userRol', $rol['Rol']['name']);	
-						$onlineUser = $this->Auth->user();
-						$this->Cookie->write('username', $onlineUser['username']);						
-						
-						//$this->requestAction('/onlineUsers/add/'.$user['User']['id'].'/'.$user['User']['username'].'/'.$rol['Rol']['name']);
+						$onlineUser = $this->Auth->user();											
 						
 						//Poner usuario como online usando socket I/O
 						$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
 						
 						if($websocket->connect()) {															
-							$data = array('userId' => $onlineUser['id'], 'username' => $onlineUser['username'], 'current_rol' => $rol['Rol']['name'], 'date' => CakeTime::format("Y-m-d H:i:s", time()), 'ip' => $this->request->clientIp());
+							$data = array('userId' => $onlineUser['id'], 'username' => $onlineUser['username'], 'current_rol' => $rol['Rol']['name'], 'date' => CakeTime::format("Y-m-d H:i:s", time()), 'ip' => $this->request->clientIp(), 'socketId' => '', 'online' => true);
 							$websocket->emit('connectUser', $data);						
-						}							
-						
-						/*$onlineUser = $this->Auth->user();
-						$dataUser = array('userId' => $onlineUser['id'], 'username' => $onlineUser['username'], 'current_rol' => $rol['Rol']['name'], 'date' => CakeTime::format("Y-m-d H:i:s", time()), 'ip' => $this->request->clientIp());
-						$this->Session->write('userConnectedDatas', $dataUser);*/
+						}	
 												
 						$this->redirect($this->Auth->redirect());
+						
 					} else {
 						$this->Session->setFlash(__("Your password was incorrect"), 'alert', array(
 								'plugin' => 'TwitterBootstrap',
@@ -128,14 +118,13 @@ class UsersController extends AppController {
 		if($websocket->connect()) {
 			$onlineUser = $this->Auth->user();
 			$data = array('username' => $onlineUser['username']);
-			$websocket->emit('disconnectUser', $data);
-			$this->Cookie->delete('username');
+			$websocket->emit('disconnectUser', $data);			
 		}	
 		
 		$this->redirect($this->Auth->logout());
 	}
 	
-	public function verifySessionUser() {
+	/*public function verifySessionUser() {
 		if($this->RequestHandler->isAjax()){
 			$this->autoRender = FALSE;
 			if (!$this->Auth->loggedIn() && $this->Cookie->read('username')) {
@@ -146,7 +135,16 @@ class UsersController extends AppController {
 			}
 			return false;
 		}
+	}*/
+	
+	public function getUserLogged() {
+		if($this->RequestHandler->isAjax()){
+			$this->autoRender = FALSE;
+			$onlineUser = $this->Auth->user();
+			return $onlineUser['username'];
+		}
 	}
+	
 	/**
 	 * index method
 	 *
