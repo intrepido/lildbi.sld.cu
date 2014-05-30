@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+App::import('Plugin/WebSocket/Lib/Network/Http', 'WebSocket', array('file'=>'WebSocket.php'));
 /**
  * Rols Controller
  *
@@ -143,6 +144,15 @@ class RolsController extends AppController {
 	//Cambia el perfil de un usuario. Se le pasa el nombre del Rol por get y se cambia en la Session
 	public function changeRol(){
 	
+		//Modificar rol del usuario usando socket I/O
+		$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
+		
+		if($websocket->connect()) {
+			$onlineUser = $this->Auth->user();
+			$data = array('username' => $onlineUser['username'], 'current_rol' => $this->request->params['pass'][0]);
+			$websocket->emit('updateCurrentRolUser', $data);			
+		}
+		
 	    $this->Session->write('userRol',$this->request->params['pass'][0]);		
 		$this->redirect($this->Auth->redirect());
 	}

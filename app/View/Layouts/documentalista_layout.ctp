@@ -28,7 +28,7 @@ $lilDBIDescription = __d('cake_dev', 'LILDBI: Biblioteca Virtual de Salud');
 <?php
 echo $this->Html->meta('infomed.ico', $this->Html->webroot('img/infomed.ico'), array('type' => 'icon'));
 
-echo $this->Html->css('bootstrap');
+echo $this->Html->css('bootstrap.min');
 echo $this->Html->css('custom-styles');
 echo $this->Html->css('bootstrap-responsive.min');
 
