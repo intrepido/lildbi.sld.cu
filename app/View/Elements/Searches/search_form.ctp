@@ -1,46 +1,15 @@
-<div style="margin-top:50px">
-  <center> 
-	<?php echo $this->Form->create('query'); ?>
-	  <?php echo$this->Html->image('logo.png', array('alt' => 'Logo'))?></br></br>
-      <?php echo $this->Form->input('qText', array('label' => '','type' => 'text','class' => 'span5 search-query','placeholder' => 'Inserte una o varias palabras...')); ?>
-      
-      <div id="options" class="collapse" >
-      
-          <table >
-              <tr>
-                  <td>
-                      <p style="margin: 0 5px 20px" >Referencias por p&aacute;gina </p>
-                  </td>
-                  <td>
-					  <?php echo $this->Form->input('rows', array('label'=>false, 'class'=>'span12', 'options' => array(
-                          '10'=>'10',
-                          '20'=>'20',
-                          '40'=>'40',
-                          '60'=>'60'
-                       ))); ?>
-                  </td>
-                  <td>
-                      <p style="margin: 0 5px 20px" > Formato de presentaci&aacute;n  </p>
-                  </td>
-                  <td>
-					   <?php echo $this->Form->input('format', array('label'=>false , 'class'=>'span12', 'options' => array(
-                            '0'=>'AfiliaciÃ³n',
-                            '1'=>'Detallado',
-                            '2'=>'Largo',
-                            '3'=>'CitaciÃ³n',
-                            '4'=>'TÃ­tulo'
-                         ))); ?>
-                  </td>			
-              </tr>
-          </table>
-          
-      </div>
-      
+<div class="container-initial-search" align="center">
+   
+	<?php echo $this->Form->create('query',array('onsubmit' => 'return validate();')); ?>
+	  <?php echo$this->Html->image('logo.png', array('alt' => 'Logo'))?></br></br> 
+      <input id="search"  name="data[query][qText]" type="text" class="span5 search-query" autocomplete="off" placeholder= "<?php echo __('Escriba palabras para buscar libros, revistas, etc.'); ?>" />    
+  	  
       <table>
               <tr>
                   <td>
                       <div>
-                          <?php echo $this->Form->button("Opciones ".$this->Html->tag('icon',null,array('class'=>'icon-cog')), array("type" => 'button','id' => 'button', 'class' => 'btn btn-info' , 'data-toggle' => 'collapse' , 'data-target'  => '#options','escape' => false));?>
+                      	  <?php echo $this->Html->link(utf8_encode(__('Búsqueda Avanzada ')).$this->Html->tag('icon',null,array('class'=>'icon-cog')), array( 'action'=>'advancedSearch'),array('plugin' => false,'class' => 'btn btn-info','escape' => false)); ?>
+                         
                       </div>
                   </td>	
                   <td>
@@ -48,17 +17,20 @@
                   </td>
                   <td>
                       <div>
-                          <?php echo $this->Form->button("Buscar ".$this->Html->tag('icon',null,array('class'=>'icon-search')), array("type" => 'commit' , 'class' => 'btn btn-primary','escape' => false));?>
+                          <?php echo $this->Form->button(__("Buscar ").$this->Html->tag('icon',null,array('class'=>'icon-search')), array("type" => 'commit' , 'class' => 'btn btn-primary','escape' => false));?>
                       </div>
                   </td>
                       
               </tr>
-      </table></br>
+      </table>
+      </br>
       
     <?php $this->Form->end(); ?>
-  </center>
+    
+    <div align="center" class="alert span6" style="display:none">
+      <strong><?php echo utf8_encode(__('Atención!')); ?></strong> <?php echo utf8_encode(__('Debe introducir términos para buscar.')); ?>
+    </div>
+  
 </div>
 
-<script>
-   $(".collapse").collapse('hidden');
-</script>
+

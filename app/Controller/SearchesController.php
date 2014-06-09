@@ -1,105 +1,190 @@
 <?php
-
 class SearchesController extends AppController {
+	
 	public $name = 'Searches'; 
-	var $uses = array('Solr','Document');
-	var $helpers = array('Solr');
-	public $recursive = 1;
+	public $uses = array('Solr','Document');
+	public $helpers = array('Solr');
+	public $components = array('RequestHandler');
 
+	//Permisos y control del layout
 	public function beforeFilter() {
 		parent::beforeFilter();
-		// La accion index que lleva a la interfaz de busqueda es la unica accesible sin autenticarse.
-		$this->Auth->allow('index');
-		$this->Auth->allow('indexBoard');
-		$this->Auth->allow('test');
+		$this->Auth->allow();	
 		
-		// El layout depende del rol que juega el usuario.
-		$this->layout = 'search_layout'; //Usuario sin autenticarse
-		
-		if ($this->Session->read('userRol') == 'Administrador'){ //Administrador
-			$this->layout = 'admin_layout';
+		$this->layout = 'search_layout'; 
+	}
+	
+	//Redirecciona
+	function index(){
+		$this->redirect(array('action'=>'search'));
+	}
+	
+	//Busqueda Simple
+	function search($params = null) { 	
+		if($this->request->is('post')){
+			$text = $this->data['query']['qText'];
+			if(strlen($text) > 2){
+				$q = urlencode($this->data['query']['qText']);		
+				if(isset($this->data['query']['rows'])){
+					$rows = $this->data['query']['rows'];
+				}else{
+					$rows = 10;
+				}
+			
+				$this->redirect(array('action'=>'search', 'select?q='.$q.'&rows='.$rows));	
+			}
 		}
+		else{
+			if($params != null){
+			  $result = $this->Solr->search($params);
 
-		if ($this->Session->read('userRol') == 'Documentalista'){ //Documentalista
-			$this->layout = 'documentalista_layout';
-		}
-
-		if ($this->Session->read('userRol') == 'Editor'){ //Editor
-			$this->layout = 'editor_layout';
+			  if( strpos( $params, "&rows=" ) != false ){	
+			  		$params = strstr($params, '&rows=', true);
+			  }
+			  
+			  if($result){$result['urlParams'] = $params;}	
+			  $this->set(compact('result'));
+			}		
 		}
 	}
+	
+	//Busqueda Avanzada
+	function advancedSearch() { 
+		if($this->request->is('post')){	
+			$form = $this->data['query'];
+			if(trim($form['qText']) != ''){
+				$q = $form['field'].':('.$form['qText'].')';
+				for($i = 1 ; $i<3 ; $i++){
+					if(trim($form['qText'.$i]) != ''){
+						$q = $q.' '.$form['op'.$i].' '.$form['field'.$i].':('.$form['qText'.$i].')';
+					}
+				}
+				
+				$lang = '';
+				$country = '';
+				$haveURL = '';
+				$formatText = '';
+				$date = '';
+				$typePub = '';
+				
+				if($form['lang'] != ''){
+					$lang = '&fq=v40%3A'.$form['lang'];
+				}
+				if($form['country'] != ''){
+					$country = '&fq=v67%3A'.$form['country'];
+				}
+				if(isset($form['url'])){
+					$haveURL = '&fq=v8%3A*';
+					if($form['formatText'] != ''){
+						$formatText = '&fq=v8%3A'.$form['formatText'];
+					}
+				}
+				if($form['from'] != '---' || $form['until'] != '---'){
+					if($form['from'] != '---' && $form['until'] != '---'){
+						$date = '&fq=v65%3A['.$form['from'].'%20TO%20'.$form['until'].']';
+					}
+					if($form['from'] == '---' && $form['until'] != '---'){
+						$date = '&fq=v65%3A[*%20TO%20'.$form['until'].']';
+					}
+					if($form['from'] != '---' && $form['until'] == '---'){
+						$date = '&fq=v65%3A['.$form['from'].'%20TO%20*]';
+					}
+				}
+				if($form['typePub'] != 'all'){
+					$typePub = '&fq=v5%3A'.$form['typePub'];
+				}
 
-	public function isAuthorized($user) {
-		// Solo los administradores pueden utilizar el resto de las acciones.
-		if ($this->Session->read('userRol') == 'Administrador') {
-			return true;
+				$this->redirect(array('action'=>'search', 'select?q='.urlencode($q).$lang.$country.$haveURL.$formatText.$date.$typePub.'&rows=10'));
+			}else{
+				if(trim($form['qText1']) != '' || trim($form['qText2']) != ''){
+					$this->set("result",'Error de sintaxis.');	
+				}else{
+					$this->set("result",'Debe introducir un texto para la búsqueda.');
+				}
+			}									
 		}
+	}
+	
+	//Visualiza un documento dada la id.
+	function view($id = null){
+		$document = $this->Solr->search('select?q=id:'.$id);
+		$this->set("doc",$document['response']['docs'][0]);
+	}
+	
+	//Agrega o elimina si existe un elemento en la carpeta.
+	function updateFolder(){
+		$this->autoRender = FALSE;
+		if($this->RequestHandler->isAjax()){
+				
+			if($this->Session->check('folder.'.$this->request->data["docID"])){			
+					$this->Session->delete('folder.'.$this->request->data["docID"]);
+					$docs = $this->Session->read('folder');
+					if(empty($docs)){
+						return 'delAll';
+					}else{
+						return 'del';
+					}
+			}else{
+				$this->Session->write('folder.'.$this->request->data["docID"], $this->request->data["docID"]);
+				return 'add';
+			}
+		}
+		
 		return false;
 	}
 	
-	function index($q = '', $start = 0, $rows = 10, $format = 0) { 	
-		if(($q != '' && $q != '0') || $this->request->is('post')){
-			if($this->request->is('post')){
-					$this->redirect(array('action'=>'index', $this->data['query']['qText'], 0,$this->data['query']['rows'], $this->data['query']['format']));									
+	//Obtener terminos sugeridos
+	function suggestions($param = null){
+		$this->autoRender = FALSE;
+		if($this->RequestHandler->isAjax()){
+			$param = urlencode($param);
+			if($param == null || $param == '' || $param == ' '){
+				$result = false;
+			}else{
+				$query = 'suggest?q='.$param;
+				$result = $this->Solr->getSuggest($query);
 			}
-			else{
-					$result = $this->Solr->makeSearch($q,$start,$rows);
-					$result['responseHeader']['params']['format'] = $format;	
-					$this->set(compact('result'));
+			
+			if($result){
+				if((count($result['spellcheck']['suggestions'])) > 0){	
+					return json_encode($result['spellcheck']['suggestions'],true);	
+				}else{
+				  return 0;	
+				}
+			}else{
+				return 0;
 			}
 		}
 	}
 	
-/*	function index($q = null, $start = 0, $rows = 10) { 	
-		if($this->request->is('post')){
-				if($this->data['query']['qText'] == ''){
-					$result = null;
-				}else{
-					$result = $this->Solr->makeSearch($this->data['query']['qText'],$start,$this->data['query']['rows']);
+	
+	//Visualizar Carpeta
+	function viewFolder(){
+		$result = '';
+		$params = 'select?q=id:(';
+		if($this->Session->check('folder')){
+			$docs = $this->Session->read('folder');
+			if(sizeof($docs)!=0){
+				foreach($docs as $doc){
+					$params = $params.'+'.$doc;
 				}
-				$this->set(compact('result'));									
-		}else{
-			if(isset($q)){
-				$result = $this->Solr->makeSearch($q,$start,$rows);
-				$this->set(compact('result'));
+				$params = $params.')';
+				$result = $this->Solr->search($params);
 			}
-		}	
-	}*/
-	
-	function indexBoard(){
-		$this->layout = 'admin_layout';
-		$bases = $this->Document->curlGet('_all_dbs');
-		$temp = array();
-		$status = '';	
-		$facetResults = $this->Solr->facetByField('v4');
-		
-		foreach ($bases as $base) {							
-			if( strpos( $base, "_base" ) !== false ){				
-				if($facetResults['v4'][strstr($base, '_', true)]){
-					$status = "success"; //Indexado
-					array_push($temp, array('name' => strstr($base, '_', true), 'capacity' => $status, 'countDocs' => $facetResults['v4'][strstr($base, '_', true)]));
-				}
-				else{
-					$status = ""; //No Indexado
-					array_push($temp, array('name' => strstr($base, '_', true), 'capacity' => $status, 'countDocs' => 0));
-				}
-			}				
-		}		
-		$this->set("bases", $temp);		
+		}
+			
+		$this->set("result",$result);
 	}
 	
-	function toindex($nameBD = null){
-		$this->Solr->toIndexBase($nameBD.'_base');
-		$this->redirect(array('action'=>'indexBoard'),null,true);		
-	}
-	
-	function unindex($nameBD = null){
-		$this->Solr->unindexBase($nameBD);			
-		$this->redirect(array('action'=>'indexBoard'),null,true);	
-	}
-	
-	function test(){
-		
+	//Elimina todos los elementos de la carpeta
+	function delFolder(){
+		$this->autoRender = FALSE;
+		if($this->RequestHandler->isAjax()){
+			if($this->Session->check('folder')){
+				$this->Session->delete('folder');
+			}
+			return 'delAll';
+		}
 	}
 	
 }

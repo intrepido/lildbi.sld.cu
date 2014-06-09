@@ -13,8 +13,7 @@ body {
 }
 
 /***********************  Begin Sticky footer styles  ******************************/
-
-html{
+html {
 	height: 100%;
 	/* The html and body elements cannot have any padding or margin. */
 }
@@ -32,6 +31,7 @@ html{
 #footer {
 	height: 60px;
 }
+
 #push {
 	height: 70px;
 }
@@ -52,58 +52,164 @@ html{
 }
 
 /************************************ End Sticky footer styles **********************************************/
-  
-      
-.bxslider-active{
+*
+*
+*
+	/************************************ Begin Search styles **********************************************/
+	
+
+.typeahead {
+	text-align: left;
+}
+
+.container-initial-search {
+	margin-top: 50px;
+}
+
+.container-initial-search table {
+	margin-top: 15px;
+}
+
+.container-initial-search a {
+	margin-right: 15px;
+}
+
+.container-search {
+	margin-bottom: auto;
+}
+
+.container-search a {
+	margin-bottom: 10px;
+}
+
+.container-search #search {
+	width: 65%;
+}
+
+.result-search-identification {
+	margin-left: 5px;
+	font-size: 0.7em;
+	font-family: Verdana;
+}
+
+.result-search-identification img {
+	margin-bottom: 3px;
+}
+
+.result-search-identification a {
+	float: right;
+	margin-left: 10px;
+}
+
+.table-result-search {
+	margin-bottom: -5px;
+}
+
+.table-result-search td {
+	text-align: justify;
+}
+
+.table-result-search .result-search-description {
+	font: small-caption;
+}
+
+#modalSearchResult {
+	margin-top: -40px;
+}
+
+#modalSearchResult .modal-header {
+	background-color: ghostwhite;
+	border-radius: 5px;
+	text-align: justify;
+}
+
+#modalSearchResult .modal-body {
+	padding-bottom: 0px;
+	padding-top: 10px; } #modalSearchResult .modal-footer {
+	margin-top: 20px;
+}
+
+.table-advanced-search {
+	margin-bottom: 40px;
+}
+
+.table-advanced-search select {
+	height: 30px !important;
+}
+
+.restrict-search .input-prepend {
+	margin-right: 30px;
+	margin-bottom: 0px;
+}
+
+.restrict-search .span12 {
+	margin-bottom: 50px;
+	margin-top: 10px;
+}
+
+.restrict-search input {
+	margin-bottom: 8px;
+}
+
+.restrict-search select {
+	width: auto;
+}
+
+
+/************************************ End Search styles **********************************************/
+*
+*
+*
+
+.bxslider-active {
 	margin-left: 50px;
-	margin-top: 20px;	
+	margin-top: 20px;
 }
 
-.bxslider-active label{
-	margin-right: 50px;	
+.bxslider-active label {
+	margin-right: 50px;
 }
 
-
-a.link-decoration, a.link-decoration:hover{
-    border-radius: 5px;
-    margin-bottom: 2px;
-    margin-top: 2px;
-    line-height: 14px;
-    margin-right: 2px;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 3px; 
-    padding-bottom: 3px;
+a.link-decoration,a.link-decoration:hover {
+	border-radius: 5px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	line-height: 14px;
+	margin-right: 2px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 
-a.link-decoration:hover{
+a.link-decoration:hover {
 	text-decoration: none;
-    background-color: #EEEEEE;
+	background-color: #EEEEEE;
 }
 
-#total-analitics{
-	padding-top: 0px; 
+#total-analitics {
+	padding-top: 0px;
 	padding-bottom: 1px;
 }
 
-#total-analitics > span{
+#total-analitics>span {
 	margin-top: 4px;
 }
 
-#list-source-documents .btn-group > .btn + .btn {
-    margin-left: 0px;
+#list-source-documents .btn-group>.btn+.btn {
+	margin-left: 0px;
 }
 
-.nav.nav-pills .dropdown-menu{
+.nav.nav-pills .dropdown-menu {
 	right: 0px;
 }
 
-.nav.nav-pills li{
+.nav.nav-pills li {
 	width: 100%;
 }
 
 .pointer-cursor {
-cursor: pointer;
+	cursor: pointer;
 }
 
 .inset-type thead tr {
@@ -163,7 +269,6 @@ cursor: pointer;
 	left: -2px;
 	width: 910px;
 }*/
-
 .breadcrumb {
 	margin-top: -20px;
 }
@@ -173,14 +278,14 @@ cursor: pointer;
 }
 
 .offline a {
-    color: #999999;
-    text-decoration: none;
-}
-.offline a:hover, .offline a:focus {
-    color: #999999;
-    text-decoration: underline;
+	color: #999999;
+	text-decoration: none;
 }
 
+.offline a:hover,.offline a:focus {
+	color: #999999;
+	text-decoration: underline;
+}
 
 .onoffswitch {
 	position: relative;

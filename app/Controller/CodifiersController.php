@@ -11,6 +11,11 @@ class CodifiersController extends AppController {
 	public $name = 'Codifiers';
 	public $components = array('RequestHandler');
 
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('getById');	
+		
+	}
 
 	public function getAll() {
 

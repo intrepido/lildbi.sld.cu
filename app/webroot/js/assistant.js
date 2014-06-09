@@ -5,7 +5,7 @@ $(document).ready(
 					'click',
 					function(e) {						
 						$('html, body').stop().animate({
-							scrollTop: $(this).parent().parent().nextAll('tr.info:first').offset().top - 75
+							scrollTop: $(this).parent().parent().nextAll('tr.info:first').offset().top - 42
 						}, 1000);
 					
 					e.preventDefault();
@@ -15,7 +15,7 @@ $(document).ready(
 					'click',
 					function() {
 						$('html, body').stop().animate({							
-							scrollTop: $(this).parent().parent().prevAll('tr.info:first').offset().top - 75
+							scrollTop: $(this).parent().parent().prevAll('tr.info:first').offset().top - 42
 						}, 1000);
 						
 					return false;
@@ -26,7 +26,7 @@ $(document).ready(
 					'click',
 					function() {
 						$('html, body').animate({
-							scrollTop: $(this).parent().parent().prevAll('tr.info:last').offset().top - 75
+							scrollTop: $(this).parent().parent().prevAll('tr.info:last').offset().top - 42
 						}, 1000);
 						
 					return false;
@@ -37,7 +37,7 @@ $(document).ready(
 					'click',
 					function() {
 						$('html, body').stop().animate({
-							scrollTop: $(this).parent().parent().nextAll('tr.info:last').offset().top - 75
+							scrollTop: $(this).parent().parent().nextAll('tr.info:last').offset().top - 42
 						}, 1000);
 					
 					e.preventDefault();	

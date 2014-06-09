@@ -1,413 +1,296 @@
-<?php 
-  $query = $result['responseHeader']['params']['q'];
-  $numFound = $result['response']['numFound'];
-  $start = $result['response']['start'];
-  $rows = $result['responseHeader']['params']['rows'];
-  $docs = $result['response']['docs'];
-  $format = $result['responseHeader']['params']['format'];
+<?php  
+
+if($result){
+  $header = $result['responseHeader'];
+  $body = $result['response'];
+  $query = $header['params']['q'];
+  $numFound = $body['numFound'];
+  $start = $body['start'];
+  $rows = $header['params']['rows'];
+  $docs = $body['docs'];
+  if(isset($result['highlighting'])){
+	  $hl = $result['highlighting'];
+  }
+  $url = $result['urlParams'];
+}else{
+  $query = '';
+  $numFound = 0;
+  $start = 0;
+  $url = '';
+  $rows = 10;
+  $docs = null;
+  $error = true;
+}
 ?>
 
-<div class="container-document" >
 
-<!-- Encabezado (inicio)-->
-
-      <p><?php echo $numFound ?> referencias encontradas para: <b><i><?php echo $query ?> </i></b></p>  
-      <p>
-		<?php
-		  if($docs != false){
-			if(($start+$rows) < $numFound){
-				echo 'Mostrando de la '.($start + 1).' a la '.($start + $rows);
-			}else{
-				echo 'Mostrando de la '.($start + 1).' a la '.$numFound;
-			}
-		  }
-        ?>
-      </p>
-      
-<!-- Encabezado (fin)-->   
-
-<!-- Resultados (inicio)--> 
-
-      <?php 
-      if($numFound == 0){
-          echo '<b>No se encontraron resultados para la b煤squeda.</b>';
-      }elseif(!$docs){
-          echo '<b>Ha excedido el r谩ngo de p谩ginas.</b>';
-      }else{
-          $counter = 0;
-          foreach($docs as $doc){ 
-		  	$counter++;
-	  ?> 
+<div class="container-document" >    
+    
+    <!-- Encabezado (inicio)-->
+    
+         <?php if(!isset($error)){ ?>
+          <p><?php echo $numFound.' '.__("referencias encontradas para:") ?> <b><i><?php echo $query ?> </i></b>
+          &nbsp;&nbsp;   
+			  <?php if(isset($header['params']['fq'])){
+				  		echo utf8_encode(__("Filtros aplicados a la b鷖queda: "));
+                        $filters = $header['params']['fq'];
+						$terms = array("v40:" => __("Idioma: "), 
+									   "v65:" => __("Fecha: ") ,
+									   "TO *]" => "" ,
+									   "TO" => __("hasta") , 
+									   "v8:*" => __("Solo con texto completo"),
+									   "[*" => "" , 
+									   "[" => __("desde ") ,
+									   "]" => "",
+									   "v67:" => utf8_encode(__("Pa韘: ")) , 
+									   "v5:" => __("Tipo: ")
+									   );
+						if(is_array($filters)){
+							foreach($filters as $f){
+								echo " <span class='label label-info'>".strtr($f, $terms)."</span> ";
+							}
+						}else{
+							echo " <span class='label label-info'>".strtr($filters, $terms)."</span> ";
+						}
+						
+                    }   
+              ?>
+          </p>  
+          <p>
+            <?php  
+              if($docs != false){
+                if(($start+$rows) < $numFound){
+                    echo __('Mostrando de la ').($start + 1).__(' a la ').($start + $rows);
+                }else{
+                    echo __('Mostrando de la ').($start + 1).__(' a la ').$numFound;
+                }
+              }
+            ?>
+          </p>
+         <?php } ?>
+         
           
-          <div class="well well-small docContent" id="doc<?php echo $counter ?>">
-          		<input type="checkbox"  onclick="javascript:check(this)" style="margin-bottom: 4px;margin-right: 4px;"/>
-                <font  face="Verdana" size="1">
-                	
-          			Id: <?php echo $doc['v2'];?> / 
-          			Base: <?php echo $doc['v4'] ;?> / 
-          			Idioma: <?php 
-         				 $langs = $this->Solr->language($doc['v40']);
-         				 foreach($langs as $l){
-							  if(trim($l) != ''){
-								  echo $this->Html->image('flags/'.trim($l).'.png').' ';
-							  }else{
-								  echo '';
-							  }
-						 }
-         			?>  
-         	 	</font>
-                
-                
-                              
-				<?php  
-					if($counter!=1){
-						echo '<a id="top" href="#" class="pull-right noprint">'.$this->Html->image('top.gif').'</a>';
-						echo '<a id="prev" href="#" class="pull-right noprint">'.$this->Html->image('prev.gif').'</a>';
-					} 
-					if($counter!=count($docs)){
-						echo '<a id="next" href="#" class="pull-right noprint">'.$this->Html->image('next.gif').'</a>';
-						echo '<a id="bott" href="#" class="pull-right noprint">'.$this->Html->image('bott.gif').'</a>';
-					} 
-                ?>
-                
-                <!-- Afiliacion y Detallado -->
-                
-                <?php if($format==0 || $format==1 || $format==2){ ?>
-              	 <table class='table'>
-                    <tbody>
+    <!-- Encabezado (fin)--> 
+      
+    <!-- Resultados (inicio)-->   
+          <?php 
+          if($numFound == 0){
+              echo '<b>'. utf8_encode(__("No se encontraron resultados para la b鷖queda.")).'</b>';
+          }elseif(!$docs){
+              echo '<b>'.utf8_encode(__("B鷖queda incorrecta.")).'</b>';
+          }else{
+              $counter = 0;
+              foreach($docs as $doc){ 
+                $counter++;
+          ?> 
+              
+              <div class="well well-small" id="doc<?php echo $counter ?>">
+                    <div class="result-search-identification">         	
+                        Id: <?php echo $doc['v2'];?> / 
+                        Base: <?php 
+                            foreach($doc['v4'] as $b){
+                                echo $b.' ';
+                            }
+                        if(isset($doc['v40'])){
+						?> / 
+                        Idioma: <?php ;
+                             foreach($doc['v40'] as $l){
+                                echo $this->Html->image('flags/'.trim($l).'.png').' ';
+                             }
+						}
+                        ?>  
+                        
+                        
+                        <?php if($this->Session->check('folder.'.$doc['id'])){ ?>
+                        	<a id="<?php echo $doc['id'] ?>" class="btn btn-mini updateFolder overDesc" rel='tooltip' data-original-title='Remover de carpeta'><icon class="icon-minus" /></a>
+                    	<?php }else{ ?>
+                        	<a id="<?php echo $doc['id'] ?>" class="btn btn-mini updateFolder overDesc" rel='tooltip' data-original-title='Agregar a carpeta'><icon class="icon-plus" /></a>
+                        <?php } ?>
+                        
+                        <a id="<?php echo $doc['id'] ?>" rel='tooltip' data-original-title='Ver todos los detalles' href="#modalSearchResult" role="button" class="btn btn-mini viewDocBtn overDesc" data-toggle="modal"><icon class='icon-search' /></a>
+                        <!--<a href="/lildbi/searches/view/<?php //echo strtolower($doc['v4'][0]).'/'.$doc['id'] ?>" style="float:right;margin-left:10px" rel='tooltip' data-original-title='Visualizar documento' class="btn btn-mini overDesc"><icon class='icon-search' /></a> -->
+                    	
+                        <?php 
+							if(isset($doc['v8'][0])){
+								echo '<a href="'.$this->Solr->url($doc['v8'][0]).'" rel="tooltip" data-original-title="Ir al texto completo" class="btn btn-mini overDesc"><icon class="icon-share" /></a>';
+							}
+						?>
+                    </div>                    
                     
-                        <?php if(isset($doc['v12'])){ ?>
-                            <tr>
-                                <td class="span2" style='text-align:right' ><b>T&iacute;tulo:</b></td>
-                                <td class="span10" style='text-align:justify'>
-                                    <b><?php echo $this->Solr->title($doc['v12']); ?></b>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        
-                        <?php if(isset($doc['v18'])){ ?>
-                            <tr>
-                                <td class="span2" style='text-align:right' ><b>T&iacute;tulo:</b></td>
-                                <td class="span10" style='text-align:justify'>
-                                    <b><?php echo $this->Solr->title($doc['v18']); ?></b>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        
-                         <?php if(isset($doc['v25'])){ ?>
-                            <tr>
-                                <td class="span2" style='text-align:right' ><b>T&iacute;tulo:</b></td>
-                                <td class="span10" style='text-align:justify'>
-                                    <b><?php echo $this->Solr->title($doc['v25']); ?></b>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        
-                        <?php if(isset($doc['v10'])){ ?>
-                            <tr>
-                                <td class="span2" style='text-align:right' ><b>Autor:</b></td>
-                                <td class="span10" style='text-align:justify'>
-                                    <?php 
-									if($format == 0){
-										echo $this->Solr->author($doc['v10']);
-									}
-									if($format == 1 || $format == 2){
-										echo $this->Solr->authorSAf($doc['v10']);
-									}
-									?>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        
-                        <?php if(isset($doc['v16'])){ ?>
-                            <tr>
-                                <td class="span2" style='text-align:right' ><b>Autor:</b></td>
-                                <td class="span10" style='text-align:justify'>
-                                    <?php 
-									if($format == 0){
-										echo $this->Solr->author($doc['v16']);
-									}
-									if($format == 1 || $format == 2){
-										echo $this->Solr->authorSAf($doc['v16']);
-									}
-									?>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        
-                        <?php if(isset($doc['v23'])){ ?>
-                            <tr>
-                                <td class="span2" style='text-align:right' ><b>Autor:</b></td>
-                                <td class="span10" style='text-align:justify'>
-                                    <?php 
-									if($format == 0){
-										echo $this->Solr->author($doc['v23']);
-									}
-									if($format == 1 || $format == 2){
-										echo $this->Solr->authorSAf($doc['v23']);
-									}
-									?>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        
-                        <?php if(isset($doc['v83'])){ ?>
-                            <tr>
-                                 <td class="span2" style='text-align:right'><b>Resumen:</b></td>
-                                 <td class="span10" style='text-align: justify'> <?php echo $this->Solr->summary($doc['v83']);?> </td>
-                            </tr>
-                        <?php } ?>
-                        
-                         <?php if(isset($doc['v87']) && $format != 2){ ?>
-                            <tr>
-                                 <td class="span2" style='text-align:right'><b>Descriptores:</b></td>
-                                 <td class="span10" style='text-align: justify'> 
-								 	<?php
-                                    $arr = $this->Solr->desc($doc['v87']);
-									foreach($arr as $a){
-										echo $a.'<br/>';	
-									}
-									?> 
-                                 </td>
-                            </tr>
-                        <?php } ?>
-                        
-                        <?php if(isset($doc['v76']) && $format != 2){ ?>
-                            <tr>
-                                 <td class="span2" style='text-align:right'><b>L&iacute;mites:</b></td>
-                                 <td class="span10" style='text-align: justify'> 
-								 	<?php
-                                    $arr = $this->Solr->limits($doc['v76']);
-									foreach($arr as $a){
-										echo $a.'<br/>';	
-									}
-									?> 
-                                 </td>
-                            </tr>
-                        <?php } ?>
-                        
-                         <?php if(isset($doc['v71']) && $format != 2){ ?>
-                            <tr>
-                                 <td class="span2" style='text-align:right'><b>Tipo de Publicaci&oacute;n:</b></td>
-                                 <td class="span10" style='text-align: justify'> 
-								 	<?php
-                                    $arr = $this->Solr->typePub($doc['v71']);
-									foreach($arr as $a){
-										echo $a.'<br/>';	
-									}
-									?> 
-                                 </td>
-                            </tr>
-                        <?php } ?>
-                        
-                        <?php if(isset($doc['v72']) && $format != 2){ ?>
-                            <tr>
-                                <td class="span2" style='text-align:right' ><b>Referencias:</b></td>
-                                <td class="span10" style='text-align:justify'>
-                                    <?php echo $doc['v72']; ?>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        
-                        <?php if(isset($doc['v85']) && $format != 2){ ?>
-                            <tr>
-                                 <td class="span2" style='text-align:right'><b>Palabras-llave del Autor:</b></td>
-                                 <td class="span10" style='text-align: justify'> 
-								 	<?php
-                                    $arr = $this->Solr->authKeyWords($doc['v85']);
-									foreach($arr as $a){
-										echo $a.'<br/>';	
-									}
-									?> 
-                                 </td>
-                            </tr>
-                        <?php } ?>
-                        
-                        <?php if(isset($doc['v3'])){ ?>
-                            <tr>
-                                 <td class="span2" style='text-align:right'><b>Localizaci&oacute;n:</b></td>
-                                 <td class="span10" style='text-align:justify'>
-                                    <?php echo $this->Solr->localization($doc['v3']);?>
-                                 </td>
-                            </tr>
-                        <?php } ?>
-                            
-                        <?php if(isset($doc['v8'])){ ?>
-                            <tr>
-                                <td class="span2" style='text-align:right' ><b>URL:</b></td>
-                                <td class="span10" style='text-align:justify'>
-                                    <?php echo '<a href="'.$this->Solr->url($doc['v8']).'" target="new" >'.$this->Solr->url($doc['v8']).'</a>'?>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        
-                    </tbody>
-                </table> 
-                
-                <!-- Citacion -->
-                
-                <?php }elseif($format == 3){?>
-                    <table class='table'>
+                  
+                     <table class='table table-condensed table-result-search'>
                         <tbody>
-                        	
-                            <?php
-							  $author = null; 
-							  $title = null;
-							  $serie = '';	
-							  $location = null;
-							  
-							  if($doc['v10']){
-								  $author = $doc['v10'];
-							  }elseif($doc['v16']){
-								  $author = $doc['v16'];	
-							  }else{
-								  $author = $doc['v23'];
-							  }
-							  
-							  if($doc['v12']){
-								  $title = $doc['v12'];
-							  }elseif($doc['v18']){
-								  $title = $doc['v18'];	
-							  }else{
-								  $title = $doc['v25'];
-							  }
-							  
-							  if($doc['v30']){
-								 $serie =  $doc['v30'];
-							  }							
-							  
-							  $location = null;
-							?>
-                        
-                            <tr>
-                                <td class="span10" style='text-align:justify'>
-                                    <?php echo $this->Solr->authorSAf($author).'. - '.$this->Solr->title($title).'. '.$serie.'; ' ; ?>
+                           <tr> 
+                              <td class="span10">
+                                  <a id="<?php echo $doc['id'] ?>" class="viewDocLink"  href="#modalSearchResult" role="button" data-toggle="modal">
+                                   <?php 
+                                   if(isset($doc['v12'][0])){ 
+								   		if(isset($hl[$doc['id']]['v12'])){ 
+                                            echo '<b>'.$this->Solr->title($hl[$doc['id']]['v12'][0]).'</b>';  
+										}else{
+											echo '<b>'.$this->Solr->title($doc['v12'][0]).'</b>';
+										}
+                                   }elseif(isset($doc['v18'][0])){ 
+                                            if(isset($hl[$doc['id']]['v18'])){ 
+                                            echo '<b>'.$this->Solr->title($hl[$doc['id']]['v18'][0]).'</b>';  
+											}else{
+												echo '<b>'.$this->Solr->title($doc['v18'][0]).'</b>';
+											} 
+                                   }elseif(isset($doc['v25'][0])){ 
+                                            if(isset($hl[$doc['id']]['v25'])){ 
+                                            echo '<b>'.$this->Solr->title($hl[$doc['id']]['v25'][0]).'</b>';  
+											}else{
+												echo '<b>'.$this->Solr->title($doc['v25'][0]).'</b>';
+											}
+                                   }elseif(isset($doc['v30'][0])){ 
+                                            if(isset($hl[$doc['id']]['v30'])){ 
+                                            echo '<b>'.$this->Solr->title($hl[$doc['id']]['v30'][0]).'</b>';  
+											}else{
+												echo '<b>'.$this->Solr->title($doc['v30'][0]).'</b>';
+											}
+                                   }elseif(isset($doc['v53'][0])){ 
+                                            if(isset($hl[$doc['id']]['v53'])){ 
+                                            echo '<b>'.$this->Solr->title($hl[$doc['id']]['v53'][0]).'</b>';  
+											}else{
+												echo '<b>'.$this->Solr->title($doc['v53'][0]).'</b>';
+											}
+                                   }elseif(isset($doc['v59'][0])){
+                                            if(isset($hl[$doc['id']]['v59'])){ 
+                                            echo '<b>'.$this->Solr->title($hl[$doc['id']]['v59'][0]).'</b>';  
+											}else{
+												echo '<b>'.$this->Solr->title($doc['v59'][0]).'</b>';
+											}
+                                   } 
+                                   ?>
+                                  </a>
                                 </td>
                             </tr>
-                             
+                            
+                            <tr>
+                                <td class="span10">
+                                	<p class="result-search-description">
+										<?php 
+										if(isset($doc['v10'])){ 
+                                             echo '<b>Por: </b>'.$this->Solr->author($doc['v10']);
+                                        }elseif(isset($doc['v16'])){ 
+                                             echo '<b>Por: </b>'.$this->Solr->author($doc['v16']);
+                                        }elseif(isset($doc['v23'])){ 
+                                             echo '<b>Por: </b>'.$this->Solr->author($doc['v23']);
+                                        } 
+                                        
+										if(isset($doc['v65'])){ 
+                                             echo ' ; '.substr($doc['v65'],0,4);
+                                        } 
+                                        if(isset($doc['v67'])){ 
+                                             echo ' ; '.$doc['v67'];
+                                        } ?>
+                                    </p>
+                                    
+                                    
+                                    <?php if(isset($doc['v83'])){ ?>
+                                        <?php if(isset($hl[$doc['id']]['v83'])){ ?>
+                                        <p>
+                                              <?php echo $this->Solr->summary($hl[$doc['id']]['v83'][0]);?> 
+                                        </p>
+                                        <?php }else{ ?> 
+                                        <p>
+                                              <?php echo $this->Solr->summary($doc['v83']);?> 
+                                        </p>
+                                        <?php } ?> 
+                                    <?php } ?> 
+                                    
+                                    <?php if(isset($doc['v87'])){ ?>
+                                        <p class="result-search-description">
+                                        	<b>Descriptores: </b>
+                                            <?php 
+												$desc = $this->Solr->desc($doc['v87']);
+												foreach($desc as $item){
+                                               		echo '['.$item.'] ';
+												}
+                                            ?>
+                                        </p>
+                                    <?php } ?> 
+                               </td>
+                            </tr>      
                         </tbody>
                     </table> 
                     
-               <?php }elseif($format == 4){?>
-               
-               <!-- T铆tulo -->
-               
-                    <table class='table'>
-                       <tbody>
-
-                         <?php if(isset($doc['v12'])){ ?>
-                            <tr>
-                                
-                                <td class="span10" style='text-align:justify'>
-                                    <b><?php echo $this->Solr->title($doc['v12']); ?></b>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        
-                        <?php if(isset($doc['v18'])){ ?>
-                            <tr>
-                                
-                                <td class="span10" style='text-align:justify'>
-                                    <b><?php echo $this->Solr->title($doc['v18']); ?></b>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        
-                         <?php if(isset($doc['v25'])){ ?>
-                            <tr>
-                                
-                                <td class="span10" style='text-align:justify'>
-                                    <b><?php echo $this->Solr->title($doc['v25']); ?></b>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                             
-                       </tbody>
-                    </table> 
-                <?php }?>
-                
-                
-                
-				<a id="print" href="" style="font-size: 12px;" class="pull-right noprint" onclick="javascript:void(imprSelec('doc<?php echo $counter ?>'));"> Imprimir Referencia <icon class="icon-print"/></a>
-                <?php if(isset($doc['v8'])){ ?>
-                	<a  id="go" href="<?php echo $this->Solr->url($doc['v8']);?>" style="margin-right: 12px;font-size: 12px;" class="pull-right noprint" target="new"> Texto Completo <icon class="icon-file"/></a>
-               	<?php }?>
-                <br/>
-          </div>
-          
-      <?php }} ?>
-      
-<!-- Resultados (fin)--> 
-  
-<!-- Paginaci贸n (Inicio)-->
-      <?php 
-          if($docs){
-			  
-              $pages = ceil($numFound/$rows);
+                    
+              </div>
               
-              if($pages > 1){
-                  echo '<div align="center" class="pagination"><ul>';
-                  if(ceil($start/$rows) > 0){
-                      echo '<li>'.$this->Html->link('<<', '/searches/index/'.$query.'/'.($start-$rows).'/'.$rows, array()).'</li>';	
-                  }
-                  for($i = 0; $i<$pages; $i++){    	
-                      if(ceil($start/$rows) == $i){
-                          echo '<li class="disabled"><a><b>'.($i+1).'</b></a></li>';
-                      }else{
-                          echo '<li>'.$this->Html->link($i+1, '/searches/index/'.$query.'/'.$i*$rows.'/'.$rows, array()).'</li>'; 
+          <?php }} ?>
+          
+    <!-- Resultados (fin)--> 
+      
+    <!-- Paginaci贸n (Inicio)-->
+          <?php 
+              if($docs){
+                  
+                  $pages = ceil($numFound/$rows);
+				  $page = ceil($start/$rows);
+                  
+                  if($pages > 1){
+                      echo '<div align="center" class="pagination"><ul>';
+                      
+					  if($page > 0){
+                          echo '<li>'.$this->Html->link('<<', array( 'action'=>'search', $url.'&rows='.$rows.'&start='.($start-$rows))).'</li>';	
                       }
-                  }
-                  if(ceil($start/$rows) < $pages-1){
-                      echo '<li>'.$this->Html->link('>>', '/searches/index/'.$query.'/'.($start+$rows).'/'.$rows, array()).'</li>';	
-                  } 
-                  echo '</ul></div>';
-              }	
-          }
-      ?>
-<!-- Paginaci贸n (Fin)-->
-   
+					  
+					  if(($page-5) <= 0){
+						for($i = 0; $i < $pages && $i<10; $i++){    	
+                          if($page == $i){
+                              echo '<li class="disabled"><a><b>'.($i+1).'</b></a></li>';
+                          }else{
+                              echo '<li>'.$this->Html->link($i+1,array( 'action'=>'search', $url.'&rows='.$rows.'&start='.$i*$rows)).'</li>'; 
+                          }		
+						  if($i==9){
+						  	  echo '<li class="disabled"><a><b>...</b></a></li>';
+						  }
+						}  
+					  }
+					  if(($page-5)>0 && ($page+5)<$pages){
+						for($i = ($page-5); $i < $pages && $i<($page+5); $i++){    	
+                          if($i==($page-5)){
+						  	  echo '<li class="disabled"><a><b>...</b></a></li>';
+						  }
+						  if($page == $i){
+                              echo '<li class="disabled"><a><b>'.($i+1).'</b></a></li>';
+                          }else{
+                              echo '<li>'.$this->Html->link($i+1,array( 'action'=>'search', $url.'&rows='.$rows.'&start='.$i*$rows)).'</li>'; 
+                          }		
+						  if($i==($page+4)){
+						  	  echo '<li class="disabled"><a><b>...</b></a></li>';
+						  }
+						}  
+					  }			  
+					  if(($page-5)>0 && ($page+5)>=$pages){
+						for($i = ($page-5); $i < $pages && $i<($page+5); $i++){    	
+                          if($i==($page-5)){
+						  	  echo '<li class="disabled"><a><b>...</b></a></li>';
+						  }
+						  if($page == $i){
+                              echo '<li class="disabled"><a><b>'.($i+1).'</b></a></li>';
+                          }else{
+                              echo '<li>'.$this->Html->link($i+1,array( 'action'=>'search',$url.'&rows='.$rows.'&start='.$i*$rows)).'</li>'; 
+                          }	
+						}  
+					  }
+
+                      if($page < $pages-1){
+                          echo '<li>'.$this->Html->link('>>', array( 'action'=>'search', $url.'&rows='.$rows.'&start='.($start+$rows))).'</li>';	
+                      } 
+                      echo '</ul></div>';
+                  }	
+              }
+          ?>
+    <!-- Paginaci贸n (Fin)-->
+
 </div>
 
-<script type="text/javascript">
-	function imprSelec(muestra){
-		var ficha=document.getElementById(muestra);
-		var ventimp=window.open(' ','popimpr');
-		ventimp.document.write(ficha.innerHTML);
-		ventimp.document.write('<style type="text/css">.noprint {display:none;}</style>');
-		ventimp.document.close();
-		ventimp.print();
-		ventimp.close();
-	}
-	
-	function imprAllSelec(){
-		if(document.getElementsByClassName('selectCHB').length == 0){
-			alert('No ha seleccionado documentos para imprimir.');
-		}else{
-			docs = document.getElementsByClassName('docContent');
-			var ventimp=window.open(' ','popimpr');
-			ventimp.document.write('<hr/>');
-	
-			for (var i = 0; i<docs.length;i++){
-				if(docs.item(i).getElementsByTagName('input').item(0).className == "selectCHB"){
-						ventimp.document.write(docs.item(i).innerHTML+'<hr/>');
-				}
-					
-			}
-			ventimp.document.write('<style type="text/css">.noprint {display:none;} .selectCHB{display:none}</style>');
-			ventimp.document.close();
-			ventimp.print();
-			ventimp.close();
-		}
-	}
-	
-	function check(input){
-		if(	input.className != "selectCHB"){
-			input.className = "selectCHB";
-		}else{
-				input.className = "";
-		}
-	}
 
-</script>
+<!-- Modal para visualizar Detalles de los Documentos-->
+<div id="modalSearchResult" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- Contenido obtenido por AJAX -->                    	   
+</div>
 
-       
+   

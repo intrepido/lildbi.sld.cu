@@ -1,18 +1,20 @@
 <?php
-
 class Solr extends AppModel {
-	public $name = 'Solr'; 
+	
 	public $useDbConfig = 'solr';
 	public $useTable = false;
 	
-	public function toIndexBase($nameBD = null){
+	public function search($params = null){
+		return $this->query(array('type' => 'search', 'params' => $params));
+	}
+	
+	public function toIndexBase($nameBD = null, $skip = null, $limit = null,$commit = null){
 			App::uses('ConnectionManager', 'Model');
 			$dataSource = ConnectionManager::getDataSource('couchdb');
 			$host = $dataSource->config['host'];
 			$port = $dataSource->config['port'];
-			
-			$this->query(array('type' => 'dih' , 'namedih' => 'couchimport' , 'params' => 'command=full-import&commit=true&clean=false&host='.$host.'&port='.$port.'&base='.$nameBD));
-			return true;
+				
+			return $this->query(array('type' => 'dih' , 'namedih' => 'couchimport' , 'params' => 'command=full-import&commit='.$commit.'&clean=false&host='.$host.'&port='.$port.'&base='.$nameBD.'&skip='.$skip.'&limit='.$limit));
 	}
 	
 	public function unindexBase($nameBD = null){
@@ -20,13 +22,22 @@ class Solr extends AppModel {
 			return true;
 	}
 	
-	public function makeSearch($terms = null, $start = null, $rows = null, $format = null){
-		return $this->query(array('type' => 'query', 'query' => $terms, 'start' => $start, 'rows' => $rows));
+	public function unindexAll(){
+			$this->query(array('type'=>'deleteAll'));	
+			return true;
+	}
+		
+	public function facetByField($q = null, $field = null){		
+		return $this->query(array('type' => 'facet', 'query' => $q, 'fields' => array($field)));
 	}
 	
-	public function facetByField($field = null){		
-		return $this->query(array('type' => 'facet', 'query' => '*:*', 'fields' => array($field)));
+	public function facetByFields($q = null, $fields = null){		
+		return $this->query(array('type' => 'facet', 'query' => $q, 'fields' => $fields));
 	}
+	
+	public function getSuggest($params = null){
+		return $this->query(array('type' => 'suggest', 'params' => $params));
+	}
+	
 }
-
 ?>

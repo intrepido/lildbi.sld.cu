@@ -1,6 +1,6 @@
 <?php echo $this->Html->breadcrumb(array(
 		$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
-		'Usuarios',
+		__('Usuarios'),
 	), array('class' => 'breadcrumb')); ?>
 
 <?php echo $this->Session->flash(); ?>
