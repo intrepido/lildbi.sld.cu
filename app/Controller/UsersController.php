@@ -69,7 +69,7 @@ class UsersController extends AppController {
 					}
 				}
 				if ($temp) {
-					$this->Session->setFlash(__("You don't have access as ".$rol['Rol']['name']), 'alert', array(
+					$this->Session->setFlash(__("Usted no tiene acceso como ".$rol['Rol']['name']), 'alert', array(
 							'plugin' => 'TwitterBootstrap',
 							'class' => 'alert-error'
 					));
@@ -90,7 +90,7 @@ class UsersController extends AppController {
 						$this->redirect($this->Auth->redirect());
 						
 					} else {
-						$this->Session->setFlash(__("Your password was incorrect"), 'alert', array(
+						$this->Session->setFlash(__("Su clave fue incorrecta"), 'alert', array(
 								'plugin' => 'TwitterBootstrap',
 								'class' => 'alert-error'
 						));
@@ -98,7 +98,7 @@ class UsersController extends AppController {
 				}
 			}
 			else{
-				$this->Session->setFlash(__("Your username/password combination was incorrect"), 'alert', array(
+				$this->Session->setFlash(__("Su combinacion usuario/clave fue incorrecta"), 'alert', array(
 						'plugin' => 'TwitterBootstrap',
 						'class' => 'alert-error'
 				));
@@ -179,13 +179,20 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved'), 'alert', array(
+				//Agregar usuario usando socket I/O
+				$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));						
+				if($websocket->connect()){
+					$addedUser = $this->User->read(null, $this->User->id);
+					$data = array('userId' => $addedUser['User']['id'], 'username' => $addedUser['User']['username'], 'current_rol' => $addedUser['Rol'][0]['name'], 'date' => CakeTime::format("Y-m-d H:i:s", time()), 'ip' => $this->request->clientIp(), 'socketId' => '', 'online' => false);
+					$websocket->emit('insertUser', $data);						
+				}	
+				$this->Session->setFlash(__('El usuario ha sido salvado'), 'alert', array(
 						'plugin' => 'TwitterBootstrap',
 						'class' => 'alert-success'
 				));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'alert', array(
+				$this->Session->setFlash(__('El usuario no pudo ser salvado. Por fabor, intentelo de nuevo.'), 'alert', array(
 						'plugin' => 'TwitterBootstrap',
 						'class' => 'alert-error'
 				));
@@ -205,18 +212,18 @@ class UsersController extends AppController {
 	public function edit($id = null) {
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('Usuario invalido'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved'), 'alert', array(
+				$this->Session->setFlash(__('El usuario ha sido salvado'), 'alert', array(
 						'plugin' => 'TwitterBootstrap',
 						'class' => 'alert-success'
 				));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'alert', array(
+				$this->Session->setFlash(__('El usuario no pudo ser salvado. Por fabor, intentelo de nuevo..'), 'alert', array(
 						'plugin' => 'TwitterBootstrap',
 						'class' => 'alert-error'
 				));
@@ -237,24 +244,37 @@ class UsersController extends AppController {
 	 * @return void
 	 */
 	public function delete($id = null) {
+		
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
-		}
+		}		
+		
 		$this->User->id = $id;
+		$onlineUser = $this->User->read(null, $id);
+		
 		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
+			throw new NotFoundException(__('Usuario invalido'));
 		}
-		if ($this->User->delete()) {
-			$this->Session->setFlash(__('User deleted'), 'alert', array(
+		
+		if ($this->User->delete()) {						
+			//Eliminar usuario usando socket I/O
+			$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));		
+			if($websocket->connect()) {				
+				$data = array('username' => $onlineUser['User']['username']);
+				$websocket->emit('removeUser', $data);
+			}	
+			$this->Session->setFlash(__('Usuario eliminado'), 'alert', array(
 					'plugin' => 'TwitterBootstrap',
 					'class' => 'alert-success'
 			));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('User was not deleted'), 'alert', array(
+		
+		$this->Session->setFlash(__('El usuario no pudo ser eliminado'), 'alert', array(
 				'plugin' => 'TwitterBootstrap',
 				'class' => 'alert-error'
 		));
+		
 		$this->redirect(array('controller' => 'admin', 'action' => 'index'));
 	}
 	

@@ -16,8 +16,19 @@ $(document).ready(function() {
 	});
 	
 	socket.on('newUser', function  (data) {
-	    $("#list-user-online").prepend("<div style='display: none'><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='media-body'><a id='user-online-" + data.message['username'] + "' data-html='true' data-placement='right' data-toggle='tooltip' href='/users/view/" + data.message['userId'] + "' data-original-title='' data-trigger='manual'>" + data.message['username'] + "</a><div id='time-online' class='pull-right'><p class='muted'><small></small></p></div></div></div>");
-	    $("#list-user-online :first-child").fadeIn(1000);
+		if(!data.message.online){ //Si se acaba de insertar			
+			$("#list-user-online").append("<div><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='offline media-body'><a id='user-online-" + data.message['username'] + "' href='/users/view/" + data.message['userId'] + "'>" + data.message['username'] + "</a><p></p></div></div>");
+			$("#list-user-online :first-child").fadeIn(1000);
+		}else{ //Si ya estaba insertado
+			$("#list-user-online").prepend("<div style='display: none'><a class='pull-left' href='#'><i class='icon-user'></i></a><div class='media-body'><a id='user-online-" + data.message['username'] + "' data-html='true' data-placement='right' data-toggle='tooltip' href='/users/view/" + data.message['userId'] + "' data-original-title='' data-trigger='manual'>" + data.message['username'] + "</a><div id='time-online' class='pull-right'><p class='muted'><small></small></p></div></div></div>");
+		    $("#list-user-online :first-child").fadeIn(1000);
+		}
+		
+	    socket.emit('updateTimeConnected');
+	});
+	
+	socket.on('removeUser', function  (data) {
+		$("#user-online-" + data.message.username).parent().parent().remove();	   
 	    socket.emit('updateTimeConnected');
 	});
 	
