@@ -39,7 +39,7 @@ class DocumentsController extends AppController {
 					$value= array_merge(array('type' => $typeUrl), $value);
 					$db['rows'][$key] = array_merge(array('totalAnalitics' => sizeof($totalAnalitics['rows'])), $value);
 					$db['rows'][$key]['value'] = $this->DocumentDatas->setNameFieldsDocument($db['rows'][$key]['value']);
-					$this->DocumentDatas->orderFieldsDocument(&$db['rows'][$key]['value']);
+					$this->DocumentDatas->orderFieldsDocument($db['rows'][$key]['value']);
 				}
 								
 				$db = array_merge(array('nameFields' => $this->DocumentDatas->getNameFieldsDocument()), $db);
@@ -193,7 +193,7 @@ class DocumentsController extends AppController {
 			$arrayData = array_merge(array('v899' => array(utf8_encode(__('Versión del Software')) => 'LILDBI-WEB 1.8')), $arrayData);
 			$arrayData = array_merge(array('v1' => array(utf8_encode(__('Código del Centro')) => 'CU1.1')), $arrayData);
 			
-			$this->DocumentDatas->orderFieldsDocument(&$arrayData);
+			$this->DocumentDatas->orderFieldsDocument($arrayData);
 
 			$this->set('data', $arrayData);
 			$this->set('urlTypeNameDocument', $urlTypeNameDocument);

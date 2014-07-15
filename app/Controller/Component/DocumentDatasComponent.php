@@ -9,7 +9,7 @@ class DocumentDatasComponent extends Component {
 		return array("v3", "v8", "v16", "v17", "v18", "v38", "v85", "v83");
 	}
 	
-	function setTypeDocument($document, $urlTypeNameDocument) {	
+	function setTypeDocument(&$document, $urlTypeNameDocument) {	
 		
 		$arrayV5V6 = array();
 	
@@ -102,7 +102,7 @@ class DocumentDatasComponent extends Component {
 		}
 		
 		//Se ponen los campos que identifican el tipo de documento
-		$this->setTypeDocument(&$dataFormatArray, $urlTypeNameDocument);		
+		$this->setTypeDocument($dataFormatArray, $urlTypeNameDocument);		
 	
 		//Este campo es la fecha en que se transfirio el documento en la BD (CouchDB)
 		if($this->Session->check('dateTransferDBEdit')){ //Si se esta editando
@@ -113,7 +113,7 @@ class DocumentDatasComponent extends Component {
 		}
 	
 		//Ordenando campos
-		$this->orderFieldsDocument(&$dataFormatArray);
+		$this->orderFieldsDocument($dataFormatArray);
 	
 		return $dataFormatArray;
 	}
@@ -146,7 +146,7 @@ class DocumentDatasComponent extends Component {
 		return $dataArray; 
 	}
 	
-	function orderFieldsDocument($data){
+	function orderFieldsDocument(&$data){
 		uksort($data, function($a, $b) {
 			$aTemp = substr($a, 1);
 			$bTemp = substr($b, 1);

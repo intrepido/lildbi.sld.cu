@@ -64,7 +64,7 @@ class SolrSource extends DataSource
 		(
 			'hostname' => $this->config['host'],
 			'port'     => $this->config['port'],
-			'path'     => '/'.$this->config['path'].'/'.$this->config['core'].'/',
+			'path'     => '/'.$this->config['path'].'/'.$this->config['core'],
 		);
 			
 		$client = new SolrClient($opciones);

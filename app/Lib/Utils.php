@@ -9,7 +9,7 @@ App::uses('CakeTime', 'Utility');
 
 class Utils {
 
-	function file_get_contents_curl($url) {
+	public static function file_get_contents_curl($url) {
 		$ch = curl_init();
 	
 		curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -22,7 +22,7 @@ class Utils {
 		return $data;
 	}
 	
-	function http_response($url, $json)
+	public static function http_response($url, $json)
 	{
 		$ch = curl_init();
 
@@ -51,7 +51,7 @@ class Utils {
 		}
 	}
 
-	function subtractHours($interval1, $interval2){
+	public static function subtractHours($interval1, $interval2){
 		$horai=substr($interval1,0,2);
 		$mini=substr($interval1,3,2);
 		$segi=substr($interval1,6,2);
