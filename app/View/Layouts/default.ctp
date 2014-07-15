@@ -87,12 +87,22 @@ echo $this->fetch('script');
 			</p>					
 		</div>
 	</div>
-	<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+	<?php  
+	 $connectionNode = Configure::read('Node'); //Datos de la conexion de nodejs
+	?>
+	<script type="text/javascript">
+		//<![CDATA[ //Se declaran los datos de conexion de nodejs de forma global en la variable 'window.nodeConnection' de esta forma desde cualquier JS se puede establecer la conexion
+	           window.nodeConnection = JSON.parse('<?php echo json_encode(array('host' => $connectionNode['host'], 'port' => $connectionNode['port'])); ?>');	
+	    //]]>
+	</script>
+	<script src="http://<?php echo $connectionNode['host']; ?>:<?php echo $connectionNode['port']; ?>/socket.io/socket.io.js"></script>
 	<?php   
 	echo $this->Html->script('jquery');
 	echo $this->Html->script('bootstrap.min');
 	echo $this->Html->script('login');
 	echo $this->Html->script('general');
+	echo $this->Js->writeBuffer(array('cache'=>TRUE));
+	echo $this->fetch('script');
 	?>
 
 </body>

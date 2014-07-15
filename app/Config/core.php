@@ -235,6 +235,14 @@
  * any date & time related errors.
  */
 	//date_default_timezone_set('UTC');
+	
+/**
+ * Datos de conexion con Node
+ */	
+	Configure::write('Node', array(
+		'host' => 'localhost',
+		'port' => '3000'
+	));
 
 /**
  * Pick the caching engine to use.  If APC is enabled use it.

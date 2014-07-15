@@ -1,13 +1,14 @@
 $(document).ready(function() {
 	
-    var socket = io.connect('http://localhost:3000');
-    
-    $.post('/users/getUserLogged/', function(data) {   //Actualizar Socket ID		
-		if(data){   			
-			 socket.emit('updateSocketIdUser', {username: data});
-		}
-	});
-   
+	if(window.nodeConnection != undefined){	
+		var socket = io.connect('http://'+ window.nodeConnection['host'] +':'+ window.nodeConnection['port'] +'');
+	    
+	    $.post('/users/getUserLogged/', function(data) {   //Actualizar Socket ID		
+			if(data){   			
+				 socket.emit('updateSocketIdUser', {username: data});
+			}
+		});
+	}
     
    /* var interval = null;
       interval = setInterval(function() { //Verifico si el usuario esta logueado	    	

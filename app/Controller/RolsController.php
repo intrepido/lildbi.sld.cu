@@ -144,8 +144,9 @@ class RolsController extends AppController {
 	//Cambia el perfil de un usuario. Se le pasa el nombre del Rol por get y se cambia en la Session
 	public function changeRol(){
 	
-		//Modificar rol del usuario usando socket I/O
-		$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
+		//Modificar rol del usuario usando socket I/O		
+		$connectionNode = Configure::read('Node'); //Datos de la conexion de nodejs
+		$websocket = new WebSocket(array('host' => $connectionNode['host'], 'port' => $connectionNode['port'], 'scheme'=>'http'));
 		
 		if($websocket->connect()) {
 			$onlineUser = $this->Auth->user();

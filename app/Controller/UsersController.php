@@ -28,18 +28,6 @@ class UsersController extends AppController {
 		parent::beforeFilter();
 		$this->Auth->allow('listRolUser');	
 		$this->Auth->allow('getUserLogged');
-
-	/*	if(!$this->Auth->loggedIn() && ($this->action != 'verifySessionUser') && $this->Cookie->read('username')){
-			//Si la session expiró, entonces desconectarlo del servidor de Node JS
-			$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
-		
-			if($websocket->connect()) {
-				$onlineUser = $this->Auth->user();
-				$data = array('username' => $this->Cookie->read('username'));
-				$websocket->emit('disconnectUser', $data);
-				$this->Cookie->delete('username');
-			}
-		}*/
 	}	
 
 	public function isAuthorized($user) {
@@ -80,7 +68,8 @@ class UsersController extends AppController {
 						$onlineUser = $this->Auth->user();											
 						
 						//Poner usuario como online usando socket I/O
-						$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
+						$connectionNode = Configure::read('Node'); //Datos de la conexion de nodejs						
+						$websocket = new WebSocket(array('host' => $connectionNode['host'], 'port' => $connectionNode['port'], 'scheme'=>'http'));
 						
 						if($websocket->connect()) {															
 							$data = array('userId' => $onlineUser['id'], 'username' => $onlineUser['username'], 'current_rol' => $rol['Rol']['name'], 'date' => CakeTime::format("Y-m-d H:i:s", time()), 'ip' => $this->request->clientIp(), 'socketId' => '', 'online' => true);
@@ -110,10 +99,11 @@ class UsersController extends AppController {
 	}
 
 	public function logout() {
-		$this->Session->write('userRol','');	
-		
+		$this->Session->write('userRol','');			
+						
 		//Desloguear usuario usando socket I/O
-		$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));
+		$connectionNode = Configure::read('Node'); //Datos de la conexion de nodejs
+		$websocket = new WebSocket(array('host' => $connectionNode['host'], 'port' => $connectionNode['port'], 'scheme'=>'http'));
 		
 		if($websocket->connect()) {
 			$onlineUser = $this->Auth->user();
@@ -179,8 +169,11 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
+				
 				//Agregar usuario usando socket I/O
-				$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));						
+				$connectionNode = Configure::read('Node'); //Datos de la conexion de nodejs
+				$websocket = new WebSocket(array('host' => $connectionNode['host'], 'port' => $connectionNode['port'], 'scheme'=>'http'));	
+								
 				if($websocket->connect()){
 					$addedUser = $this->User->read(null, $this->User->id);
 					$data = array('userId' => $addedUser['User']['id'], 'username' => $addedUser['User']['username'], 'current_rol' => $addedUser['Rol'][0]['name'], 'date' => CakeTime::format("Y-m-d H:i:s", time()), 'ip' => $this->request->clientIp(), 'socketId' => '', 'online' => false);
@@ -256,9 +249,12 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Usuario invalido'));
 		}
 		
-		if ($this->User->delete()) {						
+		if ($this->User->delete()) {
+			
 			//Eliminar usuario usando socket I/O
-			$websocket = new WebSocket(array('port' => 3000, 'scheme'=>'http'));		
+			$connectionNode = Configure::read('Node'); //Datos de la conexion de nodejs
+			$websocket = new WebSocket(array('host' => $connectionNode['host'], 'port' => $connectionNode['port'], 'scheme'=>'http'));
+			
 			if($websocket->connect()) {				
 				$data = array('username' => $onlineUser['User']['username']);
 				$websocket->emit('removeUser', $data);

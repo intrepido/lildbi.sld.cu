@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 var cacheComboBox = Array();
 
-function showOtherCombos(json) {		
+function showOtherCombos(json, callback) {		
 	var arrayCodifiers = $.parseJSON(json);		
 	var selectInitBody= "";
 	var selectBody = "";
@@ -89,6 +89,8 @@ function showOtherCombos(json) {
 			$("tr:has(select[id~='" + copyCacheComboBox[key] + "'])").remove();
 		}
 	}
+	
+	callback();
 }
 
 function convertNamesCodes (key)

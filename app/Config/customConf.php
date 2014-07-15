@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author Yasser
+ * @author Fidel Santana Morell
  * @copyright 2013
  */
 
@@ -18,7 +18,7 @@ MyTools::cron();
 
 $config = array(
     'App' => array(
-        'name' => 'Indexa'
+        'name' => 'LildbiWeb'
     ),
     'Cron' => array(
         'schedule' => array(

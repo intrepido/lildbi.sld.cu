@@ -50,7 +50,7 @@ class SolrHelper extends AppHelper{
 		return $text;
 	}
 	
-	function url($text = null){
+	function url($text = null, $full = false){
 		if(isset($text)){
 			return $this->getTagContent($text,'u');
 		}

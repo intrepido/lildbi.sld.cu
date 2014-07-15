@@ -6,37 +6,43 @@ $(document).ready(
 				{
 					$.post('/Codifiers/getById', {
 						value : arrayData["v9"][key2]
-					}, showOtherCombos); //Llama a la funcion "showOtherCombos" del "codifiers.js"
-				}
-				
-				$(document).one('ajaxComplete', function() { //La funcion "one" es para que se ejecute solo una vez cuando se carga la pagina								
-					$.each(arrayData, function(key1, value) {						
-						for (var key2 in value) {
-							if(arrayData[key1][key2] != ""){					
-								var element = $("[name = 'data[Document][" + key1 + "][" + key2 + "]']");
-								if(element.is('input')){
-									openAccordion(element);
-									if(element.attr('type') == 'hidden'){							
-										$.each(arrayData[key1][key2], function(key3, value2) {								
-											element.next().children().find("option[value='" + arrayData[key1][key2][key3] + "']").attr('selected', 'selected');				
-										});
-									}
-									else{
-										element.attr('value', arrayData[key1][key2]);
-									}												
-								}
-								if(element.is('textarea')){
-									openAccordion(element);
-									element.attr('value', arrayData[key1][key2]);
-								}
-								if(element.is('select')){								
-									openAccordion(element);
-									element.find("option[value='" + arrayData[key1][key2] + "']").attr('selected', 'selected');														
-								}
-							}					
-						}	
+					}).done(function(data) {
+						
+						showOtherCombos(data, function(){  //Llama a la funcion "showOtherCombos" del "codifiers.js"
+							
+							$(document).one('ajaxComplete', function() { //La funcion "one" es para que se ejecute solo una vez cuando se carga la pagina								
+								$.each(arrayData, function(key1, value) {						
+									for (var key2 in value) {
+										if(arrayData[key1][key2] != ""){					
+											var element = $("[name = 'data[Document][" + key1 + "][" + key2 + "]']");
+											if(element.is('input')){
+												openAccordion(element);
+												if(element.attr('type') == 'hidden'){							
+													$.each(arrayData[key1][key2], function(key3, value2) {								
+														element.next().children().find("option[value='" + arrayData[key1][key2][key3] + "']").attr('selected', 'selected');				
+													});
+												}
+												else{
+													element.attr('value', arrayData[key1][key2]);
+												}												
+											}
+											if(element.is('textarea')){
+												openAccordion(element);
+												element.attr('value', arrayData[key1][key2]);
+											}
+											if(element.is('select')){								
+												openAccordion(element);
+												element.find("option[value='" + arrayData[key1][key2] + "']").attr('selected', 'selected');														
+											}
+										}					
+									}	
+								});
+							});	
+							
+						});
+						
 					});
-				});	
+				}						
 				
 				function openAccordion(element){
 					if(element.closest('div .accordion').length > 0){	
@@ -91,7 +97,7 @@ $(document).ready(
 			
 			//Submit Formulario
 			$('#DocumentAddForm').submit(function(e) {				
-				var alertElements = $(this).children().next().children().next().children().find("[class='alert alert-error lil'][style = 'display: block;']");				
+				var alertElements = $(this).children().next().children().first().find("[class='alert alert-error lil'][style = 'display: block;']");				
 				if(alertElements.length){					
 					e.preventDefault(); 					
 				}	
@@ -130,7 +136,7 @@ $(document).ready(
 						}
 						
 						if(temp && temp2){								
-							$('html, body').stop().animate({scrollTop: $(this).offset().top - 150}, 500);
+							$('html, body').stop().animate({scrollTop: $(this).offset().top - 118}, 500);
 							temp2 = false;
 						}
 					 });
