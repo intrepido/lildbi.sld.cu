@@ -19,7 +19,7 @@ class SolrSource extends DataSource
 				
 		//Consultar
 		//ej: query(array('type' => 'search', 'params' => 'select?q=medicina'));
-		if($q['type'] == 'search'){						
+		if(isset($q['type']) && $q['type'] == 'search'){						
 			if($response = @file_get_contents('http://'.$this->config['host'].':'.$this->config['port'].'/'.$this->config['path'].'/'.$this->config['core'].'/'.$q['params'].'&wt=json')){
 				return json_decode($response,true);
 			}else{
@@ -29,7 +29,7 @@ class SolrSource extends DataSource
 		
 		//Importar con un DIH
 		//ej: query(array('type' => 'dih' , 'namedih' => 'dataimport' , 'params' => 'command=full-import&base=tramed_base'));	
-		if($q['type'] == 'dih'){				
+		if(isset($q['type']) && $q['type'] == 'dih'){				
 			if($response = @file_get_contents('http://'.$this->config['host'].':'.$this->config['port'].'/'.$this->config['path'].'/'.$this->config['core'].'/'.$q['namedih'].'?'.$q['params'])){
 				return json_decode($response,true);
 			}else{
@@ -39,7 +39,7 @@ class SolrSource extends DataSource
 		
 		//Autocompletamiento
 		//ej: query(array('type' => 'suggest' , 'params' => 'suggest?q=ac'));	
-		if($q['type'] == 'suggest'){	
+		if(isset($q['type']) && $q['type'] == 'suggest'){	
 			if($response = @file_get_contents('http://'.$this->config['host'].':'.$this->config['port'].'/'.$this->config['path'].'/'.$this->config['core'].'/'.$q['params'])){	
 				return json_decode($response,true);
 			}else{
@@ -49,7 +49,7 @@ class SolrSource extends DataSource
 		
 		//Recargar configuracion del nucleo
 		//ej: query(array('type' => 'reload');
-		if($q['type'] == 'reload'){		
+		if(isset($q['type']) && $q['type'] == 'reload'){		
 			if($response = @file_get_contents('http://'.$this->config['host'].':'.$this->config['port'].'/'.$this->config['path'].'/admin/cores?action=RELOAD&core='.$this->config['core'].'&wt=json')){
 				return json_decode($response,true);
 			}else{
@@ -71,7 +71,7 @@ class SolrSource extends DataSource
 			
 		//Facetado
 		//ej: query(array('type' => 'facet', 'query' => 'medicina', 'fields' => array('v4' , 'v40')));
-		if($q['type'] == 'facet'){
+		if(isset($q['type']) && $q['type'] == 'facet'){
 
 			$consulta = new SolrQuery($q['query']);
 
@@ -93,7 +93,7 @@ class SolrSource extends DataSource
 		
 		//Añadir documento
 		//ej: array('type' => 'add', 'fields' => array('id' => '123', v2 => '123', 'v4' => 'VIMED'));
-		if($q['type'] == 'add'){
+		if(isset($q['type']) && $q['type'] == 'add'){
 			$doc = new SolrInputDocument();
 			$fields = $q['fields'];
 			foreach($fields as $field){
@@ -107,7 +107,7 @@ class SolrSource extends DataSource
 		
 		//Eliminar todo el indce
 		//ej: query(array('type' => 'deleteAll')); 
-		if($q['type'] == 'deleteAll'){
+		if(isset($q['type']) && $q['type'] == 'deleteAll'){
 			$client->deleteByQuery('*:*');
 			$client->request("<commit/>");
 			return true;
@@ -115,7 +115,7 @@ class SolrSource extends DataSource
 		
 		//Elimina los que coincidan con la consulta
 		//ej: query(array('type' => 'deleteByQuery','query' => 'name:edelio'));
-		if($q['type'] == 'deleteByQuery'){
+		if(isset($q['type']) && $q['type'] == 'deleteByQuery'){
 			$client->deleteByQuery($q['query']);
 			$client->request("<commit/>");
 			return true;
