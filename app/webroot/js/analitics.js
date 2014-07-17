@@ -15,7 +15,30 @@ $(document).ready(
 							    });							
 							}
 						}
-				 });	
+				 });
+				
+				// LLena los datos del combo 'Tipo de Registro' y sus combos correspondientes, del documento. Cuando se carga la pagina por primera vez 
+				if(window.arrayData == undefined){
+					if(window.arrayDataDocument["v9"] != null){
+						$.each(window.arrayDataDocument["v9"], function(key, name) {	
+							$.post('/Codifiers/getById', {value : window.arrayDataDocument["v9"][key]}).done(function( data ) {
+								showOtherCombos(data, function(){  //Llama a la funcion "showOtherCombos" del "codifiers.js"
+									for (var key in window.arrayDataDocument)
+									{
+										if(key == "v9" || key == "v110" || key == "v111" || key == "v112" || key == "v114" || key == "v115"){					
+											$.each(window.arrayDataDocument[key], function(key2, name) {								
+												var element = $("[name = 'data[Document][" + key + "][" + key2 + "]']");								
+												if(element.is('select')){	
+													element.find("option[value='" + window.arrayDataDocument[key][key2] + "']").attr('selected', 'selected');														
+												}
+											});	
+										}					
+									}
+								});															
+							}); 
+						});
+					}	
+				}
 			}
 			
 			//LLenar los datos de la analitica cuando vengo de la pagina de visualizacion
@@ -24,37 +47,43 @@ $(document).ready(
 				{
 					$.post('/Codifiers/getById', {
 						value : window.arrayData["v9"][key2]
-					}, showOtherCombos); //Llama a la funcion "showOtherCombos" del "codifiers.js"
-				}
-				
-				$(document).one('ajaxComplete', function() { //La funcion "one" es para que se ejecute solo una vez cuando se carga la pagina								
-					$.each(window.arrayData, function(key1, value) {						
-						for (var key2 in value) {
-							if(window.arrayData[key1][key2] != ""){					
-								var element = $("[name = 'data[Document][" + key1 + "][" + key2 + "]']");
-								if(element.is('input')){
-									openAccordion(element);
-									if(element.attr('type') == 'hidden'){							
-										$.each(window.arrayData[key1][key2], function(key3, value2) {								
-											element.next().children().find("option[value='" + window.arrayData[key1][key2][key3] + "']").attr('selected', 'selected');				
-										});
-									}
-									else{
-										element.attr('value', window.arrayData[key1][key2]);
-									}												
-								}
-								if(element.is('textarea')){
-									openAccordion(element);
-									element.attr('value', window.arrayData[key1][key2]);
-								}
-								if(element.is('select')){								
-									openAccordion(element);
-									element.find("option[value='" + window.arrayData[key1][key2] + "']").attr('selected', 'selected');														
-								}
-							}					
-						}	
+					}).done(function(data) {
+						
+						showOtherCombos(data, function(){  //Llama a la funcion "showOtherCombos" del "codifiers.js"
+							
+							$(document).one('ajaxComplete', function() { //La funcion "one" es para que se ejecute solo una vez cuando se carga la pagina								
+								$.each(window.arrayData, function(key1, value) {						
+									for (var key2 in value) {
+										if(window.arrayData[key1][key2] != ""){					
+											var element = $("[name = 'data[Document][" + key1 + "][" + key2 + "]']");
+											if(element.is('input')){
+												openAccordion(element);
+												if(element.attr('type') == 'hidden'){							
+													$.each(window.arrayData[key1][key2], function(key3, value2) {								
+														element.next().children().find("option[value='" + window.arrayData[key1][key2][key3] + "']").attr('selected', 'selected');				
+													});
+												}
+												else{
+													element.attr('value', window.arrayData[key1][key2]);
+												}												
+											}
+											if(element.is('textarea')){
+												openAccordion(element);
+												element.attr('value', window.arrayData[key1][key2]);
+											}
+											if(element.is('select')){								
+												openAccordion(element);
+												element.find("option[value='" + window.arrayData[key1][key2] + "']").attr('selected', 'selected');														
+											}
+										}					
+									}	
+								});
+							});	
+							
+						});
+						
 					});
-				});	
+				}						
 				
 				function openAccordion(element){
 					if(element.closest('div .accordion').length > 0){	
@@ -62,27 +91,7 @@ $(document).ready(
 						element.closest('div .accordion').children().children().attr('checked', true);
 					}
 				}
-			}else{// LLena los datos del combo 'Tipo de Registro' y sus combos correspondientes, del documento. Cuando se carga la pagina por primera vez 
-				if(window.arrayDataDocument["v9"] != null){
-					$.each(window.arrayDataDocument["v9"], function(key, name) {	
-						$.post('/Codifiers/getById', {value : window.arrayDataDocument["v9"][key]}).done(function( data ) {
-							showOtherCombos(data); //Llama a la funcion "showOtherCombos" del "codifiers.js"
-							for (var key in window.arrayDataDocument)
-							{
-								if(key == "v9" || key == "v110" || key == "v111" || key == "v112" || key == "v114" || key == "v115"){					
-									$.each(window.arrayDataDocument[key], function(key2, name) {								
-										var element = $("[name = 'data[Document][" + key + "][" + key2 + "]']");								
-										if(element.is('select')){	
-											element.find("option[value='" + window.arrayDataDocument[key][key2] + "']").attr('selected', 'selected');														
-										}
-									});	
-								}					
-							}								
-						}); 
-					});
-			 }	
-			}			
-			
+			}
 			
 			$("#confirm-type-document").click(
 					function() {
@@ -166,8 +175,8 @@ $(document).ready(
 							!temp ? temp=true : null;
 						}
 						
-						if(temp && temp2){								
-							$('html, body').stop().animate({scrollTop: $(this).offset().top - 150}, 500);
+						if(temp && temp2){	
+							$('html, body').stop().animate({scrollTop: $(this).offset().top - 118}, 500);
 							temp2 = false;
 						}
 					 });

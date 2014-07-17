@@ -5,34 +5,34 @@ $(document).ready(
 				for (var key2 in arrayData["v9"])
 				{
 					$.post('/Codifiers/getById', {
-						value : arrayData["v9"][key2]
+						value : window.arrayData["v9"][key2]
 					}).done(function(data) {
 						
 						showOtherCombos(data, function(){  //Llama a la funcion "showOtherCombos" del "codifiers.js"
 							
 							$(document).one('ajaxComplete', function() { //La funcion "one" es para que se ejecute solo una vez cuando se carga la pagina								
-								$.each(arrayData, function(key1, value) {						
+								$.each(window.arrayData, function(key1, value) {						
 									for (var key2 in value) {
-										if(arrayData[key1][key2] != ""){					
+										if(window.arrayData[key1][key2] != ""){					
 											var element = $("[name = 'data[Document][" + key1 + "][" + key2 + "]']");
 											if(element.is('input')){
 												openAccordion(element);
 												if(element.attr('type') == 'hidden'){							
-													$.each(arrayData[key1][key2], function(key3, value2) {								
-														element.next().children().find("option[value='" + arrayData[key1][key2][key3] + "']").attr('selected', 'selected');				
+													$.each(window.arrayData[key1][key2], function(key3, value2) {								
+														element.next().children().find("option[value='" + window.arrayData[key1][key2][key3] + "']").attr('selected', 'selected');				
 													});
 												}
 												else{
-													element.attr('value', arrayData[key1][key2]);
+													element.attr('value', window.arrayData[key1][key2]);
 												}												
 											}
 											if(element.is('textarea')){
 												openAccordion(element);
-												element.attr('value', arrayData[key1][key2]);
+												element.attr('value', window.arrayData[key1][key2]);
 											}
 											if(element.is('select')){								
 												openAccordion(element);
-												element.find("option[value='" + arrayData[key1][key2] + "']").attr('selected', 'selected');														
+												element.find("option[value='" + window.arrayData[key1][key2] + "']").attr('selected', 'selected');														
 											}
 										}					
 									}	
