@@ -92,7 +92,7 @@ class AppController extends Controller {
 			$this->layout = 'maintenance';
 			$this->set('title_for_layout', __('Sitio web en mantenimiento', true));
 			$this->set('current_user', $this->Auth->user());
-			$this->render('../elements/maintenance');
+			$this->render('../Elements/maintenance');
 		}
 		else{
 			$this->Auth->allow('display', 'logout', 'login', 'verifySessionUser');			
