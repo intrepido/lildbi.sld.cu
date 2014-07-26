@@ -8,8 +8,8 @@ if (isset($urlTypeNameDocument)){
 	echo $this->Html->breadcrumb(array(
 			$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
 			$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')),
-			$this->Html->link(utf8_encode(__('Analíticas')), array('controller' => 'analitics','action' => 'index')),
-			utf8_encode(__('Nueva Analítica'))
+			$this->Html->link(__('AnalÃ­ticas'), array('controller' => 'analitics','action' => 'index')),
+			__('Nueva AnalÃ­tica')
 	), array('class' => 'breadcrumb'));
 	
 	if ($urlTypeNameDocument == 'series_monograficas') {

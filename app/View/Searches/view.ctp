@@ -45,10 +45,10 @@
 			}
 		?>
         
-        <!-- A駉 -->
+        <!-- A帽o -->
         <?php
 			if(isset($doc['v65'])){ 
-				echo '<dt>'.utf8_encode(__('A駉 de Publicaci髇')).'</dt><dd>'.substr($doc['v65'],0,4).'</dd>';
+				echo '<dt>'.__('A帽o de Publicaci贸n').'</dt><dd>'.substr($doc['v65'],0,4).'</dd>';
         	}
 		?>
         
@@ -56,7 +56,7 @@
         <?php
 			if(isset($doc['v3'])){ 
 			
-				echo '<dt>'.utf8_encode(__('Localizaci髇')).'</dt><dd>';
+				echo '<dt>'.__('Localizaci贸n').'</dt><dd>';
 				foreach($this->Solr->localization($doc['v3']) as $item){
 					echo $item.'<br/>';
 				}
@@ -91,7 +91,7 @@
         <!--Tipo Pub-->
         <?php
 			if(isset($doc['v71'])){ 
-				echo '<dt>'.utf8_encode(__('Tipo de publicaci髇')).'</dt><dd>';
+				echo '<dt>'.__('Tipo de publicaci贸n').'</dt><dd>';
 				foreach($doc['v71'] as $b){
                    echo $b.'</br>';
                 }
@@ -109,14 +109,14 @@
         <!--Vol-->
         <?php
 			if(isset($doc['v31'])){ 
-				echo '<dt>'.utf8_encode(__('Vol鷐en')).'</dt><dd>'.$doc['v31'].'</dd>';
+				echo '<dt>'.__('Vol煤men').'</dt><dd>'.$doc['v31'].'</dd>';
         	}
 		?>
         
-        <!--N煤mero del fasc铆culo-->
+        <!--N脙潞mero del fasc脙颅culo-->
         <?php
 			if(isset($doc['v32'])){ 
-				echo '<dt>'.utf8_encode(__('N鷐ero del fas韈ulo')).'</dt><dd>'.$doc['v32'].'</dd>';
+				echo '<dt>'.__('N煤mero del fas铆culo').'</dt><dd>'.$doc['v32'].'</dd>';
         	}
 		?>
         
@@ -145,24 +145,24 @@
         	}
 		?>
         
-        <!--Edici贸n-->
+        <!--Edici脙鲁n-->
         <?php
 			if(isset($doc['v63'])){ 
-				echo '<dt>'.utf8_encode(__('Edici髇')).'</dt><dd>'.$doc['v63'].'</dd>';
+				echo '<dt>'.__('Edici贸n').'</dt><dd>'.$doc['v63'].'</dd>';
         	}
 		?>
         
-        <!--Ciudad de publicaci贸n-->
+        <!--Ciudad de publicaci脙鲁n-->
         <?php
 			if(isset($doc['v66'])){ 
-				echo '<dt>'.utf8_encode(__('Ciudad de publicaci髇')).'</dt><dd>'.$doc['v66'].'</dd>';
+				echo '<dt>'.__('Ciudad de publicaci贸n').'</dt><dd>'.$doc['v66'].'</dd>';
         	}
 		?>
       
-      	<!--Pa铆s de publicaci贸n-->
+      	<!--Pa脙颅s de publicaci脙鲁n-->
         <?php
 			if(isset($doc['v67'])){ 
-				echo '<dt>'.utf8_encode(__('Pa韘 de publicaci髇')).'</dt><dd>'.$doc['v67'].'</dd>';
+				echo '<dt>'.__('Pa铆s de publicaci贸n').'</dt><dd>'.$doc['v67'].'</dd>';
         	}
 		?>
         
@@ -176,7 +176,7 @@
         <!--Referencias-->
         <?php
 			if(isset($doc['v72'])){ 
-				echo '<dt>'.utf8_encode(__('N鷐ero total de citas')).'</dt><dd>'.$doc['v72'].'</dd>';
+				echo '<dt>'.__('N煤mero total de citas').'</dt><dd>'.$doc['v72'].'</dd>';
         	}
 		?>
         
@@ -193,7 +193,7 @@
         
         <?php
 			if(isset($doc['v8'][0])){
-				echo '<dt>'.utf8_encode(__('Direcci髇 electr髇ica')).'</dt><dd>';
+				echo '<dt>'.__('Direcci贸n electr贸nica').'</dt><dd>';
 				echo '<a href="'.$this->Solr->url($doc['v8'][0]).'">'.$this->Solr->url($doc['v8'][0]).'</a>';
 				echo '</dd>';
 			}

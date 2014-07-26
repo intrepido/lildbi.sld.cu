@@ -21,12 +21,11 @@ if (!isset($urlTypeNameDocument)) {
 	<div class="users form">
 		<fieldset>
 			<?php
-			$urlTypeNameDocuments = array('series_monograficas' => utf8_encode(__('Series Monogr醘icas')),
-					'monografia_pert_coleccion' => utf8_encode(__('Monogr醘ica Perteneciente a una Colecci髇')),
-					'monografia' => utf8_encode(__('Monograf韆')), 'no_convencional' => __('No Convencional'),
-					'serie_periodica' => utf8_encode(__('Serie Peri骴ica')), 'coleccion_monografias' => utf8_encode(__('Colecci髇 de Monograf韆s')),
-					'tesis_disertacion_pert_serie_monografica' => utf8_encode(__('Tesis, Disertaci髇 Perteneciente a una Serie
-					Monogr醘ica')), 'tesis_disertacion' => utf8_encode(__('Tesis, Disertaci髇')));
+			$urlTypeNameDocuments = array('series_monograficas' => __('Series Monogr谩ficas'),
+					'monografia_pert_coleccion' => __('Monogr谩fica Perteneciente a una Colecci贸n'),
+					'monografia' => __('Monograf铆a'), 'no_convencional' => __('No Convencional'),
+					'serie_periodica' => __('Serie Peri贸dica'), 'coleccion_monografias' => __('Colecci贸n de Monograf铆as'),
+					'tesis_disertacion_pert_serie_monografica' => __('Tesis, Disertaci贸n Perteneciente a una Serie Monogr谩fica'), 'tesis_disertacion' => __('Tesis, Disertaci贸n'));
 			echo $this->Form->input('', array('options' => $urlTypeNameDocuments, 'size' => 8, 'style' =>'width: 385px' ));
 			?>
 		</fieldset>

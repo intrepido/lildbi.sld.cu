@@ -32,7 +32,7 @@ if($result){
           <p><?php echo $numFound.' '.__("referencias encontradas para:") ?> <b><i><?php echo $query ?> </i></b>
           &nbsp;&nbsp;   
 			  <?php if(isset($header['params']['fq'])){
-				  		echo utf8_encode(__("Filtros aplicados a la b�squeda: "));
+				  		echo __("Filtros aplicados a la búsqueda: ");
                         $filters = $header['params']['fq'];
 						$terms = array("v40:" => __("Idioma: "), 
 									   "v65:" => __("Fecha: ") ,
@@ -42,7 +42,7 @@ if($result){
 									   "[*" => "" , 
 									   "[" => __("desde ") ,
 									   "]" => "",
-									   "v67:" => utf8_encode(__("Pa�s: ")) , 
+									   "v67:" => __("País: ") , 
 									   "v5:" => __("Tipo: ")
 									   );
 						if(is_array($filters)){
@@ -75,9 +75,9 @@ if($result){
     <!-- Resultados (inicio)-->   
           <?php 
           if($numFound == 0){
-              echo '<b>'. utf8_encode(__("No se encontraron resultados para la b�squeda.")).'</b>';
+              echo '<b>'. __("No se encontraron resultados para la búsqueda.").'</b>';
           }elseif(!$docs){
-              echo '<b>'.utf8_encode(__("B�squeda incorrecta.")).'</b>';
+              echo '<b>'.__("Búsqueda incorrecta.").'</b>';
           }else{
               $counter = 0;
               foreach($docs as $doc){ 
@@ -222,7 +222,7 @@ if($result){
           
     <!-- Resultados (fin)--> 
       
-    <!-- Paginación (Inicio)-->
+    <!-- PaginaciÃ³n (Inicio)-->
           <?php 
               if($docs){
                   
@@ -283,7 +283,7 @@ if($result){
                   }	
               }
           ?>
-    <!-- Paginación (Fin)-->
+    <!-- PaginaciÃ³n (Fin)-->
 
 </div>
 

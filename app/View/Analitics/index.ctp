@@ -13,7 +13,7 @@ echo $this->Html->script('table', FALSE);
 echo $this->Html->breadcrumb(array(
 					$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
 					$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')),
-					utf8_encode(__('Analíticas'))
+					__('AnalÃ­ticas')
 ), array('class' => 'breadcrumb')); ?>
 
 <?php echo $this->Session->flash(); ?>
@@ -30,9 +30,9 @@ echo $this->Html->breadcrumb(array(
 							<b class="caret"></b> </a>
 						<ul aria-labelledby="drop4" role="menu" class="dropdown-menu"
 							id="menu1">
-							<li role="presentation"><?php echo $this->Html->link(utf8_encode(__('Con Indezación')), array('controller' => 'documents', 'action' => 'add', 'con_indizacion'), array('role' => 'menuitem')); ?>
+							<li role="presentation"><?php echo $this->Html->link(__('Con IndezaciÃ³n'), array('controller' => 'documents', 'action' => 'add', 'con_indizacion'), array('role' => 'menuitem')); ?>
 							</li>
-							<li role="presentation"><?php echo $this->Html->link(utf8_encode(__('Sin Indezación')), array('controller' => 'documents', 'action' => 'add', 'sin_indizacion'), array('role' => 'menuitem')); ?>
+							<li role="presentation"><?php echo $this->Html->link(__('Sin IndezaciÃ³n'), array('controller' => 'documents', 'action' => 'add', 'sin_indizacion'), array('role' => 'menuitem')); ?>
 							</li>
 						</ul>
 					</li>
@@ -52,7 +52,7 @@ echo $this->Html->breadcrumb(array(
 					else{
 						$documentTitle = "";
 					}
-					echo utf8_encode(__('Analíticas')).$documentTitle;
+					echo __('AnalÃ­ticas').$documentTitle;
 					?>
 				</legend>
 				
@@ -68,7 +68,7 @@ echo $this->Html->breadcrumb(array(
 						<div id="collapseOne" class="accordion-body collapse">
 							<div class="accordion-inner">
 								<div id="columns">
-									<div id='columns-default' title='<?php echo utf8_encode( __('Básico: ')); ?>' style="margin-top: 10px;"></div>
+									<div id='columns-default' title='<?php echo  __('BÃ¡sico: '); ?>' style="margin-top: 10px;"></div>
 									<hr style="margin-top: 0px; margin-bottom: 10px;"></hr>
 									<!-- Slider -->
 									<ul class="bxslider" style="display: none">
@@ -154,12 +154,12 @@ echo $this->Html->breadcrumb(array(
 				<!-- Alerts-->
 				<div class="alert alert-error fade in"
 					id="alert-empty-list-analitics" style="display: none;">
-					<?php echo utf8_encode(__('No tiene analiticas en su base de datos')); ?>
+					<?php echo __('No tiene analiticas en su base de datos'); ?>
 				</div>
 
 				<div class="alert alert-error fade in"
 					id="alert-empty-list-document-analitics" style="display: none;">
-					<?php echo utf8_encode(__('Este documento no tiene analíticas')); ?>
+					<?php echo __('Este documento no tiene analÃ­ticas'); ?>
 				</div>
 
 				<!-- Loader-->
@@ -173,12 +173,12 @@ echo $this->Html->breadcrumb(array(
 						<button type="button" class="close" data-dismiss="modal"
 							aria-hidden="true">&times;</button>
 						<h3 id="myModalLabel">
-							<?php echo utf8_encode(__('Confirmación')); ?>
+							<?php echo __('ConfirmaciÃ³n'); ?>
 						</h3>
 					</div>
 					<div class="modal-body">
 						<p>
-							<?php echo utf8_encode(__('Esta seguro que desea eliminar esta analítica?')); ?>
+							<?php echo __('Esta seguro que desea eliminar esta analÃ­tica?'); ?>
 						</p>
 					</div>
 					<div class="modal-footer">

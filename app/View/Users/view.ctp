@@ -62,7 +62,7 @@
 						&nbsp;
 					</dd>
 					<dt>
-						<?php echo utf8_encode(__('Código del Centro')) . ":"; ?>
+						<?php echo __('CÃ³digo del Centro') . ":"; ?>
 					</dt>
 					<dd>
 						<?php echo h($user['User']['center_code']); ?>

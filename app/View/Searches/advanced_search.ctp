@@ -4,16 +4,16 @@
 	<?php echo $this->Form->create('query',array('onsubmit' => 'return validateAdv();')); ?>
 
        	<div name="formSearch" class="container-document">
-			<legend><?php echo utf8_encode(__('Búsqueda Avanzada')); ?></legend>
+			<legend><?php echo __('BÃºsqueda Avanzada'); ?></legend>
 			<?php if(isset($result)){ ?>
 	            <div class="alert">
-					<button type="button" class="close" data-dismiss="alert">Ã—</button>
+					<button type="button" class="close" data-dismiss="alert">Ãƒâ€”</button>
 	              <?php echo $result; ?>
 	            </div>	
             <?php } ?>
             <table class="table-advanced-search">
 				<tr>
-					<td align="center"><?php echo utf8_encode(__('Buscar palabras en un campo específico.')); ?></td>
+					<td align="center"><?php echo __('Buscar palabras en un campo especÃ­fico.'); ?></td>
 				</tr>
 				<tr>
 					<td align="center">
@@ -23,7 +23,7 @@
 							<select name="data[query][field]"
 								class="add-on">
 								<option value="text"><?php echo __('Todos los campos'); ?></option>
-								<option value="title"><?php echo utf8_encode(__('Título')); ?></option>
+								<option value="title"><?php echo __('TÃ­tulo'); ?></option>
 								<option value="authors"><?php echo __('Autor'); ?></option>
 								<option value="kw"><?php echo __('Palabras Claves'); ?></option>
 								<option value="summary"><?php echo __('Resumen'); ?></option>
@@ -43,7 +43,7 @@
 							<select
 								name="data[query][field1]" class="add-on">
 								<option value="text"><?php echo __('Todos los campos'); ?></option>
-								<option value="title"><?php echo utf8_encode(__('Título')); ?></option>
+								<option value="title"><?php echo __('TÃ­tulo'); ?></option>
 								<option value="authors"><?php echo __('Autor'); ?></option>
 								<option value="kw"><?php echo __('Palabras Claves'); ?></option>
 								<option value="summary"><?php echo __('Resumen'); ?></option>
@@ -61,7 +61,7 @@
 							</select> <input name="data[query][qText2]" type="text"> <select
 								name="data[query][field2]" class="add-on">
 								<option value="text"><?php echo __('Todos los campos'); ?></option>
-								<option value="title"><?php echo utf8_encode(__('Título')); ?></option>
+								<option value="title"><?php echo __('TÃ­tulo'); ?></option>
 								<option value="authors"><?php echo __('Autor'); ?></option>
 								<option value="kw"><?php echo __('Palabras Claves'); ?></option>
 								<option value="summary"><?php echo __('Resumen'); ?></option>
@@ -71,12 +71,12 @@
 				</tr>
 			</table>
 
-			<legend><?php echo utf8_encode(__('Restringir Búsqueda')); ?></legend>
+			<legend><?php echo __('Restringir BÃºsqueda'); ?></legend>
 			
 			<div class="restrict-search row-fluid">	
 				<div class="span12">
 					<div class="input-prepend">
-							<span class="add-on"><?php echo utf8_encode(__('Idioma de la publicación:')); ?></span> 
+							<span class="add-on"><?php echo __('Idioma de la publicaciÃ³n:'); ?></span> 
 							<select id="lang" name="data[query][lang]" value='Todos'>
 	                             <?php
 									$lens = $this->requestAction ( '/Codifiers/getById/lenguaje' );
@@ -89,7 +89,7 @@
 	                         </select>
 					</div>
 					<div class="input-prepend">				
-							<span class="add-on"><?php echo utf8_encode(__('País de publicación:')); ?></span>
+							<span class="add-on"><?php echo __('PaÃ­s de publicaciÃ³n:')); ?></span>
 							<select id="country" name="data[query][country]">
 		                           <?php
 									  $paises = $this->requestAction ( '/Codifiers/getById/pais' );
@@ -103,8 +103,7 @@
 					</div>
 				</div>
 				<div class="span12">
-					<div  class="span7"><input name="data[query][url]" id="checkCompletText" type="checkbox"/> <?php echo __('Que tengan
-							URL del texto completo.'); ?>
+					<div  class="span7"><input name="data[query][url]" id="checkCompletText" type="checkbox"/> <?php echo __('Que tengan URL del texto completo.'); ?>
 							<div class="input-prepend">
 								<span class="add-on"><?php echo __('Formato del Texto Completo:'); ?> </span> 
 								<select id="formatText" name="data[query][formatText]" disabled="disabled">
@@ -117,7 +116,7 @@
 							</div>
 					</div>
 					<div class="span5"><label style="margin: 0px 95px -8px 0px;">
-							<?php echo utf8_encode(__('Fecha de Publicación:')); ?></label><br />
+							<?php echo __('Fecha de PublicaciÃ³n:'); ?></label><br />
 							<div class="form-inline">
 								<label class="control-label"><?php echo __('Desde:'); ?> </label> <select
 									name="data[query][from]">
@@ -147,30 +146,22 @@
 							<span class="add-on"><?php echo __('Tipo de Literatura:'); ?> </span> <select
 								name="data[query][typePub]">
 								<option value="all"><?php echo __('Todos'); ?></option>
-								<option value="S"><?php echo utf8_encode(__('Documento publicado en una serie periódica')); ?></option>
-								<option value="SC"><?php echo utf8_encode(__('Documento de conferencia en una serie
-									periódica')); ?></option>
-								<option value="SCP"><?php echo utf8_encode(__('Documento de proyecto y conferencia en una
-									serie periódica')); ?></option>
-								<option value="SP"><?php echo utf8_encode(__('Documento de proyecto en una serie periódica')); ?></option>
-								<option value="M"><?php echo utf8_encode(__('Documento publicado en una monografía')); ?></option>
-								<option value="MC"><?php echo utf8_encode(__('Documento de conferencia en una monografía')); ?></option>
-								<option value="MCP"><?php echo utf8_encode(__('Documento de proyecto y conferencia en una
-									monografía')); ?></option>
-								<option value="MP"><?php echo utf8_encode(__('Documento de proyecto en una monografía')); ?></option>
-								<option value="MS"><?php echo utf8_encode(__('Documento publicado en una serie monográfica')); ?></option>
-								<option value="MSC"><?php echo utf8_encode(__('Documento de conferencia en una serie
-									monográfica')); ?></option>
-								<option value="MSP"><?php echo utf8_encode(__('Documento de proyecto en una serie
-									monográfica')); ?></option>
-								<option value="T"><?php echo utf8_encode(__('Tesis, Disertación')); ?></option>
-								<option value="TS"><?php echo utf8_encode(__('Tesis, Disertación que pertenece a una serie
-									monográfica')); ?></option>
+								<option value="S"><?php echo __('Documento publicado en una serie periÃ³dica'); ?></option>
+								<option value="SC"><?php echo __('Documento de conferencia en una serie periÃ³dica'); ?></option>
+								<option value="SCP"><?php echo __('Documento de proyecto y conferencia en una serie periÃ³dica'); ?></option>
+								<option value="SP"><?php echo __('Documento de proyecto en una serie periÃ³dica'); ?></option>
+								<option value="M"><?php echo __('Documento publicado en una monografÃ­a'); ?></option>
+								<option value="MC"><?php echo __('Documento de conferencia en una monografÃ­a'); ?></option>
+								<option value="MCP"><?php echo __('Documento de proyecto y conferencia en una monografÃ­a'); ?></option>
+								<option value="MP"><?php echo __('Documento de proyecto en una monografÃ­a'); ?></option>
+								<option value="MS"><?php echo __('Documento publicado en una serie monogrÃ¡fica'); ?></option>
+								<option value="MSC"><?php echo __('Documento de conferencia en una serie monogrÃ¡fica'); ?></option>
+								<option value="MSP"><?php echo __('Documento de proyecto en una serie monogrÃ¡fica'); ?></option>
+								<option value="T"><?php echo __('Tesis, DisertaciÃ³n'); ?></option>
+								<option value="TS"><?php echo __('Tesis, DisertaciÃ³n que pertenece a una serie	monogrÃ¡fica'); ?></option>
 								<option value="N"><?php echo __('Documento no convencional'); ?></option>
-								<option value="NC"><?php echo __('Documento de conferencia en forma no
-									convencional'); ?></option>
-								<option value="NP"><?php echo __('Documento de proyecto en forma no
-									convencional'); ?></option>
+								<option value="NC"><?php echo __('Documento de conferencia en forma no convencional'); ?></option>
+								<option value="NP"><?php echo __('Documento de proyecto en forma no convencional'); ?></option>
 							</select>
 						</div>
 
@@ -183,7 +174,7 @@
 			
 			
 			<div class="form-actions">
-				<?php echo $this->Html->link(utf8_encode(__('Volver a Búsqueda Simple ')).$this->Html->tag('icon',null,array('class'=>'icon-cog')), array( 'action'=>'search'),array('plugin' => false,'class' => 'btn btn-info','escape' => false)); ?>
+				<?php echo $this->Html->link(__('Volver a BÃºsqueda Simple ').$this->Html->tag('icon',null,array('class'=>'icon-cog')), array( 'action'=>'search'),array('plugin' => false,'class' => 'btn btn-info','escape' => false)); ?>
                 <?php echo $this->Form->button(__("Buscar ").$this->Html->tag('icon',null,array('class'=>'icon-search')), array("type" => 'commit' , 'class' => 'btn btn-primary','escape' => false));?>
         	</div>
 		</div> 

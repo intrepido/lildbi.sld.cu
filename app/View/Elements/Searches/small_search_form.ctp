@@ -18,12 +18,12 @@
 				<icon class="icon-search"></icon>
 			</button>
 		</div>
-		<?php echo $this->Html->link(utf8_encode(__('Búsqueda Avanzada ')).$this->Html->tag('icon',null,array('class'=>'icon-cog')), array( 'action'=>'advancedSearch'),array('class' => 'btn btn-info','escape' => false)); ?>
+		<?php echo $this->Html->link(__('BÃºsqueda Avanzada ').$this->Html->tag('icon',null,array('class'=>'icon-cog')), array( 'action'=>'advancedSearch'),array('class' => 'btn btn-info','escape' => false)); ?>
 		
 	</div>
 	<div class="span3">
 		<div class="input-prepend">
-			<span class="add-on"><?php echo utf8_encode(__('Resultados por página')); ?></span> <select
+			<span class="add-on"><?php echo __('Resultados por pÃ¡gina'); ?></span> <select
 				name="data[query][rows]" id="queryRows"
 				class="span4">
 				<option

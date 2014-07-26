@@ -26,7 +26,7 @@
 				<?php echo $this->Form->create('User'); ?>
 				<fieldset>
 					<legend>
-						<?php echo utf8_encode(__('Añadir Usuario')); ?>
+						<?php echo __('AÃ±adir Usuario'); ?>
 					</legend>
 					<?php
 					echo $this->Form->input('name');

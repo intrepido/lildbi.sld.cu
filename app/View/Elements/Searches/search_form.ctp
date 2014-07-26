@@ -8,7 +8,7 @@
               <tr>
                   <td>
                       <div>
-                      	  <?php echo $this->Html->link(utf8_encode(__('Búsqueda Avanzada ')).$this->Html->tag('icon',null,array('class'=>'icon-cog')), array( 'action'=>'advancedSearch'),array('plugin' => false,'class' => 'btn btn-info','escape' => false)); ?>
+                      	  <?php echo $this->Html->link(__('BÃºsqueda Avanzada ').$this->Html->tag('icon',null,array('class'=>'icon-cog')), array( 'action'=>'advancedSearch'),array('plugin' => false,'class' => 'btn btn-info','escape' => false)); ?>
                          
                       </div>
                   </td>	
@@ -28,7 +28,7 @@
     <?php $this->Form->end(); ?>
     
     <div align="center" class="alert span6" style="display:none">
-      <strong><?php echo utf8_encode(__('Atención!')); ?></strong> <?php echo utf8_encode(__('Debe introducir términos para buscar.')); ?>
+      <strong><?php echo __('AtenciÃ³n!'); ?></strong> <?php echo __('Debe introducir tÃ©rminos para buscar.'); ?>
     </div>
   
 </div>

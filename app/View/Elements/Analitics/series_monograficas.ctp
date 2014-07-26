@@ -22,7 +22,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 <div class="container-document">
 	<div class="page-header">
 		<h3>
-			<?php echo utf8_encode(__('Serie Monogr醘ica')); ?>
+			<?php echo __('Serie Monogr谩fica'); ?>
 		</h3>
 	</div>
 
@@ -35,7 +35,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 			<thead>
 				<tr>
 					<th><?php echo __('Campo'); ?></th>
-					<th><?php echo utf8_encode(__('Descripci髇 Bibliogr醘ica')); ?></th>
+					<th><?php echo __('Descripci贸n Bibliogr谩fica'); ?></th>
 					<th class="span2"><?php echo __('Tag'); ?></th>
 				</tr>
 			</thead>
@@ -49,7 +49,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 					</td>
 				</tr>
 				<tr>
-					<td><?php echo utf8_encode(__('N鷐ero de Identificaci髇')); ?></td>
+					<td><?php echo __('N煤mero de Identificaci贸n'); ?></td>
 					<td>
 						<div class='alert alert-error lil' style="display: none;">
 							<button type='button' class='close'>&times;</button>
@@ -60,18 +60,18 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 								'type' => 'text',
 								'class' => 'span6',
 								'value'=> '',
-								'name'  => 'data[Document][v2]['. utf8_encode(__('N鷐ero de Identificaci髇')) .']',
+								'name'  => 'data[Document][v2]['. __('N煤mero de Identificaci贸n') .']',
 								'required' => 'true'
 				)); ?>
 					</td>
 					<td class="mandatory">[02]</td>
 				</tr>
 				<tr>
-					<td><?php echo utf8_encode(__('Localizaci髇 del Documento')); ?>
+					<td><?php echo __('Localizaci贸n del Documento'); ?>
 						<div class="btn-toolbar">
 							<div class="btn-group">
 								<?php
-								echo $this->element('assistant',array("nameField" => utf8_encode(__('Localizaci髇 del Documento')), "numberField" => 3));
+								echo $this->element('assistant',array("nameField" => __('Localizaci贸n del Documento'), "numberField" => 3));
 								?>
 								<a id='cleanField' class="btn" style="padding: 6px 5px 7px;"
 									href="#"><i class="icon-remove"></i> </a>
@@ -84,7 +84,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 							'rows' => 4,
 							'disabled' => true,
 							'value'=> '',
-							'name'  => 'data[Document][v3]['. utf8_encode(__('Localizaci髇 del Documento')) .']'
+							'name'  => 'data[Document][v3]['. __('Localizaci贸n del Documento') .']'
 
 					)); ?></td>
 					<td>[03]</td>
@@ -101,22 +101,22 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 					<td>[04]</td>
 				</tr>
 				<tr>
-					<td><?php echo utf8_encode(__('N鷐ero del Registro')); ?></td>
+					<td><?php echo __('N煤mero del Registro'); ?></td>
 					<td><?php echo $this->Form->textarea('', array(				
 							'type' => 'text',
 							'class' => 'span6',
 							'rows' => 4,
 							'value'=> '',
-							'name'  => 'data[Document][v7]['. utf8_encode(__('N鷐ero del Registro')) .']'
+							'name'  => 'data[Document][v7]['. __('N煤mero del Registro') .']'
 					)); ?></td>
 					<td>[07]</td>
 				</tr>
 				<tr>
-					<td><?php echo utf8_encode(__('Direcci髇 Electr髇ica')); ?>
+					<td><?php echo __('Direcci贸n Electr贸nica'); ?>
 						<div class="btn-toolbar">
 							<div class="btn-group">
 								<?php
-								echo $this->element('assistant',array("nameField" => utf8_encode(__('Direcci髇 Electr髇ica')), "numberField" => 8));
+								echo $this->element('assistant',array("nameField" => __('Direcci贸n Electr贸nica'), "numberField" => 8));
 								?>
 								<a id='cleanField' class="btn" style="padding: 6px 5px 7px;"
 									href="#"><i class="icon-remove"></i> </a>
@@ -129,7 +129,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 							'rows' => 4,
 							'disabled' => true,
 							'value'=> '',
-							'name'  => 'data[Document][v8]['. utf8_encode(__('Direcci髇 Electr髇ica')) .']'
+							'name'  => 'data[Document][v8]['. __('Direcci贸n Electr贸nica') .']'
 					)); ?></td>
 					<td>[08]</td>
 				</tr>
@@ -161,7 +161,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 					</td>
 				</tr>
 				<tr class="success">
-					<td><?php echo utf8_encode(__('T韙ulo')); ?></td>
+					<td><?php echo __('T铆tulo'); ?></td>
 					<td></td>
 					<td>[30]</td>
 				</tr>
@@ -171,7 +171,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 					<td>[31]</td>
 				</tr>
 				<tr class="success">
-					<td><?php echo utf8_encode(__('N鷐ero del Fasc韈ulo')); ?></td>
+					<td><?php echo __('N煤mero del Fasc铆culo'); ?></td>
 					<td></td>
 					<td>[32]</td>
 				</tr>
@@ -182,7 +182,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 				</tr>
 				<tr class="info">
 					<td colspan="12" style="border-left-width: 0px; padding-left: 6px;"><div
-							class="span5"></div> <b><?php echo utf8_encode(__('Nivel Monogr醘ico')) ?>
+							class="span5"></div> <b><?php echo __('Nivel Monogr谩fico') ?>
 					</b><a id="next" href="#" class="pull-right"><?php  echo $this->Html->image('next.gif'); ?>
 					</a><a id="prev" href="#" class="pull-right"><?php  echo $this->Html->image('prev.gif'); ?>
 					</a><a id="bott" href="#" class="pull-right"><?php  echo $this->Html->image('bott.gif'); ?>
@@ -203,24 +203,24 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 					<td>[17]</td>
 				</tr>
 				<tr class="success">
-					<td><?php echo utf8_encode(__('T韙ulo')); ?>
+					<td><?php echo __('T铆tulo'); ?>
 					</td>
 					<td></td>
 					<td>[18]</td>
 				</tr>
 				<tr class="success">
-					<td><?php echo utf8_encode(__('T韙ulo Traducido al Ingl閟')); ?></td>
+					<td><?php echo __('T铆tulo Traducido al Ingl茅s'); ?></td>
 					<td></td>
 					<td>[19]</td>
 				</tr>
 				<tr class="success">
-					<td><?php echo utf8_encode(__('P醙inas')); ?></td>
+					<td><?php echo __('P谩ginas'); ?></td>
 					<td></td>
 					<td>[20]</td>
 				</tr>
 				<tr class="info">
 					<td colspan="12" style="border-left-width: 0px; padding-left: 6px;"><div
-							class="span5"></div> <b><?php echo utf8_encode(__('Nivel Anal韙ico')) ?>
+							class="span5"></div> <b><?php echo __('Nivel Anal铆tico') ?>
 					</b><a id="next" href="#" class="pull-right"><?php  echo $this->Html->image('next.gif'); ?>
 					</a><a id="prev" href="#" class="pull-right"><?php  echo $this->Html->image('prev.gif'); ?>
 					</a><a id="bott" href="#" class="pull-right"><?php  echo $this->Html->image('bott.gif'); ?>
@@ -281,11 +281,11 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 					<td class="mandatory">[11]</td>
 				</tr>
 				<tr>
-					<td><?php echo utf8_encode(__('T韙ulo')); ?>
+					<td><?php echo __('T铆tulo'); ?>
 						<div class="btn-toolbar">
 							<div class="btn-group">
 								<?php
-								echo $this->element('assistant',array("nameField" => utf8_encode(__('T韙ulo')), "numberField" => 12));
+								echo $this->element('assistant',array("nameField" => __('T铆tulo'), "numberField" => 12));
 								?>
 								<a id='cleanField' class="btn" style="padding: 6px 5px 7px;"
 									href="#"><i class="icon-remove"></i> </a>
@@ -304,28 +304,28 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 								'rows' => 4,
 								'disabled' => true,
 								'value'=> '',
-								'name'  => 'data[Document][v12]['. utf8_encode(__('T韙ulo')) .']',
+								'name'  => 'data[Document][v12]['. __('T铆tulo') .']',
 								'required' => 'true'
 				)); ?>
 					</td>
 					<td class="mandatory">[12]</td>
 				</tr>
 				<tr>
-					<td><?php echo utf8_encode(__('T韙ulo Traducido al Ingl閟')); ?></td>
+					<td><?php echo __('T铆tulo Traducido al Ingl茅s'); ?></td>
 					<td><?php echo $this->Form->input('', array(				
 							'type' => 'text',
 							'class' => 'span6',
 							'value'=> '',
-							'name'  => 'data[Document][v13]['. utf8_encode(__('T韙ulo Traducido al Ingl閟')) .']'
+							'name'  => 'data[Document][v13]['. __('T铆tulo Traducido al Ingl茅s') .']'
 					)); ?></td>
 					<td>[13]</td>
 				</tr>
 				<tr>
-					<td><?php echo utf8_encode(__('P醙inas')); ?>
+					<td><?php echo __('P谩ginas'); ?>
 						<div class="btn-toolbar">
 							<div class="btn-group">
 								<?php
-								echo $this->element('assistant',array("nameField" => utf8_encode(__('P醙inas')), "numberField" => 14));
+								echo $this->element('assistant',array("nameField" => __('P谩ginas'), "numberField" => 14));
 								?>
 								<a id='cleanField' class="btn" style="padding: 6px 5px 7px;"
 									href="#"><i class="icon-remove"></i> </a>
@@ -344,7 +344,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 								'rows' => 4,
 								'disabled' => true,
 								'value'=> '',
-								'name'  => 'data[Document][v14]['. utf8_encode(__('P醙inas')) .']',
+								'name'  => 'data[Document][v14]['. __('P谩ginas') .']',
 								'required' => 'true'
 				)); ?>
 					</td>
@@ -360,11 +360,11 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 					</a></td>
 				</tr>
 				<tr>
-					<td><?php echo utf8_encode(__('Informaci髇 Descriptiva'));?>
+					<td><?php echo __('Informaci贸n Descriptiva');?>
 						<div class="btn-toolbar">
 							<div class="btn-group">
 								<?php
-								echo $this->element('assistant',array("nameField" => utf8_encode(__("Informaci髇 Descriptiva")), "numberField" => 38));
+								echo $this->element('assistant',array("nameField" => __("Informaci贸n Descriptiva"), "numberField" => 38));
 								?>
 								<a id='cleanField' class="btn" style="padding: 6px 5px 7px;"
 									href="#"><i class="icon-remove"></i> </a>
@@ -377,7 +377,7 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 							'rows' => 4,
 							'disabled' => true,
 							'value'=> '',
-							'name'  => 'data[Document][v38]['. utf8_encode(__('Informaci髇 Descriptiva')) .']'
+							'name'  => 'data[Document][v38]['. __('Informaci贸n Descriptiva') .']'
 					)); ?></td>
 					<td>[38]</td>
 				</tr>
@@ -426,36 +426,36 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 					<td>[505]</td>
 				</tr>
 				<tr>
-					<td><?php echo utf8_encode(__('Nota de Disponibilidad de Forma F韘ica Adicional'));?>
+					<td><?php echo __('Nota de Disponibilidad de Forma F铆sica Adicional');?>
 					</td>
 					<td><?php echo $this->Form->textarea('', array(				
 							'type' => 'text',
 							'class' => 'span6',
 							'rows' => 4,
 							'value'=> '',
-							'name'  => 'data[Document][v530]['. utf8_encode(__('Nota de Disponibilidad de Forma F韘ica Adicional')) .']'
+							'name'  => 'data[Document][v530]['. __('Nota de Disponibilidad de Forma F铆sica Adicional') .']'
 					)); ?></td>
 					<td>[530]</td>
 				</tr>
 				<tr>
-					<td><?php echo utf8_encode(__('Nota de Reproducci髇'))?></td>
+					<td><?php echo __('Nota de Reproducci贸n')?></td>
 					<td><?php echo $this->Form->textarea('', array(				
 							'type' => 'text',
 							'class' => 'span6',
 							'rows' => 4,
 							'value'=> '',
-							'name'  => 'data[Document][v533]['. utf8_encode(__('Nota de Reproducci髇')) .']'
+							'name'  => 'data[Document][v533]['. __('Nota de Reproducci贸n') .']'
 					)); ?></td>
 					<td>[533]</td>
 				</tr>
 				<tr>
-					<td><?php echo utf8_encode(__('Nota de Versi髇 Original'))?></td>
+					<td><?php echo __('Nota de Versi贸n Original')?></td>
 					<td><?php echo $this->Form->textarea('', array(				
 							'type' => 'text',
 							'class' => 'span6',
 							'rows' => 4,
 							'value'=> '',
-							'name'  => 'data[Document][v534]['. utf8_encode(__('Nota de Versi髇 Original')) .']'
+							'name'  => 'data[Document][v534]['. __('Nota de Versi贸n Original') .']'
 					)); ?></td>
 					<td>[534]</td>
 				</tr>
@@ -484,12 +484,12 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 					<td>[62]</td>
 				</tr>
 				<tr class="success">
-					<td><?php echo utf8_encode(__('Edici髇'))?></td>
+					<td><?php echo __('Edici贸n')?></td>
 					<td></td>
 					<td>[63]</td>
 				</tr>
 				<tr class="success">
-					<td><?php echo utf8_encode(__('Fecha de Publicaci髇'))?></td>
+					<td><?php echo __('Fecha de Publicaci贸n')?></td>
 					<td></td>
 					<td>[64]</td>
 				</tr>
@@ -499,17 +499,17 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 					<td>[65]</td>
 				</tr>
 				<tr class="success">
-					<td><?php echo utf8_encode(__('Ciudad de Publicaci髇'))?></td>
+					<td><?php echo __('Ciudad de Publicaci贸n')?></td>
 					<td></td>
 					<td>[66]</td>
 				</tr>
 				<tr class="success">
-					<td><?php echo utf8_encode(__('Pa韘 de Publicaci髇')); ?></td>
+					<td><?php echo __('Pa铆s de Publicaci贸n'); ?></td>
 					<td></td>
 					<td>[67]</td>
 				</tr>
 				<tr class="success">
-					<td><?php echo utf8_encode(__('S韒bolo'))?></td>
+					<td><?php echo __('S铆mbolo')?></td>
 					<td></td>
 					<td>[68]</td>
 				</tr>
@@ -597,14 +597,14 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 								<div class="accordion-inner">
 									<table class="table table-bordered">
 										<tr>
-											<td><?php echo utf8_encode(__('Instituci髇 Patrocinadora')) ?>
+											<td><?php echo __('Instituci贸n Patrocinadora') ?>
 											</td>
 											<td><?php echo $this->Form->textarea('', array(				
 													'type' => 'text',
 													'class' => 'span6',
 													'rows' => 4,
 													'value'=> '',
-													'name'  => 'data[Document][v52]['. utf8_encode(__('Evento - Instituci髇 Patrocinadora')) .']'
+													'name'  => 'data[Document][v52]['. __('Evento - Instituci贸n Patrocinadora') .']'
 											)); ?>
 											</td>
 											<td class='span1'>[52]</td>
@@ -667,10 +667,10 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 											<td class="mandatory">[56]</td>
 										</tr>
 										<tr>
-											<td><?php echo utf8_encode(__('Pa韘')) ?></td>
+											<td><?php echo __('Pa铆s') ?></td>
 											<td><?php
 											$paises = $this->requestAction('/Codifiers/getById/pais');
-											echo $this->Form->input('', array('options' => $paises['Codifier']['pais'], 'class' => 'span6', 'value'=> '', 'name'  => 'data[Document][v57]['. utf8_encode(__('Evento - Pa韘')) .']' ));
+											echo $this->Form->input('', array('options' => $paises['Codifier']['pais'], 'class' => 'span6', 'value'=> '', 'name'  => 'data[Document][v57]['. __('Evento - Pa铆s') .']' ));
 											?>
 											</td>
 											<td>[57]</td>
@@ -692,14 +692,14 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 								<div class="accordion-inner">
 									<table class="table table-bordered">
 										<tr>
-											<td><?php echo utf8_encode(__('Instituci髇 Patrocinadora')) ?>
+											<td><?php echo __('Instituci贸n Patrocinadora') ?>
 											</td>
 											<td><?php echo $this->Form->textarea('', array(				
 													'type' => 'text',
 													'class' => 'span6',
 													'rows' => 4,
 													'value'=> '',
-													'name'  => 'data[Document][v58]['. utf8_encode(__('Proyecto - Instituci髇 Patrocinadora')) .']'
+													'name'  => 'data[Document][v58]['. __('Proyecto - Instituci贸n Patrocinadora') .']'
 											)); ?>
 											</td>
 											<td class='span1'>[58]</td>
@@ -715,12 +715,12 @@ $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
 											<td>[59]</td>
 										</tr>
 										<tr>
-											<td><?php echo utf8_encode(__('N鷐ero')) ?></td>
+											<td><?php echo __('N煤mero') ?></td>
 											<td><?php echo $this->Form->input('', array(				
 													'type' => 'text',
 													'class' => 'span6',
 													'value'=> '',
-													'name'  => 'data[Document][v60]['. utf8_encode(__('Proyecto - N鷐ero')) .']'
+													'name'  => 'data[Document][v60]['. __('Proyecto - N煤mero') .']'
 											)); ?></td>
 											<td>[60]</td>
 										</tr>

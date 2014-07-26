@@ -26,7 +26,7 @@ echo $this->Html->breadcrumb(array(
 				<div class="alert alert-error fade in" id="alert-empty-base"
 					style="display: none;">
 					<button data-dismiss="alert" class="close" type="button">&times;</button>
-					<?php echo utf8_encode(__('La base no puede importarse ya que esta no existe o esta vacía en el proveedor')); ?>
+					<?php echo __('La base no puede importarse ya que esta no existe o esta vacÃ­a en el proveedor'); ?>
 				</div>				
 				<input id="name-base" type="text" class="input-small">
 				<button id="add-base" class="btn" style="margin-bottom: 10px;">
@@ -82,12 +82,12 @@ echo $this->Html->breadcrumb(array(
 						<button type="button" class="close" data-dismiss="modal"
 							aria-hidden="true">&times;</button>
 						<h3 id="myModalLabel">
-							<?php echo utf8_encode(__('Confirmación')); ?>
+							<?php echo __('ConfirmaciÃ³n'); ?>
 						</h3>
 					</div>
 					<div class="modal-body">
 						<p>
-							<?php echo utf8_encode(__('Si elimina la base perderá todo los registros que esta contenga. Esta seguro que desea eliminarla?')); ?>
+							<?php echo __('Si elimina la base perderÃ¡ todo los registros que esta contenga. Esta seguro que desea eliminarla?'); ?>
 						</p>
 					</div>
 					<div class="modal-footer">

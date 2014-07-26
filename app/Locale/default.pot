@@ -1,0 +1,1858 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-07-26 13:27-0400\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/AnaliticsController.php:192
+#: Controller/DocumentsController.php:184
+#: Controller/Component/DocumentDatasComponent.php:225
+msgid "Documentalista"
+msgstr ""
+
+#: Controller/AnaliticsController.php:193
+#: Controller/DocumentsController.php:185
+msgid "Fecha de ultima modificación"
+msgstr ""
+
+#: Controller/AnaliticsController.php:196;198
+#: Controller/DocumentsController.php:188;190
+#: Controller/Component/DocumentDatasComponent.php:224
+msgid "Fecha de Creación del Registro"
+msgstr ""
+
+#: Controller/AnaliticsController.php:201
+#: Controller/DocumentsController.php:193
+#: Controller/Component/DocumentDatasComponent.php:245
+msgid "Versión del Software"
+msgstr ""
+
+#: Controller/AnaliticsController.php:202
+#: Controller/DocumentsController.php:194
+#: Controller/Component/DocumentDatasComponent.php:160
+#: View/Elements/assistant.ctp:52;54
+#: View/Users/view.ctp:65
+msgid "Código del Centro"
+msgstr ""
+
+#: Controller/AppController.php:93
+msgid "Sitio web en mantenimiento"
+msgstr ""
+
+#: Controller/CodifiersController.php:106
+msgid "you do not have properly set the environment variable \"BASES\""
+msgstr ""
+
+#: Controller/CodifiersController.php:113
+msgid "Codifiers were successfully imported"
+msgstr ""
+
+#: Controller/DocumentsController.php:102
+#: View/Analitics/index.ctp:35
+#: View/Documents/index.ctp:36
+msgid "Sin Indezación"
+msgstr ""
+
+#: Controller/DocumentsController.php:106
+#: View/Analitics/index.ctp:33
+#: View/Documents/index.ctp:34
+msgid "Con Indezación"
+msgstr ""
+
+#: Controller/RolsController.php:52;92;128
+msgid "Invalid rol"
+msgstr ""
+
+#: Controller/RolsController.php:66;96
+msgid "The rol has been saved"
+msgstr ""
+
+#: Controller/RolsController.php:72;102
+msgid "The rol could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/RolsController.php:131
+msgid "Rol deleted"
+msgstr ""
+
+#: Controller/RolsController.php:137
+msgid "Rol was not deleted"
+msgstr ""
+
+#: Controller/UsersController.php:60
+msgid "Usted no tiene acceso como "
+msgstr ""
+
+#: Controller/UsersController.php:82
+msgid "Su clave fue incorrecta"
+msgstr ""
+
+#: Controller/UsersController.php:90
+msgid "Su combinacion usuario/clave fue incorrecta"
+msgstr ""
+
+#: Controller/UsersController.php:158
+msgid "Invalid user"
+msgstr ""
+
+#: Controller/UsersController.php:182;213
+msgid "El usuario ha sido salvado"
+msgstr ""
+
+#: Controller/UsersController.php:188
+msgid "El usuario no pudo ser salvado. Por fabor, intentelo de nuevo."
+msgstr ""
+
+#: Controller/UsersController.php:208;249
+msgid "Usuario invalido"
+msgstr ""
+
+#: Controller/UsersController.php:219
+msgid "El usuario no pudo ser salvado. Por fabor, intentelo de nuevo.."
+msgstr ""
+
+#: Controller/UsersController.php:262
+msgid "Usuario eliminado"
+msgstr ""
+
+#: Controller/UsersController.php:269
+msgid "El usuario no pudo ser eliminado"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:37;45;55
+#: View/Elements/Analitics/series_monograficas.ctp:25
+#: View/Elements/Documents/series_monograficas.ctp:19
+msgid "Serie Monográfica"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:161
+#: View/Elements/Analitics/series_monograficas.ctp:52;63
+#: View/Elements/Documents/series_monograficas.ctp:47;58
+msgid "Número de Identificación"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:162
+#: View/Elements/assistant.ctp:47
+#: View/Elements/Analitics/series_monograficas.ctp:70;74;87
+#: View/Elements/Documents/series_monograficas.ctp:65;69;82
+msgid "Localización del Documento"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:163
+#: View/Elements/Analitics/series_monograficas.ctp:93;99
+#: View/Elements/Documents/series_monograficas.ctp:89;95
+#: View/Layouts/admin_layout.ctp:64
+msgid "Base de Datos"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:164
+#: View/Searches/view.ctp:105
+msgid "Tipo de Literatura"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:165
+msgid "Nivel de Tratamiento"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:166
+#: View/Elements/Analitics/series_monograficas.ctp:104;110
+#: View/Elements/Documents/series_monograficas.ctp:101;107
+msgid "Número del Registro"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:167
+#: View/Elements/assistant.ctp:97
+#: View/Elements/Analitics/series_monograficas.ctp:115;119;132
+#: View/Elements/Documents/series_monograficas.ctp:113;117;130
+msgid "Dirección Electrónica"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:168
+#: View/Elements/Analitics/series_monograficas.ctp:137;148
+#: View/Elements/Documents/series_monograficas.ctp:136;147
+msgid "Tipo de Registro"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:169;174;180
+#: View/Elements/assistant.ctp:250;256;258
+#: View/Elements/Analitics/series_monograficas.ctp:194;232;236;249
+#: View/Elements/Documents/series_monograficas.ctp:224;228;241
+msgid "Autor Personal"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:170;175;181
+#: View/Elements/assistant.ctp:333;339;341
+#: View/Elements/Analitics/series_monograficas.ctp:200;254;258;277
+#: View/Elements/Documents/series_monograficas.ctp:247;251;270
+msgid "Autor Institucional"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:171;176;182;185
+#: View/Elements/assistant.ctp:368;374;376
+#: View/Elements/Analitics/series_monograficas.ctp:164;206;284;288;307
+#: View/Elements/Documents/series_monograficas.ctp:163;174;277;281;300
+#: View/Searches/advanced_search.ctp:26;46;64
+msgid "Título"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:172
+msgid "Título Traducido al Ingés"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:173;178
+#: View/Elements/assistant.ctp:403
+#: View/Elements/Analitics/series_monograficas.ctp:217;324;328;347
+#: View/Elements/Documents/series_monograficas.ctp:318;328
+msgid "Páginas"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:177
+#: View/Elements/Analitics/series_monograficas.ctp:212;314;319
+#: View/Elements/Documents/series_monograficas.ctp:307;312
+msgid "Título Traducido al Inglés"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:179;186
+#: View/Elements/Analitics/series_monograficas.ctp:169
+#: View/Elements/Documents/series_monograficas.ctp:180;185
+msgid "Volumen"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:183
+msgid "Título Traducido para el Inglés"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:184
+msgid "Número total de Volúmenes"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:187
+#: View/Elements/Analitics/series_monograficas.ctp:174
+#: View/Elements/Documents/series_monograficas.ctp:191;196
+msgid "Número del Fascículo"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:188
+#: View/Elements/Analitics/series_monograficas.ctp:179
+#: View/Elements/Documents/series_monograficas.ctp:202;207
+#: View/Searches/view.ctp:126
+msgid "ISSN"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:189
+#: View/Elements/assistant.ctp:437
+#: View/Elements/Analitics/series_monograficas.ctp:363;367;380
+#: View/Elements/Documents/series_monograficas.ctp:343;347;360
+msgid "Información Descriptiva"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:190
+#: View/Elements/Analitics/series_monograficas.ctp:385
+#: View/Elements/Documents/series_monograficas.ctp:366
+#: View/Searches/view.ctp:186
+msgid "Idioma del Texto"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:191
+msgid "Tesis, Disertación - Orientador"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:192
+msgid "Tesis, Disertación - Institución a la cual se Presenta"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:193
+msgid "Tesis, Disertación - Título Académico"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:194
+#: View/Elements/Analitics/series_monograficas.ctp:607
+#: View/Elements/Documents/series_monograficas.ctp:685
+msgid "Evento - Institución Patrocinadora"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:195
+#: View/Elements/Analitics/series_monograficas.ctp:624
+#: View/Elements/Documents/series_monograficas.ctp:702
+msgid "Evento - Nombre"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:196
+#: View/Elements/Analitics/series_monograficas.ctp:639
+#: View/Elements/Documents/series_monograficas.ctp:719
+msgid "Evento - Fecha"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:197
+#: View/Elements/Analitics/series_monograficas.ctp:649
+#: View/Elements/Documents/series_monograficas.ctp:730
+msgid "Evento - Fecha Normalizada"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:198
+#: View/Elements/Analitics/series_monograficas.ctp:664
+#: View/Elements/Documents/series_monograficas.ctp:747
+msgid "Evento - Ciudad"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:199
+#: View/Elements/Analitics/series_monograficas.ctp:673
+#: View/Elements/Documents/series_monograficas.ctp:755
+msgid "Evento - País"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:200
+#: View/Elements/Analitics/series_monograficas.ctp:702
+#: View/Elements/Documents/series_monograficas.ctp:784
+msgid "Proyecto - Institución Patrocinadora"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:201
+#: View/Elements/Analitics/series_monograficas.ctp:713
+#: View/Elements/Documents/series_monograficas.ctp:794
+msgid "Proyecto - Nombre"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:202
+#: View/Elements/Analitics/series_monograficas.ctp:723
+#: View/Elements/Documents/series_monograficas.ctp:805
+msgid "Proyecto - Número"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:203
+#: View/Elements/Analitics/series_monograficas.ctp:463;469
+#: View/Elements/Documents/series_monograficas.ctp:449;455
+msgid "Nota Interna"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:204
+#: View/Elements/Analitics/series_monograficas.ctp:482
+#: View/Elements/Documents/series_monograficas.ctp:469;480
+#: View/Searches/view.ctp:140
+msgid "Editora"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:205
+#: View/Elements/Analitics/series_monograficas.ctp:487
+#: View/Elements/Documents/series_monograficas.ctp:486;491
+#: View/Searches/view.ctp:151
+msgid "Edición"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:206
+#: View/Elements/Analitics/series_monograficas.ctp:492
+#: View/Elements/Documents/series_monograficas.ctp:497;507
+msgid "Fecha de Publicación"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:207
+#: View/Elements/Analitics/series_monograficas.ctp:497;644
+#: View/Elements/Documents/series_monograficas.ctp:513;523;725
+msgid "Fecha Normalizada"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:208
+#: View/Elements/Analitics/series_monograficas.ctp:502
+#: View/Elements/Documents/series_monograficas.ctp:529;539
+msgid "Ciudad de Publicación"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:209
+#: View/Elements/Analitics/series_monograficas.ctp:507
+#: View/Elements/Documents/series_monograficas.ctp:545;572
+msgid "País de Publicación"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:210
+#: View/Elements/Analitics/series_monograficas.ctp:512
+#: View/Elements/Documents/series_monograficas.ctp:577;583
+msgid "Símbolo"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:211
+#: View/Elements/Analitics/series_monograficas.ctp:517
+#: View/Elements/Documents/series_monograficas.ctp:589;594
+#: View/Searches/view.ctp:133
+msgid "ISBN"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:212
+msgid "Tipo de Publicación"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:213
+msgid "Número total de referencias"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:214;215
+msgid "Alcance Temporal"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:216
+msgid "Descriptor Precodificado"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:217
+msgid "Individuo como Tema"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:218
+msgid "Región no DECS"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:219
+#: View/Elements/assistant.ctp:551;556;558
+#: View/Elements/Analitics/series_monograficas.ctp:561;565;578
+#: View/Elements/Documents/series_monograficas.ctp:640;644;657
+#: View/Searches/advanced_search.ctp:29;49;67
+#: View/Searches/view.ctp:172
+msgid "Resumen"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:220
+msgid "Fecha de Transferencia para la Base de Datos"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:221
+#: View/Elements/assistant.ctp:506
+#: View/Elements/Analitics/series_monograficas.ctp:531;535;548
+#: View/Elements/Documents/series_monograficas.ctp:609;613;626
+msgid "Palabras Llaves del Autor"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:222
+msgid "Descriptor Primario"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:223
+msgid "Descriptor Secundario"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:226
+msgid "Fecha de Ultima Modificación"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:227;228;229
+msgid "Registro Complementario"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:230
+msgid "Forma del Item"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:231
+msgid "Tipo de Archivo de Computador"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:232
+msgid "Tipo de Material Cartográfico"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:233
+msgid "Tipo de Periódico"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:234
+msgid "Tipo de Material Visual"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:235
+msgid "Designación Específica del Material (Material No Proyectable)"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:236
+#: View/Elements/Analitics/series_monograficas.ctp:407
+#: View/Elements/Documents/series_monograficas.ctp:388
+msgid "Nota General"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:237
+#: View/Elements/Analitics/series_monograficas.ctp:418;424
+#: View/Elements/Documents/series_monograficas.ctp:400;406
+msgid "Nota Formateada de Contenido"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:238
+#: View/Elements/Analitics/series_monograficas.ctp:429;436
+#: View/Elements/Documents/series_monograficas.ctp:412;419
+msgid "Nota de Disponibilidad de Forma Física Adicional"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:239
+#: View/Elements/Analitics/series_monograficas.ctp:441;447
+#: View/Elements/Documents/series_monograficas.ctp:425;431
+msgid "Nota de Reproducción"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:240
+#: View/Elements/Analitics/series_monograficas.ctp:452;458
+#: View/Elements/Documents/series_monograficas.ctp:437;443
+msgid "Nota de Versión Original"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:241
+msgid "Institución como Tema"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:242
+msgid "Descriptores Locales"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:243
+msgid "Nombre del Registro de Ensayo Clínico"
+msgstr ""
+
+#: Controller/Component/DocumentDatasComponent.php:244
+msgid "Número DOI"
+msgstr ""
+
+#: Plugin/Configuration/Controller/ConfigurationsController.php:15
+msgid "Invalid Configuration."
+msgstr ""
+
+#: Plugin/Configuration/Controller/ConfigurationsController.php:25;40
+msgid "The Configuration has been saved"
+msgstr ""
+
+#: Plugin/Configuration/Controller/ConfigurationsController.php:28;43
+msgid "The Configuration could not be saved. Please, try again."
+msgstr ""
+
+#: Plugin/Configuration/Controller/ConfigurationsController.php:35
+msgid "Invalid Configuration"
+msgstr ""
+
+#: Plugin/Configuration/Controller/ConfigurationsController.php:53
+msgid "Invalid id for Configuration"
+msgstr ""
+
+#: Plugin/Configuration/Controller/ConfigurationsController.php:57
+msgid "Configuration deleted"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/edit.ctp:15
+#: Plugin/Configuration/View/configurations/index.ctp:37
+msgid "Delete"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/edit.ctp:15
+#: Plugin/Configuration/View/configurations/index.ctp:37
+#: Plugin/Configuration/View/configurations/view.ctp:24
+#: View/Users/edit.ctp:16
+#: View/Users/view.ctp:123
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/edit.ctp:16
+#: Plugin/Configuration/View/configurations/view.ctp:25
+msgid "List Configurations"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/index.ctp:2
+msgid "Configurations"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/index.ctp:6
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/index.ctp:14
+msgid "Actions"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/index.ctp:35
+msgid "View"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/index.ctp:36
+msgid "Edit"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/index.ctp:44
+msgid "previous"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/index.ctp:46
+msgid "next"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/index.ctp:50
+#: Plugin/Configuration/View/configurations/view.ctp:26
+msgid "New Configuration"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/view.ctp:2
+msgid "Configuration"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/view.ctp:4
+#: View/Rols/view.ctp:38;78
+#: View/Users/view.ctp:37;105
+msgid "Id"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/view.ctp:9
+msgid "Name"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/view.ctp:14
+msgid "Value"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/view.ctp:23
+msgid "Edit Configuration"
+msgstr ""
+
+#: Plugin/Configuration/View/configurations/view.ctp:24
+msgid "Delete Configuration"
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:10
+msgid "Set theme to place Bootstrap files in."
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:15
+msgid "Set file output to webroot Theme dir (use with theme option)."
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:22
+msgid "TwitterBootstrap Copy Shell Help."
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:29
+msgid "Copies Less, Js & Img source from Bootstrap submodule in plugin Vendor dir"
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:31
+msgid "files will be placed in webroot of App or named Theme"
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:39
+msgid "Copies Less source from Bootstrap submodule in plugin Vendor dir"
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:41
+msgid "files will be placed in webroot/css/lib/ of App or named Theme"
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:49
+msgid "Copies Img source from Bootstrap submodule in plugin Vendor dir"
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:51
+msgid "files will be placed in webroot/img/ of App or named Theme"
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:59
+msgid "Copies Js source from Bootstrap submodule in plugin Vendor dir"
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:61
+msgid "files will be placed in webroot/js/lib of App or named Theme"
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:108
+msgid "Success."
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Console/Command/CopyShell.php:110
+msgid "Error!"
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Controller/TwitterBootstrapController.php:18
+msgid "Debug setting does not allow access to this url."
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Controller/TwitterBootstrapController.php:24
+msgid "Alert notice message testing..."
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Controller/TwitterBootstrapController.php:27
+msgid "Alert success message testing..."
+msgstr ""
+
+#: Plugin/TwitterBootstrap/Controller/TwitterBootstrapController.php:31
+msgid "Alert error message testing..."
+msgstr ""
+
+#: Plugin/TwitterBootstrap/View/Layouts/default.ctp:6
+msgid "CakePHP: the rapid development php framework:"
+msgstr ""
+
+#: Plugin/TwitterBootstrap/View/Layouts/default.ctp:51
+msgid "CakePHP"
+msgstr ""
+
+#: View/Admin/index.ctp:15
+msgid "Mantenimiento"
+msgstr ""
+
+#: View/Admin/index.ctp:52;67
+msgid "Usuarios en Linea"
+msgstr ""
+
+#: View/Admin/reports.ctp:9
+#: View/Analitics/add.ctp:9
+#: View/Analitics/edit.ctp:7
+#: View/Analitics/index.ctp:14
+#: View/Analitics/view.ctp:5
+#: View/Analitics/visualization.ctp:7;16
+#: View/Bases/index.ctp:5
+#: View/Documents/add.ctp:10;49
+#: View/Documents/edit.ctp:7
+#: View/Documents/index.ctp:15
+#: View/Documents/view.ctp:5
+#: View/Documents/visualization.ctp:7;16
+#: View/IndexBases/view_bases.ctp:5
+#: View/Rols/add.ctp:2
+#: View/Rols/edit.ctp:2
+#: View/Rols/index.ctp:2
+#: View/Rols/view.ctp:2
+#: View/Searches/index_board.ctp:3
+#: View/Users/add.ctp:2
+#: View/Users/edit.ctp:2
+#: View/Users/index.ctp:2
+#: View/Users/view.ctp:2
+msgid "Inicio"
+msgstr ""
+
+#: View/Analitics/add.ctp:10
+#: View/Analitics/edit.ctp:8
+#: View/Analitics/index.ctp:15
+#: View/Analitics/view.ctp:6
+#: View/Analitics/visualization.ctp:8;17
+#: View/Documents/add.ctp:11;50
+#: View/Documents/edit.ctp:8
+#: View/Documents/index.ctp:16;49
+#: View/Documents/view.ctp:6
+#: View/Documents/visualization.ctp:8;17
+#: View/Layouts/documentalista_layout.ctp:55
+msgid "Documentos"
+msgstr ""
+
+#: View/Analitics/add.ctp:11
+#: View/Analitics/edit.ctp:9
+#: View/Analitics/index.ctp:16;55
+#: View/Analitics/view.ctp:7
+#: View/Analitics/visualization.ctp:9;18
+msgid "Analíticas"
+msgstr ""
+
+#: View/Analitics/add.ctp:12
+#: View/Analitics/visualization.ctp:10
+msgid "Nueva Analítica"
+msgstr ""
+
+#: View/Analitics/edit.ctp:10
+#: View/Analitics/index.ctp:141
+#: View/Analitics/visualization.ctp:19
+#: View/Documents/edit.ctp:9
+#: View/Documents/index.ctp:134
+#: View/Documents/visualization.ctp:18
+#: View/Rols/index.ctp:53
+#: View/Rols/view.ctp:99
+#: View/Users/index.ctp:53
+#: View/Users/view.ctp:122
+msgid "Editar"
+msgstr ""
+
+#: View/Analitics/index.ctp:25;89
+#: View/Documents/index.ctp:26;82
+#: View/Elements/assistant.ctp:22
+#: View/Rols/add.ctp:13
+#: View/Rols/edit.ctp:13
+#: View/Rols/index.ctp:13;42
+#: View/Rols/view.ctp:13;84
+#: View/Users/add.ctp:11
+#: View/Users/edit.ctp:12
+#: View/Users/index.ctp:12;39
+#: View/Users/view.ctp:12;109
+msgid "Acciones"
+msgstr ""
+
+#: View/Analitics/index.ctp:29
+#: View/Documents/index.ctp:30
+msgid "Nuevo Documento"
+msgstr ""
+
+#: View/Analitics/index.ctp:39
+msgid "Listar Documentos"
+msgstr ""
+
+#: View/Analitics/index.ctp:50
+msgid " del documento - "
+msgstr ""
+
+#: View/Analitics/index.ctp:65
+#: View/Documents/index.ctp:58
+msgid "Filtrar por columnas"
+msgstr ""
+
+#: View/Analitics/index.ctp:71
+#: View/Documents/index.ctp:64
+msgid "Básico: "
+msgstr ""
+
+#: View/Analitics/index.ctp:138
+#: View/Analitics/view.ctp:8
+#: View/Documents/index.ctp:131
+#: View/Documents/view.ctp:7
+#: View/Rols/index.ctp:52
+#: View/Rols/view.ctp:98
+#: View/Users/index.ctp:52
+#: View/Users/view.ctp:121
+msgid "Ver"
+msgstr ""
+
+#: View/Analitics/index.ctp:143;189
+#: View/Bases/index.ctp:98
+#: View/Documents/index.ctp:136;180
+#: View/Rols/edit.ctp:16
+#: View/Rols/index.ctp:54
+#: View/Rols/view.ctp:100
+#: View/Users/edit.ctp:16
+#: View/Users/index.ctp:54
+#: View/Users/view.ctp:123
+msgid "Eliminar"
+msgstr ""
+
+#: View/Analitics/index.ctp:147
+msgid "Ver fuente"
+msgstr ""
+
+#: View/Analitics/index.ctp:157
+msgid "No tiene analiticas en su base de datos"
+msgstr ""
+
+#: View/Analitics/index.ctp:162
+msgid "Este documento no tiene analíticas"
+msgstr ""
+
+#: View/Analitics/index.ctp:176
+#: View/Bases/index.ctp:85
+#: View/Documents/index.ctp:167
+msgid "Confirmación"
+msgstr ""
+
+#: View/Analitics/index.ctp:181
+msgid "Esta seguro que desea eliminar esta analítica?"
+msgstr ""
+
+#: View/Analitics/index.ctp:186
+#: View/Documents/index.ctp:177
+#: View/Elements/assistant.ctp:604
+#: View/Searches/view.ctp:215
+msgid "Cerrar"
+msgstr ""
+
+#: View/Analitics/view.ctp:52
+#: View/Analitics/visualization.ctp:82
+#: View/Documents/view.ctp:51
+#: View/Documents/visualization.ctp:81
+msgid "Atras"
+msgstr ""
+
+#: View/Analitics/visualization.ctp:11;20
+#: View/Documents/visualization.ctp:11;19
+msgid "Visualización"
+msgstr ""
+
+#: View/Analitics/visualization.ctp:36
+#: View/Documents/visualization.ctp:35
+#: View/Elements/Analitics/series_monograficas.ctp:39
+#: View/Elements/Documents/series_monograficas.ctp:34
+msgid "Tag"
+msgstr ""
+
+#: View/Analitics/visualization.ctp:37
+#: View/Documents/visualization.ctp:36
+#: View/Elements/assistant.ctp:12
+#: View/Elements/Analitics/series_monograficas.ctp:37
+#: View/Elements/Documents/series_monograficas.ctp:32
+msgid "Campo"
+msgstr ""
+
+#: View/Analitics/visualization.ctp:38
+#: View/Documents/visualization.ctp:37
+msgid "Valor"
+msgstr ""
+
+#: View/Analitics/visualization.ctp:83
+#: View/Documents/add.ctp:36
+#: View/Documents/visualization.ctp:82
+#: View/Rols/add.ctp:37
+#: View/Rols/edit.ctp:40
+#: View/Users/add.ctp:42
+#: View/Users/edit.ctp:46
+#: View/Users/login.ctp:54
+msgid "Confirmar"
+msgstr ""
+
+#: View/Bases/index.ctp:6
+msgid "Importar Bases"
+msgstr ""
+
+#: View/Bases/index.ctp:19
+msgid "Nombre de la Base"
+msgstr ""
+
+#: View/Bases/index.ctp:24
+msgid "Ya existe una base con ese nombre."
+msgstr ""
+
+#: View/Bases/index.ctp:29
+msgid "La base no puede importarse ya que esta no existe o esta vacía en el proveedor"
+msgstr ""
+
+#: View/Bases/index.ctp:33
+msgid "Adicionar"
+msgstr ""
+
+#: View/Bases/index.ctp:40
+msgid "Seleccione las Bases a Importar"
+msgstr ""
+
+#: View/Bases/index.ctp:55
+#: View/IndexBases/view_bases.ctp:35
+#: View/Searches/index_board.ctp:28
+msgid "No existe Bases creadas para importar."
+msgstr ""
+
+#: View/Bases/index.ctp:90
+msgid "Si elimina la base perderá todo los registros que esta contenga. Esta seguro que desea eliminarla?"
+msgstr ""
+
+#: View/Bases/index.ctp:95
+msgid "Close"
+msgstr ""
+
+#: View/Bases/index.ctp:105
+#: View/Layouts/documentalista_layout.ctp:82
+msgid "Importar"
+msgstr ""
+
+#: View/Documents/add.ctp:18
+msgid "Seleccione el Tipo de Documento"
+msgstr ""
+
+#: View/Documents/add.ctp:24
+msgid "Series Monográficas"
+msgstr ""
+
+#: View/Documents/add.ctp:25
+msgid "Monográfica Perteneciente a una Colección"
+msgstr ""
+
+#: View/Documents/add.ctp:26
+msgid "Monografía"
+msgstr ""
+
+#: View/Documents/add.ctp:26
+msgid "No Convencional"
+msgstr ""
+
+#: View/Documents/add.ctp:27
+msgid "Serie Periódica"
+msgstr ""
+
+#: View/Documents/add.ctp:27
+msgid "Colección de Monografías"
+msgstr ""
+
+#: View/Documents/add.ctp:28
+msgid "Tesis, Disertación Perteneciente a una Serie Monográfica"
+msgstr ""
+
+#: View/Documents/add.ctp:28
+#: View/Searches/advanced_search.ctp:160
+msgid "Tesis, Disertación"
+msgstr ""
+
+#: View/Documents/index.ctp:40
+#: View/Layouts/documentalista_layout.ctp:70
+msgid "Listar Analíticas"
+msgstr ""
+
+#: View/Documents/index.ctp:140
+msgid "Adicionar analítica"
+msgstr ""
+
+#: View/Documents/index.ctp:143
+msgid "Ver analíticas"
+msgstr ""
+
+#: View/Documents/index.ctp:153
+msgid "No tiene documentos en su base de datos"
+msgstr ""
+
+#: View/Documents/index.ctp:172
+msgid "Esta seguro que desea eliminar el documento y todas sus analíticas?"
+msgstr ""
+
+#: View/Elements/assistant.ctp:2
+msgid "Asistente"
+msgstr ""
+
+#: View/Elements/assistant.ctp:24
+msgid "Adicionar Campo"
+msgstr ""
+
+#: View/Elements/assistant.ctp:33
+msgid "Llene los campos obligatorios"
+msgstr ""
+
+#: View/Elements/assistant.ctp:62;64
+msgid "Número de Clasificación"
+msgstr ""
+
+#: View/Elements/assistant.ctp:71;73
+msgid "Número de Autor"
+msgstr ""
+
+#: View/Elements/assistant.ctp:80;82
+msgid "Volumen, Tomo, Parte"
+msgstr ""
+
+#: View/Elements/assistant.ctp:89;91
+msgid "Sistema de Empréstito"
+msgstr ""
+
+#: View/Elements/assistant.ctp:103;105
+msgid "Localizador de Fuente (URL)"
+msgstr ""
+
+#: View/Elements/assistant.ctp:113;384;532;566
+msgid "Código del Idioma"
+msgstr ""
+
+#: View/Elements/assistant.ctp:134;136
+msgid "Extensión del Archivo"
+msgstr ""
+
+#: View/Elements/assistant.ctp:160;162
+msgid "Tipo de Archivo"
+msgstr ""
+
+#: View/Elements/assistant.ctp:186;191;193
+#: View/Searches/view.ctp:211
+msgid "Texto Completo"
+msgstr ""
+
+#: View/Elements/assistant.ctp:202;204
+msgid "Nota Pública"
+msgstr ""
+
+#: View/Elements/assistant.ctp:212;214
+msgid "Nota no Pública"
+msgstr ""
+
+#: View/Elements/assistant.ctp:222;224
+msgid "Tamaño de Archivo"
+msgstr ""
+
+#: View/Elements/assistant.ctp:232;234
+msgid "Seña"
+msgstr ""
+
+#: View/Elements/assistant.ctp:241;243
+msgid "Logo"
+msgstr ""
+
+#: View/Elements/assistant.ctp:266;268;276;278;286;288
+msgid "Afiliación"
+msgstr ""
+
+#: View/Elements/assistant.ctp:295;297
+#: View/Elements/Analitics/series_monograficas.ctp:654
+#: View/Elements/Documents/series_monograficas.ctp:736
+msgid "Ciudad"
+msgstr ""
+
+#: View/Elements/assistant.ctp:304;306
+#: View/Elements/Analitics/series_monograficas.ctp:670
+#: View/Elements/Documents/series_monograficas.ctp:752
+msgid "País"
+msgstr ""
+
+#: View/Elements/assistant.ctp:314;349
+msgid "Grado de responsabilidad"
+msgstr ""
+
+#: View/Elements/assistant.ctp:409;411
+msgid "Paginación irregular o inexistente"
+msgstr ""
+
+#: View/Elements/assistant.ctp:419;421
+msgid "Número inicial"
+msgstr ""
+
+#: View/Elements/assistant.ctp:429;431
+msgid "Número final"
+msgstr ""
+
+#: View/Elements/assistant.ctp:443;445
+msgid "Otros detalles físicos"
+msgstr ""
+
+#: View/Elements/assistant.ctp:459
+msgid "Ilustraciones"
+msgstr ""
+
+#: View/Elements/assistant.ctp:460
+msgid "Mapas"
+msgstr ""
+
+#: View/Elements/assistant.ctp:461
+msgid "Tablas"
+msgstr ""
+
+#: View/Elements/assistant.ctp:462
+msgid "Gráficos"
+msgstr ""
+
+#: View/Elements/assistant.ctp:477;479
+msgid "Extensión de artículo"
+msgstr ""
+
+#: View/Elements/assistant.ctp:487;489
+msgid "Dimensión"
+msgstr ""
+
+#: View/Elements/assistant.ctp:497;499
+msgid "Material acompañante"
+msgstr ""
+
+#: View/Elements/assistant.ctp:512;514
+msgid "Palabra Clave"
+msgstr ""
+
+#: View/Elements/assistant.ctp:522;524
+msgid "Calificador"
+msgstr ""
+
+#: View/Elements/assistant.ctp:589
+msgid " Eliminar"
+msgstr ""
+
+#: View/Elements/assistant.ctp:607
+msgid "Guardar"
+msgstr ""
+
+#: View/Elements/maintenance.ctp:10
+msgid "Web en Mantenimiento"
+msgstr ""
+
+#: View/Elements/maintenance.ctp:12
+msgid "Disculpe las molestias, pronto estaremos en linea nuevamente..."
+msgstr ""
+
+#: View/Elements/maintenance.ctp:28
+msgid "El sitio web esta provisionalmente solo disponible para los usuarios con rol de administrador. En caso de tener rol de administrador, "
+msgstr ""
+
+#: View/Elements/maintenance.ctp:28
+msgid "salga del sistema"
+msgstr ""
+
+#: View/Elements/maintenance.ctp:28
+msgid " y autentiquese como administrador para poder acceder."
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:38
+#: View/Elements/Documents/series_monograficas.ctp:33
+msgid "Descripción Bibliográfica"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:45
+#: View/Elements/Documents/series_monograficas.ctp:40
+msgid "Informaciones\tGenerales"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:57;142;269;299;339;389;617;633;658
+#: View/Elements/Documents/series_monograficas.ctp:52;141;167;262;292;322;370;473;501;517;533;549;695;713;741
+msgid "Este campo es obligatorio, por favor debe llenarlo"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:155
+#: View/Elements/Documents/series_monograficas.ctp:154
+msgid "Nivel Serie"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:185
+#: View/Elements/Documents/series_monograficas.ctp:215
+msgid "Nivel Monográfico"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:223
+msgid "Nivel Analítico"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:355
+#: View/Elements/Documents/series_monograficas.ctp:335
+msgid "Informaciones Complementarias"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:399
+#: View/Elements/Documents/series_monograficas.ctp:380
+msgid "Otras Notas"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:523
+#: View/Elements/Documents/series_monograficas.ctp:601
+msgid "Datos de Contenido"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:584
+#: View/Elements/Documents/series_monograficas.ctp:662
+#: View/Layouts/admin_layout.ctp:74
+msgid "Complementos"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:594
+#: View/Elements/Documents/series_monograficas.ctp:672
+msgid "Notas de Evento"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:600;695
+#: View/Elements/Documents/series_monograficas.ctp:678;777
+msgid "Institución Patrocinadora"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:613;708
+#: View/Elements/Documents/series_monograficas.ctp:690;789
+#: View/Rols/view.ctp:45;79
+#: View/Users/view.ctp:44;106
+msgid "Nombre"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:629
+#: View/Elements/Documents/series_monograficas.ctp:708
+msgid "Fecha"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:689
+#: View/Elements/Documents/series_monograficas.ctp:771
+msgid "Notas de Proyecto"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:718
+#: View/Elements/Documents/series_monograficas.ctp:800
+msgid "Número"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:743
+#: View/Elements/Documents/series_monograficas.ctp:827
+#: View/Users/login.ctp:49
+msgid "Cancelar"
+msgstr ""
+
+#: View/Elements/Analitics/series_monograficas.ctp:748
+#: View/Elements/Documents/series_monograficas.ctp:832
+msgid "Vista Previa"
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:32
+msgid "referencias encontradas para:"
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:35
+msgid "Filtros aplicados a la búsqueda: "
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:37
+msgid "Idioma: "
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:38
+msgid "Fecha: "
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:40
+msgid "hasta"
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:41
+msgid "Solo con texto completo"
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:43
+msgid "desde "
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:45
+msgid "País: "
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:46
+msgid "Tipo: "
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:63;65
+msgid "Mostrando de la "
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:63;65
+msgid " a la "
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:78
+msgid "No se encontraron resultados para la búsqueda."
+msgstr ""
+
+#: View/Elements/Searches/results.ctp:80
+msgid "Búsqueda incorrecta."
+msgstr ""
+
+#: View/Elements/Searches/search_form.ctp:5
+msgid "Escriba palabras para buscar libros, revistas, etc."
+msgstr ""
+
+#: View/Elements/Searches/search_form.ctp:11
+#: View/Elements/Searches/small_search_form.ctp:21
+msgid "Búsqueda Avanzada "
+msgstr ""
+
+#: View/Elements/Searches/search_form.ctp:20
+#: View/Searches/advanced_search.ctp:178
+msgid "Buscar "
+msgstr ""
+
+#: View/Elements/Searches/search_form.ctp:31
+msgid "Atención!"
+msgstr ""
+
+#: View/Elements/Searches/search_form.ctp:31
+msgid "Debe introducir términos para buscar."
+msgstr ""
+
+#: View/Elements/Searches/small_search_form.ctp:26
+msgid "Resultados por página"
+msgstr ""
+
+#: View/IndexBases/view_bases.ctp:6
+#: View/Searches/index_board.ctp:4
+msgid "Indexar Bases"
+msgstr ""
+
+#: View/IndexBases/view_bases.ctp:17
+msgid "Bases Disponibles para Indexar"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:53
+msgid "Sistema"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:56
+msgid "Disponibilidad"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:57
+msgid "Aviso a los Usuarios"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:67
+msgid "Definiciones"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:70
+msgid "Definiciones Generales"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:72
+msgid "Tipos de Registros"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:75
+msgid "Campos"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:76
+msgid "FST"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:77
+msgid "Mensajes"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:80
+msgid "Generar Invertido"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:84
+#: View/Layouts/documentalista_layout.ctp:86
+msgid "Desbloquear"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:85
+#: View/Layouts/documentalista_layout.ctp:87
+msgid "Reiniciar Base"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:92
+#: View/Layouts/documentalista_layout.ctp:94
+#: View/Layouts/editor_layout.ctp:71
+msgid "Cambiar Perfil"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:107
+#: View/Layouts/search_layout.ctp:78
+msgid "Administrador:"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:58
+msgid "Listar"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:60
+msgid "Nuevo"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:63
+msgid "Sin Indización"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:65
+msgid "Con Indización"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:73
+msgid "Indexar"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:74
+msgid "Certificar"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:79
+msgid "Utilitarios"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:83
+msgid "Exportar"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:84
+msgid "Reorganizar"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:85
+msgid "Reinvertir"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:90
+msgid "Configuración"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:101
+msgid "Salir"
+msgstr ""
+
+#: View/Layouts/documentalista_layout.ctp:109
+#: View/Layouts/search_layout.ctp:84
+msgid "Documentalista:"
+msgstr ""
+
+#: View/Layouts/search_layout.ctp:39
+msgid "Registrarse"
+msgstr ""
+
+#: View/Layouts/search_layout.ctp:41
+msgid "Administrar"
+msgstr ""
+
+#: View/Layouts/search_layout.ctp:52;54;57
+msgid "Carpeta "
+msgstr ""
+
+#: View/Layouts/search_layout.ctp:81
+msgid "Editor:"
+msgstr ""
+
+#: View/Pages/home.ctp:6
+msgid "Administración"
+msgstr ""
+
+#: View/Pages/home.ctp:7
+msgid "Administración y gestión de documentos del sistema."
+msgstr ""
+
+#: View/Pages/home.ctp:11
+msgid "Búsqueda"
+msgstr ""
+
+#: View/Pages/home.ctp:12
+msgid "Realizar búsquedas en nuestras bases de datos."
+msgstr ""
+
+#: View/Pages/home.ctp:13
+msgid "Acceder"
+msgstr ""
+
+#: View/Rols/add.ctp:3
+#: View/Rols/edit.ctp:3
+#: View/Rols/index.ctp:3
+#: View/Rols/view.ctp:3
+#: View/Users/add.ctp:3
+#: View/Users/edit.ctp:3
+#: View/Users/index.ctp:3;28
+#: View/Users/view.ctp:3
+msgid "Usuarios"
+msgstr ""
+
+#: View/Rols/add.ctp:4
+#: View/Rols/edit.ctp:4
+#: View/Rols/index.ctp:4;28
+#: View/Rols/view.ctp:4
+msgid "Roles"
+msgstr ""
+
+#: View/Rols/add.ctp:16
+#: View/Rols/edit.ctp:18
+#: View/Rols/view.ctp:20
+#: View/Users/add.ctp:17
+#: View/Users/edit.ctp:20
+#: View/Users/index.ctp:17
+#: View/Users/view.ctp:23
+msgid "Listar Roles"
+msgstr ""
+
+#: View/Rols/add.ctp:18
+#: View/Rols/edit.ctp:20
+#: View/Rols/index.ctp:18
+#: View/Rols/view.ctp:24
+#: View/Users/add.ctp:15
+#: View/Users/edit.ctp:18
+#: View/Users/view.ctp:19
+msgid "Listar Usuarios"
+msgstr ""
+
+#: View/Rols/add.ctp:20
+#: View/Rols/edit.ctp:22
+#: View/Rols/index.ctp:20
+#: View/Rols/view.ctp:26;110
+#: View/Users/add.ctp:4
+#: View/Users/index.ctp:15
+#: View/Users/view.ctp:21
+msgid "Nuevo Usuario"
+msgstr ""
+
+#: View/Rols/add.ctp:30
+msgid "Adicionar Rol"
+msgstr ""
+
+#: View/Rols/edit.ctp:16
+#: View/Rols/index.ctp:54
+#: View/Rols/view.ctp:18;100
+#: View/Users/index.ctp:54
+#: View/Users/view.ctp:17
+msgid "Esta seguro que desea eliminar el # %s?"
+msgstr ""
+
+#: View/Rols/edit.ctp:32
+#: View/Rols/view.ctp:16
+msgid "Editar Rol"
+msgstr ""
+
+#: View/Rols/index.ctp:16
+#: View/Rols/view.ctp:22
+#: View/Users/add.ctp:19
+#: View/Users/edit.ctp:22
+#: View/Users/index.ctp:19
+#: View/Users/view.ctp:25;133
+msgid "Nuevo Rol"
+msgstr ""
+
+#: View/Rols/index.ctp:63
+#: View/Users/index.ctp:63
+msgid "Pagina {:page} de {:pages}, mostrando {:current} filas de {:count} total, comenzando en fila {:start}, terminando en {:end}"
+msgstr ""
+
+#: View/Rols/view.ctp:18
+msgid "Eliminar Rol"
+msgstr ""
+
+#: View/Rols/view.ctp:34
+msgid "Rol"
+msgstr ""
+
+#: View/Rols/view.ctp:52;82
+#: View/Users/view.ctp:79;107
+msgid "Creado"
+msgstr ""
+
+#: View/Rols/view.ctp:59;83
+#: View/Users/view.ctp:86;108
+msgid "Modificado"
+msgstr ""
+
+#: View/Rols/view.ctp:71
+msgid "Usuarios Relacionados"
+msgstr ""
+
+#: View/Rols/view.ctp:80
+#: View/Users/view.ctp:51
+msgid "Nombre de Usuario"
+msgstr ""
+
+#: View/Rols/view.ctp:81
+#: View/Users/view.ctp:72
+msgid "Email"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:7
+msgid "Búsqueda Avanzada"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:16
+msgid "Buscar palabras en un campo específico."
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:25;45;63
+msgid "Todos los campos"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:27;47;65
+msgid "Autor"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:28;48;66
+msgid "Palabras Claves"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:74
+msgid "Restringir Búsqueda"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:79
+msgid "Idioma de la publicación:"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:92
+msgid "País de publicación:"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:106
+msgid "Que tengan URL del texto completo."
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:108
+msgid "Formato del Texto Completo:"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:119
+msgid "Fecha de Publicación:"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:121
+msgid "Desde:"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:130
+msgid "Hasta:"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:146
+msgid "Tipo de Literatura:"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:148
+msgid "Todos"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:149
+msgid "Documento publicado en una serie periódica"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:150
+msgid "Documento de conferencia en una serie periódica"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:151
+msgid "Documento de proyecto y conferencia en una serie periódica"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:152
+msgid "Documento de proyecto en una serie periódica"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:153
+msgid "Documento publicado en una monografía"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:154
+msgid "Documento de conferencia en una monografía"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:155
+msgid "Documento de proyecto y conferencia en una monografía"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:156
+msgid "Documento de proyecto en una monografía"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:157
+msgid "Documento publicado en una serie monográfica"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:158
+msgid "Documento de conferencia en una serie monográfica"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:159
+msgid "Documento de proyecto en una serie monográfica"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:161
+msgid "Tesis, Disertación que pertenece a una serie\tmonográfica"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:162
+msgid "Documento no convencional"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:163
+msgid "Documento de conferencia en forma no convencional"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:164
+msgid "Documento de proyecto en forma no convencional"
+msgstr ""
+
+#: View/Searches/advanced_search.ctp:177
+msgid "Volver a Búsqueda Simple "
+msgstr ""
+
+#: View/Searches/index_board.ctp:13
+msgid "Bases Disponibles"
+msgstr ""
+
+#: View/Searches/view.ctp:29
+msgid "ID:"
+msgstr ""
+
+#: View/Searches/view.ctp:40;42;44
+msgid "Autor(es)"
+msgstr ""
+
+#: View/Searches/view.ctp:51
+msgid "Año de Publicación"
+msgstr ""
+
+#: View/Searches/view.ctp:59
+msgid "Localización"
+msgstr ""
+
+#: View/Searches/view.ctp:70
+msgid "Descriptores"
+msgstr ""
+
+#: View/Searches/view.ctp:82
+msgid "Palabras claves del autor"
+msgstr ""
+
+#: View/Searches/view.ctp:94
+msgid "Tipo de publicación"
+msgstr ""
+
+#: View/Searches/view.ctp:112
+msgid "Volúmen"
+msgstr ""
+
+#: View/Searches/view.ctp:119
+msgid "Número del fasículo"
+msgstr ""
+
+#: View/Searches/view.ctp:158
+msgid "Ciudad de publicación"
+msgstr ""
+
+#: View/Searches/view.ctp:165
+msgid "País de publicación"
+msgstr ""
+
+#: View/Searches/view.ctp:179
+msgid "Número total de citas"
+msgstr ""
+
+#: View/Searches/view.ctp:196
+msgid "Dirección electrónica"
+msgstr ""
+
+#: View/Users/add.ctp:29
+msgid "Añadir Usuario"
+msgstr ""
+
+#: View/Users/edit.ctp:32
+#: View/Users/view.ctp:15
+msgid "Editar Usuario"
+msgstr ""
+
+#: View/Users/view.ctp:17
+msgid "Eliminar Usuario"
+msgstr ""
+
+#: View/Users/view.ctp:33
+msgid "Usuario"
+msgstr ""
+
+#: View/Users/view.ctp:58
+msgid "Inicial"
+msgstr ""
+
+#: View/Users/view.ctp:98
+msgid "Roles Relacionados"
+msgstr ""
+
+#: Model/Document.php:validation for field title
+#: Model/Rol.php:validation for field name
+#: Model/User.php:validation for field initials;validation for field center_code
+msgid "notempty"
+msgstr ""
+
+#: Model/User.php:validation for field name
+msgid "Please enter your name."
+msgstr ""
+
+#: Model/User.php:validation for field username
+msgid "The username must be between 5 and 15 characters."
+msgstr ""
+
+#: Model/User.php:validation for field username
+msgid "That username has already been taken."
+msgstr ""
+
+#: Model/User.php:validation for field email
+msgid "Please enter a valid email address"
+msgstr ""
+
+#: Model/User.php:validation for field password
+msgid "Please enter your password"
+msgstr ""
+
+#: Model/User.php:validation for field password
+msgid "Your passwords do not match"
+msgstr ""
+
+#: Model/User.php:validation for field password_confirmation
+msgid "Please confirm your password"
+msgstr ""
+
+#: Plugin/Configuration/Model/Configuration.php:validation for field name
+msgid "No variable name specified"
+msgstr ""
+
+#: Plugin/Configuration/Model/Configuration.php:validation for field name
+msgid "Name must be unique."
+msgstr ""
+

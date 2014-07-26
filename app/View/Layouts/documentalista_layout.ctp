@@ -60,14 +60,14 @@ echo $this->fetch('css');
 								<li class="dropdown-submenu"><a tabindex="-1" href="#"><?php echo __('Nuevo'); ?>
 								</a>
 									<ul class="dropdown-menu">
-										<li><?php echo $this->Html->link(utf8_encode(__('Sin Indización')), array('plugin' => false, 'controller'=>'documents', 'action'=>'add', 'sin_indizacion')); ?>
+										<li><?php echo $this->Html->link(__('Sin IndizaciÃ³n'), array('plugin' => false, 'controller'=>'documents', 'action'=>'add', 'sin_indizacion')); ?>
 										</li>
-										<li><?php echo $this->Html->link(utf8_encode(__('Con Indización')), array('plugin' => false, 'controller'=>'documents', 'action'=>'add', 'con_indizacion')); ?>
+										<li><?php echo $this->Html->link(__('Con IndizaciÃ³n'), array('plugin' => false, 'controller'=>'documents', 'action'=>'add', 'con_indizacion')); ?>
 										</li>
 									</ul>
 								</li>
 								<li class="divider"></li>
-								<li><?php echo $this->Html->link(utf8_encode(__('Listar Analíticas')), array('plugin' => false, 'controller'=>'analitics', 'action'=>'index')); ?>
+								<li><?php echo $this->Html->link(__('Listar AnalÃ­ticas'), array('plugin' => false, 'controller'=>'analitics', 'action'=>'index')); ?>
 								</li>
 								<li class="divider"></li>
 								<li><a href="#"><?php echo __('Indexar'); ?> </a></li>
@@ -87,7 +87,7 @@ echo $this->fetch('css');
 								<li><a href="#"><?php echo __('Reiniciar Base'); ?> </a></li>
 							</ul>
 						</li>
-						<li><a href="#"><?php echo utf8_encode(__('Configuración')) ?> </a>
+						<li><a href="#"><?php echo __('ConfiguraciÃ³n') ?> </a>
 						</li>
 
 						<li id="change-profile" class="dropdown"><a data-toggle="dropdown"

@@ -44,14 +44,14 @@
 							style="padding: 10px 8px 5px 5px; border-left-width: 0px; background-color: rgb(255, 255, 255); margin-left: 0px; margin-top: 8px; margin-bottom: 0px;">
 
 							<div class="row-fluid">
-								<?php if($nameField == utf8_encode(__("Localizaci髇 del Documento"))){?>
+								<?php if($nameField == __("Localizaci贸n del Documento")){?>
 								<div id="v<?php echo $numberField;?>">
 									<div class="span12" style="margin-left: 6px;">
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
-												data-placement="top" title="<?php echo utf8_encode(__('C骴igo del Centro')); ?>">*</span>
+												data-placement="top" title="<?php echo __('C贸digo del Centro'); ?>">*</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('C骴igo del Centro')); ?>"
+												placeholder="<?php echo __('C贸digo del Centro'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -59,18 +59,18 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('N鷐ero de Clasificaci髇')); ?>">a</span>
+												title="<?php echo __('N煤mero de Clasificaci贸n'); ?>">a</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('N鷐ero de Clasificaci髇')); ?>"
+												placeholder="<?php echo __('N煤mero de Clasificaci贸n'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
 									<div class="span12">
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
-												data-placement="top" title="<?php echo utf8_encode(__('N鷐ero de Autor')); ?>">b</span>
+												data-placement="top" title="<?php echo __('N煤mero de Autor'); ?>">b</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('N鷐ero de Autor')); ?>"
+												placeholder="<?php echo __('N煤mero de Autor'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -86,15 +86,15 @@
 									<div class="span12">
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
-												data-placement="top" title="<?php echo utf8_encode(__('Sistema de Empr閟tito')); ?>">t</span>
+												data-placement="top" title="<?php echo __('Sistema de Empr茅stito'); ?>">t</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Sistema de Empr閟tito')); ?>"
+												placeholder="<?php echo __('Sistema de Empr茅stito'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
 								</div>
 								<?php } ?>
-								<?php if($nameField == utf8_encode(__("Direcci髇 Electr髇ica"))){?>
+								<?php if($nameField == __("Direcci贸n Electr贸nica")){?>
 								<div id="v<?php echo $numberField;?>">
 									<div class="span12" style="margin-left: 6px;">
 										<div class="input-prepend">
@@ -110,7 +110,7 @@
 										<div class="input-prepend">
 											<span class="add-on mandatory" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('C骴igo del Idioma')); ?>">i</span>
+												title="<?php echo __('C贸digo del Idioma'); ?>">i</span>
 											<select name="codeLenguage" class="span11 required"
 												id="prependedInput"
 												style="overflow: hidden; height: 20px; padding-bottom: 4px; margin-bottom: 8px;">
@@ -131,9 +131,9 @@
 										<div class="input-prepend">
 											<span class="add-on mandatory" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Extensi髇 del Archivo')); ?>">q</span>
+												title="<?php echo __('Extensi贸n del Archivo'); ?>">q</span>
 											<textarea class="input-xlarge required"
-												placeholder="<?php echo utf8_encode(__('Extensi髇 del Archivo')); ?>"
+												placeholder="<?php echo __('Extensi贸n del Archivo'); ?>"
 												id="prependedInput"
 												style="overflow: hidden; height: 20px; display: none;"></textarea>
 											<select id="conditional-select" name="tipoArchivo"
@@ -199,9 +199,9 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Nota P鷅lica')); ?>">z</span>
+												title="<?php echo __('Nota P煤blica'); ?>">z</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Nota P鷅lica')); ?>"
+												placeholder="<?php echo __('Nota P煤blica'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -209,9 +209,9 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Nota no P鷅lica')); ?>">x</span>
+												title="<?php echo __('Nota no P煤blica'); ?>">x</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Nota no P鷅lica')); ?>"
+												placeholder="<?php echo __('Nota no P煤blica'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -219,9 +219,9 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Tama駉 de Archivo')); ?>">s</span>
+												title="<?php echo __('Tama帽o de Archivo'); ?>">s</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Tama駉 de Archivo')); ?>"
+												placeholder="<?php echo __('Tama帽o de Archivo'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -229,9 +229,9 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Se馻')); ?>">k</span>
+												title="<?php echo __('Se帽a'); ?>">k</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Se馻')); ?>"
+												placeholder="<?php echo __('Se帽a'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -253,9 +253,9 @@
 										<div class="input-prepend">
 											<span class="add-on mandatory" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Autor Personal')); ?>">*</span>
+												title="<?php echo __('Autor Personal'); ?>">*</span>
 											<textarea class="input-xlarge required"
-												placeholder="<?php echo utf8_encode(__('Autor Personal')); ?>"
+												placeholder="<?php echo __('Autor Personal'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -263,9 +263,9 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Afiliaci髇')); ?>">1</span>
+												title="<?php echo __('Afiliaci贸n'); ?>">1</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Afiliaci髇')); ?>"
+												placeholder="<?php echo __('Afiliaci贸n'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -273,9 +273,9 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Afiliaci髇')); ?>">2</span>
+												title="<?php echo __('Afiliaci贸n'); ?>">2</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Afiliaci髇')); ?>"
+												placeholder="<?php echo __('Afiliaci贸n'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -283,9 +283,9 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Afiliaci髇')); ?>">3</span>
+												title="<?php echo __('Afiliaci贸n'); ?>">3</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Afiliaci髇')); ?>"
+												placeholder="<?php echo __('Afiliaci贸n'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -301,9 +301,9 @@
 									<div class="span12" style="margin-left: 6px;">
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
-												data-placement="top" title="<?php echo utf8_encode(__('Pa韘')); ?>">p</span>
+												data-placement="top" title="<?php echo __('Pa铆s'); ?>">p</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Pa韘')); ?>"
+												placeholder="<?php echo __('Pa铆s'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -311,7 +311,7 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Grado de responsabilidad')); ?>">r</span>
+												title="<?php echo __('Grado de responsabilidad'); ?>">r</span>
 											<select name="levelResponsibility" class="span11"
 												id="prependedInput"
 												style="overflow: hidden; height: 20px; padding-bottom: 4px; margin-bottom: 8px;">
@@ -346,7 +346,7 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Grado de responsabilidad')); ?>">r</span>
+												title="<?php echo __('Grado de responsabilidad'); ?>">r</span>
 											<select name="levelResponsibility" class="span11"
 												id="prependedInput"
 												style="overflow: hidden; height: 20px; padding-bottom: 4px; margin-bottom: 8px;">
@@ -365,15 +365,15 @@
 									</div>
 								</div>
 								<?php } ?>
-								<?php if($nameField == utf8_encode(__('T韙ulo'))){?>
+								<?php if($nameField == __('T铆tulo')){?>
 								<div id="v<?php echo $numberField;?>">
 									<div class="span12" style="margin-left: 6px;">
 										<div class="input-prepend">
 											<span class="add-on mandatory" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('T韙ulo')); ?>">*</span>
+												title="<?php echo __('T铆tulo'); ?>">*</span>
 											<textarea class="input-xlarge required"
-												placeholder="<?php echo utf8_encode(__('T韙ulo')); ?>"
+												placeholder="<?php echo __('T铆tulo'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -381,7 +381,7 @@
 										<div class="input-prepend">
 											<span class="add-on mandatory" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('C骴igo del Idioma')); ?>">i</span>
+												title="<?php echo __('C贸digo del Idioma'); ?>">i</span>
 											<select name="codeLenguage" class="span11 required"
 												id="prependedInput"
 												style="overflow: hidden; height: 20px; padding-bottom: 4px; margin-bottom: 8px;">
@@ -400,15 +400,15 @@
 									</div>
 								</div>
 								<?php } ?>
-								<?php if($nameField == utf8_encode(__('P醙inas'))){?>
+								<?php if($nameField == __('P谩ginas')){?>
 								<div id="v<?php echo $numberField;?>">
 									<div class="span12" style="margin-left: 6px;">
 										<div class="input-prepend">
 											<span class="add-on mandatory" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Paginaci髇 irregular o inexistente')); ?>">*</span>
+												title="<?php echo __('Paginaci贸n irregular o inexistente'); ?>">*</span>
 											<textarea class="input-xlarge required"
-												placeholder="<?php echo utf8_encode(__('Paginaci髇 irregular o inexistente')); ?>"
+												placeholder="<?php echo __('Paginaci贸n irregular o inexistente'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -416,9 +416,9 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('N鷐ero inicial')); ?>">f</span>
+												title="<?php echo __('N煤mero inicial'); ?>">f</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('N鷐ero inicial')); ?>"
+												placeholder="<?php echo __('N煤mero inicial'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -426,23 +426,23 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('N鷐ero final')); ?>">l</span>
+												title="<?php echo __('N煤mero final'); ?>">l</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('N鷐ero final')); ?>"
+												placeholder="<?php echo __('N煤mero final'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
 								</div>
 								<?php } ?>
-								<?php if($nameField == utf8_encode(__('Informaci髇 Descriptiva'))){?>
+								<?php if($nameField == __('Informaci贸n Descriptiva')){?>
 								<div id="v<?php echo $numberField;?>">
 									<div class="span12" style="margin-left: 6px;">
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Otros detalles f韘icos')); ?>">b</span>
+												title="<?php echo __('Otros detalles f铆sicos'); ?>">b</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Otros detalles f韘icos')); ?>"
+												placeholder="<?php echo __('Otros detalles f铆sicos'); ?>"
 												id="prependedInput"
 												style="overflow: hidden; height: 20px; display: none;"></textarea>
 											<select id="conditional-select" name="infDescr"
@@ -459,7 +459,7 @@
 														$key == "ilus" ? $value = __('Ilustraciones'): null;
 														$key == "mapas" ? $value = __('Mapas'): null;
 														$key == "tab" ? $value = __('Tablas'): null;
-														$key == "graf" ? $value = utf8_encode(__('Gr醘icos')): null;
+														$key == "graf" ? $value = __('Gr谩ficos'): null;
 													}
 													echo $value;
 													?>
@@ -474,9 +474,9 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Extensi髇 de art韈ulo')); ?>">a</span>
+												title="<?php echo __('Extensi贸n de art铆culo'); ?>">a</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Extensi髇 de art韈ulo')); ?>"
+												placeholder="<?php echo __('Extensi贸n de art铆culo'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -484,9 +484,9 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Dimensi髇')); ?>">c</span>
+												title="<?php echo __('Dimensi贸n'); ?>">c</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Dimensi髇')); ?>"
+												placeholder="<?php echo __('Dimensi贸n'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -494,9 +494,9 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('Material acompa馻nte')); ?>">e</span>
+												title="<?php echo __('Material acompa帽ante'); ?>">e</span>
 											<textarea class="input-xlarge"
-												placeholder="<?php echo utf8_encode(__('Material acompa馻nte')); ?>"
+												placeholder="<?php echo __('Material acompa帽ante'); ?>"
 												id="prependedInput" style="overflow: hidden; height: 20px;"></textarea>
 										</div>
 									</div>
@@ -529,7 +529,7 @@
 										<div class="input-prepend">
 											<span class="add-on" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('C骴igo del Idioma')); ?>">i</span>
+												title="<?php echo __('C贸digo del Idioma'); ?>">i</span>
 											<select name="codeLenguage" class="span11"
 												id="prependedInput"
 												style="overflow: hidden; height: 20px; padding-bottom: 4px; margin-bottom: 8px;">
@@ -563,7 +563,7 @@
 										<div class="input-prepend">
 											<span class="add-on mandatory" data-toggle="tooltip"
 												data-placement="top"
-												title="<?php echo utf8_encode(__('C骴igo del Idioma')); ?>">i</span>
+												title="<?php echo __('C贸digo del Idioma'); ?>">i</span>
 											<select name="codeLenguage" class="span11 required"
 												id="prependedInput"
 												style="overflow: hidden; height: 20px; padding-bottom: 4px; margin-bottom: 8px;">

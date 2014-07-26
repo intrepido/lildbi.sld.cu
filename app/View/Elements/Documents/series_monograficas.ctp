@@ -16,7 +16,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 <div class="container-document">
 	<div class="page-header">
 		<h3>
-			<?php echo utf8_encode(__('Serie Monogr醘ica')); ?>
+			<?php echo __('Serie Monogr谩fica'); ?>
 		</h3>
 	</div>
 
@@ -30,7 +30,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 				<thead>
 					<tr>
 						<th><?php echo __('Campo'); ?></th>
-						<th><?php echo utf8_encode(__('Descripci髇 Bibliogr醘ica')); ?></th>
+						<th><?php echo __('Descripci贸n Bibliogr谩fica'); ?></th>
 						<th class="span2"><?php echo __('Tag'); ?></th>
 					</tr>
 				</thead>
@@ -44,7 +44,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 						</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('N鷐ero de Identificaci髇')); ?></td>
+						<td><?php echo __('N煤mero de Identificaci贸n'); ?></td>
 						<td>
 							<div class='alert alert-error lil' style="display: none;">
 								<button type='button' class='close'>&times;</button>
@@ -55,18 +55,18 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 									'type' => 'text',
 									'class' => 'span6',
 									'value'=> '',
-									'name'  => 'data[Document][v2]['. utf8_encode(__('N鷐ero de Identificaci髇')) .']',
+									'name'  => 'data[Document][v2]['. __('N煤mero de Identificaci贸n') .']',
 									'required' => 'true'
 				)); ?>
 						</td>
 						<td class="mandatory">[02]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('Localizaci髇 del Documento')); ?>
+						<td><?php echo __('Localizaci贸n del Documento'); ?>
 							<div class="btn-toolbar">
 								<div class="btn-group">
 									<?php
-									echo $this->element('assistant',array("nameField" => utf8_encode(__('Localizaci髇 del Documento')), "numberField" => 3));
+									echo $this->element('assistant',array("nameField" => __('Localizaci贸n del Documento'), "numberField" => 3));
 									?>
 									<a id='cleanField' class="btn" style="padding: 6px 5px 7px;"
 										href="#"><i class="icon-remove"></i> </a>
@@ -79,7 +79,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 								'rows' => 4,
 								'disabled' => true,
 								'value'=> '',
-								'name'  => 'data[Document][v3]['. utf8_encode(__('Localizaci髇 del Documento')) .']'
+								'name'  => 'data[Document][v3]['. __('Localizaci贸n del Documento') .']'
 
 						)); ?>
 						</td>
@@ -98,23 +98,23 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 						<td>[04]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('N鷐ero del Registro')); ?></td>
+						<td><?php echo __('N煤mero del Registro'); ?></td>
 						<td><?php echo $this->Form->textarea('', array(				
 								'type' => 'text',
 								'class' => 'span6',
 								'rows' => 4,
 								'value'=> '',
-								'name'  => 'data[Document][v7]['. utf8_encode(__('N鷐ero del Registro')) .']'
+								'name'  => 'data[Document][v7]['. __('N煤mero del Registro') .']'
 						)); ?>
 						</td>
 						<td>[07]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('Direcci髇 Electr髇ica')); ?>
+						<td><?php echo __('Direcci贸n Electr贸nica'); ?>
 							<div class="btn-toolbar">
 								<div class="btn-group">
 									<?php
-									echo $this->element('assistant',array("nameField" => utf8_encode(__('Direcci髇 Electr髇ica')), "numberField" => 8));
+									echo $this->element('assistant',array("nameField" => __('Direcci贸n Electr贸nica'), "numberField" => 8));
 									?>
 									<a id='cleanField' class="btn" style="padding: 6px 5px 7px;"
 										href="#"><i class="icon-remove"></i> </a>
@@ -127,7 +127,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 								'rows' => 4,
 								'disabled' => true,
 								'value'=> '',
-								'name'  => 'data[Document][v8]['. utf8_encode(__('Direcci髇 Electr髇ica')) .']'
+								'name'  => 'data[Document][v8]['. __('Direcci贸n Electr贸nica') .']'
 						)); ?>
 						</td>
 						<td>[08]</td>
@@ -160,7 +160,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 						</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('T韙ulo')); ?></td>
+						<td><?php echo __('T铆tulo'); ?></td>
 						<td><div class='alert alert-error lil' style="display: none;">
 								<button type='button' class='close'>&times;</button>
 								<p>
@@ -171,7 +171,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 									'class' => 'span6',
 									'rows' => 4,
 									'value'=> '',
-									'name'  => 'data[Document][v30]['. utf8_encode(__('T韙ulo')) .']',
+									'name'  => 'data[Document][v30]['. __('T铆tulo') .']',
 									'required' => 'true'
 							)); ?></td>
 						<td class="mandatory">[30]</td>
@@ -188,12 +188,12 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 						<td>[31]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('N鷐ero del Fasc韈ulo')); ?></td>
+						<td><?php echo __('N煤mero del Fasc铆culo'); ?></td>
 						<td><?php echo $this->Form->input('', array(				
 								'type' => 'text',
 								'class' => 'span6',
 								'value'=> '',
-								'name'  => 'data[Document][v32]['. utf8_encode(__('N鷐ero del Fasc韈ulo')) .']'
+								'name'  => 'data[Document][v32]['. __('N煤mero del Fasc铆culo') .']'
 						)); ?>
 						</td>
 						<td>[32]</td>
@@ -212,7 +212,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 					<tr class="info">
 						<td colspan="12"
 							style="border-left-width: 0px; padding-left: 6px;"><div
-								class="span5"></div> <b><?php echo utf8_encode(__('Nivel Monogr醘ico')) ?>
+								class="span5"></div> <b><?php echo __('Nivel Monogr谩fico') ?>
 						</b><a id="next" href="#" class="pull-right"><?php  echo $this->Html->image('next.gif'); ?>
 						</a><a id="prev" href="#" class="pull-right"><?php  echo $this->Html->image('prev.gif'); ?>
 						</a><a id="bott" href="#" class="pull-right"><?php  echo $this->Html->image('bott.gif'); ?>
@@ -274,11 +274,11 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 						<td class="mandatory">[17]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('T韙ulo')); ?>
+						<td><?php echo __('T铆tulo'); ?>
 							<div class="btn-toolbar">
 								<div class="btn-group">
 									<?php
-									echo $this->element('assistant',array("nameField" => utf8_encode(__('T韙ulo')), "numberField" => 18));
+									echo $this->element('assistant',array("nameField" => __('T铆tulo'), "numberField" => 18));
 									?>
 									<a id='cleanField' class="btn" style="padding: 6px 5px 7px;"
 										href="#"><i class="icon-remove"></i> </a>
@@ -297,25 +297,25 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 									'rows' => 4,
 									'disabled' => true,
 									'value'=> '',
-									'name'  => 'data[Document][v18]['. utf8_encode(__('T韙ulo')) .']',
+									'name'  => 'data[Document][v18]['. __('T铆tulo') .']',
 									'required' => 'true'
 				)); ?>
 						</td>
 						<td class="mandatory">[18]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('T韙ulo Traducido al Ingl閟')); ?></td>
+						<td><?php echo __('T铆tulo Traducido al Ingl茅s'); ?></td>
 						<td><?php echo $this->Form->input('', array(				
 								'type' => 'text',
 								'class' => 'span6',
 								'value'=> '',
-								'name'  => 'data[Document][v19]['. utf8_encode(__('T韙ulo Traducido al Ingl閟')) .']'
+								'name'  => 'data[Document][v19]['. __('T铆tulo Traducido al Ingl茅s') .']'
 						)); ?>
 						</td>
 						<td>[19]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('P醙inas')); ?></td>
+						<td><?php echo __('P谩ginas'); ?></td>
 						<td><div class='alert alert-error lil' style="display: none;">
 								<button type='button' class='close'>&times;</button>
 								<p>
@@ -325,7 +325,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 									'type' => 'text',
 									'class' => 'span6',
 									'value'=> '',
-									'name'  => 'data[Document][v20]['. utf8_encode(__('P醙inas')) .']',
+									'name'  => 'data[Document][v20]['. __('P谩ginas') .']',
 									'required' => 'true'
 							)); ?></td>
 						<td class="mandatory">[20]</td>
@@ -340,11 +340,11 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 						</a></td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('Informaci髇 Descriptiva'));?>
+						<td><?php echo __('Informaci贸n Descriptiva');?>
 							<div class="btn-toolbar">
 								<div class="btn-group">
 									<?php
-									echo $this->element('assistant',array("nameField" => utf8_encode(__("Informaci髇 Descriptiva")), "numberField" => 38));
+									echo $this->element('assistant',array("nameField" => __("Informaci贸n Descriptiva"), "numberField" => 38));
 									?>
 									<a id='cleanField' class="btn" style="padding: 6px 5px 7px;"
 										href="#"><i class="icon-remove"></i> </a>
@@ -357,7 +357,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 								'rows' => 4,
 								'disabled' => true,
 								'value'=> '',
-								'name'  => 'data[Document][v38]['. utf8_encode(__('Informaci髇 Descriptiva')) .']'
+								'name'  => 'data[Document][v38]['. __('Informaci贸n Descriptiva') .']'
 						)); ?>
 						</td>
 						<td>[38]</td>
@@ -409,38 +409,38 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 						<td>[505]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('Nota de Disponibilidad de Forma F韘ica Adicional'));?>
+						<td><?php echo __('Nota de Disponibilidad de Forma F铆sica Adicional');?>
 						</td>
 						<td><?php echo $this->Form->textarea('', array(				
 								'type' => 'text',
 								'class' => 'span6',
 								'rows' => 4,
 								'value'=> '',
-								'name'  => 'data[Document][v530]['. utf8_encode(__('Nota de Disponibilidad de Forma F韘ica Adicional')) .']'
+								'name'  => 'data[Document][v530]['. __('Nota de Disponibilidad de Forma F铆sica Adicional') .']'
 						)); ?>
 						</td>
 						<td>[530]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('Nota de Reproducci髇'))?></td>
+						<td><?php echo __('Nota de Reproducci贸n')?></td>
 						<td><?php echo $this->Form->textarea('', array(				
 								'type' => 'text',
 								'class' => 'span6',
 								'rows' => 4,
 								'value'=> '',
-								'name'  => 'data[Document][v533]['. utf8_encode(__('Nota de Reproducci髇')) .']'
+								'name'  => 'data[Document][v533]['. __('Nota de Reproducci贸n') .']'
 						)); ?>
 						</td>
 						<td>[533]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('Nota de Versi髇 Original'))?></td>
+						<td><?php echo __('Nota de Versi贸n Original')?></td>
 						<td><?php echo $this->Form->textarea('', array(				
 								'type' => 'text',
 								'class' => 'span6',
 								'rows' => 4,
 								'value'=> '',
-								'name'  => 'data[Document][v534]['. utf8_encode(__('Nota de Versi髇 Original')) .']'
+								'name'  => 'data[Document][v534]['. __('Nota de Versi贸n Original') .']'
 						)); ?>
 						</td>
 						<td>[534]</td>
@@ -483,18 +483,18 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 						<td class="mandatory">[62]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('Edici髇'))?></td>
+						<td><?php echo __('Edici贸n')?></td>
 						<td><?php echo $this->Form->input('', array(				
 								'type' => 'text',
 								'class' => 'span6',
 								'value'=> '',
-								'name'  => 'data[Document][v63]['. utf8_encode(__('Edici髇')) .']'
+								'name'  => 'data[Document][v63]['. __('Edici贸n') .']'
 						)); ?>
 						</td>
 						<td>[63]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('Fecha de Publicaci髇'))?></td>
+						<td><?php echo __('Fecha de Publicaci贸n')?></td>
 						<td><div class='alert alert-error lil' style="display: none;">
 								<button type='button' class='close'>&times;</button>
 								<p>
@@ -504,7 +504,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 									'type' => 'text',
 									'class' => 'span6',
 									'value'=> '',
-									'name'  => 'data[Document][v64]['. utf8_encode(__('Fecha de Publicaci髇')) .']',
+									'name'  => 'data[Document][v64]['. __('Fecha de Publicaci贸n') .']',
 									'required' => 'true'
 							)); ?></td>
 						<td class="mandatory">[64]</td>
@@ -526,7 +526,7 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 						<td class="mandatory">[65]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('Ciudad de Publicaci髇'))?></td>
+						<td><?php echo __('Ciudad de Publicaci贸n')?></td>
 						<td><div class='alert alert-error lil' style="display: none;">
 								<button type='button' class='close'>&times;</button>
 								<p>
@@ -536,13 +536,13 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 									'type' => 'text',
 									'class' => 'span6',
 									'value'=> '',
-									'name'  => 'data[Document][v66]['. utf8_encode(__('Ciudad de Publicaci髇')) .']',
+									'name'  => 'data[Document][v66]['. __('Ciudad de Publicaci贸n') .']',
 									'required' => 'true'
 							)); ?></td>
 						<td class="mandatory">[66]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('Pa韘 de Publicaci髇')); ?></td>
+						<td><?php echo __('Pa铆s de Publicaci贸n'); ?></td>
 						<td><div class='alert alert-error lil' style="display: none;">
 								<button type='button' class='close'>&times;</button>
 								<p>
@@ -569,18 +569,18 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 						}
 					}
 
-					echo $this->Form->input('', array('options' => $resultArray, 'size' => 4, 'style' =>'width: 385px','value'=> '', 'required' => 'true',	'name'  => 'data[Document][v67]['. utf8_encode(__('Pa韘 de Publicaci髇')) .']' ));
+					echo $this->Form->input('', array('options' => $resultArray, 'size' => 4, 'style' =>'width: 385px','value'=> '', 'required' => 'true',	'name'  => 'data[Document][v67]['. __('Pa铆s de Publicaci贸n') .']' ));
 					?></td>
 						<td class="mandatory">[67]</td>
 					</tr>
 					<tr>
-						<td><?php echo utf8_encode(__('S韒bolo'))?></td>
+						<td><?php echo __('S铆mbolo')?></td>
 						<td><?php echo $this->Form->textarea('', array(				
 								'type' => 'text',
 								'class' => 'span6',
 								'rows' => 4,
 								'value'=> '',
-								'name'  => 'data[Document][v68]['. utf8_encode(__('S韒bolo')) .']'
+								'name'  => 'data[Document][v68]['. __('S铆mbolo') .']'
 						)); ?>
 						</td>
 						<td>[68]</td>
@@ -675,14 +675,14 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 									<div class="accordion-inner">
 										<table class="table table-bordered">
 											<tr>
-												<td><?php echo utf8_encode(__('Instituci髇 Patrocinadora')) ?>
+												<td><?php echo __('Instituci贸n Patrocinadora') ?>
 												</td>
 												<td><?php echo $this->Form->textarea('', array(				
 														'type' => 'text',
 														'class' => 'span6',
 														'rows' => 4,
 														'value'=> '',
-														'name'  => 'data[Document][v52]['. utf8_encode(__('Evento - Instituci髇 Patrocinadora')) .']'
+														'name'  => 'data[Document][v52]['. __('Evento - Instituci贸n Patrocinadora') .']'
 												)); ?></td>
 												<td class='span1'>[52]</td>
 											</tr>
@@ -749,10 +749,10 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 												<td class="mandatory">[56]</td>
 											</tr>
 											<tr>
-												<td><?php echo utf8_encode(__('Pa韘')) ?></td>
+												<td><?php echo __('Pa铆s') ?></td>
 												<td><?php
 												$paises = $this->requestAction('/Codifiers/getById/pais');
-												echo $this->Form->input('', array('options' => $paises['Codifier']['pais'], 'class' => 'span6', 'value'=> '', 'name'  => 'data[Document][v57]['. utf8_encode(__('Evento - Pa韘')) .']' ));
+												echo $this->Form->input('', array('options' => $paises['Codifier']['pais'], 'class' => 'span6', 'value'=> '', 'name'  => 'data[Document][v57]['. __('Evento - Pa铆s') .']' ));
 												?>
 												</td>
 												<td>[57]</td>
@@ -774,14 +774,14 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 									<div class="accordion-inner">
 										<table class="table table-bordered">
 											<tr>
-												<td><?php echo utf8_encode(__('Instituci髇 Patrocinadora')) ?>
+												<td><?php echo __('Instituci贸n Patrocinadora') ?>
 												</td>
 												<td><?php echo $this->Form->textarea('', array(				
 														'type' => 'text',
 														'class' => 'span6',
 														'rows' => 4,
 														'value'=> '',
-														'name'  => 'data[Document][v58]['. utf8_encode(__('Proyecto - Instituci髇 Patrocinadora')) .']'
+														'name'  => 'data[Document][v58]['. __('Proyecto - Instituci贸n Patrocinadora') .']'
 												)); ?></td>
 												<td class='span1'>[58]</td>
 											</tr>
@@ -797,12 +797,12 @@ $backEscapedValues = str_replace($escapers, $replacements, json_encode($backValu
 												<td>[59]</td>
 											</tr>
 											<tr>
-												<td><?php echo utf8_encode(__('N鷐ero')) ?></td>
+												<td><?php echo __('N煤mero') ?></td>
 												<td><?php echo $this->Form->input('', array(				
 														'type' => 'text',
 														'class' => 'span6',
 														'value'=> '',
-														'name'  => 'data[Document][v60]['. utf8_encode(__('Proyecto - N鷐ero')) .']'
+														'name'  => 'data[Document][v60]['. __('Proyecto - N煤mero') .']'
 												)); ?>
 												</td>
 												<td>[60]</td>

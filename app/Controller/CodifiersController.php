@@ -43,7 +43,7 @@ class CodifiersController extends AppController {
 			
 			if ($this->request->data['value'] != "Archivo de computador" ) {
 
-				if (($this->request->data['value'] == utf8_encode("Material cartográfico")) || ($this->request->data['value'] == utf8_encode("Manuscritos de material cartográfico"))) {
+				if (($this->request->data['value'] == "Material cartogrÃ¡fico") || ($this->request->data['value'] == "Manuscritos de material cartogrÃ¡fico")) {
 					$codifier = Set::extract('*/Codifier/tipo_material_cartografico', $codifiers);					
 					array_push($result, array('Codifier' => $codifier[0]));
 					$codifier = Set::extract('*/Codifier/forma_item', $codifiers);
@@ -55,7 +55,7 @@ class CodifiersController extends AppController {
 					$codifier = Set::extract('*/Codifier/forma_item', $codifiers);
 					array_push($result, array('Codifier' => $codifier[0]));						
 				}
-				else if ($this->request->data['value'] == utf8_encode("Gráficos bidimensionales no proyectables")) {
+				else if ($this->request->data['value'] == "GrÃ¡ficos bidimensionales no proyectables") {
 					$codifier = Set::extract('*/Codifier/designacion_especifica_material', $codifiers);
 					array_push($result, array('Codifier' => $codifier[0]));
 					$codifier = Set::extract('*/Codifier/tipo_material_visual', $codifiers);

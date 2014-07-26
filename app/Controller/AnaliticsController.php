@@ -190,16 +190,16 @@ class AnaliticsController extends AppController {
 		$user = $this->Auth->user();
 		$arrayData = array();
 		$arrayData = array_merge(array('v92' => array(__('Documentalista') => $user['initials'])), $this->params['data']['Document']);
-		$arrayData = array_merge(array('v93' => array(utf8_encode(__('Fecha de ultima modificaci髇')) => CakeTime::format('Ymd', time()))), $arrayData);
+		$arrayData = array_merge(array('v93' => array(__('Fecha de ultima modificaci贸n') => CakeTime::format('Ymd', time()))), $arrayData);
 			
 		if($this->Session->check('dateCreationEdit')){//si se esta modificando
-			$arrayData = array_merge(array('v91' => array(utf8_encode(__('Fecha de Creaci髇 del Registro')) => $this->Session->read('dateCreationEdit'))), $arrayData);
+			$arrayData = array_merge(array('v91' => array(__('Fecha de Creaci贸n del Registro') => $this->Session->read('dateCreationEdit'))), $arrayData);
 		}else{//si se esta insertando
-			$arrayData = array_merge(array('v91' => array(utf8_encode(__('Fecha de Creaci髇 del Registro')) => CakeTime::format('Ymd', time()))), $arrayData);
+			$arrayData = array_merge(array('v91' => array(__('Fecha de Creaci贸n del Registro') => CakeTime::format('Ymd', time()))), $arrayData);
 		}
 			
-		$arrayData = array_merge(array('v899' => array(utf8_encode(__('Versi髇 del Software')) => 'LILDBI-WEB 1.8')), $arrayData);
-		$arrayData = array_merge(array('v1' => array(utf8_encode(__('C骴igo del Centro')) => 'CU1.1')), $arrayData);
+		$arrayData = array_merge(array('v899' => array(__('Versi贸n del Software') => 'LILDBI-WEB 1.8')), $arrayData);
+		$arrayData = array_merge(array('v1' => array(__('C贸digo del Centro') => 'CU1.1')), $arrayData);
 			
 		$this->DocumentDatas->orderFieldsDocument($arrayData);
 

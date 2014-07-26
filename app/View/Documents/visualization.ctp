@@ -8,7 +8,7 @@ if(!$this->Session->check('idEdit')){ //Si estoy adicionando un documento
 			$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')),
 			$this->Html->link($this->Session->read('index'), array('controller' => 'documents','action' => 'add')),
 			$this->Html->link($typeNameDocument, "#", array('id' => 'backBreadcrumb')),
-			utf8_encode(__('Visualización'))
+			__('VisualizaciÃ³n')
 	), array('class' => 'breadcrumb'));
 
 }else{ //Si estoy editando un documento
@@ -16,7 +16,7 @@ if(!$this->Session->check('idEdit')){ //Si estoy adicionando un documento
 			$this->Html->link(__('Inicio'), array('controller' => 'admin','action' => 'index')),
 			$this->Html->link(__('Documentos'), array('controller' => 'documents','action' => 'index')),
 			$this->Html->link(__('Editar'), "#", array('id' => 'backBreadcrumb')),
-			utf8_encode(__('Visualización'))
+			__('VisualizaciÃ³n')
 	), array('class' => 'breadcrumb row-fluid'));
 }
 ?>

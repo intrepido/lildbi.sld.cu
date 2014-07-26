@@ -34,7 +34,7 @@ class DocumentDatasComponent extends Component {
 		$type='';
 	
 		if($v5Value == 'MS'){
-			$type = utf8_encode(__('Serie Monogr醘ica'));
+			$type = __('Serie Monogr谩fica');
 		}
 	
 		return $type;
@@ -42,7 +42,7 @@ class DocumentDatasComponent extends Component {
 	
 	function convertTypeNameToUrlName($typeName) {
 	
-		if ($typeName == utf8_encode(__('Serie Monogr醘ica'))) {
+		if ($typeName == __('Serie Monogr谩fica')) {
 			$urlName = 'series_monograficas';
 		}
 	
@@ -52,7 +52,7 @@ class DocumentDatasComponent extends Component {
 	function convertUrlNameToTypeName($urlName) {
 	
 		if ($urlName == 'series_monograficas') {
-			$typeName = utf8_encode(__('Serie Monogr醘ica'));
+			$typeName = __('Serie Monogr谩fica');
 		}
 	
 		return $typeName;
@@ -76,7 +76,7 @@ class DocumentDatasComponent extends Component {
 						$dataFormatArray[$key] = $value[$arrayKey[0]];
 					}
 				}else{ //Campos que se modifican en el momento que se inserta.
-					if($key == 'v91' && !$this->Session->check('dateCreationEdit')){ //Fecha de Creaci髇 del Registro si se esta insertando
+					if($key == 'v91' && !$this->Session->check('dateCreationEdit')){ //Fecha de Creaci贸n del Registro si se esta insertando
 						$interval1 = $this->Session->read('initialTimeCreation');
 						$interval2 = CakeTime::format("H:i:s", time());
 						$value[$arrayKey[0]] = CakeTime::format("Ymd", time())."^i".$this->Session->read('initialTimeCreation')."^f".CakeTime::format("H:i:s", time())."^t". Utils::subtractHours($interval1, $interval2);
@@ -157,92 +157,92 @@ class DocumentDatasComponent extends Component {
 	
 	function getNameFieldsDocument() {
 		$arrayData = array(
-							'v1' => utf8_encode(__('C骴igo del Centro')),
-							'v2' => utf8_encode(__('N鷐ero de Identificaci髇')),
-							'v3' => utf8_encode(__('Localizaci髇 del Documento')),
+							'v1' => __('C贸digo del Centro'),
+							'v2' => __('N煤mero de Identificaci贸n'),
+							'v3' => __('Localizaci贸n del Documento'),
 							'v4' => __('Base de Datos'),
 							'v5' => __('Tipo de Literatura'),
 							'v6' => __('Nivel de Tratamiento'),
-							'v7' => utf8_encode(__('N鷐ero del Registro')),
-							'v8' => utf8_encode(__('Direcci髇 Electr髇ica')),
+							'v7' => __('N煤mero del Registro'),
+							'v8' => __('Direcci贸n Electr贸nica'),
 							'v9' => __('Tipo de Registro'),
 							'v10' => __('Autor Personal'),
 							'v11' => __('Autor Institucional'),
-							'v12' => utf8_encode(__('T韙ulo')),
-							'v13' => utf8_encode(__('T韙ulo Traducido al Ing閟')),
-							'v14' => utf8_encode(__('P醙inas')),
+							'v12' => __('T铆tulo'),
+							'v13' => __('T铆tulo Traducido al Ing茅s'),
+							'v14' => __('P谩ginas'),
 							'v16' => __('Autor Personal'),
 							'v17' => __('Autor Institucional'),
-							'v18' => utf8_encode(__('T韙ulo')),
-							'v19' => utf8_encode(__('T韙ulo Traducido al Ingl閟')),
-							'v20' => utf8_encode(__('P醙inas')),
+							'v18' => __('T铆tulo'),
+							'v19' => __('T铆tulo Traducido al Ingl茅s'),
+							'v20' => __('P谩ginas'),
 							'v21' => __('Volumen'),
 							'v23' => __('Autor Personal'),
 							'v24' => __('Autor Institucional'),
-							'v25' => utf8_encode(__('T韙ulo')),
-							'v26' => utf8_encode(__('T韙ulo Traducido para el Ingl閟')),
-							'v27' => utf8_encode(__('N鷐ero total de Vol鷐enes')),
-							'v30' => utf8_encode(__('T韙ulo')),
+							'v25' => __('T铆tulo'),
+							'v26' => __('T铆tulo Traducido para el Ingl茅s'),
+							'v27' => __('N煤mero total de Vol煤menes'),
+							'v30' => __('T铆tulo'),
 							'v31' => __('Volumen'),
-							'v32' => utf8_encode(__('N鷐ero del Fasc韈ulo')),
+							'v32' => __('N煤mero del Fasc铆culo'),
 							'v35' => __('ISSN'),
-							'v38' => utf8_encode(__('Informaci髇 Descriptiva')),
+							'v38' => __('Informaci贸n Descriptiva'),
 							'v40' => __('Idioma del Texto'),
-							'v49' => utf8_encode(__('Tesis, Disertaci髇 - Orientador')),
-							'v50' => utf8_encode(__('Tesis, Disertaci髇 - Instituci髇 a la cual se Presenta')),
-							'v51' => utf8_encode(__('Tesis, Disertaci髇 - T韙ulo Acad閙ico')),
-							'v52' => utf8_encode(__('Evento - Instituci髇 Patrocinadora')),
+							'v49' => __('Tesis, Disertaci贸n - Orientador'),
+							'v50' => __('Tesis, Disertaci贸n - Instituci贸n a la cual se Presenta'),
+							'v51' => __('Tesis, Disertaci贸n - T铆tulo Acad茅mico'),
+							'v52' => __('Evento - Instituci贸n Patrocinadora'),
 							'v53' => __('Evento - Nombre'),
 							'v54' => __('Evento - Fecha'),
 							'v55' => __('Evento - Fecha Normalizada'),
 							'v56' => __('Evento - Ciudad'),
-							'v57' => utf8_encode(__('Evento - Pa韘')),
-							'v58' => utf8_encode(__('Proyecto - Instituci髇 Patrocinadora')),
+							'v57' => __('Evento - Pa铆s'),
+							'v58' => __('Proyecto - Instituci贸n Patrocinadora'),
 							'v59' => __('Proyecto - Nombre'),
-							'v60' => utf8_encode(__('Proyecto - N鷐ero')),
+							'v60' => __('Proyecto - N煤mero'),
 							'v61' => __('Nota Interna'),
 							'v62' => __('Editora'),
-							'v63' => utf8_encode(__('Edici髇')),
-							'v64' => utf8_encode(__('Fecha de Publicaci髇')),
+							'v63' => __('Edici贸n'),
+							'v64' => __('Fecha de Publicaci贸n'),
 							'v65' => __('Fecha Normalizada'),
-							'v66' => utf8_encode(__('Ciudad de Publicaci髇')),
-							'v67' => utf8_encode(__('Pa韘 de Publicaci髇')),
-							'v68' => utf8_encode(__('S韒bolo')),
+							'v66' => __('Ciudad de Publicaci贸n'),
+							'v67' => __('Pa铆s de Publicaci贸n'),
+							'v68' => __('S铆mbolo'),
 							'v69' => __('ISBN'),
-							'v71' => utf8_encode(__('Tipo de Publicaci髇')),
-							'v72' => utf8_encode(__('N鷐ero total de referencias')),
+							'v71' => __('Tipo de Publicaci贸n'),
+							'v72' => __('N煤mero total de referencias'),
 							'v74' => __('Alcance Temporal'),
 							'v75' => __('Alcance Temporal'),
 							'v76' => __('Descriptor Precodificado'),
 							'v78' => __('Individuo como Tema'),
-							'v82' => utf8_encode(__('Regi髇 no DECS')),
+							'v82' => __('Regi贸n no DECS'),
 							'v83' => __('Resumen'),
 							'v84' => __('Fecha de Transferencia para la Base de Datos'),
 							'v85' => __('Palabras Llaves del Autor'),
 							'v87' => __('Descriptor Primario'),
 							'v88' => __('Descriptor Secundario'),
-							'v91' => utf8_encode(__('Fecha de Creaci髇 del Registro')),
+							'v91' => __('Fecha de Creaci贸n del Registro'),
 							'v92' => __('Documentalista'),
-							'v93' => utf8_encode(__('Fecha de Ultima Modificaci髇')),
+							'v93' => __('Fecha de Ultima Modificaci贸n'),
 							'v98' => __('Registro Complementario'),
 							'v101' => __('Registro Complementario'),
 							'v102' => __('Registro Complementario'),
 							'v110' => __('Forma del Item'),
 							'v111' => __('Tipo de Archivo de Computador'),
-							'v112' => utf8_encode(__('Tipo de Material Cartogr醘ico')),
-							'v113' => utf8_encode(__('Tipo de Peri骴ico')),
+							'v112' => __('Tipo de Material Cartogr谩fico'),
+							'v113' => __('Tipo de Peri贸dico'),
 							'v114' => __('Tipo de Material Visual'),
-							'v115' => utf8_encode(__('Designaci髇 Espec韋ica del Material (Material No Proyectable)')),
+							'v115' => __('Designaci贸n Espec铆fica del Material (Material No Proyectable)'),
 							'v500' => __('Nota General'),
 							'v505' => __('Nota Formateada de Contenido'),
-							'v530' => utf8_encode(__('Nota de Disponibilidad de Forma F韘ica Adicional')),
-							'v533' => utf8_encode(__('Nota de Reproducci髇')),
-							'v534' => utf8_encode(__('Nota de Versi髇 Original')),
-							'v610' => utf8_encode(__('Instituci髇 como Tema')),
+							'v530' => __('Nota de Disponibilidad de Forma F铆sica Adicional'),
+							'v533' => __('Nota de Reproducci贸n'),
+							'v534' => __('Nota de Versi贸n Original'),
+							'v610' => __('Instituci贸n como Tema'),
 							'v653' => __('Descriptores Locales'),
-							'v700' => utf8_encode(__('Nombre del Registro de Ensayo Cl韓ico')),
-							'v724' => utf8_encode(__('N鷐ero DOI')),
-							'v899' => utf8_encode(__('Versi髇 del Software'))
+							'v700' => __('Nombre del Registro de Ensayo Cl铆nico'),
+							'v724' => __('N煤mero DOI'),
+							'v899' => __('Versi贸n del Software')
 		);
 			
 		return $arrayData;
