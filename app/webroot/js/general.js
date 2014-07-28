@@ -38,11 +38,11 @@ $(document).ready(function() {
 			}, function(data) {	
 				
 				
-				var roles = $.parseJSON(data);
+				var rols = $.parseJSON(data);
 				//alert("hola");
 				var temp= true;
 				
-				 $.each(roles, function(i, item){			
+				 $.each(rols, function(i, item){			
 					 if(item['name'] != rol){
 						 if(temp){						
 							 temp = false;
@@ -60,6 +60,15 @@ $(document).ready(function() {
 		}		
 		
 	});
+	
+	//Change idioms
+	$("#idioms a").click(function() {    	
+		$.post('/', {
+			language : $(this).attr('id')
+		}, function(data) {	
+			location.reload();
+		});		
+	}); 
 	
 	
     $(".onoffswitch input").change(function() {

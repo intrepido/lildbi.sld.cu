@@ -102,6 +102,15 @@ echo $this->fetch('css');
 						</li>
 						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 						<li class="divider-vertical"></li>
+						<li class="dropdown"><a data-toggle="dropdown"
+							class="dropdown-toggle" href="#"><?php echo $this->Session->check('Config.language') ? $this->Html->image('flags/'. $this->Session->read('Config.language').'.png') : $this->Html->image('flags/'. Configure::read('Config.language').'.png'); ?>
+								<b class="caret"></b> </a>
+							<ul id='idioms' class="dropdown-menu">							
+								<li><?php echo $this->Html->link($this->Html->image('flags/eng.png') . ' ' . __('Ingles'),'#',  array('id' => 'eng','escape' => false));?></li>
+								<li><?php echo $this->Html->link($this->Html->image('flags/esp.png') . ' ' . __('Español'),'#',  array('id' => 'esp','escape' => false));?></li>	
+								<li><?php echo $this->Html->link($this->Html->image('flags/ptr.png') . ' ' . __('Portugues'),'#',  array('id' => 'ptr','escape' => false));?></li>									
+							</ul>
+						</li>
 					</ul>
 					<div class="navbar-form pull-right" style="margin-top: 10px;">
 						<div class="span20">

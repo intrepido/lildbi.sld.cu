@@ -4,27 +4,27 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-07-26 12:18-0400\n"
-"PO-Revision-Date: 2014-07-26 12:36-0400\n"
+"POT-Creation-Date: 2014-07-28 00:19-0400\n"
+"PO-Revision-Date: 2014-07-28 00:48-0400\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.6.7\n"
-"Language: es\n"
 
 #: Controller/AnaliticsController.php:192
 #: Controller/DocumentsController.php:184
 #: Controller/Component/DocumentDatasComponent.php:225
 msgid "Documentalista"
-msgstr ""
+msgstr "Documentalist"
 
 #: Controller/AnaliticsController.php:193
 #: Controller/DocumentsController.php:185
 msgid "Fecha de ultima modificación"
-msgstr ""
+msgstr "Date of the last modification"
 
 #: Controller/AnaliticsController.php:196;198
 #: Controller/DocumentsController.php:188;190
@@ -36,18 +36,18 @@ msgstr ""
 #: Controller/DocumentsController.php:193
 #: Controller/Component/DocumentDatasComponent.php:245
 msgid "Versión del Software"
-msgstr ""
+msgstr "Software version"
 
 #: Controller/AnaliticsController.php:202
 #: Controller/DocumentsController.php:194
 #: Controller/Component/DocumentDatasComponent.php:160
 #: View/Elements/assistant.ctp:52;54 View/Users/view.ctp:65
 msgid "Código del Centro"
-msgstr ""
+msgstr "Code Center"
 
-#: Controller/AppController.php:93
+#: Controller/AppController.php:96
 msgid "Sitio web en mantenimiento"
-msgstr ""
+msgstr "Web site in maintenance"
 
 #: Controller/CodifiersController.php:106
 msgid "you do not have properly set the environment variable \"BASES\""
@@ -105,7 +105,7 @@ msgstr ""
 
 #: Controller/UsersController.php:182;213
 msgid "El usuario ha sido salvado"
-msgstr ""
+msgstr "The user has saved"
 
 #: Controller/UsersController.php:188
 msgid "El usuario no pudo ser salvado. Por fabor, intentelo de nuevo."
@@ -121,7 +121,7 @@ msgstr ""
 
 #: Controller/UsersController.php:262
 msgid "Usuario eliminado"
-msgstr ""
+msgstr "User deleted"
 
 #: Controller/UsersController.php:269
 msgid "El usuario no pudo ser eliminado"
@@ -137,21 +137,21 @@ msgstr ""
 #: View/Elements/Analitics/series_monograficas.ctp:52;63
 #: View/Elements/Documents/series_monograficas.ctp:47;58
 msgid "Número de Identificación"
-msgstr ""
+msgstr "Identification Number"
 
 #: Controller/Component/DocumentDatasComponent.php:162
 #: View/Elements/assistant.ctp:47
 #: View/Elements/Analitics/series_monograficas.ctp:70;74;87
 #: View/Elements/Documents/series_monograficas.ctp:65;69;82
 msgid "Localización del Documento"
-msgstr ""
+msgstr "Document Location"
 
 #: Controller/Component/DocumentDatasComponent.php:163
 #: View/Elements/Analitics/series_monograficas.ctp:93;99
 #: View/Elements/Documents/series_monograficas.ctp:89;95
 #: View/Layouts/admin_layout.ctp:64
 msgid "Base de Datos"
-msgstr ""
+msgstr "Data Base"
 
 #: Controller/Component/DocumentDatasComponent.php:164
 #: View/Searches/view.ctp:105
@@ -166,14 +166,14 @@ msgstr ""
 #: View/Elements/Analitics/series_monograficas.ctp:104;110
 #: View/Elements/Documents/series_monograficas.ctp:101;107
 msgid "Número del Registro"
-msgstr ""
+msgstr "Registry Number"
 
 #: Controller/Component/DocumentDatasComponent.php:167
 #: View/Elements/assistant.ctp:97
 #: View/Elements/Analitics/series_monograficas.ctp:115;119;132
 #: View/Elements/Documents/series_monograficas.ctp:113;117;130
 msgid "Dirección Electrónica"
-msgstr ""
+msgstr "E-Mail"
 
 #: Controller/Component/DocumentDatasComponent.php:168
 #: View/Elements/Analitics/series_monograficas.ctp:137;148
@@ -186,14 +186,14 @@ msgstr ""
 #: View/Elements/Analitics/series_monograficas.ctp:194;232;236;249
 #: View/Elements/Documents/series_monograficas.ctp:224;228;241
 msgid "Autor Personal"
-msgstr ""
+msgstr "Personal Author"
 
 #: Controller/Component/DocumentDatasComponent.php:170;175;181
 #: View/Elements/assistant.ctp:333;339;341
 #: View/Elements/Analitics/series_monograficas.ctp:200;254;258;277
 #: View/Elements/Documents/series_monograficas.ctp:247;251;270
 msgid "Autor Institucional"
-msgstr ""
+msgstr "Institutional Author"
 
 #: Controller/Component/DocumentDatasComponent.php:171;176;182;185
 #: View/Elements/assistant.ctp:368;374;376
@@ -201,7 +201,7 @@ msgstr ""
 #: View/Elements/Documents/series_monograficas.ctp:163;174;277;281;300
 #: View/Searches/advanced_search.ctp:26;46;64
 msgid "Título"
-msgstr ""
+msgstr "Title"
 
 #: Controller/Component/DocumentDatasComponent.php:172
 msgid "Título Traducido al Ingés"
@@ -212,7 +212,7 @@ msgstr ""
 #: View/Elements/Analitics/series_monograficas.ctp:217;324;328;347
 #: View/Elements/Documents/series_monograficas.ctp:318;328
 msgid "Páginas"
-msgstr ""
+msgstr "Pages"
 
 #: Controller/Component/DocumentDatasComponent.php:177
 #: View/Elements/Analitics/series_monograficas.ctp:212;314;319
@@ -245,7 +245,7 @@ msgstr ""
 #: View/Elements/Documents/series_monograficas.ctp:202;207
 #: View/Searches/view.ctp:126
 msgid "ISSN"
-msgstr ""
+msgstr "ISSN"
 
 #: Controller/Component/DocumentDatasComponent.php:189
 #: View/Elements/assistant.ctp:437
@@ -345,7 +345,7 @@ msgstr ""
 #: View/Elements/Documents/series_monograficas.ctp:486;491
 #: View/Searches/view.ctp:151
 msgid "Edición"
-msgstr ""
+msgstr "Edition"
 
 #: Controller/Component/DocumentDatasComponent.php:206
 #: View/Elements/Analitics/series_monograficas.ctp:492
@@ -382,7 +382,7 @@ msgstr ""
 #: View/Elements/Documents/series_monograficas.ctp:589;594
 #: View/Searches/view.ctp:133
 msgid "ISBN"
-msgstr ""
+msgstr "ISBN"
 
 #: Controller/Component/DocumentDatasComponent.php:212
 msgid "Tipo de Publicación"
@@ -414,7 +414,7 @@ msgstr ""
 #: View/Elements/Documents/series_monograficas.ctp:640;644;657
 #: View/Searches/advanced_search.ctp:29;49;67 View/Searches/view.ctp:172
 msgid "Resumen"
-msgstr ""
+msgstr "Resume"
 
 #: Controller/Component/DocumentDatasComponent.php:220
 msgid "Fecha de Transferencia para la Base de Datos"
@@ -693,11 +693,11 @@ msgstr ""
 
 #: View/Admin/index.ctp:15
 msgid "Mantenimiento"
-msgstr "Mantainment"
+msgstr "Maintenance"
 
 #: View/Admin/index.ctp:52;67
 msgid "Usuarios en Linea"
-msgstr ""
+msgstr "Users online"
 
 #: View/Admin/reports.ctp:9 View/Analitics/add.ctp:9 View/Analitics/edit.ctp:7
 #: View/Analitics/index.ctp:14 View/Analitics/view.ctp:5
@@ -709,7 +709,7 @@ msgstr ""
 #: View/Rols/view.ctp:2 View/Searches/index_board.ctp:3 View/Users/add.ctp:2
 #: View/Users/edit.ctp:2 View/Users/index.ctp:2 View/Users/view.ctp:2
 msgid "Inicio"
-msgstr ""
+msgstr "Home"
 
 #: View/Analitics/add.ctp:10 View/Analitics/edit.ctp:8
 #: View/Analitics/index.ctp:15 View/Analitics/view.ctp:6
@@ -718,17 +718,17 @@ msgstr ""
 #: View/Documents/view.ctp:6 View/Documents/visualization.ctp:8;17
 #: View/Layouts/documentalista_layout.ctp:55
 msgid "Documentos"
-msgstr ""
+msgstr "Documents"
 
 #: View/Analitics/add.ctp:11 View/Analitics/edit.ctp:9
 #: View/Analitics/index.ctp:16;55 View/Analitics/view.ctp:7
 #: View/Analitics/visualization.ctp:9;18
 msgid "Analíticas"
-msgstr ""
+msgstr "Analitics"
 
 #: View/Analitics/add.ctp:12 View/Analitics/visualization.ctp:10
 msgid "Nueva Analítica"
-msgstr ""
+msgstr "New Analitic"
 
 #: View/Analitics/edit.ctp:10 View/Analitics/index.ctp:141
 #: View/Analitics/visualization.ctp:19 View/Documents/edit.ctp:9
@@ -736,7 +736,7 @@ msgstr ""
 #: View/Rols/index.ctp:53 View/Rols/view.ctp:99 View/Users/index.ctp:53
 #: View/Users/view.ctp:122
 msgid "Editar"
-msgstr ""
+msgstr "Edit"
 
 #: View/Analitics/index.ctp:25;89 View/Documents/index.ctp:26;82
 #: View/Elements/assistant.ctp:22 View/Rols/add.ctp:13 View/Rols/edit.ctp:13
@@ -744,15 +744,15 @@ msgstr ""
 #: View/Users/edit.ctp:12 View/Users/index.ctp:12;39
 #: View/Users/view.ctp:12;109
 msgid "Acciones"
-msgstr ""
+msgstr "Accions"
 
 #: View/Analitics/index.ctp:29 View/Documents/index.ctp:30
 msgid "Nuevo Documento"
-msgstr ""
+msgstr "New Document"
 
 #: View/Analitics/index.ctp:39
 msgid "Listar Documentos"
-msgstr ""
+msgstr "List Documents"
 
 #: View/Analitics/index.ctp:50
 msgid " del documento - "
@@ -764,7 +764,7 @@ msgstr ""
 
 #: View/Analitics/index.ctp:71 View/Documents/index.ctp:64
 msgid "Básico: "
-msgstr ""
+msgstr "Basic:"
 
 #: View/Analitics/index.ctp:138 View/Analitics/view.ctp:8
 #: View/Documents/index.ctp:131 View/Documents/view.ctp:7
@@ -778,7 +778,7 @@ msgstr ""
 #: View/Rols/index.ctp:54 View/Rols/view.ctp:100 View/Users/edit.ctp:16
 #: View/Users/index.ctp:54 View/Users/view.ctp:123
 msgid "Eliminar"
-msgstr ""
+msgstr "Delete"
 
 #: View/Analitics/index.ctp:147
 msgid "Ver fuente"
@@ -795,7 +795,7 @@ msgstr ""
 #: View/Analitics/index.ctp:176 View/Bases/index.ctp:85
 #: View/Documents/index.ctp:167
 msgid "Confirmación"
-msgstr ""
+msgstr "Confirmation"
 
 #: View/Analitics/index.ctp:181
 msgid "Esta seguro que desea eliminar esta analítica?"
@@ -804,17 +804,17 @@ msgstr ""
 #: View/Analitics/index.ctp:186 View/Documents/index.ctp:177
 #: View/Elements/assistant.ctp:604 View/Searches/view.ctp:215
 msgid "Cerrar"
-msgstr ""
+msgstr "Close"
 
 #: View/Analitics/view.ctp:52 View/Analitics/visualization.ctp:82
 #: View/Documents/view.ctp:51 View/Documents/visualization.ctp:81
 msgid "Atras"
-msgstr ""
+msgstr "Back"
 
 #: View/Analitics/visualization.ctp:11;20
 #: View/Documents/visualization.ctp:11;19
 msgid "Visualización"
-msgstr ""
+msgstr "Visualization"
 
 #: View/Analitics/visualization.ctp:36 View/Documents/visualization.ctp:35
 #: View/Elements/Analitics/series_monograficas.ctp:39
@@ -827,18 +827,18 @@ msgstr ""
 #: View/Elements/Analitics/series_monograficas.ctp:37
 #: View/Elements/Documents/series_monograficas.ctp:32
 msgid "Campo"
-msgstr ""
+msgstr "Field"
 
 #: View/Analitics/visualization.ctp:38 View/Documents/visualization.ctp:37
 msgid "Valor"
-msgstr ""
+msgstr "Value"
 
 #: View/Analitics/visualization.ctp:83 View/Documents/add.ctp:36
 #: View/Documents/visualization.ctp:82 View/Rols/add.ctp:37
 #: View/Rols/edit.ctp:40 View/Users/add.ctp:42 View/Users/edit.ctp:46
 #: View/Users/login.ctp:54
 msgid "Confirmar"
-msgstr ""
+msgstr "Confirm"
 
 #: View/Bases/index.ctp:6
 msgid "Importar Bases"
@@ -860,7 +860,7 @@ msgstr ""
 
 #: View/Bases/index.ctp:33
 msgid "Adicionar"
-msgstr ""
+msgstr "Add"
 
 #: View/Bases/index.ctp:40
 msgid "Seleccione las Bases a Importar"
@@ -883,11 +883,11 @@ msgstr ""
 
 #: View/Bases/index.ctp:105 View/Layouts/documentalista_layout.ctp:82
 msgid "Importar"
-msgstr ""
+msgstr "Import"
 
 #: View/Documents/add.ctp:18
 msgid "Seleccione el Tipo de Documento"
-msgstr ""
+msgstr "Select Type of Document"
 
 #: View/Documents/add.ctp:24
 msgid "Series Monográficas"
@@ -947,7 +947,7 @@ msgstr ""
 
 #: View/Elements/assistant.ctp:24
 msgid "Adicionar Campo"
-msgstr ""
+msgstr "Add Field"
 
 #: View/Elements/assistant.ctp:33
 msgid "Llene los campos obligatorios"
@@ -999,7 +999,7 @@ msgstr ""
 
 #: View/Elements/assistant.ctp:222;224
 msgid "Tamaño de Archivo"
-msgstr ""
+msgstr "Size File"
 
 #: View/Elements/assistant.ctp:232;234
 msgid "Seña"
@@ -1017,13 +1017,13 @@ msgstr ""
 #: View/Elements/Analitics/series_monograficas.ctp:654
 #: View/Elements/Documents/series_monograficas.ctp:736
 msgid "Ciudad"
-msgstr ""
+msgstr "City"
 
 #: View/Elements/assistant.ctp:304;306
 #: View/Elements/Analitics/series_monograficas.ctp:670
 #: View/Elements/Documents/series_monograficas.ctp:752
 msgid "País"
-msgstr ""
+msgstr "Country"
 
 #: View/Elements/assistant.ctp:314;349
 msgid "Grado de responsabilidad"
@@ -1266,7 +1266,7 @@ msgstr ""
 #: View/Elements/Searches/search_form.ctp:20
 #: View/Searches/advanced_search.ctp:178
 msgid "Buscar "
-msgstr ""
+msgstr "Find"
 
 #: View/Elements/Searches/search_form.ctp:31
 msgid "Atención!"
@@ -1290,7 +1290,7 @@ msgstr ""
 
 #: View/Layouts/admin_layout.ctp:53
 msgid "Sistema"
-msgstr ""
+msgstr "System"
 
 #: View/Layouts/admin_layout.ctp:56
 msgid "Disponibilidad"
@@ -1300,13 +1300,19 @@ msgstr ""
 msgid "Aviso a los Usuarios"
 msgstr ""
 
+#: View/Layouts/admin_layout.ctp:61 View/Rols/add.ctp:3 View/Rols/edit.ctp:3
+#: View/Rols/index.ctp:3 View/Rols/view.ctp:3 View/Users/add.ctp:3
+#: View/Users/edit.ctp:3 View/Users/index.ctp:3;28 View/Users/view.ctp:3
+msgid "Usuarios"
+msgstr "Users"
+
 #: View/Layouts/admin_layout.ctp:67
 msgid "Definiciones"
-msgstr ""
+msgstr "Definitions"
 
 #: View/Layouts/admin_layout.ctp:70
 msgid "Definiciones Generales"
-msgstr ""
+msgstr "General Definitions"
 
 #: View/Layouts/admin_layout.ctp:72
 msgid "Tipos de Registros"
@@ -1314,15 +1320,15 @@ msgstr ""
 
 #: View/Layouts/admin_layout.ctp:75
 msgid "Campos"
-msgstr ""
+msgstr "Fields"
 
 #: View/Layouts/admin_layout.ctp:76
 msgid "FST"
-msgstr ""
+msgstr "FST"
 
 #: View/Layouts/admin_layout.ctp:77
 msgid "Mensajes"
-msgstr ""
+msgstr "Message"
 
 #: View/Layouts/admin_layout.ctp:80
 msgid "Generar Invertido"
@@ -1336,14 +1342,37 @@ msgstr ""
 msgid "Reiniciar Base"
 msgstr ""
 
+#: View/Layouts/admin_layout.ctp:89
+msgid "Informe"
+msgstr "Inform"
+
 #: View/Layouts/admin_layout.ctp:92 View/Layouts/documentalista_layout.ctp:94
 #: View/Layouts/editor_layout.ctp:71
 msgid "Cambiar Perfil"
+msgstr "Change Profile"
+
+#: View/Layouts/admin_layout.ctp:98 View/Layouts/documentalista_layout.ctp:101
+msgid "Salir"
+msgstr "Log out"
+
+#: View/Layouts/admin_layout.ctp:107
+#: View/Layouts/documentalista_layout.ctp:109
+msgid "Español"
+msgstr "Spanish"
+
+#: View/Layouts/admin_layout.ctp:108
+#: View/Layouts/documentalista_layout.ctp:110
+msgid "Ingles"
+msgstr "English"
+
+#: View/Layouts/admin_layout.ctp:109
+#: View/Layouts/documentalista_layout.ctp:111
+msgid "Portugues"
 msgstr ""
 
-#: View/Layouts/admin_layout.ctp:107 View/Layouts/search_layout.ctp:78
+#: View/Layouts/admin_layout.ctp:117 View/Layouts/search_layout.ctp:78
 msgid "Administrador:"
-msgstr ""
+msgstr "Administrator:"
 
 #: View/Layouts/documentalista_layout.ctp:58
 msgid "Listar"
@@ -1371,11 +1400,11 @@ msgstr ""
 
 #: View/Layouts/documentalista_layout.ctp:79
 msgid "Utilitarios"
-msgstr ""
+msgstr "Utilitaries"
 
 #: View/Layouts/documentalista_layout.ctp:83
 msgid "Exportar"
-msgstr ""
+msgstr "Export"
 
 #: View/Layouts/documentalista_layout.ctp:84
 msgid "Reorganizar"
@@ -1387,16 +1416,12 @@ msgstr ""
 
 #: View/Layouts/documentalista_layout.ctp:90
 msgid "Configuración"
-msgstr ""
+msgstr "Configuration"
 
-#: View/Layouts/documentalista_layout.ctp:101
-msgid "Salir"
-msgstr ""
-
-#: View/Layouts/documentalista_layout.ctp:109
+#: View/Layouts/documentalista_layout.ctp:118
 #: View/Layouts/search_layout.ctp:84
 msgid "Documentalista:"
-msgstr ""
+msgstr "Documentalist:"
 
 #: View/Layouts/search_layout.ctp:39
 msgid "Registrarse"
@@ -1408,7 +1433,7 @@ msgstr ""
 
 #: View/Layouts/search_layout.ctp:52;54;57
 msgid "Carpeta "
-msgstr ""
+msgstr "Folder"
 
 #: View/Layouts/search_layout.ctp:81
 msgid "Editor:"
@@ -1416,7 +1441,7 @@ msgstr ""
 
 #: View/Pages/home.ctp:6
 msgid "Administración"
-msgstr ""
+msgstr "Administration"
 
 #: View/Pages/home.ctp:7
 msgid "Administración y gestión de documentos del sistema."
@@ -1434,38 +1459,32 @@ msgstr ""
 msgid "Acceder"
 msgstr ""
 
-#: View/Rols/add.ctp:3 View/Rols/edit.ctp:3 View/Rols/index.ctp:3
-#: View/Rols/view.ctp:3 View/Users/add.ctp:3 View/Users/edit.ctp:3
-#: View/Users/index.ctp:3;28 View/Users/view.ctp:3
-msgid "Usuarios"
-msgstr ""
-
 #: View/Rols/add.ctp:4 View/Rols/edit.ctp:4 View/Rols/index.ctp:4;28
 #: View/Rols/view.ctp:4
 msgid "Roles"
-msgstr ""
+msgstr "Rols"
 
 #: View/Rols/add.ctp:16 View/Rols/edit.ctp:18 View/Rols/view.ctp:20
 #: View/Users/add.ctp:17 View/Users/edit.ctp:20 View/Users/index.ctp:17
 #: View/Users/view.ctp:23
 msgid "Listar Roles"
-msgstr ""
+msgstr "List Rols"
 
 #: View/Rols/add.ctp:18 View/Rols/edit.ctp:20 View/Rols/index.ctp:18
 #: View/Rols/view.ctp:24 View/Users/add.ctp:15 View/Users/edit.ctp:18
 #: View/Users/view.ctp:19
 msgid "Listar Usuarios"
-msgstr ""
+msgstr "List Users"
 
 #: View/Rols/add.ctp:20 View/Rols/edit.ctp:22 View/Rols/index.ctp:20
 #: View/Rols/view.ctp:26;110 View/Users/add.ctp:4 View/Users/index.ctp:15
 #: View/Users/view.ctp:21
 msgid "Nuevo Usuario"
-msgstr ""
+msgstr "New User"
 
 #: View/Rols/add.ctp:30
 msgid "Adicionar Rol"
-msgstr ""
+msgstr "Add Rol"
 
 #: View/Rols/edit.ctp:16 View/Rols/index.ctp:54 View/Rols/view.ctp:18;100
 #: View/Users/index.ctp:54 View/Users/view.ctp:17
@@ -1474,12 +1493,12 @@ msgstr ""
 
 #: View/Rols/edit.ctp:32 View/Rols/view.ctp:16
 msgid "Editar Rol"
-msgstr ""
+msgstr "Edir Rol"
 
 #: View/Rols/index.ctp:16 View/Rols/view.ctp:22 View/Users/add.ctp:19
 #: View/Users/edit.ctp:22 View/Users/index.ctp:19 View/Users/view.ctp:25;133
 msgid "Nuevo Rol"
-msgstr ""
+msgstr "New Rol"
 
 #: View/Rols/index.ctp:63 View/Users/index.ctp:63
 msgid ""
@@ -1489,19 +1508,19 @@ msgstr ""
 
 #: View/Rols/view.ctp:18
 msgid "Eliminar Rol"
-msgstr ""
+msgstr "Delete Rol"
 
 #: View/Rols/view.ctp:34
 msgid "Rol"
-msgstr ""
+msgstr "Rol"
 
 #: View/Rols/view.ctp:52;82 View/Users/view.ctp:79;107
 msgid "Creado"
-msgstr ""
+msgstr "Created"
 
 #: View/Rols/view.ctp:59;83 View/Users/view.ctp:86;108
 msgid "Modificado"
-msgstr ""
+msgstr "Modified"
 
 #: View/Rols/view.ctp:71
 msgid "Usuarios Relacionados"
@@ -1509,15 +1528,15 @@ msgstr ""
 
 #: View/Rols/view.ctp:80 View/Users/view.ctp:51
 msgid "Nombre de Usuario"
-msgstr ""
+msgstr "User Name"
 
 #: View/Rols/view.ctp:81 View/Users/view.ctp:72
 msgid "Email"
-msgstr ""
+msgstr "E-Mail"
 
 #: View/Searches/advanced_search.ctp:7
 msgid "Búsqueda Avanzada"
-msgstr ""
+msgstr "Advanced Search"
 
 #: View/Searches/advanced_search.ctp:16
 msgid "Buscar palabras en un campo específico."
@@ -1525,11 +1544,11 @@ msgstr ""
 
 #: View/Searches/advanced_search.ctp:25;45;63
 msgid "Todos los campos"
-msgstr ""
+msgstr "All fields"
 
 #: View/Searches/advanced_search.ctp:27;47;65
 msgid "Autor"
-msgstr ""
+msgstr "Author"
 
 #: View/Searches/advanced_search.ctp:28;48;66
 msgid "Palabras Claves"
@@ -1561,11 +1580,11 @@ msgstr ""
 
 #: View/Searches/advanced_search.ctp:121
 msgid "Desde:"
-msgstr ""
+msgstr "From:"
 
 #: View/Searches/advanced_search.ctp:130
 msgid "Hasta:"
-msgstr ""
+msgstr "To:"
 
 #: View/Searches/advanced_search.ctp:146
 msgid "Tipo de Literatura:"
@@ -1573,7 +1592,7 @@ msgstr ""
 
 #: View/Searches/advanced_search.ctp:148
 msgid "Todos"
-msgstr ""
+msgstr "All"
 
 #: View/Searches/advanced_search.ctp:149
 msgid "Documento publicado en una serie periódica"
@@ -1657,11 +1676,11 @@ msgstr ""
 
 #: View/Searches/view.ctp:59
 msgid "Localización"
-msgstr ""
+msgstr "Localization"
 
 #: View/Searches/view.ctp:70
 msgid "Descriptores"
-msgstr ""
+msgstr "Descriptors"
 
 #: View/Searches/view.ctp:82
 msgid "Palabras claves del autor"
@@ -1697,23 +1716,23 @@ msgstr ""
 
 #: View/Users/add.ctp:29
 msgid "Añadir Usuario"
-msgstr ""
+msgstr "Add User"
 
 #: View/Users/edit.ctp:32 View/Users/view.ctp:15
 msgid "Editar Usuario"
-msgstr ""
+msgstr "Edit User"
 
 #: View/Users/view.ctp:17
 msgid "Eliminar Usuario"
-msgstr ""
+msgstr "Delete User"
 
 #: View/Users/view.ctp:33
 msgid "Usuario"
-msgstr ""
+msgstr "User"
 
 #: View/Users/view.ctp:58
 msgid "Inicial"
-msgstr ""
+msgstr "Initial"
 
 #: View/Users/view.ctp:98
 msgid "Roles Relacionados"

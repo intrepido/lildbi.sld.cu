@@ -53,13 +53,9 @@ $(document).ready(
 			}			
 			
 			
-			$("#confirm-type-document").click(
-					function() {
-						$(this).attr(
-								"href",
-								"/documents/add/"
-										+ $("select").attr("value"));
-					});
+			$("#confirm-type-document").click(function() {
+				$(this).attr("href", "/documents/add/" + $("select").attr("value"));
+			});
 
 			$('#cleanField').live(
 					'click',

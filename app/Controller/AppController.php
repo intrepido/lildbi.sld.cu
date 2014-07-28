@@ -83,6 +83,9 @@ class AppController extends Controller {
 	
 	public function beforeFilter() {
 		
+		//Set Language
+		$this->_setLanguage();
+		
 		//Load Configurations
 		$this->Configuration->load('CFG'); //$prefix is 'CFG' by default		
 		
@@ -101,4 +104,24 @@ class AppController extends Controller {
 			
 		}
 	}
+	
+	private function _setLanguage() {
+		//if the cookie was previously set, and Config.language has not been set
+		//write the Config.language with the value from the Cookie
+		if ($this->Cookie->read('lang') && !$this->Session->check('Config.language')) {
+			$this->Session->write('Config.language', $this->Cookie->read('lang'));
+		}
+		//if the user clicked the language URL
+		else if (isset($this->data['language']) && ($this->data['language'] !=  $this->Session->read('Config.language'))
+		) {
+			//then update the value in Session and the one in Cookie
+			$this->Session->write('Config.language', $this->data['language']);
+			$this->Cookie->write('lang', $this->data['language'], false, '20 days');
+		}
+		 
+		if($this->Session->check('Config.language')){
+			Configure::write('Config.language', $this->Session->read('Config.language'));
+		}
+	}	
+	
 }

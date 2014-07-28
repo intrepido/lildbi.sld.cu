@@ -290,4 +290,4 @@ Cache::config('_cake_model_', array(
 	'duration' => $duration
 ));
 
-Configure::write('Config.language', 'eng');
+Configure::write('Config.language', 'esp');

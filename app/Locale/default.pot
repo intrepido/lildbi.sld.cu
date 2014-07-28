@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-07-26 13:27-0400\n"
+"POT-Creation-Date: 2014-07-28 00:19-0400\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -45,7 +45,7 @@ msgstr ""
 msgid "Código del Centro"
 msgstr ""
 
-#: Controller/AppController.php:93
+#: Controller/AppController.php:96
 msgid "Sitio web en mantenimiento"
 msgstr ""
 
@@ -1360,6 +1360,18 @@ msgstr ""
 msgid "Aviso a los Usuarios"
 msgstr ""
 
+#: View/Layouts/admin_layout.ctp:61
+#: View/Rols/add.ctp:3
+#: View/Rols/edit.ctp:3
+#: View/Rols/index.ctp:3
+#: View/Rols/view.ctp:3
+#: View/Users/add.ctp:3
+#: View/Users/edit.ctp:3
+#: View/Users/index.ctp:3;28
+#: View/Users/view.ctp:3
+msgid "Usuarios"
+msgstr ""
+
 #: View/Layouts/admin_layout.ctp:67
 msgid "Definiciones"
 msgstr ""
@@ -1398,13 +1410,37 @@ msgstr ""
 msgid "Reiniciar Base"
 msgstr ""
 
+#: View/Layouts/admin_layout.ctp:89
+msgid "Informe"
+msgstr ""
+
 #: View/Layouts/admin_layout.ctp:92
 #: View/Layouts/documentalista_layout.ctp:94
 #: View/Layouts/editor_layout.ctp:71
 msgid "Cambiar Perfil"
 msgstr ""
 
+#: View/Layouts/admin_layout.ctp:98
+#: View/Layouts/documentalista_layout.ctp:101
+msgid "Salir"
+msgstr ""
+
 #: View/Layouts/admin_layout.ctp:107
+#: View/Layouts/documentalista_layout.ctp:109
+msgid "Español"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:108
+#: View/Layouts/documentalista_layout.ctp:110
+msgid "Ingles"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:109
+#: View/Layouts/documentalista_layout.ctp:111
+msgid "Portugues"
+msgstr ""
+
+#: View/Layouts/admin_layout.ctp:117
 #: View/Layouts/search_layout.ctp:78
 msgid "Administrador:"
 msgstr ""
@@ -1453,11 +1489,7 @@ msgstr ""
 msgid "Configuración"
 msgstr ""
 
-#: View/Layouts/documentalista_layout.ctp:101
-msgid "Salir"
-msgstr ""
-
-#: View/Layouts/documentalista_layout.ctp:109
+#: View/Layouts/documentalista_layout.ctp:118
 #: View/Layouts/search_layout.ctp:84
 msgid "Documentalista:"
 msgstr ""
@@ -1496,17 +1528,6 @@ msgstr ""
 
 #: View/Pages/home.ctp:13
 msgid "Acceder"
-msgstr ""
-
-#: View/Rols/add.ctp:3
-#: View/Rols/edit.ctp:3
-#: View/Rols/index.ctp:3
-#: View/Rols/view.ctp:3
-#: View/Users/add.ctp:3
-#: View/Users/edit.ctp:3
-#: View/Users/index.ctp:3;28
-#: View/Users/view.ctp:3
-msgid "Usuarios"
 msgstr ""
 
 #: View/Rols/add.ctp:4
